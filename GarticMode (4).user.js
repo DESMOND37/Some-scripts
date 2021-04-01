@@ -1,16 +1,3 @@
-// ==UserScript==
-// @name         GarticMode
-// @description  Мой самый первый юзерскрипт
-// @author       DoctorDeathDDracula
-// @license      MIT
-// @version      1.0
-// @include      https://garticphone.com/*
-// @grant        none
-// @require      https://docs.opencv.org/4.0.1/opencv.js
-// ==/UserScript==
-
-//var cv = document.opencv;
-//console.log(cv)
 
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
 var cssAnimation = document.createElement('style');
