@@ -767,7 +767,6 @@ function censss(e){
 }
 
 function kok() {
-    console.log("in");
     var items = document.getElementsByClassName("jsx-4074752268 item");
     items = Array.prototype.slice.call( items );
     var items2 = document.getElementsByClassName("jsx-2790456822 item");
@@ -3567,7 +3566,4 @@ function exec() {
     var asyncTres = setInterval(asyncSlowSpace, 1000);
 }
 
-alert("FUCK");
 exec();
-
-
