@@ -1410,7 +1410,6 @@ function nessEdit(){
         var ness = (()=>{var items = document.getElementsByClassName("jsx-340028725"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})()
         ness.step="0.01";
         ness.min="0";
-        ness.style.height="60px";
         ness.style.cursor = "pointer";
         var nesstext = document.createElement("input");
         nesstext.classList.add("ness-text");
