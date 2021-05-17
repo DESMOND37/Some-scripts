@@ -1,3 +1,5 @@
+(function(that){((context, fapply, console) => {with (context) {(module => {"use strict";try {fapply(module, context, [,,context.CDATA,context.uneval,context.define,context.module,context.exports,context.GM,context.GM_info]);} catch (e) {if (e.message && e.stack) {console.error("ERROR: Execution of script 'GarticMode' failed! " + e.message);console.log(e.stack.replace(/(\\(eval at )?<anonymous>[: ]?)|([\s.]*at Object.tms_[\s\S.]*)/g, ""));} else {console.error(e);}}})(function (context,fapply,CDATA,uneval,define,module,exports,GM,GM_info) {
+
 // ==UserScript==
 // @name         GarticMode
 // @description  Мой самый первый юзерскрипт
@@ -3582,5 +3584,8 @@ function exec() {
     var asyncTres = setInterval(asyncSlowSpace, 1000);
 }
 
-exec();
 alert("FUCK");
+exec();
+})}})(that.context, that.fapply, that.console);
+               })((()=>{const k="__u__14101777.66766793",r=this[k];delete this[k];return r;})())
+
