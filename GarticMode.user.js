@@ -1,17 +1,5 @@
 (function(that){((context, fapply, console) => {with (context) {(module => {"use strict";try {fapply(module, context, [,,context.CDATA,context.uneval,context.define,context.module,context.exports,context.GM,context.GM_info]);} catch (e) {if (e.message && e.stack) {console.error("ERROR: Execution of script 'GarticMode' failed! " + e.message);console.log(e.stack.replace(/(\\(eval at )?<anonymous>[: ]?)|([\s.]*at Object.tms_[\s\S.]*)/g, ""));} else {console.error(e);}}})(function (context,fapply,CDATA,uneval,define,module,exports,GM,GM_info) {
 
-// ==UserScript==
-// @name         GarticMode
-// @description  Мой самый первый юзерскрипт
-// @author       Doctor Death D. Dracula
-// @license      MIT
-// @version      2.0.4 beta
-// @include      https://garticphone.com/*
-// @grant        none
-// @iconURL      https://media.discordapp.net/attachments/827569141782282272/829494437083349023/-2.png?width=689&height=676
-// @supportURL   t.me/DoctorDeathDDracula
-// ==/UserScript==
-
 //var cv = document.opencv;
 //console.log(cv)
 
