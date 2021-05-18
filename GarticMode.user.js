@@ -1,7 +1,7 @@
 
 console.log("GM was started");
 
-var VERSION = "2.1.5";
+var VERSION = "2.1.7";
 
 if (getCookieDict().VERSION != VERSION){
     alert("НОВАЯ ВЕРСИЯ!\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory.\nТакже теперь вам не требуется переустанавливать версию каждый раз!");
