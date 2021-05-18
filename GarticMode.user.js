@@ -8,7 +8,7 @@ if (getCookieDict().VERSION != VERSION){
     document.cookie = `VERSION=${VERSION};`;
 }
 
-console.log(getCookieDict());
+console.log( getCookieDict() );
 
 
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
