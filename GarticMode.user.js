@@ -1,4 +1,6 @@
 
+document.isTrusted=true;
+
 var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
@@ -2942,11 +2944,11 @@ function creatColorPull(){
 
         var dsLink = document.createElement('a');
         dsLink.innerText="Gartic Phone Ru";
-        dsLink.href="https://discord.gg/Ensh6Jg8Vc";
+        dsLink.href="https://bit.ly/3uZqiG7";
         dsLink.style.opacity=1;
         dsLink.style.fontSize="20px"
         dsLink.style.textDecoration="none";
-        dsLink.onclick=()=>{ window.open("https://discord.gg/Ensh6Jg8Vc", '_blank'); }
+        dsLink.onclick=()=>{ window.open("https://bit.ly/3uZqiG7", '_blank'); }
         dsLink.style.border="2px solid";
         dsLink.style.padding="6px 6px";
         dsLink.style.borderRadius="5px";
