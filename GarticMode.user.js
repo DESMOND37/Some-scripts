@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0";
+var VERSION = "2.2.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -1011,7 +1011,7 @@ function clearActiveelements(){
 var zoomOffsetY = 400;
 var zoomCHidden = true;
 function addZoom(){
-    if (!document.getElementsByClassName("zoomC").length && document.URL.indexOf("draw") != -1){
+    if (!document.getElementsByClassName("zoomC").length && document.URL.indexOf("draw") != -1 && !document.getElementsByClassName("jsx-1307288772 book dark").length){
         var zoomC = createCanvas(200, 200);
         zoomC.classList.add("zoomC");
         zoomC.hidden = true;
