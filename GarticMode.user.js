@@ -2348,7 +2348,7 @@ function mainMenuTitle(){
     if (document.getElementsByClassName("title") != []){
         var title = document.createElement("div");
         title.classList.add("title");
-        title.innerText="GarticMode By Doctor Death D. Drac v2.0.4 beta";
+        title.innerText=`GarticMode By Doctor Death D. Drac v${VERSION}`;
         title.style.backgroundColor="rgba(0,0,0, 0.5)";
         title.style.borderRadius="0px 0px 0px 5px";
         title.style.position="absolute";
