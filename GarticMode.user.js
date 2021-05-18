@@ -1,4 +1,16 @@
+
 console.log("GM was started");
+
+var VERSION = "2.1.5";
+
+if (getCookieDict().VERSION != VERSION){
+    alert("НОВАЯ ВЕРСИЯ!\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory");
+    document.cookie = `VERSION=${VERSION};`;
+}
+
+console.log(getCookieDict());
+
+
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 var cssAnimation = document.createElement('style');
@@ -713,14 +725,9 @@ function setNess(n) {
 }
 
 function censss(e){
-    if (e.which == 3){
+    if (e.which == 1){
         let canv = this.getElementsByTagName("canvas")[0];
         if (canv != undefined){
-            //var im = document.createElement("img");
-            //im.innerHTML='<img src="https://media.discordapp.net/attachments/833410401366573066/835980543567986809/twitch.png" style="max-width: 100%; max-height: 100%;">';
-            //im.style.maxWidth="100%";
-            //im.style.maxHeight="100%";
-            //im.src="https://media.discordapp.net/attachments/833410401366573066/835980543567986809/twitch.png";
             var bord = this.getElementsByClassName("jsx-4032599855 balloon")[0];
 
             var can = this.getElementsByTagName("canvas")[0];
@@ -729,18 +736,11 @@ function censss(e){
                 bord.removeChild(bord.getElementsByTagName('img')[0]);
             } else {
                 can.parentNode.hidden=true;
-                can.parentNode.insertAdjacentHTML("beforeBegin", '<img src="https://media.discordapp.net/attachments/833410401366573066/835980543567986809/twitch.png" style="max-width: 100%; max-height: 100%;">')
+                can.parentNode.insertAdjacentHTML("beforeBegin", '<img src="https://static-prod.weplay.tv/2018-12-19/f2e481db44650925f3f5bb8a840181ab_large_cover.jpeg" style="max-width: 100%; max-height: 100%; border-radius: 5px; cursor: pointer;">')
             }
 
         } else if (this.getElementsByTagName("span")[1].innerText != "" && this.getElementsByTagName("i")[0] == undefined && document.getElementsByClassName("jsx-4032599855 lottie")[0] == undefined && document.getElementsByClassName("jsx-2184811213 show")[0] == undefined){
-            if (document.getElementsByClassName("jsx-4283719431 sound off").length == 0){
-                document.getElementsByClassName("jsx-4283719431 sound")[0].click();
-                setTimeout(()=>{
-                    if (document.getElementsByClassName("jsx-4283719431 sound off").length != 0){
-                        document.getElementsByClassName("jsx-4283719431 sound")[0].click();
-                    }
-                }, 4000)
-            }
+
             var cens = document.createElement("span");
             cens.innerText = "CENSORED";
             cens.style.color="red";
@@ -775,7 +775,7 @@ function kok() {
         items.push(items2[i]);
     }
     for (let i=0; i<items.length; i++){
-        items[i].style.transition="all 0.5s ease 0s";
+        /*items[i].style.transition="all 0.5s ease 0s";
         items[i].style.borderRadius="10px";
 
         items[i].onmouseenter=()=>{
@@ -783,23 +783,27 @@ function kok() {
         }
         items[i].onmouseleave=()=>{
             items[i].style.backgroundColor="rgba(0,0,0,0)";
+        }*/
+
+        items[i].oncontextmenu=()=>{}
+
+        //items[i].removeEventListener('mouseup', censss);
+        if (!items[i].verible){
+            items[i].addEventListener('mouseup', censss);
         }
-
-        items[i].oncontextmenu=()=>{return false;}
-
-        items[i].removeEventListener('mouseup', censss);
-        items[i].addEventListener('mouseup', censss);
+        items[i].verible=true;
 
         let canv = items[i].getElementsByTagName("canvas")[0];
 
         if (canv != undefined){
             let nick = items[i].getElementsByClassName("jsx-4032599855 nick")[0].innerText;
             canv.style.cursor="pointer";
-            canv.onclick=()=>{
+            canv.oncontextmenu=()=>{
                 let link = document.createElement('a');
                 link.download = `${nick}.png`;
                 link.href = canv.toDataURL();
                 link.click();
+                return false;
             }
 
             if (nick == "DOCTORDEATHDDRACULA "){
@@ -866,51 +870,6 @@ function f1() {
 
     var i = 100/255 * MyVar1
 
-    //var border = document.querySelector("#content > div");
-    //border.style.transform="scale(2)";
-
-    //var banner = document.querySelector("#__next > div.jsx-4127328682.banner");
-
-    //banner.parentNode.removeChild(banner)
-
-    //document.body.style.backgroundImage=`linear-gradient(215deg, rgb(${MyVar1}, ${MyVar2}, ${MyVar3}) 0%, rgb(${MyVar3}, ${MyVar2}, ${MyVar1}) ${parseInt(i)}%)`;
-
-    /*var input = document.querySelector("#content > div > div > div:nth-of-type(2) > div > input");
-    input.value=color;
-
-    $("#content>DIV>DIV>DIV:nth-of-type(2)>DIV>INPUT").trigger("change");
-    $("#content>DIV>DIV>DIV:nth-of-type(2)>DIV>INPUT").change();
-    $("#content>DIV>DIV>DIV:nth-of-type(2)>DIV>INPUT").val(color).change();
-    $("#content>DIV>DIV>DIV:nth-of-type(2)>DIV>INPUT").text(color).change();
-    $("#content>DIV>DIV>DIV:nth-of-type(2)>DIV>INPUT").html(color).change();
-    console.log($("#content>DIV>DIV>DIV:nth-of-type(2)>DIV>INPUT"));
-
-    var event = new Event('change', { bubbles: true, cancelable: true } );
-    input.dispatchEvent(event);*/
-
-    /*let canvas0 = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core > div > canvas:nth-child(1)");
-    let event = new Event('mousedown', { bubbles: true, cancelable: true } );
-    canvas0.dispatchEvent(event);
-
-    canvas0 = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core > div > canvas:nth-child(1)");
-    event = new Event('mouseup', { bubbles: true, cancelable: true } );
-    canvas0.dispatchEvent(event);*/
-
-    //let canvas1 = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core > div > canvas:nth-child(2)");
-    //event = new Event('mouseup', { bubbles: true, cancelable: true } );
-    //canvas1.dispatchEvent(event);
-
-    //let canvas2 = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core > div > canvas.jsx-150592943");
-    //event = new Event('mouseup', { bubbles: true, cancelable: true } );
-    //canvas2.dispatchEvent(event);
-
-    //canvas1 = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core > div > canvas:nth-child(2)");
-    //event = new Event('mousedown', { bubbles: true, cancelable: true } );
-    //canvas1.dispatchEvent(event);
-
-    //canvas2 = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core > div > canvas.jsx-150592943");
-    //event = new Event('mousedown', { bubbles: true, cancelable: true } );
-    //canvas2.dispatchEvent(event);
 };
 
 function getRandomInt(max) {
@@ -3399,6 +3358,24 @@ function flagsOff(){
     waitingKey = false;
 }
 
+function memoryFunc(){
+    var smth = document.getElementsByClassName("jsx-1307288772 core")[0];
+    var mCanvas = document.getElementsByClassName("jsx-3193114933 ")[0];
+    smth.style.backgroundImage="url()";
+    smth.style.cursor="pointer";
+    smth.onclick = ()=>{
+        if (mCanvas.style.opacity == "" || mCanvas.style.opacity == "1"){
+            mCanvas.style.opacity = 0;
+            smth.style.backgroundImage="url(https://images-ext-1.discordapp.net/external/4j6MAS7dlRdJgi1KciurS5q6zKYnF3KbhUzq9YP1xFs/https/static-prod.weplay.tv/2018-12-19/f2e481db44650925f3f5bb8a840181ab_large_cover.jpeg?width=1202&height=676)";
+            smth.style.backgroundSize="100%";
+        } else {
+            mCanvas.style.opacity = 1;
+            smth.style.backgroundImage="url()";
+        }
+    }
+
+}
+
 function offBgMenu(){
     var panel = document.getElementsByClassName("rightpanel");
     if (panel.length != 0){
@@ -3531,6 +3508,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
+        setTimeout(memoryFunc, 300);
         styleUpdate();
         flagsOff();
         memoryKey=true;
