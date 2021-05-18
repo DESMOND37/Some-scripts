@@ -3138,7 +3138,7 @@ function creatColorPull(){
         opacity1.classList.add("opacity1");
         opacity1.type = "range";
         opacity1.min = 0;
-        opacity1.max = 256;
+        opacity1.max = 255;
         opacity1.step = 1;
         //percentRange1.value = 85;
         opacity1.value = `${cookieDict.opacity1}`;
