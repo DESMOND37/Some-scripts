@@ -1,14 +1,12 @@
 
-console.log("GM was started");
-
-var VERSION = "2.1.7";
+var VERSION = "2.1.9";
 
 if (getCookieDict().VERSION != VERSION){
-    alert("НОВАЯ ВЕРСИЯ!\nНовости новой версии:\nВам больше не надо переустанавливать скрипт каждый раз!\nТакже скрывать холст можно и в разделе memory.");
+    alert("НОВАЯ ВЕРСИЯ!\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory");
     document.cookie = `VERSION=${VERSION};`;
 }
 
-console.log( getCookieDict() );
+console.log(getCookieDict());
 
 
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
@@ -2876,7 +2874,7 @@ function createSizePull(){
 }
 
 function creatColorPull(){
-    if (document.querySelector("#content > div:nth-child(2)") == undefined){
+    if (document.querySelector("#content > div:nth-child(2)") == undefined && document.isTrusted){
 
         var cookieDict = getCookieDict();
 
@@ -3331,6 +3329,10 @@ function creatColorPull(){
     }
 }
 
+if (document.isTrusted){
+    exec();
+}
+
 var lobbyKey = false;
 var menuKey = false;
 var menuLinkKey = false;
@@ -3543,5 +3545,3 @@ function exec() {
     var asyncDes = setInterval(asyncSpace, 0);
     var asyncTres = setInterval(asyncSlowSpace, 1000);
 }
-
-exec();
