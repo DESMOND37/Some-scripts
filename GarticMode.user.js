@@ -1,6 +1,4 @@
 
-document.isTrusted=true;
-
 var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
