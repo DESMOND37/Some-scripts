@@ -1207,7 +1207,7 @@ function palitEdit(){
     if (document.getElementsByClassName("jsx-3071142060 color").length != 36){
         var target = document.getElementsByClassName("jsx-3071142060")[0].getElementsByTagName("input")[0];
         var colorList = [[0, 0, 0], [34, 177, 76], [47, 253, 57], [51, 51, 51], [0, 81, 36], [74, 255, 169], [125, 125, 125], [255, 255, 125], [0, 9, 168], [175, 175, 175], [255, 242, 0], [0, 0, 255], [255, 255, 255], [255, 201, 14], [79, 83, 255], [90, 7, 12], [191, 191, 0],[87, 129, 215], [171, 14, 21], [119, 92, 0], [73, 189, 218], [255, 0, 0], [255, 210, 166], [153, 217, 234], [239, 71, 80], [254, 135, 48], [180, 3, 175], [245, 80, 127], [224, 96, 1], [163, 73, 164], [244, 128, 134], [80, 43, 18], [251, 30, 245], [249, 185, 188], [54, 29, 12], [253, 162, 251]];
-        if (document.getElementsByClassName("jsx-1307288772 book dark")[0]){colorList[12]==[0,0,0];}
+        if (document.getElementsByClassName("jsx-1307288772 book dark")[0] != undefined){colorList[12]==[0,0,0];}
         for (let i=0; i<colorList.length; i++){
             let newColor = nColor.cloneNode(true);
             let color = colorList[i];
