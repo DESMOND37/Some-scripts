@@ -2260,7 +2260,7 @@ function asyncSpace(){
         if (canv == undefined){
             var sp = items[i].getElementsByTagName("span");
             if (blackList.indexOf(sp[1].innerText.toUpperCase()) != -1 && sp[1].innerText!="CENSORED"){
-                sp[1].innerText="CENSORED"; sp[1].style.color="red"
+                sp[1].click();
             }
         }
     }
