@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.2";
+var VERSION = "2.2.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -516,7 +516,7 @@ function drawNsort(arr){
     width = pos.width;
     height = pos.height;
     var lastPoint=arr[0];
-    mouseDown(lastPoint[0], lastPoint[1]);
+    //mouseDown(lastPoint[0], lastPoint[1]);
     arr.splice(0, 1);
     var index;
     var minS;
@@ -550,7 +550,7 @@ function drawNsort(arr){
             key = true;
         } else {mouseMoveBucket(lastPoint[0], lastPoint[1]); key=false;}
     }
-    mouseUp();
+    //mouseUp();
 }
 
 
