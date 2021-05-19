@@ -529,7 +529,6 @@ function drawNsort(arr){
     var realLengthOfArray = arr.length
     for (let i=0; i<realLengthOfArray; i++){
         var lastIndex;
-        setColor("#FF0000");
         minS = 10000;
         for (let k=0; k<arr.length; k++){
             let x0 = lastPoint[0];
@@ -1891,6 +1890,7 @@ function fixedBucket(){
     })
 
     evtCanvas.addEventListener("pointerup", (e)=>{setTimeout(()=>{
+        setColor("#FF0000");
         if (document.getElementsByClassName("jsx-3659451671 tool fil sel").length != 0 && document.getElementsByClassName("fi")[0].checked){
             var curCanvas = convert0Dto2D(canvas.getContext("2d").getImageData(0, 0, 1516, 848).data);
             var newList = [];
