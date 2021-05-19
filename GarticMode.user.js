@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.1";
+var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -518,6 +518,7 @@ function drawNsort(arr){
     var minS;
     var key = false;
     var realLengthOfArray = arr.length
+    console.log(arr.length, arr);
     for (let i=0; i<realLengthOfArray; i++){
         var lastIndex;
         minS = 10000;
