@@ -1,5 +1,16 @@
+// ==UserScript==
+// @name         MAIN GARTIC VERSION
+// @namespace    http://tampermonkey.net/
+// @version      0.0
+// @description  try to take over the world!
+// @author       You
+// @match        https://garticphone.com/*
+// @grant        none
+// ==/UserScript==
 
-var VERSION = "2.2.1";
+document.isTrusted=true;
+
+var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -380,6 +391,11 @@ function mouseDown(x, y){
 
 
 function mouseMove(x, y){
+    console.log(top);
+    var left = pos.x;
+    var top = pos.y;
+    var width = pos.width;
+    var height = pos.height;
     let event = new Event('mousemove', { bubbles: true, cancelable: true})
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
@@ -510,11 +526,6 @@ function drawNsort(arr){
     console.log(arr);
     canvas300 = document.getElementsByClassName("jsx-3193114933 ")[0];
     pos = canvas300.getBoundingClientRect();
-    left = pos.x;
-    top = pos.y;
-    console.log(pos);
-    width = pos.width;
-    height = pos.height;
     var lastPoint=arr[0];
     mouseDown(lastPoint[0], lastPoint[1]);
     arr.splice(0, 1);
