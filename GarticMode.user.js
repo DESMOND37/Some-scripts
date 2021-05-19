@@ -1906,7 +1906,7 @@ function fixedBucket(){
             curThicc.click();
             document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
         }
-    }, 20)})
+    }, 2)})
 }
 
 ////////////////////////////////
