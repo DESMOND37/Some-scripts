@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.2";
+var VERSION = "2.2.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -379,9 +379,10 @@ function mouseDown(x, y){
     canvas300.dispatchEvent(event);
 }
 
-function mouseMoveBucket(x, y){
+
+function mouseMove(x, y){
     var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
-    var event = new Event('mousemove', { bubbles: true, cancelable: true})
+    let event = new Event('mousemove', { bubbles: true, cancelable: true})
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
     canvas300.dispatchEvent(event);
@@ -402,7 +403,7 @@ function drawSolidLine(arr){
         width = pos.width;
         height = pos.height;
         mouseDown(arr[0][0], arr[0][1]);
-        arr.forEach(function (point){mouseMoveBucket(point[0], point[1]);})
+        arr.forEach(function (point){mouseMove(point[0], point[1]);})
         mouseUp();
     }
 }
@@ -524,6 +525,7 @@ function drawNsort(arr){
     var realLengthOfArray = arr.length
     for (let i=0; i<realLengthOfArray; i++){
         var lastIndex;
+        setColor("#FF0000");
         minS = 10000;
         for (let k=0; k<arr.length; k++){
             let x0 = lastPoint[0];
@@ -546,7 +548,7 @@ function drawNsort(arr){
         if (minS>2){
             mouseUp();
             key = true;
-        } else {mouseMoveBucket(lastPoint[0], lastPoint[1]); key=false;}
+        } else {mouseMove(lastPoint[0], lastPoint[1]); key=false;}
     }
     mouseUp();
 }
@@ -1056,7 +1058,9 @@ function addZoom(){
         }
 
         document.querySelector("#__next").addEventListener("pointermove", (e)=>{
-            zoomUpdate(e);
+            if (document.getElementsByClassName("jsx-3659451671 tool loopa act1 sel")[0]){
+                zoomUpdate(e);
+            }
         });
 
         document.querySelector("#__next").addEventListener("pointerdown", (e)=>{
@@ -1901,16 +1905,16 @@ function fixedBucket(){
                 }
             }
 
+            setTimeout(()=>{
             time = performance.now() - time;
             console.log('Время выполнения = ', time);
             document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
             var curThicc = document.getElementsByClassName("jsx-340028725 thickness sel")[0];
             document.getElementsByClassName("jsx-340028725 thickness")[0].click();
-            setTimeout(()=>{
-                drawNsort(getBorderOfNew(newList));
-                curThicc.click();
-                document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
-            }, 1000);
+            drawNsort(getBorderOfNew(newList));
+            curThicc.click();
+            document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
+            }, 30);
         }
     }, 2)})
 }
