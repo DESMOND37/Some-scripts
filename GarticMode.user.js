@@ -335,7 +335,7 @@ function createCanvas(height=800, width=800){
     return canvas;
 }
 
-var canvas;
+var canvas300;
 var pos;
 var left;
 var top;
@@ -368,7 +368,6 @@ function clientMouseUp(x, y){
 
 
 function mouseDown(x, y){
-    var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
     var left = pos.x;
     var top = pos.y;
     var width = pos.width;
@@ -381,7 +380,7 @@ function mouseDown(x, y){
 
 
 function mouseMove(x, y){
-    var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
+    console.log(left, top, width, height, x, y);
     let event = new Event('mousemove', { bubbles: true, cancelable: true})
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
@@ -389,7 +388,6 @@ function mouseMove(x, y){
 }
 
 function mouseUp(){
-    var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
     var event = new Event('mouseup', { bubbles: true, cancelable: true} )
     canvas300.dispatchEvent(event);
 }
@@ -510,8 +508,9 @@ function sortBorderArray(arr){
 
 
 function drawNsort(arr){
-    canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
-    pos = canvas.getBoundingClientRect();
+    console.log(arr);
+    canvas300 = document.getElementsByClassName("jsx-3193114933 ")[0];
+    pos = canvas300.getBoundingClientRect();
     left = pos.x;
     top = pos.y;
     width = pos.width;
@@ -1911,7 +1910,9 @@ function fixedBucket(){
             document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
             var curThicc = document.getElementsByClassName("jsx-340028725 thickness sel")[0];
             document.getElementsByClassName("jsx-340028725 thickness")[0].click();
+
             drawNsort(getBorderOfNew(newList));
+
             curThicc.click();
             document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
             }, 30);
