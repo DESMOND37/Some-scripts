@@ -2,7 +2,7 @@
 var VERSION = "2.2.0.4";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ ${VERSION}`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -908,7 +908,7 @@ function VIP(){
             arr[i].style.opacity=1;
             arr[i].parentNode.style.backgroundColor="rgb(0, 0, 0)";
             arr[i].parentElement.style.border="2px rgb(255, 0, 0) solid";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)"
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
         }
@@ -920,10 +920,12 @@ function VIP(){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/krevetka74", '_blank'); };
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.backgroundColor="#f7c2c2";
             arr[i].parentElement.style.border="2px rgb(255, 255, 255) solid";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.borderColor="#ffffff";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png)"
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px 4px";
         }
@@ -941,6 +943,7 @@ function VIP(){
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/844594975546277929/-1.png?width=676&height=676)";
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
     }
