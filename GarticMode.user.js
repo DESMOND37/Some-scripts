@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.1";
+var VERSION = "2.2.2";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -389,7 +389,7 @@ function mouseMoveBucket(x, y){
 
 function mouseUp(){
     var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
-    var event = new Event('mouseup', { bubbles: true, cancelable: true} )
+    var event = new Event('click', { bubbles: true, cancelable: true} )
     canvas300.dispatchEvent(event);
 }
 
@@ -542,11 +542,11 @@ function drawNsort(arr){
         console.log(arr[lastIndex]);
 
         if (key){
-            mouseDown(lastPoint[0], lastPoint[1]);
+            //mouseDown(lastPoint[0], lastPoint[1]);
         }
 
         if (minS>2){
-            mouseUp();
+            //mouseUp();
             key = true;
         } else {mouseMoveBucket(lastPoint[0], lastPoint[1]); key=false;}
     }
