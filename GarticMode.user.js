@@ -1,5 +1,16 @@
+// ==UserScript==
+// @name         MAIN GARTIC VERSION
+// @namespace    http://tampermonkey.net/
+// @version      0.0
+// @description  try to take over the world!
+// @author       You
+// @match        https://garticphone.com/*
+// @grant        none
+// ==/UserScript==
 
-var VERSION = "2.2.0";
+document.isTrusted=true;
+
+var VERSION = "2.2.0.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -2260,7 +2271,7 @@ function asyncSpace(){
         if (canv == undefined){
             var sp = items[i].getElementsByTagName("span");
             if (blackList.indexOf(sp[1].innerText.toUpperCase()) != -1 && sp[1].innerText!="CENSORED"){
-                sp[1].click();
+                items[i].click();
             }
         }
     }
