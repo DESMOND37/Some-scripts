@@ -380,7 +380,12 @@ function mouseDown(x, y){
 
 
 function mouseMove(x, y){
-    console.log(left, top, width, height, x, y);
+    console.log(top);
+    console.log(width);
+    console.log(height);
+    console.log(x);
+    console.log(y);
+    console.log("____________________________________");
     let event = new Event('mousemove', { bubbles: true, cancelable: true})
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
