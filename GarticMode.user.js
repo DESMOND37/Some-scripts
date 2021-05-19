@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0";
+var VERSION = "2.2.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -366,7 +366,9 @@ function clientMouseUp(x, y){
     pointerCanvas.dispatchEvent(event);
 }
 
+
 function mouseDown(x, y){
+    var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
     var left = pos.x;
     var top = pos.y;
     var width = pos.width;
@@ -374,19 +376,21 @@ function mouseDown(x, y){
     var event = new Event('mousedown', { bubbles: true, cancelable: true} )
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
-    canvas.dispatchEvent(event);
+    canvas300.dispatchEvent(event);
 }
 
-function mouseMove(x, y){
+function mouseMoveBucket(x, y){
+    var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
     var event = new Event('mousemove', { bubbles: true, cancelable: true})
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
-    canvas.dispatchEvent(event);
+    canvas300.dispatchEvent(event);
 }
 
 function mouseUp(){
+    var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
     var event = new Event('mouseup', { bubbles: true, cancelable: true} )
-    canvas.dispatchEvent(event);
+    canvas300.dispatchEvent(event);
 }
 
 function drawSolidLine(arr){
@@ -398,7 +402,7 @@ function drawSolidLine(arr){
         width = pos.width;
         height = pos.height;
         mouseDown(arr[0][0], arr[0][1]);
-        arr.forEach(function (point){mouseMove(point[0], point[1]);})
+        arr.forEach(function (point){mouseMoveBucket(point[0], point[1]);})
         mouseUp();
     }
 }
@@ -544,7 +548,7 @@ function drawNsort(arr){
         if (minS>2){
             mouseUp();
             key = true;
-        } else {mouseMove(lastPoint[0], lastPoint[1]); key=false;}
+        } else {mouseMoveBucket(lastPoint[0], lastPoint[1]); key=false;}
     }
     mouseUp();
 }
