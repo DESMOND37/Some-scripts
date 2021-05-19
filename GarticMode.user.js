@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0.1";
+var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -2260,7 +2260,8 @@ function asyncSpace(){
         if (canv == undefined){
             var sp = items[i].getElementsByTagName("span");
             if (blackList.indexOf(sp[1].innerText.toUpperCase()) != -1 && sp[1].innerText!="CENSORED"){
-                items[i].click();
+                let event = Event ('mousedown', { bubbles: true, cancelable: true});
+                items[i].dispatchEvent(event);
             }
         }
     }
