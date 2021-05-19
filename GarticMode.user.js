@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.0.2";
+var VERSION = "2.2.0.4";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
+    alert(`НОВАЯ ВЕРСИЯ ${VERSION}`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -899,7 +899,7 @@ function VIP(){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
-            arr[i].parentNode.title="Флекс"
+            arr[i].parentNode.title="Создатель";
             arr[i].href="https://t.me/DoctorDeathDDracula";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
@@ -917,6 +917,9 @@ function VIP(){
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
             arr[i].style.opacity=1;
+            arr[i].parentNode.title="Стример";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/krevetka74", '_blank'); };
             arr[i].parentNode.style.backgroundColor="#f7c2c2";
             arr[i].parentElement.style.border="2px rgb(255, 255, 255) solid";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.borderColor="#ffffff";
@@ -924,7 +927,8 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px 4px";
         }
-        if (arr[i].innerText.toLowerCase() == "test"){
+        if (arr[i].innerText.toLowerCase() == "xviperx"){
+            arr[i].parentNode.title="Стример";
             arr[i].style.animation = "viper 2s linear";
             arr[i].style.opacity=1;
             arr[i].parentNode.style.backgroundColor="chartreuse";
@@ -936,6 +940,7 @@ function VIP(){
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
     }
@@ -2366,11 +2371,15 @@ function mainMenuTitle(){
         title.style.position="absolute";
         title.style.animation="10s linear 0s infinite normal none running rainbow";
         title.style.right="0px";
-        title.style.fontSize="12px"
+        title.style.fontSize="100%";
+        title.style.heigth="auto";
+        title.style.width="auto";
         title.style.fontFamily="Black";
         title.style.padding="1px 5px 1px 10px";
         title.style.border="2px solid red";
         document.querySelector("#content").appendChild(title);
+        title.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
+        title.style.cursor="pointer";
         title.style.borderBlockStart="none";
         title.style.borderRight="hidden";
     }
