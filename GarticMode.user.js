@@ -1,14 +1,3 @@
-// ==UserScript==
-// @name         MAIN GARTIC VERSION
-// @namespace    http://tampermonkey.net/
-// @version      0.0
-// @description  try to take over the world!
-// @author       You
-// @match        https://garticphone.com/*
-// @grant        none
-// ==/UserScript==
-
-document.isTrusted=true;
 
 var VERSION = "2.2.0.1";
 
