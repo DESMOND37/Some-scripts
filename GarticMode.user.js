@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0";
+var VERSION = "2.2.0.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -1374,6 +1374,8 @@ function nessEdit(){
         var ness = (()=>{var items = document.getElementsByClassName("jsx-340028725"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})()
         ness.step="0.01";
         ness.min="0";
+        ness.style.height="150%";
+        ness.style.backgroundColor="rgba(0,0,0,0)";
         ness.style.cursor = "pointer";
         var nesstext = document.createElement("input");
         nesstext.classList.add("ness-text");
@@ -2260,7 +2262,7 @@ function asyncSpace(){
         if (canv == undefined){
             var sp = items[i].getElementsByTagName("span");
             if (blackList.indexOf(sp[1].innerText.toUpperCase()) != -1 && sp[1].innerText!="CENSORED"){
-                let event = Event ('mousedown', { bubbles: true, cancelable: true});
+                let event = Event ('click', { bubbles: true, cancelable: true});
                 items[i].dispatchEvent(event);
             }
         }
