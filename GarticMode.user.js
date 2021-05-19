@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.1";
+var VERSION = "2.2.2";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -389,7 +389,7 @@ function mouseMoveBucket(x, y){
 
 function mouseUp(){
     var canvas300 = document.getElementsByClassName("jsx-150592943")[0];
-    var event = new Event('click', { bubbles: true, cancelable: true} )
+    var event = new Event('mouseup', { bubbles: true, cancelable: true} )
     canvas300.dispatchEvent(event);
 }
 
@@ -516,13 +516,12 @@ function drawNsort(arr){
     width = pos.width;
     height = pos.height;
     var lastPoint=arr[0];
-    //mouseDown(lastPoint[0], lastPoint[1]);
+    mouseDown(lastPoint[0], lastPoint[1]);
     arr.splice(0, 1);
     var index;
     var minS;
     var key = false;
     var realLengthOfArray = arr.length
-    console.log(arr.length, arr);
     for (let i=0; i<realLengthOfArray; i++){
         var lastIndex;
         minS = 10000;
@@ -539,18 +538,17 @@ function drawNsort(arr){
         }
         lastPoint = arr[lastIndex];
         arr.splice(lastIndex, 1);
-        console.log(arr[lastIndex]);
 
         if (key){
-            //mouseDown(lastPoint[0], lastPoint[1]);
+            mouseDown(lastPoint[0], lastPoint[1]);
         }
 
         if (minS>2){
-            //mouseUp();
+            mouseUp();
             key = true;
         } else {mouseMoveBucket(lastPoint[0], lastPoint[1]); key=false;}
     }
-    //mouseUp();
+    mouseUp();
 }
 
 
@@ -1908,9 +1906,11 @@ function fixedBucket(){
             document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
             var curThicc = document.getElementsByClassName("jsx-340028725 thickness sel")[0];
             document.getElementsByClassName("jsx-340028725 thickness")[0].click();
-            drawNsort(getBorderOfNew(newList));
-            curThicc.click();
-            document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
+            setTimeout(()=>{
+                drawNsort(getBorderOfNew(newList));
+                curThicc.click();
+                document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
+            }, 1000);
         }
     }, 2)})
 }
