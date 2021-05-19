@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.2";
+var VERSION = "2.2.1";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -380,7 +380,6 @@ function mouseDown(x, y){
 
 
 function mouseMove(x, y){
-    console.log(top);
     let event = new Event('mousemove', { bubbles: true, cancelable: true})
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
@@ -513,7 +512,7 @@ function drawNsort(arr){
     pos = canvas300.getBoundingClientRect();
     left = pos.x;
     top = pos.y;
-    console.log("---",top);
+    console.log(pos);
     width = pos.width;
     height = pos.height;
     var lastPoint=arr[0];
