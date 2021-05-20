@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0.4";
+var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
@@ -944,6 +944,9 @@ function VIP(){
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/844594975546277929/-1.png?width=676&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="0px 6px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="45px;"
+            arr[i].previousElementSibling.style.backgroundColor="black";
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
     }
