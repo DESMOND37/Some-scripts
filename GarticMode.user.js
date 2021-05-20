@@ -995,6 +995,28 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
+        if (arr[i].innerText.toLowerCase() == "peps_nn"){
+            arr[i].parentNode.title="Стример";
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
+            arr[i].parentNode.style.backgroundColor="darkorange";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="3px solid brown";
+            arr[i].parentNode.style.border="3px solid brown";
+            arr[i].style.color="yellow";
+            arr[i].parentNode.style.transition="all 0.3s linear 0s";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/peps_nn", '_blank'); };
+            //arr[i].style.textShadow="2px 2px 3px black";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/845064787028475924/unknown.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-3px -3px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
     }
 }
 
