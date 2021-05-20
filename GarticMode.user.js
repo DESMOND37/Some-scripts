@@ -964,13 +964,36 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px -3px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
-            arr[i].parentNode.style.transition="all 0.3s linear 0s";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.borderColor="yellow";
             arr[i].parentNode.style.border="3px solid yellow";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/bobtyan", '_blank'); };
+            arr[i].parentNode.style.transition="all 0.3s linear 0s";
+        }
+        if (arr[i].innerText.toLowerCase() == "беатмахоне"){
+            arr[i].parentNode.title="Стример";
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
+            arr[i].parentNode.style.backgroundColor="red";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="3px solid black";
+            arr[i].parentNode.style.border="3px solid black";
+            arr[i].style.color="white";
+            arr[i].style.fontFamily="cursive";
+            arr[i].parentNode.style.transition="all 0.3s linear 0s";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/beatmaxone", '_blank'); };
+            arr[i].style.fontWeight="bolder";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/844986185788162048/6f9d8ae1-7e01-4876-99cb-6386e13a5550-profile_image-70x70.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px -3px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
     }
 }
