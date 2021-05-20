@@ -951,6 +951,15 @@ function VIP(){
             arr[i].previousElementSibling.style.backgroundColor="black";
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
+        if (arr[i].innerText == "Bobtyan"){
+            arr[i].parentNode.title="Стример";
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
+            arr[i].parentNode.style.backgroundColor="lightblue";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/844929630329896990/8c9367ad-edac-4808-ad31-965923a180cd-profile_image-70x70.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
     }
 }
 
