@@ -2,7 +2,7 @@
 var VERSION = "2.2.0.4";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}\nНовости новой версии:\nТеперь скрывать холст можно и в разделе memory`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
