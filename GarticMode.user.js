@@ -920,8 +920,8 @@ function VIP(){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/krevetka74", '_blank'); };
-            arr[i].parentNode.onmouseenter=()=>{this.parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
-            arr[i].parentNode.onmouseleave=()=>{this.parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.backgroundColor="#f7c2c2";
             arr[i].parentElement.style.border="2px rgb(255, 255, 255) solid";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.borderColor="#ffffff";
@@ -939,8 +939,8 @@ function VIP(){
             arr[i].style.animationIterationCount="infinite";
             arr[i].style.fontFamily="fantasy";
             arr[i].style.fontSize="x-large";
-            arr[i].parentNode.onmouseenter=()=>{this.parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
-            arr[i].parentNode.onmouseleave=()=>{this.parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/844594975546277929/-1.png?width=676&height=676)";
