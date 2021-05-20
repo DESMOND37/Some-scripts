@@ -944,8 +944,10 @@ function VIP(){
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/844594975546277929/-1.png?width=676&height=676)";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="0px 6px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="45px;"
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].previousElementSibling.style.backgroundColor="black";
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
