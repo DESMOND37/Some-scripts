@@ -30,6 +30,20 @@ var rules = document.createTextNode('@keyframes rainbow {'+
 cssAnimation.appendChild(rules);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var font1 = document.createElement('style');
+font1.classList.add("font1");
+font1.type='text/css';
+var rule = document.createTextNode(
+    "@font-face {font-family: 'Majestic';" +
+    "src: url(https://cdn.discordapp.com/attachments/833410401366573066/845238689352908800/Majestic_Regular.ttf);"+
+
+    +"}"
+                                  );
+font1.appendChild(rule);
+document.getElementsByTagName("head")[0].appendChild(font1);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 var cssPlaceHolder = document.createElement('style');
 cssAnimation.type = 'text/css';
 var rules1 = document.createTextNode("input::placeholder { color: rgba(255, 255, 255, 0.8); opacity: 1;} ");
@@ -396,10 +410,11 @@ function mouseUp(){
     canvas300.dispatchEvent(event);
 }
 
+
 function drawSolidLine(arr){
     if (arr.length > 1){
-        canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
-        pos = canvas.getBoundingClientRect();
+ //       canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
+ //       pos = canvas.getBoundingClientRect();
         left = pos.x;
         top = pos.y;
         width = pos.width;
@@ -846,13 +861,14 @@ var Key1 = false;
 var globalKey=false;
 
 function asyncSlowSpace(){
-    //VIP();
+    VIP();
     kok();
     var ele = document.getElementsByClassName("jsx-2562723607 jsx-3822683434 ");
     if (ele.length == 4){
         ele[0].parentNode.removeChild(ele[0]);
     }
 }
+
 
 function f1() {
     if (MyVar1== 255){Checker1=1};
@@ -895,7 +911,7 @@ function debugName(){
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     for (let i=0; i<arr.length; i++){
-        if (arr[i].innerText == "DOCTORDEATHDDRACULA "){
+        if (arr[i].innerText.toLowerCase() == "doctordeathddracula "){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
@@ -1012,6 +1028,30 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-3px -3px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
+        if (arr[i].innerText.toLowerCase() == "груша "){
+            arr[i].parentNode.title="Художник";
+            arr[i].parentNode.style.backgroundColor="rgb(247 232 208)";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="3px solid #c7945a";
+            arr[i].style.color="#824700";
+            arr[i].style.fontSize="x-large";
+            arr[i].style.fontFamily='Bold';
+            arr[i].style.fontStyle="italic";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/845257788443590686/unknown.png)";
+            arr[i].parentNode.style.backgroundSize="130%";
+            arr[i].parentNode.style.backgroundPosition="-35px -40px";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.style.transition="none";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/845264187927298068/unknown.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px -10px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
