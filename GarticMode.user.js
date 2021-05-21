@@ -912,6 +912,7 @@ function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     for (let i=0; i<arr.length; i++){
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula "){
+            arr[i].innerText="Doctor";
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
@@ -927,6 +928,13 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
+            arr[i].parentNode.style.backgroundPosition="60px -70px";
+            arr[i].parentNode.style.backgroundImage="url(https://i.makeagif.com/media/6-22-2015/CqH5tw.gif)";
+            arr[i].parentNode.style.backgroundPosition="-3px -70px";
+            arr[i].parentNode.style.backgroundSize="400px 400%";
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
+            arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
         else if (arr[i].innerText.toLowerCase() == "krevetka74"){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
