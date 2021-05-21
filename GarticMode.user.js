@@ -928,7 +928,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
         }
-        if (arr[i].innerText.toLowerCase() == "krevetka74"){
+        else if (arr[i].innerText.toLowerCase() == "krevetka74"){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
@@ -946,7 +946,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px 4px";
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
-        if (arr[i].innerText.toLowerCase() == "xviperx"){
+        else if (arr[i].innerText.toLowerCase() == "xviperx"){
             arr[i].parentNode.title="Стример";
             arr[i].style.animation = "viper 2s linear";
             arr[i].style.opacity=1;
@@ -969,7 +969,7 @@ function VIP(){
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
         //console.log(arr[i].innerText.toLowerCase());
-        if (arr[i].innerText.toLowerCase() == "bobtyan"){
+        else if (arr[i].innerText.toLowerCase() == "bobtyan"){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
@@ -988,7 +988,7 @@ function VIP(){
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/bobtyan", '_blank'); };
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
         }
-        if (arr[i].innerText.toLowerCase() == "беатмахоне"){
+        else if (arr[i].innerText.toLowerCase() == "беатмахоне"){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
@@ -1011,7 +1011,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
-        if (arr[i].innerText.toLowerCase() == "peps_nn"){
+        else if (arr[i].innerText.toLowerCase() == "peps_nn"){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
@@ -1033,7 +1033,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
-        if (arr[i].innerText.toLowerCase() == "груша "){
+        else if (arr[i].innerText.toLowerCase() == "груша "){
             arr[i].parentNode.title="Художник";
             arr[i].parentNode.style.backgroundColor="rgb(247 232 208)";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
@@ -1056,6 +1056,12 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
+        else if (arr[i].innerText.indexOf("#") != -1){
+            var text = arr[i].innerText
+            var index = text.lastIndexOf("#");
+            arr[i].parentNode.style.backgroundColor=text.substring(index, text.length);
+            arr[i].innerText=text.substring(0, index);
         }
     }
 }
