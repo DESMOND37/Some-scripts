@@ -935,6 +935,12 @@ function VIP(){
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
+            arr[i].parentNode.style.boxShadow="0px 10px 15px";
+
+            var music0 = document.createElement("audio");
+            music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845421876012777492/c83b76721ff6c4.mp3";
+            music0.autoplay=true;
+
         }
         else if (arr[i].innerText.toLowerCase() == "krevetka74"){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
@@ -1065,11 +1071,26 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
+        else if (arr[i].innerText.toLowerCase() == "мэл "){
+            arr[i].innerText == "Мэл";
+            arr[i].parentNode.style.border="3px solid darkblue";
+            arr[i].parentNode.style.backgroundColor="#f9f9f9";
+            arr[i].parentNode.style.backgroundImage="url(https://images-ext-2.discordapp.net/external/krsoImVrqUxzDfVXAoIhBxsIlgVnqkIZm7CMPE6ZqnA/https/i.pinimg.com/originals/b5/17/6b/b5176b6….gif)";
+            arr[i].parentNode.style.backgroundSize="250px";
+            arr[i].parentNode.style.backgroundPosition="center";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
+        }
+
         else if (arr[i].innerText.indexOf("#") != -1){
             var text = arr[i].innerText
             var index = text.lastIndexOf("#");
             arr[i].parentNode.style.backgroundColor=text.substring(index, text.length);
             arr[i].innerText=text.substring(0, index);
+            arr[i].parentNode.title="Друг Баракуды";
+            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
+            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
     }
 }
