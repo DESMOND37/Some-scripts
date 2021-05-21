@@ -938,7 +938,7 @@ function VIP(){
             arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
             var music0 = document.createElement("audio");
-            music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845421876012777492/c83b76721ff6c4.mp3";
+            //music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
             music0.autoplay=true;
 
         }
