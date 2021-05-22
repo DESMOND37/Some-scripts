@@ -940,10 +940,11 @@ function VIP(){
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
             arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
-            if (doctorwas && !was0){
+            if (!doctorwas && !was0){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
                 music0.autoplay=true;
+                doctorwas = true;
             }
         }
         else if (arr[i].innerText.toLowerCase() == "krevetka74"){
