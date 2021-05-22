@@ -911,6 +911,7 @@ function debugName(){
 var was0 = false;
 var doctorwas = false;
 function VIP(){
+    console.log(was0, doctorwas);
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     for (let i=0; i<arr.length; i++){
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
