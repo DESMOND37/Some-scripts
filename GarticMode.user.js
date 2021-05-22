@@ -1,9 +1,11 @@
 
-var VERSION = "2.2.0.5"; 
+var VERSION = "2.2.0.5";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Новые способы цензуры, проверте раздел "Для стримеров" в Телеграфе!`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}`);
     document.cookie = `VERSION=${VERSION};`;
+}
+
 console.log(getCookieDict());
 
 
