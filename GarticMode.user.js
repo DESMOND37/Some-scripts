@@ -945,6 +945,7 @@ function VIP(){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
                 music0.autoplay=true;
+                music0.classList.add("audio0");
                 doctorwasplayed = true;
 
                 var plast = document.createElement("div");
