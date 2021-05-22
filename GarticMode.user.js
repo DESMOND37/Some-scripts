@@ -1133,6 +1133,15 @@ function VIP(){
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
+        else if (arr[i].innerText.toLowerCase() == "владыко "){
+            arr[i].parentNode.style.backgroundColor="rgb(224 18 18)";
+            arr[i].style.color="rgb(31 31 31)";
+            arr[i].parentNode.firstChild.style.border="none";
+            arr[i].parentNode.firstChild.style.backgroundColor="rgb(31 31 31)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/845797316471291924/111.png?width=478&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="2px 2px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="90%";
+        }
 
         else if (arr[i].innerText.indexOf("#") != -1){
             var text1 = arr[i].innerText
