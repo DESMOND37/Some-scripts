@@ -908,6 +908,8 @@ function debugName(){
     }
 }
 
+var was0 = false;
+var doctorwas = false;
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     for (let i=0; i<arr.length; i++){
@@ -937,10 +939,11 @@ function VIP(){
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
             arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
-            var music0 = document.createElement("audio");
-            //music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
-            music0.autoplay=true;
-
+            if (doctorwas && !was0){
+                var music0 = document.createElement("audio");
+                music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
+                music0.autoplay=true;
+            }
         }
         else if (arr[i].innerText.toLowerCase() == "krevetka74"){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
@@ -1092,6 +1095,7 @@ function VIP(){
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
+        was0 = true;
     }
 }
 
