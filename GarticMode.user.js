@@ -2,7 +2,7 @@
 var VERSION = "2.2.0.5";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Появились новые способы цензуры, проверте раздел "Для стримеров", для этого нажмите на версию в углу экрана!`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
