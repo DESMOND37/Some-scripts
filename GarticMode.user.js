@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0.4";
+var VERSION = "2.2.0.5";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION}`);
@@ -665,7 +665,7 @@ function getPix(x, y, canvas){
 }
 
 function draw(x1, y1){
-    var canvas = document.getElementsByClassName("jsx-150592943")[0];
+    canvas = document.getElementsByClassName("jsx-150592943")[0];
     var pos = canvas.getBoundingClientRect()
     let x = pos.x;
     let y = pos.y;
@@ -677,8 +677,9 @@ function draw(x1, y1){
     canvas.dispatchEvent(event);
 }
 
-
+var canvas;
 function globalDraw(){
+    canvas = document.getElementsByClassName("jsx-150592943")[0];
     alert("WRONG FUNC");
     var url = document.querySelector("#content > input[type=text]:nth-child(2)").value;
 
@@ -784,6 +785,18 @@ function censss(e){
 }
 
 function kok() {
+
+    var checkList = document.getElementsByTagName("span");
+    for (let u=0; u<checkList.length; u++){
+        if (checkList[u].classList.contains("jsx-4032599855") || checkList[u].classList.contains("jsx-1858843370")) {
+            if (blackArr.indexOf(checkList[u].innerText) != -1){
+                checkList[u].parentNode.parentNode.style.opacity = 0;
+            } else {
+                checkList[u].parentNode.parentNode.style.opacity = 1;
+            };
+        }
+    }
+
     var items = document.getElementsByClassName("jsx-4074752268 item");
     items = Array.prototype.slice.call( items );
     var items2 = document.getElementsByClassName("jsx-2790456822 item");
@@ -911,12 +924,12 @@ function debugName(){
 var was0 = false;
 var doctorwas = false;
 var doctorwasplayed = false;
+var blackArr = [];
 function VIP(){
-    console.log(was0, doctorwas);
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     for (let i=0; i<arr.length; i++){
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
-            arr[i].innerText="Doctor ";
+            //arr[i].innerText="Doctor ";
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
@@ -945,7 +958,7 @@ function VIP(){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
                 music0.autoplay=true;
-                music0.classList.add("audio0");
+                music0.volume=0.1;
                 doctorwasplayed = true;
 
                 var plast = document.createElement("div");
@@ -1108,7 +1121,6 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
         else if (arr[i].innerText.toLowerCase() == "мэл "){
-            arr[i].innerText == "Мэл";
             arr[i].parentNode.style.border="3px solid darkblue";
             arr[i].parentNode.style.backgroundColor="#f9f9f9";
             arr[i].parentNode.style.backgroundImage="url(https://images-ext-2.discordapp.net/external/krsoImVrqUxzDfVXAoIhBxsIlgVnqkIZm7CMPE6ZqnA/https/i.pinimg.com/originals/b5/17/6b/b5176b6….gif)";
@@ -1120,14 +1132,33 @@ function VIP(){
         }
 
         else if (arr[i].innerText.indexOf("#") != -1){
-            var text = arr[i].innerText
-            var index = text.lastIndexOf("#");
-            arr[i].parentNode.style.backgroundColor=text.substring(index, text.length);
+            var text1 = arr[i].innerText
+            var index = text1.lastIndexOf("#");
+            arr[i].parentNode.style.backgroundColor=text.substring(index, text1.length);
             arr[i].innerText=text.substring(0, index);
             arr[i].parentNode.title="Друг Баракуды";
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
+        else if (document.URL.indexOf("book") != -1){
+            arr[i].parentNode.onmouseenter=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.backgroundColor="white"} };
+            arr[i].parentNode.onmouseleave=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.backgroundColor=""} };
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{
+                if (arr[i].banned){
+                    let popa = blackArr.indexOf(arr[i].innerText)
+                    arr[i].banned=false;
+                    arr[i].parentNode.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+                    blackArr.splice(popa, 1);
+                } else {
+                    arr[i].banned=true;
+                    blackArr.push(arr[i].innerText);
+                    arr[i].parentNode.style.backgroundColor = "red";
+                };
+            };
+        }
+
+
         if (!doctorwas){
             was0 = true;
         }
