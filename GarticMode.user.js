@@ -2,7 +2,7 @@
 var VERSION = "2.2.0.5";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION}`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Новые способы цензуры, проверте раздел "Для стримеров" в Телеграфе!`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -791,8 +791,11 @@ function kok() {
         if (checkList[u].classList.contains("jsx-4032599855") || checkList[u].classList.contains("jsx-1858843370")) {
             if (blackArr.indexOf(checkList[u].innerText) != -1){
                 checkList[u].parentNode.parentNode.style.opacity = 0;
+                checkList[u].parentNode.parentNode.parentNode.style.borderRadius="20px";
+                checkList[u].parentNode.parentNode.parentNode.style.backgroundColor = "black";
             } else {
                 checkList[u].parentNode.parentNode.style.opacity = 1;
+                checkList[u].parentNode.parentNode.parentNode.style.backgroundColor = "";
             };
         }
     }
