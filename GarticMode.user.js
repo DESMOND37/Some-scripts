@@ -910,6 +910,7 @@ function debugName(){
 
 var was0 = false;
 var doctorwas = false;
+var doctorwasplayed = false;
 function VIP(){
     console.log(was0, doctorwas);
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
@@ -940,12 +941,41 @@ function VIP(){
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
             arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
-            if (!doctorwas && !was0){
+            if (was0 && !doctorwasplayed){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
                 music0.autoplay=true;
-                doctorwas = true;
+                doctorwasplayed = true;
+
+                var plast = document.createElement("div");
+                plast.style.backgroundColor = "rgb(214 70 70 / 80%)";
+                plast.width=500;
+                plast.height = 1000;
+                plast.style.width = "700px";
+                plast.style.height = "200px";
+                plast.style.margin = "60px auto";
+                plast.style.zIndex="2";
+                plast.style.borderRadius="20px";
+                plast.style.transition="0.5s";
+                plast.style.transform="scale(0)";
+
+                var text = document.createElement("p");
+                text.innerText = "Doctor вошёл в игру!";
+                text.style.color="#6f0000;"
+                text.style.fontSize="65px"
+                text.style.fontFamily="'Black'"
+                text.style.margin="60px 10px";
+                text.style.textShadow="4px 5px 4px #f90000";
+                plast.style.border="5px solid red";
+                plast.appendChild(text);
+
+                document.querySelector("#content").appendChild(plast);
+                setTimeout(()=>{plast.style.transform="scale(1)";}, 100);
+                setTimeout(()=>{plast.style.transform="scale(0)"}, 3000);
+                setTimeout(()=>{document.querySelector("#content").removeChild(plast);}, 3500);
+
             }
+            doctorwas = true;
         }
         else if (arr[i].innerText.toLowerCase() == "krevetka74"){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
@@ -1097,7 +1127,9 @@ function VIP(){
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
-        was0 = true;
+        if (!doctorwas){
+            was0 = true;
+        }
     }
 }
 
