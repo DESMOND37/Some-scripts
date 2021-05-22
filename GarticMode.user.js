@@ -911,8 +911,8 @@ function debugName(){
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     for (let i=0; i<arr.length; i++){
-        if (arr[i].innerText.toLowerCase() == "doctordeathddracula "){
-            arr[i].innerText="Doctor";
+        if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
+            arr[i].innerText="Doctor ";
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
