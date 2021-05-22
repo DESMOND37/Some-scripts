@@ -4,10 +4,6 @@ var VERSION = "2.2.0.5";
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Новые способы цензуры, проверте раздел "Для стримеров" в Телеграфе!`);
     document.cookie = `VERSION=${VERSION};`;
-}
-
-console.log(getCookieDict());
-
 
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2598,9 +2594,9 @@ function mainMenuTitle(){
         title.style.width="auto";
         title.style.fontFamily="Black";
         title.style.padding="1px 5px 1px 10px";
-        title.style.border="2px solid red";
+        //title.style.border="2px solid red";
         document.querySelector("#content").appendChild(title);
-        title.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
+        title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
         title.style.cursor="pointer";
         title.style.borderBlockStart="none";
         title.style.borderRight="hidden";
