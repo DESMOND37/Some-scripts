@@ -1009,6 +1009,10 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px 4px";
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846132899258564658/giphy.gif)";
+            arr[i].parentNode.style.backgroundPosition="153% 15%";
+            arr[i].parentNode.style.backgroundSize="73%";
+
         }
         else if (arr[i].innerText.toLowerCase() == "xviperx"){
             arr[i].parentNode.title="Стример";
@@ -1143,10 +1147,11 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
         }
         else if (arr[i].innerText.indexOf("#") != -1){
+            console.log(arr[i].innerText);
             var text1 = arr[i].innerText
             var index = text1.lastIndexOf("#");
-            arr[i].parentNode.style.backgroundColor=text.substring(index, text1.length);
-            arr[i].innerText=text.substring(0, index);
+            arr[i].parentNode.style.backgroundColor=text1.substring(index, text1.length);
+            arr[i].innerText=text1.substring(0, index);
         }
         else if (document.URL.indexOf("book") != -1){
             arr[i].parentNode.onmouseenter=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.backgroundColor="white"} };
