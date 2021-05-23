@@ -1021,7 +1021,7 @@ function VIP(){
             arr[i].parentNode.style.borderLeft="dashed 4px";
             arr[i].style.animationIterationCount="infinite";
             arr[i].style.fontFamily="fantasy";
-            arr[i].style.fontSize="x-large";
+            arr[i].style.fontSize="large";
             arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.cursor="pointer";
@@ -1134,6 +1134,7 @@ function VIP(){
             arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
         else if (arr[i].innerText.toLowerCase() == "владыко "){
+            arr[i].parentNode.title="Художник";
             arr[i].parentNode.style.backgroundColor="rgb(224 18 18)";
             arr[i].style.color="rgb(31 31 31)";
             arr[i].parentNode.firstChild.style.border="none";
