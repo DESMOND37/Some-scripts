@@ -952,8 +952,8 @@ function VIP(){
             arr[i].parentNode.style.backgroundImage="url(https://i.makeagif.com/media/6-22-2015/CqH5tw.gif)";
             arr[i].parentNode.style.backgroundPosition="-3px -70px";
             arr[i].parentNode.style.backgroundSize="400px 400%";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
+            //arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
+            //arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.transition="all 0.3s linear 0s";
             arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
@@ -1002,8 +1002,6 @@ function VIP(){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/krevetka74", '_blank'); };
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.backgroundColor="#f7c2c2";
             arr[i].parentElement.style.border="2px rgb(255, 255, 255) solid";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.borderColor="#ffffff";
@@ -1022,8 +1020,6 @@ function VIP(){
             arr[i].style.animationIterationCount="infinite";
             arr[i].style.fontFamily="fantasy";
             arr[i].style.fontSize="large";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/844594975546277929/-1.png?width=676&height=676)";
@@ -1037,8 +1033,6 @@ function VIP(){
         //console.log(arr[i].innerText.toLowerCase());
         else if (arr[i].innerText.toLowerCase() == "bobtyan"){
             arr[i].parentNode.title="Стример";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
             arr[i].parentNode.style.backgroundColor="lightblue";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/844929630329896990/8c9367ad-edac-4808-ad31-965923a180cd-profile_image-70x70.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
@@ -1056,8 +1050,6 @@ function VIP(){
         }
         else if (arr[i].innerText.toLowerCase() == "беатмахоне"){
             arr[i].parentNode.title="Стример";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
             arr[i].parentNode.style.backgroundColor="red";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="3px solid black";
             arr[i].parentNode.style.border="3px solid black";
@@ -1079,8 +1071,6 @@ function VIP(){
         }
         else if (arr[i].innerText.toLowerCase() == "peps_nn"){
             arr[i].parentNode.title="Стример";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
             arr[i].parentNode.style.backgroundColor="darkorange";
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="3px solid brown";
             arr[i].parentNode.style.border="3px solid brown";
@@ -1130,8 +1120,6 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="250px";
             arr[i].parentNode.style.backgroundPosition="center";
             arr[i].parentNode.style.backgroundRepeat="no-repeat";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
         else if (arr[i].innerText.toLowerCase() == "владыко "){
             arr[i].parentNode.title="Художник";
@@ -1143,15 +1131,22 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="2px 2px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="90%";
         }
-
+        else if (arr[i].innerText.toLowerCase() == "бpaйc"){
+            arr[i].parentNode.title="Художник";
+            arr[i].innerText="";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846076813830520902/unknown.png)";
+            arr[i].parentNode.style.backgroundSize="150%";
+            arr[i].parentNode.style.backgroundPosition="-10px";
+            arr[i].parentNode.style.transition="all 0s linear 0s";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             var text1 = arr[i].innerText
             var index = text1.lastIndexOf("#");
             arr[i].parentNode.style.backgroundColor=text.substring(index, text1.length);
             arr[i].innerText=text.substring(0, index);
-            arr[i].parentNode.title="Друг Баракуды";
-            arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"};
-            arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"};
         }
         else if (document.URL.indexOf("book") != -1){
             arr[i].parentNode.onmouseenter=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.backgroundColor="white"} };
