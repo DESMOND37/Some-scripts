@@ -785,6 +785,7 @@ function censss(e){
 }
 
 function kok() {
+    if (document.URL.indexOf("book") == -1){return};
 
     var checkList = document.getElementsByTagName("span");
     for (let u=0; u<checkList.length; u++){
@@ -800,14 +801,11 @@ function kok() {
         }
     }
 
-    var items = document.getElementsByClassName("jsx-4074752268 item");
-    items = Array.prototype.slice.call( items );
-    var items2 = document.getElementsByClassName("jsx-2790456822 item");
-    items2 = Array.prototype.slice.call( items2 );
-    for (let i=0; i<items2.length; i++){
-        items.push(items2[i]);
-    }
+    var items = document.getElementsByClassName("jsx-3158565948 scrollElements")[1].children;
+
     for (let i=0; i<items.length; i++){
+        if (!items[i].classList.contains("jsx-2790456822")){continue;};
+
         /*items[i].style.transition="all 0.5s ease 0s";
         items[i].style.borderRadius="10px";
 
@@ -839,32 +837,15 @@ function kok() {
                 return false;
             }
 
-            if (nick == "DOCTORDEATHDDRACULA "){
-                items[i].getElementsByClassName("jsx-4032599855 nick")[0].style.animation="5s linear 0s infinite normal none running rainbow";
-                items[i].getElementsByClassName("jsx-4032599855 nick")[0].style.opacity="1";
-                try{
-                    items[i].getElementsByClassName("jsx-115839309")[1].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-                    items[i].getElementsByClassName("jsx-115839309")[1].style.backgroundPosition="-2px 0px";
-                } catch {
-                    items[i].getElementsByClassName("jsx-2302786545")[1].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-                items[i].getElementsByClassName("jsx-2302786545")[1].style.backgroundPosition="-2px 0px";
-            }
         }
-    } else if (items[i].getElementsByClassName("jsx-1858843370")[2] != undefined){
-        let nick = items[i].getElementsByClassName("jsx-1858843370")[2].innerText;
-        if (nick == "DOCTORDEATHDDRACULA "){
-            items[i].getElementsByClassName("jsx-1858843370")[2].style.animation="5s linear 0s infinite normal none running rainbow";
-            items[i].getElementsByClassName("jsx-1858843370")[2].style.opacity="1";
-            try{
-                items[i].getElementsByClassName("jsx-115839309")[1].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-                items[i].getElementsByClassName("jsx-115839309")[1].style.backgroundPosition="-2px 0px";
-            } catch {
-                items[i].getElementsByClassName("jsx-2302786545")[1].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-            items[i].getElementsByClassName("jsx-2302786545")[1].style.backgroundPosition="-2px 0px";
+        if (items[i].firstChild.children[1].firstChild.innerText == "DOCTORDEATHDDRACULA "){
+            items[i].firstChild.firstChild.firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
+            items[i].firstChild.firstChild.firstChild.style.backgroundPosition="-2px 0px";
+            items[i].firstChild.children[1].firstChild.style.animation="rainbow 5s linear";
+            items[i].firstChild.children[1].firstChild.style.animationIterationCount="infinite";
+            items[i].firstChild.children[1].firstChild.style.opacity=1;
         }
     }
-}
-}
 }
 
 var MyVar1 = 0;
@@ -924,14 +905,16 @@ function debugName(){
     }
 }
 
-var was0 = false;
+
 var doctorwas = false;
-var doctorwasplayed = false;
+var was0;
 var blackArr = [];
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
+    was0 = false;
     for (let i=0; i<arr.length; i++){
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
+            was0=true;
             //arr[i].innerText="Doctor ";
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
@@ -954,15 +937,15 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="400px 400%";
             //arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             //arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
-            arr[i].parentNode.style.transition="all 0.3s linear 0s";
-            arr[i].parentNode.style.boxShadow="0px 10px 15px";
+            arr[i].parentNode.style.transition="";
+            //arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
-            if (was0 && !doctorwasplayed){
+            if (!doctorwas){
                 var music0 = document.createElement("audio");
-                music0.src="https://cdn.discordapp.com/attachments/833410401366573066/845425207580950538/64663c1b21dbce.mp3";
+                music0.src="https://cdn.discordapp.com/attachments/833410401366573066/846834550847963236/roundstart_main.mp3";
                 music0.autoplay=true;
                 music0.volume=0.1;
-                doctorwasplayed = true;
+                doctorwas = true;
 
                 var plast = document.createElement("div");
                 plast.style.backgroundColor = "rgb(214 70 70 / 80%)";
@@ -1154,8 +1137,8 @@ function VIP(){
             arr[i].innerText=text1.substring(0, index);
         }
         else if (document.URL.indexOf("book") != -1){
-            arr[i].parentNode.onmouseenter=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.backgroundColor="white"} };
-            arr[i].parentNode.onmouseleave=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.backgroundColor=""} };
+            arr[i].parentNode.onmouseenter=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.boxShadow="0px 0px 10px red"} };
+            arr[i].parentNode.onmouseleave=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.boxShadow=""} };
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{
                 if (arr[i].banned){
@@ -1170,11 +1153,9 @@ function VIP(){
                 };
             };
         }
-
-
-        if (!doctorwas){
-            was0 = true;
-        }
+    }
+    if (!was0){
+        doctorwas = false;
     }
 }
 
@@ -1845,8 +1826,9 @@ function addSmoothingTool(){
     var startPoint, endPoint;
     var onWorkingKey = false;
     pointerCanvas.addEventListener('pointerdown', (e)=>{
+        var pipetTool = document.getElementsByClassName("jsx-3659451671 tool pipet act sel")[0];
         var bucketTool = document.getElementsByClassName("jsx-3659451671 tool fil sel")[0];
-        if (Number(degRange1.value)!=1 && !bucketTool && e.which != 2 && !onWorking){
+        if (Number(degRange1.value)!=1 && !bucketTool && e.which != 2 && !onWorking && e.which != 3 && !pipetTool){
             onWorkingKey = true;
             startPoint = [e.clientX, e.clientY];
         }
@@ -1892,6 +1874,40 @@ function addSmoothingTool(){
     })
 }
 
+//Функционал пипеточного элемента
+function addTitle(){
+    if (document.getElementsByClassName("pipet-title")[0]){return 0};
+    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var canada = document.getElementsByClassName("jsx-3193114933")[0];
+    var curc = document.createElement("div");
+    curc.style.height="10px";
+    curc.style.width="10px";
+    curc.style.border="1px solid black";
+    var title = document.createElement("div");
+    title.classList.add("pipet-title");
+    title.style.width="auto";
+    title.style.height="auto";
+    title.style.border="1px solid black";
+    title.style.position="absolute";
+    title.style.backgroundColor="rgb(255, 239, 181)";
+    pointerCanvas.addEventListener("pointermove", (e)=>{
+        if (!title.hidden){
+            var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
+            title.innerText = rgba;
+            title.style.left=e.clientX+20 + "px";
+            title.style.top=e.clientY+20 + "px";
+        }
+    })
+    pointerCanvas.addEventListener("pointerleave", (e)=>{
+        title.hidden=true;
+    })
+    pointerCanvas.addEventListener("pointerenter", (e)=>{
+        title.hidden=false;
+    })
+    title.appendChild(curc);
+    document.querySelector("#__next").appendChild(title);
+}
+
 //Функционал пипетки
 var prevElem;
 function addPipetButton(){
@@ -1910,6 +1926,7 @@ function addPipetButton(){
 
         pipetButton.onclick = function(){
             if (!document.getElementsByClassName("jsx-1553483530 pencil").length){
+                addTitle();
                 prevElem = document.getElementsByClassName("tool sel")[0];
                 prevElem.classList.remove("sel");
                 pipetButton.classList.add("act");
@@ -1920,6 +1937,7 @@ function addPipetButton(){
 
         toolBar.addEventListener('click', (e)=>{
             if (e.target != pipetButton && document.getElementsByClassName("act").length != 0){
+                document.querySelector("#__next").removeChild(document.getElementsByClassName("pipet-title")[0]);
                 prevElem.classList.add("sel");
                 pipetButton.classList.remove("act");
                 pipetButton.classList.remove("sel");
