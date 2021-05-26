@@ -919,7 +919,7 @@ function VIP(){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
-            arr[i].parentNode.title="Создатель";
+            arr[i].parentNode.title="Создатель модификации";
             arr[i].href="https://t.me/DoctorDeathDDracula";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
