@@ -940,7 +940,7 @@ function VIP(){
             arr[i].parentNode.style.transition="";
             //arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
-            if (!doctorwas){
+            if (!doctorwas && false){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/846834550847963236/roundstart_main.mp3";
                 music0.autoplay=true;
