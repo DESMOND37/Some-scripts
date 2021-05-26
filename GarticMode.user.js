@@ -742,55 +742,13 @@ function setNess(n) {
   input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
-function censss(e){
-    if (e.which == 1){
-        let canv = this.getElementsByTagName("canvas")[0];
-        if (canv != undefined){
-            var bord = this.getElementsByClassName("jsx-4032599855 balloon")[0];
-
-            var can = this.getElementsByTagName("canvas")[0];
-            if (can.parentNode.hidden){
-                can.parentNode.hidden=false;
-                bord.removeChild(bord.getElementsByTagName('img')[0]);
-            } else {
-                can.parentNode.hidden=true;
-                can.parentNode.insertAdjacentHTML("beforeBegin", '<img src="https://static-prod.weplay.tv/2018-12-19/f2e481db44650925f3f5bb8a840181ab_large_cover.jpeg" style="max-width: 100%; max-height: 100%; border-radius: 5px; cursor: pointer;">')
-            }
-
-        } else if (this.getElementsByTagName("span")[1].innerText != "" && this.getElementsByTagName("i")[0] == undefined && document.getElementsByClassName("jsx-4032599855 lottie")[0] == undefined && document.getElementsByClassName("jsx-2184811213 show")[0] == undefined){
-
-            var cens = document.createElement("span");
-            cens.innerText = "CENSORED";
-            cens.style.color="red";
-            cens.style.fontFamily="Bold";
-            cens.style.fontSize="23px";
-            cens.style.letterSpacing="-0.13px";
-            cens.style.textAlign="center";
-            cens.style.lineHeight="18px";
-            cens.style.wordBreak="break-word";
-
-            var text = this.getElementsByTagName("span")[1];
-            if (text.hidden){
-                console.log('if');
-                text.hidden=false;
-                text.parentNode.removeChild(text.parentNode.getElementsByTagName("span")[1]);
-            } else {
-                console.log('else');
-                text.hidden=true;
-                text.parentNode.appendChild(cens);
-
-            }
-        }
-    }
-}
-
 function kok() {
     if (document.URL.indexOf("book") == -1){return};
 
     var checkList = document.getElementsByTagName("span");
     for (let u=0; u<checkList.length; u++){
         if (checkList[u].classList.contains("jsx-4032599855") || checkList[u].classList.contains("jsx-1858843370")) {
-            if (blackArr.indexOf(checkList[u].innerText) != -1){
+            if ((blackArr.indexOf(checkList[u].innerText) != -1) || checkList[u].parentNode.parentNode.parentNode.parentNode.banned || checkList[u].parentNode.parentNode.parentNode.banned){
                 checkList[u].parentNode.parentNode.style.opacity = 0;
                 checkList[u].parentNode.parentNode.parentNode.style.borderRadius="20px";
                 checkList[u].parentNode.parentNode.parentNode.style.backgroundColor = "black";
@@ -798,13 +756,15 @@ function kok() {
                 checkList[u].parentNode.parentNode.style.opacity = 1;
                 checkList[u].parentNode.parentNode.parentNode.style.backgroundColor = "";
             };
+            console.log(checkList[u].parentNode.parentNode.parentNode.parentNode.banned);
         }
     }
 
+    if (!document.getElementsByClassName("jsx-3158565948 scrollElements")[1]){return}
     var items = document.getElementsByClassName("jsx-3158565948 scrollElements")[1].children;
 
     for (let i=0; i<items.length; i++){
-        if (!items[i].classList.contains("jsx-2790456822")){continue;};
+        if (items[i].classList.contains("jsx-2790456822 ")){continue;};
 
         /*items[i].style.transition="all 0.5s ease 0s";
         items[i].style.borderRadius="10px";
@@ -817,12 +777,18 @@ function kok() {
         }*/
 
         items[i].oncontextmenu=()=>{}
+        items[i].onclick=()=>{
+            console.log("okey");
+            if (items[i].banned){
+                items[i].banned = false;
+            } else {items[i].banned = true}
+
+        };
+
+        items[i].style.cursor="pointer";
+        if (items[i].banned == undefined){items[i].banned=false;}
 
         //items[i].removeEventListener('mouseup', censss);
-        if (!items[i].verible){
-            items[i].addEventListener('mouseup', censss);
-        }
-        items[i].verible=true;
 
         let canv = items[i].getElementsByTagName("canvas")[0];
 
@@ -838,12 +804,21 @@ function kok() {
             }
 
         }
-        if (items[i].firstChild.children[1].firstChild.innerText == "DOCTORDEATHDDRACULA "){
-            items[i].firstChild.firstChild.firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-            items[i].firstChild.firstChild.firstChild.style.backgroundPosition="-2px 0px";
-            items[i].firstChild.children[1].firstChild.style.animation="rainbow 5s linear";
-            items[i].firstChild.children[1].firstChild.style.animationIterationCount="infinite";
-            items[i].firstChild.children[1].firstChild.style.opacity=1;
+
+        if (items[i].firstChild.children[1]){
+            if (items[i].firstChild.children[1].firstChild.innerText == "DOCTORDEATHDDRACULA "){
+                items[i].firstChild.firstChild.firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
+                items[i].firstChild.firstChild.firstChild.style.backgroundPosition="-2px 0px";
+                items[i].firstChild.children[1].firstChild.style.animation="rainbow 5s linear";
+                items[i].firstChild.children[1].firstChild.style.animationIterationCount="infinite";
+                items[i].firstChild.children[1].firstChild.style.opacity=1;
+            }
+        }
+        if (items[i].firstChild.firstChild.firstChild.innerText == "DOCTORDEATHDDRACULA "){
+            items[i].firstChild.children[1].firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
+            items[i].firstChild.children[1].firstChild.style.backgroundPosition="-2px 0px";
+            items[i].firstChild.firstChild.firstChild.style.animation="rainbow 5s linear";
+            items[i].firstChild.firstChild.firstChild.style.animationIterationCount="infinite";
         }
     }
 }
@@ -940,7 +915,7 @@ function VIP(){
             arr[i].parentNode.style.transition="";
             //arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
-            if (!doctorwas && false){
+            if (!doctorwas){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/846834550847963236/roundstart_main.mp3";
                 music0.autoplay=true;
@@ -1154,9 +1129,9 @@ function VIP(){
             };
         }
     }
-    if (!was0){
-        doctorwas = false;
-    }
+    //if (!was0){
+    //    doctorwas = false;
+    //}
 }
 
 function extendTextInput() {
@@ -3817,5 +3792,5 @@ function exec() {
     var start = setInterval(main, 1);
     var under = setInterval(asyncDraw, 0);
     var asyncDes = setInterval(asyncSpace, 0);
-    var asyncTres = setInterval(asyncSlowSpace, 1000);
+    var asyncTres = setInterval(asyncSlowSpace, 100);
 }
