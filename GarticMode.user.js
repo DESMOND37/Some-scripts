@@ -919,7 +919,7 @@ function VIP(){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/846834550847963236/roundstart_main.mp3";
                 music0.autoplay=true;
-                music0.volume=0.1;
+                music0.volume=0.3;
                 doctorwas = true;
 
                 var plast = document.createElement("div");
@@ -931,15 +931,15 @@ function VIP(){
                 plast.style.margin = "60px auto";
                 plast.style.zIndex="2";
                 plast.style.borderRadius="20px";
-                plast.style.transition="0.5s";
+                plast.style.transition="1s";
                 plast.style.transform="scale(0)";
 
                 var text = document.createElement("p");
-                text.innerText = "Doctor вошёл в игру!";
+                text.innerText = "Doctor в игре!";
                 text.style.color="#6f0000;"
                 text.style.fontSize="65px"
                 text.style.fontFamily="'Black'"
-                text.style.margin="60px 10px";
+                text.style.margin="60px 120px";
                 text.style.textShadow="4px 5px 4px #f90000";
                 plast.style.border="5px solid red";
                 plast.appendChild(text);
@@ -947,7 +947,7 @@ function VIP(){
                 document.querySelector("#content").appendChild(plast);
                 setTimeout(()=>{plast.style.transform="scale(1)";}, 100);
                 setTimeout(()=>{plast.style.transform="scale(0)"}, 3000);
-                setTimeout(()=>{document.querySelector("#content").removeChild(plast);}, 3500);
+                setTimeout(()=>{document.querySelector("#content").removeChild(plast);}, 4000);
 
             }
             doctorwas = true;
