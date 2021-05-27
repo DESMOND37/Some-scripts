@@ -972,6 +972,26 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="73%";
 
         }
+        else if (arr[i].innerText.toLowerCase() == "lepishov2007"){
+            arr[i].parentNode.title="Стример";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/lepishov2007", '_blank'); };
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/847413107005718548/wallpaper.png)";
+            arr[i].style.color="white";
+            arr[i].style.fontFamily="fantasy";
+            arr[i].style.fontStyle="oblique";
+            arr[i].style.fontSize="xx-large";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.overflow="unset";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/847414409957343232/dd86851c-cf1a-4211-884b-4b1d369d3c37-profile_image-300x300.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px -10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
         else if (arr[i].innerText.toLowerCase() == "xviperx"){
             arr[i].parentNode.title="Стример";
             arr[i].style.animation = "viper 2s linear";
