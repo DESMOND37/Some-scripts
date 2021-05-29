@@ -1,4 +1,5 @@
 
+
 var VERSION = "2.2.0.5";
 
 if (getCookieDict().VERSION != VERSION){
@@ -1098,7 +1099,7 @@ function VIP(){
         else if (arr[i].innerText.toLowerCase() == "мэл "){
             arr[i].parentNode.style.border="3px solid darkblue";
             arr[i].parentNode.style.backgroundColor="#f9f9f9";
-            arr[i].parentNode.style.backgroundImage="url(https://images-ext-2.discordapp.net/external/krsoImVrqUxzDfVXAoIhBxsIlgVnqkIZm7CMPE6ZqnA/https/i.pinimg.com/originals/b5/17/6b/b5176b6….gif)";
+            arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/848315223973691412/b5176b6979ba46da196d35b515fc5110.gif)";
             arr[i].parentNode.style.backgroundSize="250px";
             arr[i].parentNode.style.backgroundPosition="center";
             arr[i].parentNode.style.backgroundRepeat="no-repeat";
