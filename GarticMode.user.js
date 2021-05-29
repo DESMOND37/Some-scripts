@@ -1,5 +1,4 @@
 
-
 var VERSION = "2.2.0.5";
 
 if (getCookieDict().VERSION != VERSION){
@@ -1097,12 +1096,16 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
         else if (arr[i].innerText.toLowerCase() == "мэл "){
+            arr[i].parentNode.title="Друг Баракуды";
             arr[i].parentNode.style.border="3px solid darkblue";
             arr[i].parentNode.style.backgroundColor="#f9f9f9";
             arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/848315223973691412/b5176b6979ba46da196d35b515fc5110.gif)";
             arr[i].parentNode.style.backgroundSize="250px";
             arr[i].parentNode.style.backgroundPosition="center";
             arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848315900771696640/IMG_20201122_201910.jpg?width=765&height=676)";
         }
         else if (arr[i].innerText.toLowerCase() == "владыко "){
             arr[i].parentNode.title="Художник";
