@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.0.5";
+var VERSION = "2.2.0.6";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Появились новые способы цензуры, проверте раздел "Для стримеров", для этого нажмите на версию в углу экрана!`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Исправлена автоцензура при неавтоматическом показом`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -756,7 +756,6 @@ function kok() {
                 checkList[u].parentNode.parentNode.style.opacity = 1;
                 checkList[u].parentNode.parentNode.parentNode.style.backgroundColor = "";
             };
-            console.log(checkList[u].parentNode.parentNode.parentNode.parentNode.banned);
         }
     }
 
@@ -777,13 +776,16 @@ function kok() {
         }*/
 
         items[i].oncontextmenu=()=>{}
-        items[i].onclick=()=>{
-            console.log("okey");
-            if (items[i].banned){
-                items[i].banned = false;
-            } else {items[i].banned = true}
 
-        };
+        if (items[i].was == undefined){
+            items[i].onclick=(e)=>{
+                if (e.target.tagName == "BUTTON"){return false};
+                if (items[i].banned){
+                    items[i].banned = false;
+                } else {items[i].banned = true}
+                items[i].was = true;
+            };
+        }
 
         items[i].style.cursor="pointer";
         if (items[i].banned == undefined){items[i].banned=false;}
