@@ -1130,6 +1130,38 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
         }
+        else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
+            arr[i].parentNode.title="Клоун";
+            arr[i].parentNode.style.transition="all 0s linear 0s";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848598632868741140/IVrXjpOxYqQ.png)";
+            arr[i].parentNode.style.border="none";
+            arr[i].parentNode.style.cursor="pointer";
+
+            if (!document.getElementsByClassName("clone").length){
+                console.log(1);
+                var music1 = document.createElement("audio");
+                music1.classList.add("clone");
+                music1.src="https://cdn.discordapp.com/attachments/833410401366573066/848599758342848542/Cirkovaya_muzyka_-_leto_2012_Gybka.com.mp3";
+                document.querySelector("body").appendChild(music1);
+            }
+
+            arr[i].parentNode.onclick=()=>{
+                document.querySelector("body > audio").play();
+                document.querySelector("body > audio").volume=0.3;
+                document.querySelector("body > audio").currentTime="2";
+            }
+
+            //arr[i].style.fontFamily="cursive";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="140%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px -10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848596567120281670/unknown.png?width=726&height=676)";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             console.log(arr[i].innerText);
             var text1 = arr[i].innerText
@@ -3659,6 +3691,13 @@ function offBgMenu(){
     }
 }
 
+function blackListFunc(){
+    var elem = document.getElementsByClassName("jsx-856742297 ")[0];
+    if (elem.value.toLowerCase().indexOf("vinegative") != -1 || elem.placeholder.toLowerCase().indexOf("vinegative") != -1 ){
+        elem.disabled=true;
+    }
+}
+
 
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
@@ -3670,7 +3709,7 @@ function main(){
         }
 
         styleUpdate();
-
+        setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
@@ -3687,6 +3726,7 @@ function main(){
             //creatColorPull();
             //styleUpdate();
         //}
+        setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
