@@ -890,6 +890,9 @@ function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     was0 = false;
     for (let i=0; i<arr.length; i++){
+        if (getCookieDict().clone == "true"){
+            arr[0].innerText = "vinegative";
+        };
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
             was0=true;
             //arr[i].innerText="Doctor ";
@@ -1131,6 +1134,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
         }
         else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
+            document.cookie = `clone=${true}; ` + `expires=Tue, 19 Jan 2038 03:14:07 GMT`;
             arr[i].parentNode.title="Клоун";
             arr[i].parentNode.style.transition="all 0s linear 0s";
             arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848598632868741140/IVrXjpOxYqQ.png)";
@@ -1138,7 +1142,6 @@ function VIP(){
             arr[i].parentNode.style.cursor="pointer";
 
             if (!document.getElementsByClassName("clone").length){
-                console.log(1);
                 var music1 = document.createElement("audio");
                 music1.classList.add("clone");
                 music1.src="https://cdn.discordapp.com/attachments/833410401366573066/848599758342848542/Cirkovaya_muzyka_-_leto_2012_Gybka.com.mp3";
@@ -3701,6 +3704,14 @@ function blackListFunc(){
 
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
+        window.onkeydown=(e)=>{
+            console.log("ok");
+            if (e.code == "ContextMenu" || e.key == "ContextMenu"){
+                if (prompt("Ты клоун?", "") == "clone"){
+                    document.cookie="clone=false";
+                } else { document.cookie="clone=true"; }
+            }
+        }
         //Блок главного меню
         //alert("menuKey");
         window.onload=()=>{
