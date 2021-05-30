@@ -886,12 +886,18 @@ function debugName(){
 var doctorwas = false;
 var was0;
 var blackArr = [];
+var cloneWas = false;
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     was0 = false;
     for (let i=0; i<arr.length; i++){
         if (getCookieDict().clone == "true"){
-            arr[0].innerText = "vinegative";
+            var j = document.getElementsByClassName("jsx-1396844807");
+            for (let o=0; o<j.length; o++){
+                if (j[o].tagName == "I"){
+                    j[o].parentNode.parentNode.children[1].innerText="vinegative";
+                }
+            }
         };
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
             was0=true;
@@ -1146,13 +1152,20 @@ function VIP(){
                 music1.classList.add("clone");
                 music1.src="https://cdn.discordapp.com/attachments/833410401366573066/848599758342848542/Cirkovaya_muzyka_-_leto_2012_Gybka.com.mp3";
                 document.querySelector("body").appendChild(music1);
+                document.querySelector("body > audio").volume=0.3;
+                document.querySelector("body > audio").currentTime="2";
             }
 
             arr[i].parentNode.onclick=()=>{
                 document.querySelector("body > audio").play();
-                document.querySelector("body > audio").volume=0.3;
-                document.querySelector("body > audio").currentTime="2";
+
             }
+
+            if (!cloneWas){
+                document.querySelector("body > audio").currentTime="2";
+                document.querySelector("body > audio").play();
+            }
+            cloneWas=true;
 
             //arr[i].style.fontFamily="cursive";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
@@ -3770,6 +3783,7 @@ function main(){
         //window.onload=()=>{styleUpdate();}
         setTimeout(styleUpdate, 500);
         setTimeout(VIP, 200);
+        cloneWas = false;
         //setTimeout(console.clear, 2000);
         //styleUpdate();
         //VIP();
