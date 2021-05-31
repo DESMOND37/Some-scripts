@@ -1157,6 +1157,7 @@ function VIP(){
             }
 
             arr[i].parentNode.onclick=()=>{
+                document.querySelector("body > audio").currentTime="2";
                 document.querySelector("body > audio").play();
 
             }
