@@ -3664,6 +3664,11 @@ function flagsOff(){
         document.getElementsByClassName("jsx-1553483530 pencil")[0].parentNode.removeChild(document.getElementsByClassName("jsx-1553483530 pencil")[0]);
     }
 
+    if (document.getElementsByClassName("bm")[0]){
+        document.getElementsByClassName("bm")[0].pause();
+        document.getElementsByClassName("bm")[0].currentTime = 0;
+    }
+
     lobbyKey = false;
     menuKey = false;
     menuLinkKey = false;
@@ -3776,6 +3781,14 @@ function main(){
         menuLinkKey=true;
     }
     else if (document.URL.indexOf("draw") != -1 && !drawKey){
+        if (document.getElementsByClassName("bm")[0] == undefined && getCookieDict().clone=="true"){
+            var m = document.createElement("audio");
+            m.classList.add("bm");
+            m.loop=true;
+            m.volume=0.05;
+            m.src="https://cdn.discordapp.com/attachments/833410401366573066/848888166253723648/1.mp3";
+            document.querySelector("#content").appendChild(m);
+        }
         //Блок рисования
         //alert("drawKey");
         //window.onload=()=>{
@@ -3790,6 +3803,7 @@ function main(){
         //styleUpdate();
         //mainDrawFunc();
         flagsOff();
+        m.play();
         drawKey=true;
     }
     else if (document.URL.indexOf("lobby") != -1 && !lobbyKey){
@@ -3798,7 +3812,6 @@ function main(){
         //window.onload=()=>{styleUpdate();}
         setTimeout(styleUpdate, 500);
         setTimeout(VIP, 200);
-        cloneWas = false;
         //setTimeout(console.clear, 2000);
         //styleUpdate();
         //VIP();
