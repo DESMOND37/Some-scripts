@@ -3779,10 +3779,12 @@ function main(){
             var m = document.createElement("audio");
             m.classList.add("bm");
             m.loop=true;
-            m.volume=0.05;
+            m.volume=0.01;
             m.src="https://cdn.discordapp.com/attachments/833410401366573066/848888166253723648/1.mp3";
             document.querySelector("#content").appendChild(m);
+
         }
+        if (getCookieDict().badguy == "1"){ setTimeout(()=>{document.getElementsByClassName("jsx-1307288772 core")[0].style.backgroundImage = "url(https://media.discordapp.net/attachments/833410401366573066/849034460543451197/unknown.png)"}, 1000)}
         //Блок рисования
         //alert("drawKey");
         //window.onload=()=>{
