@@ -734,6 +734,14 @@ function setColor(color) {
   input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
+
+function setValue(input, value) {
+  input.value = value;
+  input._valueTracker.setValue();
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+
 function setNess(n) {
   const input = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1562482592.bottom > div > div.jsx-340028725.bxopacity > input.jsx-340028725");
   const value = input.value;
@@ -882,23 +890,13 @@ function debugName(){
     }
 }
 
-
 var doctorwas = false;
 var was0;
 var blackArr = [];
-var cloneWas = false;
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     was0 = false;
     for (let i=0; i<arr.length; i++){
-        if (getCookieDict().clone == "true"){
-            var j = document.getElementsByClassName("jsx-1396844807");
-            for (let o=0; o<j.length; o++){
-                if (j[o].tagName == "I"){
-                    j[o].parentNode.parentNode.children[1].innerText="vinegative";
-                }
-            }
-        };
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
             was0=true;
             //arr[i].innerText="Doctor ";
@@ -1161,12 +1159,6 @@ function VIP(){
                 document.querySelector("body > audio").play();
 
             }
-
-            if (!cloneWas){
-                document.querySelector("body > audio").currentTime="2";
-                document.querySelector("body > audio").play();
-            }
-            cloneWas=true;
 
             //arr[i].style.fontFamily="cursive";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
@@ -3716,14 +3708,34 @@ function blackListFunc(){
 }
 
 
+    function clown(){
+        if (getCookieDict().clone=="true"){
+            var input = document.getElementsByClassName("jsx-856742297 ")[0];
+            setValue(input, "vinegative");
+            document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener('click', ()=>{
+                if (getCookieDict().clone=="true"){
+                    setValue(input, "vinegative");
+                }
+            })
+        }
+    }
+
+
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
         window.onkeydown=(e)=>{
-            console.log("ok");
-            if (e.code == "ContextMenu" || e.key == "ContextMenu"){
-                if (prompt("Ты клоун?", "") == "clone"){
+            var input = document.getElementsByClassName("jsx-856742297 ")[0];
+            if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
+                var p = prompt("Ты клоун?", "") ;
+                if (p == "0"){
                     document.cookie="clone=false";
-                } else { document.cookie="clone=true"; }
+                    setValue(input, "");
+                    alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
+                } else if (p == "1"){
+                    document.cookie="clone=true";
+                    setValue(input, "vinegative");
+                    alert("ПОЗДРАВЛЯЮ ВЫ КЛОУН!");
+                } else {alert("Такой команды не существует")}
             }
         }
         //Блок главного меню
@@ -3733,8 +3745,9 @@ function main(){
             creatColorPull();
         }
 
+        setTimeout(clown, 100);
         styleUpdate();
-        setTimeout(blackListFunc, 10);
+        //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
@@ -3751,7 +3764,8 @@ function main(){
             //creatColorPull();
             //styleUpdate();
         //}
-        setTimeout(blackListFunc, 10);
+        setTimeout(clown, 100);
+        //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
