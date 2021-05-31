@@ -3803,7 +3803,7 @@ function main(){
         //styleUpdate();
         //mainDrawFunc();
         flagsOff();
-        m.play();
+        if (m != undefined){m.play()};
         drawKey=true;
     }
     else if (document.URL.indexOf("lobby") != -1 && !lobbyKey){
