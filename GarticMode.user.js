@@ -1138,7 +1138,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
         }
         else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
-            document.cookie = `clone=${true}; ` + `expires=Tue, 19 Jan 2038 03:14:07 GMT`;
+            document.cookie = "badguy=1;" + "expires=Tue, 19 Jan 2038 03:14:07 GMT";
             arr[i].parentNode.title="Клоун";
             arr[i].parentNode.style.transition="all 0s linear 0s";
             arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848598632868741140/IVrXjpOxYqQ.png)";
@@ -3705,26 +3705,19 @@ function offBgMenu(){
     }
 }
 
-function blackListFunc(){
-    var elem = document.getElementsByClassName("jsx-856742297 ")[0];
-    if (elem.value.toLowerCase().indexOf("vinegative") != -1 || elem.placeholder.toLowerCase().indexOf("vinegative") != -1 ){
-        elem.disabled=true;
-    }
-}
-
-
     function clown(){
-        if (getCookieDict().clone=="true"){
+        if (getCookieDict().badguy=="1"){
             var input = document.getElementsByClassName("jsx-856742297 ")[0];
             setValue(input, "vinegative");
             document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener('click', ()=>{
-                if (getCookieDict().clone=="true"){
+                if (getCookieDict().badguy=="1"){
                     setValue(input, "vinegative");
                 }
             })
         }
     }
 
+setInterval(()=>{console.log(getCookieDict().badguy)}, 1000);
 
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
@@ -3733,13 +3726,13 @@ function main(){
             if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
                 var p = prompt("Ты клоун?", "") ;
                 if (p == "0"){
-                    document.cookie="clone=false";
+                    document.cookie="badguy=0";
                     setValue(input, "");
                     alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
                 } else if (p == "1"){
-                    document.cookie="clone=true";
+                    document.cookie="badguy=1;";
                     setValue(input, "vinegative");
-                    alert("ПОЗДРАВЛЯЮ ВЫ КЛОУН!");
+                    alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
                 } else {alert("Такой команды не существует")}
             }
         }
@@ -3781,7 +3774,8 @@ function main(){
         menuLinkKey=true;
     }
     else if (document.URL.indexOf("draw") != -1 && !drawKey){
-        if (document.getElementsByClassName("bm")[0] == undefined && getCookieDict().clone=="true"){
+
+        if (document.getElementsByClassName("bm")[0] == undefined && getCookieDict().badguy == "1"){
             var m = document.createElement("audio");
             m.classList.add("bm");
             m.loop=true;
