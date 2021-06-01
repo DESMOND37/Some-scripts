@@ -1274,46 +1274,50 @@ function clearActiveelements(){
 //Добавление на страницу холста зума
 var zoomOffsetY = 400;
 var zoomCHidden = true;
+var memmoryC;
+var currentC;
 function addZoom(){
+    function zoomUpdate(e){
+        try{
+        var topC = document.getElementsByClassName("jsx-150592943")[0];
+        var zoomC = document.getElementsByClassName("zoomC")[0];
+        var rect = topC.getBoundingClientRect();
+        var dx = e.clientX - rect.x;
+        var dy = e.clientY - rect.y;
+        var coefX = 1516 / rect.width;
+        var coefY = 848 / rect.height;
+
+        zoomC.style.left = e.clientX + 'px';
+        zoomC.style.top = e.clientY - zoomOffsetY + 'px';
+        var ctx = zoomC.getContext("2d");
+        ctx.fillRect(0, 0, zoomC.width, zoomC.height);
+        ctx.drawImage(memmoryC, dx * coefX - 70+3, dy * coefY - 70+3, 200, 200, 0, 0, 300, 300);
+        ctx.drawImage(currentC, dx * coefX - 70+3, dy * coefY - 70+3, 200, 200, 0, 0, 300, 300);
+
+        const centerX = zoomC.width / 2;
+        const centerY = zoomC.height / 2;
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, 2, 0, 2 * Math.PI, false);
+        //ctx.fillStyle = 'red';
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#000000';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, 1, 0, 2 * Math.PI, false);
+        //ctx.fillStyle = 'red';
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.stroke();
+        } catch {};
+    }
+
+
     if (!document.getElementsByClassName("zoomC").length && document.URL.indexOf("draw") != -1 && !document.getElementsByClassName("jsx-1307288772 book dark").length){
         var zoomC = createCanvas(200, 200);
         zoomC.classList.add("zoomC");
         zoomC.hidden = true;
-        var topC = document.getElementsByClassName("jsx-150592943")[0];
-        var memmoryC = document.getElementsByClassName("jsx-3193114933 ")[0];
-        var currentC = document.getElementsByClassName("jsx-3193114933 ")[1];
-
-        function zoomUpdate(e){
-            var rect = topC.getBoundingClientRect();
-            var dx = e.clientX - rect.x;
-            var dy = e.clientY - rect.y;
-            var coefX = 1516 / rect.width;
-            var coefY = 848 / rect.height;
-
-            zoomC.style.left = e.clientX + 'px';
-            zoomC.style.top = e.clientY - zoomOffsetY + 'px';
-            var ctx = zoomC.getContext("2d");
-            ctx.fillRect(0, 0, zoomC.width, zoomC.height);
-            ctx.drawImage(memmoryC, dx * coefX - 70+3, dy * coefY - 70+3, 200, 200, 0, 0, 300, 300);
-            ctx.drawImage(currentC, dx * coefX - 70+3, dy * coefY - 70+3, 200, 200, 0, 0, 300, 300);
-
-            const centerX = zoomC.width / 2;
-            const centerY = zoomC.height / 2;
-
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 2, 0, 2 * Math.PI, false);
-            //ctx.fillStyle = 'red';
-            ctx.lineWidth = 3;
-            ctx.strokeStyle = '#000000';
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 1, 0, 2 * Math.PI, false);
-            //ctx.fillStyle = 'red';
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = '#FFFFFF';
-            ctx.stroke();
-        }
 
         document.querySelector("#__next").addEventListener("pointermove", (e)=>{
             if (document.getElementsByClassName("jsx-3659451671 tool loopa act1 sel")[0]){
@@ -1326,6 +1330,9 @@ function addZoom(){
                 zoomUpdate(e);
             }, 10);
         });
+
+        memmoryC = document.getElementsByClassName("jsx-3193114933 ")[0];
+        currentC = document.getElementsByClassName("jsx-3193114933 ")[1];
 
         document.querySelector("#__next").appendChild(zoomC);
     }
@@ -1452,13 +1459,16 @@ function firstLevelFunctions(){
     }
 
     var readyButton = document.getElementsByClassName("jsx-4289504161 small")[0];
-    if (readyButton){
+    if (readyButton && document.getElementsByClassName("jsx-3659451671 tool clear")[0] == undefined){
         readyButton.addEventListener("click", ()=>{
             clearActiveelements();
+            setTimeout(()=>{
+                if (document.getElementsByClassName("jsx-1553483530 pencil")[0] == undefined){
+                    mainDrawFunc();
+                }
+            }, 300);
         })
     }
-
-    document.getElementsByClassName("jsx-4289504161")[0].addEventListener("click", mainDrawFunc);
 }
 
 //Изменение палитры
@@ -1716,6 +1726,7 @@ function addTools(){
 ///////////////////////////////////tools////////////////////////////////////////
 
 //Функционал луппы
+
 function addLoopaButton(){
     var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
     var zoomC = document.getElementsByClassName("zoomC")[0];
@@ -1748,175 +1759,182 @@ function addLoopaButton(){
     }
 }
 
+
 //Функционал иструмент сглаживания
+var mapArray = [];
+var startPoint, endPoint;
+var onWorkingKey = false;
 var sLevel = 1;
 function addSmoothingTool(){
-    if (document.getElementsByClassName("jsx-3659451671 tool smooth").length){return};
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
+        if (!document.getElementsByClassName("jsx-3659451671 tool smooth").length){
+            var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
 
-    var smoothBorder = document.createElement("div");
-    smoothBorder.width = 300;
-    smoothBorder.height = 100;
-    smoothBorder.style.position = "relative";
-    smoothBorder.style.top = "200px;";
-    smoothBorder.style.display = "flex";
-    smoothBorder.style.width = "auto";
-    smoothBorder.style.height = "auto";
-    smoothBorder.style.right="0px"; //->210px
-    toolBar.appendChild(smoothBorder);
+            var smoothBorder = document.createElement("div");
+            smoothBorder.width = 300;
+            smoothBorder.height = 100;
+            smoothBorder.style.position = "relative";
+            smoothBorder.style.top = "200px;";
+            smoothBorder.style.display = "flex";
+            smoothBorder.style.width = "auto";
+            smoothBorder.style.height = "auto";
+            smoothBorder.style.right="0px"; //->210px
+            toolBar.appendChild(smoothBorder);
 
-    var degRangeBorder = document.createElement("div");
-    degRangeBorder.classList.add("jsx-3659451671");
-    degRangeBorder.classList.add("deg-range-border");
-    degRangeBorder.style.width="230px";
-    degRangeBorder.style.height="auto";
-    degRangeBorder.style.border="2px solid black";
-    degRangeBorder.style.borderRadius="5px";
-    degRangeBorder.style.margin="0px 5px 0px 0px";
-    degRangeBorder.style.backgroundColor = "rgba(94, 25, 51, 0.5)";
-    degRangeBorder.style.zIndex = "10";
-    degRangeBorder.style.position = "absolute";
-    degRangeBorder.style.right="53px";
-    degRangeBorder.style.display="none";
-
-    degRangeBorder.onmouseleave=()=>{
-        setTimeout(()=>{if ([
-            smoothButton,
-            sCounter,
-            degRange1,
-            degRangeBorder,
-        ].indexOf(curElementOverCursor) != -1){
-            console.log("over")
-        } else {
+            var degRangeBorder = document.createElement("div");
+            degRangeBorder.classList.add("jsx-3659451671");
+            degRangeBorder.classList.add("deg-range-border");
+            degRangeBorder.style.width="230px";
+            degRangeBorder.style.height="auto";
+            degRangeBorder.style.border="2px solid black";
+            degRangeBorder.style.borderRadius="5px";
+            degRangeBorder.style.margin="0px 5px 0px 0px";
+            degRangeBorder.style.backgroundColor = "rgba(94, 25, 51, 0.5)";
+            degRangeBorder.style.zIndex = "10";
+            degRangeBorder.style.position = "absolute";
+            degRangeBorder.style.right="53px";
             degRangeBorder.style.display="none";
-        }
-                       }, 1000)
-    }
 
-    var degRange1 = document.createElement('input');
-    degRange1.type = "range";
-    degRange1.min = 1;
-    degRange1.max = 10;
-    degRange1.step = 1;
-    degRange1.value="0";
-    degRange1.style.margin="23px 5px";
-    degRange1.style.width="190px";
-    degRange1.style.height="4px";
-    degRange1.style.borderRadius="10px";
-    degRange1.oninput=()=>{
-        sCounter.innerText = degRange1.value
-        sLevel = Number(degRange1.value);
-    };
 
-    var sCounter = document.createElement("div");
-    sCounter.innerText = "1";
-    sCounter.style.fontFamily="Black";
-    sCounter.style.color="rgb(67, 222, 153)";
-    sCounter.style.width="30px";
-    sCounter.style.border="thick";
-    sCounter.style.textAlign="center";
-    sCounter.style.fontSize="17px";
-    sCounter.style.backgroundColor="rgba(100, 100, 100, 0)";
-    sCounter.style.position="absolute";
-    sCounter.style.right="5px";
-    sCounter.style.margin="15px 0px 0px 0px";
-
-    degRangeBorder.appendChild(sCounter);
-    degRangeBorder.appendChild(degRange1);
-    smoothBorder.appendChild(degRangeBorder);
-
-    var smoothButton = document.createElement("div");
-    smoothButton.classList.add("jsx-3659451671");
-    smoothButton.classList.add("tool");
-    smoothButton.classList.add("smooth");
-    smoothButton.style.margin="0px";
-
-    smoothButton.onclick=()=>{
-        if (!smoothButton.classList.contains("act1") && !document.getElementsByClassName("jsx-1553483530 pencil").length){
-            smoothButton.classList.add("act1");
-            degRangeBorder.style.display="";
-            sLevel = Number(degRange1.value);
-        } else {
-            smoothButton.classList.remove("act1");
-            degRangeBorder.style.display="none";
-            sLevel = 1;
-        }
-    };
-
-    smoothButton.onmouseenter=()=>{
-        if (smoothButton.classList.contains("act1")){
-            degRangeBorder.style.display="";
-        }
-    }
-
-    smoothButton.onmouseleave=()=>{
-        setTimeout(()=>{if ([
-            smoothButton,
-            sCounter,
-            degRange1,
-            degRangeBorder,
-        ].indexOf(curElementOverCursor) != -1){
-            console.log("over")
-        } else {
-            degRangeBorder.style.display="none";
-        }
-                       }, 1000)
-    }
-
-    smoothBorder.appendChild(smoothButton);
-
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var mapArray = [];
-    var startPoint, endPoint;
-    var onWorkingKey = false;
-    pointerCanvas.addEventListener('pointerdown', (e)=>{
-        var pipetTool = document.getElementsByClassName("jsx-3659451671 tool pipet act sel")[0];
-        var bucketTool = document.getElementsByClassName("jsx-3659451671 tool fil sel")[0];
-        if (Number(degRange1.value)!=1 && !bucketTool && e.which != 2 && !onWorking && e.which != 3 && !pipetTool){
-            onWorkingKey = true;
-            startPoint = [e.clientX, e.clientY];
-        }
-    })
-
-    window.addEventListener('pointermove', (e)=>{
-        if (onWorkingKey){
-            mapArray.push([e.clientX, e.clientY]);
-        }})
-
-    pointerCanvas.addEventListener('pointerup', (e)=>{
-        if (onWorkingKey){
-            console.log(sLevel);
-            onWorkingKey=false;
-            endPoint = [e.clientX, e.clientY];
-            clientMouseDown(startPoint[0], startPoint[1]);
-            clientMouseMove(startPoint[0], startPoint[1]);
-            for (let i=0; i<mapArray.length; i+=sLevel) {
-                let point = mapArray[i];
-                clientMouseMove(point[0], point[1]);
+            degRangeBorder.onmouseleave=()=>{
+                setTimeout(()=>{if ([
+                    smoothButton,
+                    sCounter,
+                    degRange1,
+                    degRangeBorder,
+                ].indexOf(curElementOverCursor) != -1){
+                    console.log("over")
+                } else {
+                    degRangeBorder.style.display="none";
+                }
+                               }, 1000)
             }
-            clientMouseMove(endPoint[0], endPoint[1]);
-            clientMouseUp(endPoint[0], endPoint[1]);
-            mapArray=[];
-        }
-    })
 
-    window.addEventListener('pointerup', (e)=>{
-        if (onWorkingKey){
-            console.log(sLevel);
-            onWorkingKey=false;
-            endPoint = [e.clientX, e.clientY];
-            clientMouseDown(startPoint[0], startPoint[1]);
-            clientMouseMove(startPoint[0], startPoint[1]);
-            for (let i=0; i<mapArray.length; i+=sLevel) {
-                let point = mapArray[i];
-                clientMouseMove(point[0], point[1]);
+            var degRange1 = document.createElement('input');
+            degRange1.classList.add("here-degrange");
+            degRange1.type = "range";
+            degRange1.min = 1;
+            degRange1.max = 10;
+            degRange1.step = 1;
+            degRange1.value="0";
+            degRange1.style.margin="23px 5px";
+            degRange1.style.width="190px";
+            degRange1.style.height="4px";
+            degRange1.style.borderRadius="10px";
+            degRange1.oninput=()=>{
+                sCounter.innerText = degRange1.value
+                sLevel = Number(degRange1.value);
+            };
+
+            var sCounter = document.createElement("div");
+            sCounter.innerText = "1";
+            sCounter.style.fontFamily="Black";
+            sCounter.style.color="rgb(67, 222, 153)";
+            sCounter.style.width="30px";
+            sCounter.style.border="thick";
+            sCounter.style.textAlign="center";
+            sCounter.style.fontSize="17px";
+            sCounter.style.backgroundColor="rgba(100, 100, 100, 0)";
+            sCounter.style.position="absolute";
+            sCounter.style.right="5px";
+            sCounter.style.margin="15px 0px 0px 0px";
+
+            degRangeBorder.appendChild(sCounter);
+            degRangeBorder.appendChild(degRange1);
+            smoothBorder.appendChild(degRangeBorder);
+
+            var smoothButton = document.createElement("div");
+            smoothButton.classList.add("jsx-3659451671");
+            smoothButton.classList.add("tool");
+            smoothButton.classList.add("smooth");
+            smoothButton.style.margin="0px";
+
+            smoothButton.onclick=()=>{
+                if (!smoothButton.classList.contains("act1") && !document.getElementsByClassName("jsx-1553483530 pencil").length){
+                    smoothButton.classList.add("act1");
+                    degRangeBorder.style.display="";
+                    sLevel = Number(degRange1.value);
+                } else {
+                    smoothButton.classList.remove("act1");
+                    degRangeBorder.style.display="none";
+                    sLevel = 1;
+                }
+            };
+
+            smoothButton.onmouseenter=()=>{
+                if (smoothButton.classList.contains("act1")){
+                    degRangeBorder.style.display="";
+                }
             }
-            clientMouseMove(endPoint[0], endPoint[1]);
-            clientMouseUp(endPoint[0], endPoint[1]);
-            mapArray=[];
+
+            smoothButton.onmouseleave=()=>{
+                setTimeout(()=>{if ([
+                    smoothButton,
+                    sCounter,
+                    degRange1,
+                    degRangeBorder,
+                ].indexOf(curElementOverCursor) != -1){
+                    console.log("over")
+                } else {
+                    degRangeBorder.style.display="none";
+                }
+                               }, 1000)
+            }
+
+            smoothBorder.appendChild(smoothButton);
+
+            window.addEventListener('pointerup', (e)=>{
+                if (onWorkingKey){
+                    console.log(sLevel);
+                    onWorkingKey=false;
+                    endPoint = [e.clientX, e.clientY];
+                    clientMouseDown(startPoint[0], startPoint[1]);
+                    clientMouseMove(startPoint[0], startPoint[1]);
+                    for (let i=0; i<mapArray.length; i+=sLevel) {
+                        let point = mapArray[i];
+                        clientMouseMove(point[0], point[1]);
+                    }
+                    clientMouseMove(endPoint[0], endPoint[1]);
+                    clientMouseUp(endPoint[0], endPoint[1]);
+                    mapArray=[];
+                }
+            })
+
+            window.addEventListener('pointermove', (e)=>{
+                if (onWorkingKey){
+                    mapArray.push([e.clientX, e.clientY]);
+                }})
         }
-    })
-}
+
+        degRange1 = document.getElementsByClassName("here-degrange")[0];
+
+        var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+        pointerCanvas.addEventListener('pointerdown', (e)=>{
+            var pipetTool = document.getElementsByClassName("jsx-3659451671 tool pipet act sel")[0];
+            var bucketTool = document.getElementsByClassName("jsx-3659451671 tool fil sel")[0];
+            if (Number(degRange1.value)!=1 && !bucketTool && e.which != 2 && !onWorking && e.which != 3 && !pipetTool){
+                onWorkingKey = true;
+                startPoint = [e.clientX, e.clientY];
+            }
+        })
+
+        pointerCanvas.addEventListener('pointerup', (e)=>{
+            if (onWorkingKey){
+                console.log(sLevel);
+                onWorkingKey=false;
+                endPoint = [e.clientX, e.clientY];
+                clientMouseDown(startPoint[0], startPoint[1]);
+                clientMouseMove(startPoint[0], startPoint[1]);
+                for (let i=0; i<mapArray.length; i+=sLevel) {
+                    let point = mapArray[i];
+                    clientMouseMove(point[0], point[1]);
+                }
+                clientMouseMove(endPoint[0], endPoint[1]);
+                clientMouseUp(endPoint[0], endPoint[1]);
+                mapArray=[];
+            }
+        })
+
+    }
 
 //Функционал пипеточного элемента
 function addTitle(){
@@ -1929,15 +1947,17 @@ function addTitle(){
     curc.style.border="1px solid black";
     var title = document.createElement("div");
     title.classList.add("pipet-title");
+    title.style.fontFamily="Black";
     title.style.width="auto";
     title.style.height="auto";
     title.style.border="1px solid black";
     title.style.position="absolute";
     title.style.backgroundColor="rgb(255, 239, 181)";
+    title.style.padding="1px 5px";
     pointerCanvas.addEventListener("pointermove", (e)=>{
         if (!title.hidden){
             var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
-            title.innerText = " " + rgba + " ";
+            title.innerText = ` ${rgba} `;
             title.style.left=e.clientX+20 + "px";
             title.style.top=e.clientY+20 + "px";
         }
@@ -1988,28 +2008,27 @@ function addPipetButton(){
             }
         });
 
-        pointerCanvas.addEventListener('pointerdown', (e)=>{
-            if (document.getElementsByClassName("act").length != 0 && e.which == 1){
-                var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
-                let r = rgba[0];
-                let g = rgba[1];
-                let b = rgba[2];
-                let a = rgba[3];
-                if (a == 0){r=255; g=255; b=255; a=255;}
-                setColor(rgb2hex(r, g, b));
-                setNess(100/255*a);
 
-                setTimeout(()=>{
-                    var event = new Event ('mouseup', { bubbles: true, cancelable: true});
-                    pointerCanvas.dispatchEvent(event);
+    } else { console.log("PIP-button already exists or pointerCanvas is undefined") }
 
-                    document.getElementsByClassName("jsx-3659451671 tool undo")[0].click();
-                }, 50)
-            }
-        })
+    pointerCanvas.addEventListener('pointerdown', (e)=>{
+        if (document.getElementsByClassName("act").length != 0 && e.which == 1){
+            var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
+            let r = rgba[0];
+            let g = rgba[1];
+            let b = rgba[2];
+            let a = rgba[3];
+            if (a == 0){r=255; g=255; b=255; a=255;}
+            setColor(rgb2hex(r, g, b));
+            setNess(100/255*a);
+            setTimeout(()=>{
+                var event = new Event ('mouseup', { bubbles: true, cancelable: true});
+                pointerCanvas.dispatchEvent(event);
 
-
-    } else { console.log("L-button already exists or pointerCanvas is undefined") }
+                document.getElementsByClassName("jsx-3659451671 tool undo")[0].click();
+            }, 50)
+        }
+    })
 
 }
 
@@ -2264,6 +2283,7 @@ var loopaKey = false;
 
 
 function mainDrawFunc(){
+    console.log("draw func");
     //Добавление зума
     addZoom(); //Вызывается через unhide элемента класса zoomC
 
