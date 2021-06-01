@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.0.6";
+var VERSION = "2.2.0.7";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Исправлена автоцензура при неавтоматическом показом`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Исправлена работа инструментов после нажатия "ГОТОВ!"`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
