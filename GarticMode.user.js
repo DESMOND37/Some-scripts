@@ -1457,6 +1457,8 @@ function firstLevelFunctions(){
             clearActiveelements();
         })
     }
+
+    document.getElementsByClassName("jsx-4289504161")[0].addEventListener("click", mainDrawFunc);
 }
 
 //Изменение палитры
@@ -1487,7 +1489,6 @@ function palitEdit(){
 //Эвенты клавиатуры
 function drawKeys (evt){
     evt = evt || window.event;
-    console.log(evt);
     var isEscape = false;
     if ("key" in evt) {
         if (evt.key === "Escape" || evt.key === "Esc" || evt.keyCode === 27) {
