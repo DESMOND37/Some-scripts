@@ -1750,6 +1750,7 @@ function addLoopaButton(){
 //Функционал иструмент сглаживания
 var sLevel = 1;
 function addSmoothingTool(){
+    if (document.getElementsByClassName("jsx-3659451671 tool smooth").length){return};
     var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
 
     var smoothBorder = document.createElement("div");
@@ -1935,7 +1936,7 @@ function addTitle(){
     pointerCanvas.addEventListener("pointermove", (e)=>{
         if (!title.hidden){
             var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
-            title.innerText = rgba;
+            title.innerText = " " + rgba + " ";
             title.style.left=e.clientX+20 + "px";
             title.style.top=e.clientY+20 + "px";
         }
@@ -3716,8 +3717,6 @@ function offBgMenu(){
             })
         }
     }
-
-setInterval(()=>{console.log(getCookieDict().badguy)}, 1000);
 
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
