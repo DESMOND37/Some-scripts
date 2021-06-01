@@ -1137,6 +1137,23 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
         }
+        else if (arr[i].innerText.toLowerCase() == "alexkimoor(кутулуху)"){
+            arr[i].parentNode.title="Фанат & Художник";
+            arr[i].parentNode.style.backgroundImage="url(https://coverfiles.alphacoders.com/116/116776.jpg)";
+            arr[i].parentNode.style.backgroundPosition="center";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="white";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849408701344383027/bk7fK7xy_J8.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-15px -10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
         else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
             document.cookie = "badguy=1;" + "expires=Tue, 19 Jan 2038 03:14:07 GMT";
             arr[i].parentNode.title="Клоун";
@@ -1999,14 +2016,14 @@ function addPipetButton(){
         };
 
 
-        toolBar.addEventListener('click', (e)=>{
+        /*toolBar.addEventListener('click', (e)=>{
             if (e.target != pipetButton && document.getElementsByClassName("act").length != 0){
                 document.querySelector("#__next").removeChild(document.getElementsByClassName("pipet-title")[0]);
                 prevElem.classList.add("sel");
                 pipetButton.classList.remove("act");
                 pipetButton.classList.remove("sel");
             }
-        });
+        });*/
 
 
     } else { console.log("PIP-button already exists or pointerCanvas is undefined") }
