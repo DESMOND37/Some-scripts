@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.0.7";
+var VERSION = "2.2.0.8";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Исправлена работа инструментов после нажатия "ГОТОВ!"`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Добавлена возможность копирования холста (хотя она и раньше была x) )`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -329,6 +329,16 @@ cssAnimation.type = 'text/css';
 var rules001 = document.createTextNode("@keyframes viper {100%, 0% { color: #8a2be2; } 9% { color: #945cca; } 18% {color: #9781b1;} 27% {color: #92a297;} 36% {color: #83c17a;} 45% {color: #67e056;} 54% {color: #0eff0e;} 63% {color: #67e056;} 72% {color: #83c17a;} 81% {color: #92a297;} 90% {color: #9781b1;}}")
 cssAnimation.appendChild(rules001);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//Активация кнопки кастомного контекстного меню
+var styleInputRange0201 = document.createElement('style');
+styleInputRange0201.type = 'text/css';
+var rules0201 = document.createTextNode(".ctxmbutton:hover {background-color: powderblue; cursor: pointer;}");
+styleInputRange0201.appendChild(rules0201);
+document.getElementsByTagName("head")[0].appendChild(styleInputRange0201);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -750,6 +760,18 @@ function setNess(n) {
   input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
+
+window.addEventListener("pointerup", (e)=>{
+    var item = document.getElementsByClassName("contextmenu")[0];
+    if (item && !e.target.classList.contains("ctxmbutton")){item.parentNode.removeChild(item)};
+});
+
+window.onwheel = ()=>{
+    var item = document.getElementsByClassName("contextmenu")[0];
+    if (item){item.parentNode.removeChild(item)};
+};
+
+
 function kok() {
     if (document.URL.indexOf("book") == -1){return};
 
@@ -795,21 +817,82 @@ function kok() {
             };
         }
 
-        items[i].style.cursor="pointer";
+        if (items[i].classList.contains("item")){items[i].style.cursor="pointer";};
         if (items[i].banned == undefined){items[i].banned=false;}
 
         //items[i].removeEventListener('mouseup', censss);
 
         let canv = items[i].getElementsByTagName("canvas")[0];
 
-        if (canv != undefined){
+
+
+        if (canv != undefined && canv.was == undefined){
+            canv.was=true;
             let nick = items[i].getElementsByClassName("jsx-4032599855 nick")[0].innerText;
             canv.style.cursor="pointer";
-            canv.oncontextmenu=()=>{
-                let link = document.createElement('a');
-                link.download = `${nick}.png`;
-                link.href = canv.toDataURL();
-                link.click();
+            canv.oncontextmenu=(e)=>{
+
+                var contextmenu = document.createElement("div");
+                contextmenu.classList.add("contextmenu");
+                contextmenu.style.height="auto";
+                contextmenu.style.width="auto";
+                contextmenu.style.borderRadius="5px";
+                contextmenu.style.border="2px solid black";
+                contextmenu.style.backgroundColor="rgba(255, 255, 255, 0.8)";
+                contextmenu.style.position="absolute";
+                contextmenu.style.left=e.clientX+"px";
+                contextmenu.style.top=e.clientY+"px";
+                contextmenu.style.display="grid";
+                contextmenu.style.padding="3px";
+
+                var copy = document.createElement("a");
+                copy.classList.add("ctxmbutton");
+                copy.innerText = "КОПИРОВАТЬ";
+                copy.style.fontFamily = "Black";
+                //copy.style.color = "white";
+                copy.style.height="auto";
+                copy.style.width="auto";
+                copy.style.borderRadius="3px";
+                copy.style.margin="0px 0px 2px 0px";
+                copy.style.textAlign="left";
+                copy.onclick=()=>{canv.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])); contextmenu.parentNode.removeChild(contextmenu);};
+                contextmenu.appendChild(copy);
+                var save = document.createElement("a");
+                save.classList.add("ctxmbutton");
+                save.innerText="CОХРАНИТЬ";
+                save.style.fontFamily = "Black";
+                //save.style.color = "white";
+                save.style.height="auto";
+                save.style.width="auto";
+                save.style.borderRadius="3px";
+                save.style.margin="0px 0px 2px 0px";
+                save.style.textAlign="left";
+                save.onclick=()=>{
+                    let link = document.createElement('a');
+                    link.download = `${nick}.png`;
+                    link.href = canv.toDataURL();
+                    link.click();
+                    contextmenu.parentNode.removeChild(contextmenu);
+                };
+                contextmenu.appendChild(save);
+                /*var saveAs = document.createElement("a");
+                saveAs.classList.add("ctxmbutton");
+                saveAs.innerText="СОХРАНИТЬ КАК...";
+                saveAs.style.fontFamily = "Black";
+                //saveAs.style.color = "white";
+                saveAs.style.height="auto";
+                saveAs.style.width="auto";
+                saveAs.style.borderRadius="3px";
+                saveAs.style.margin="";
+                saveAs.style.textAlign="left";
+
+                saveAs.download = `${nick}.png`;
+                saveAs.href = canv.toDataURL();
+
+                contextmenu.appendChild(saveAs);
+                */
+                document.querySelector("#content").appendChild(contextmenu);
+
                 return false;
             }
 
