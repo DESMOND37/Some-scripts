@@ -1188,7 +1188,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
         else if (arr[i].innerText.toLowerCase() == "мэл "){
-            arr[i].parentNode.title="Друг Баракуды";
+            arr[i].parentNode.title="Друг Баракуды & Художник";
             arr[i].parentNode.style.border="3px solid darkblue";
             arr[i].parentNode.style.backgroundColor="#f9f9f9";
             arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/848315223973691412/b5176b6979ba46da196d35b515fc5110.gif)";
@@ -1196,10 +1196,9 @@ function VIP(){
             arr[i].parentNode.style.backgroundPosition="center";
             arr[i].parentNode.style.backgroundRepeat="no-repeat";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849408701344383027/bk7fK7xy_J8.png)";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-15px -10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -2px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
