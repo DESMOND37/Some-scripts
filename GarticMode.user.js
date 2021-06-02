@@ -1226,8 +1226,10 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
         }
         else if (arr[i].innerText.toLowerCase() == "Jen Menots".toLowerCase()){
-            arr[i].parentNode.title="Художник";
+            arr[i].parentNode.title="Стример & Художник";
             arr[i].style.color="white";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/jen_menots", '_blank'); };
             arr[i].parentNode.style.backgroundColor="black";
             arr[i].parentNode.style.border="2px solid white";
             arr[i].parentNode.style.backgroundSize="150%";
@@ -1242,6 +1244,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849760932505845810/unknown.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].parentNode.style.border="2px solid white";
+
         }
         else if (arr[i].innerText.toLowerCase() == "alexkimoor(кутулуху)"){
             arr[i].parentNode.title="Фанат & Художник";
