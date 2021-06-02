@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.0.8";
+var VERSION = "2.2.0.0";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Добавлена возможность копирования холста (хотя она и раньше была x) )`);
