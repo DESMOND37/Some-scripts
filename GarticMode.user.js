@@ -1195,7 +1195,6 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="250px";
             arr[i].parentNode.style.backgroundPosition="center";
             arr[i].parentNode.style.backgroundRepeat="no-repeat";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849408701344383027/bk7fK7xy_J8.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -2px";
@@ -1228,14 +1227,21 @@ function VIP(){
         }
         else if (arr[i].innerText.toLowerCase() == "Jen Menots".toLowerCase()){
             arr[i].parentNode.title="Художник";
-            arr[i].innerText="";
-            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846076813830520902/unknown.png)";
+            arr[i].style.color="white";
+            arr[i].parentNode.style.backgroundColor="black";
+            arr[i].parentNode.style.border="2px solid white";
             arr[i].parentNode.style.backgroundSize="150%";
             arr[i].parentNode.style.backgroundPosition="-10px";
             arr[i].parentNode.style.transition="all 0s linear 0s";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -2px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849760932505845810/unknown.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].parentNode.style.border="2px solid white";
         }
         else if (arr[i].innerText.toLowerCase() == "alexkimoor(кутулуху)"){
             arr[i].parentNode.title="Фанат & Художник";
