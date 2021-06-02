@@ -1195,8 +1195,15 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="250px";
             arr[i].parentNode.style.backgroundPosition="center";
             arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849408701344383027/bk7fK7xy_J8.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-15px -10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848315900771696640/IMG_20201122_201910.jpg?width=765&height=676)";
         }
         else if (arr[i].innerText.toLowerCase() == "владыко "){
@@ -1210,6 +1217,17 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="90%";
         }
         else if (arr[i].innerText.toLowerCase() == "бpaйc"){
+            arr[i].parentNode.title="Художник";
+            arr[i].innerText="";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846076813830520902/unknown.png)";
+            arr[i].parentNode.style.backgroundSize="150%";
+            arr[i].parentNode.style.backgroundPosition="-10px";
+            arr[i].parentNode.style.transition="all 0s linear 0s";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
+        }
+        else if (arr[i].innerText.toLowerCase() == "Jen Menots".toLowerCase()){
             arr[i].parentNode.title="Художник";
             arr[i].innerText="";
             arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846076813830520902/unknown.png)";
