@@ -1782,6 +1782,7 @@ var mapArray = [];
 var startPoint, endPoint;
 var onWorkingKey = false;
 var sLevel = 1;
+var firstTimeAddWindowSmooth = true;
 function addSmoothingTool(){
         if (!document.getElementsByClassName("jsx-3659451671 tool smooth").length){
             var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
@@ -1899,6 +1900,7 @@ function addSmoothingTool(){
 
             smoothBorder.appendChild(smoothButton);
 
+            if (firstTimeAddWindowSmooth){
             window.addEventListener('pointerup', (e)=>{
                 if (onWorkingKey){
                     console.log(sLevel);
@@ -1920,6 +1922,8 @@ function addSmoothingTool(){
                 if (onWorkingKey){
                     mapArray.push([e.clientX, e.clientY]);
                 }})
+            }
+            firstTimeAddWindowSmooth = false;
         }
 
         degRange1 = document.getElementsByClassName("here-degrange")[0];
