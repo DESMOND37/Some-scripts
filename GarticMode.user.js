@@ -3844,6 +3844,7 @@ function memoryFunc(){
             mCanvas.style.opacity = 0;
             smth.style.backgroundImage="url(https://images-ext-1.discordapp.net/external/4j6MAS7dlRdJgi1KciurS5q6zKYnF3KbhUzq9YP1xFs/https/static-prod.weplay.tv/2018-12-19/f2e481db44650925f3f5bb8a840181ab_large_cover.jpeg?width=1202&height=676)";
             smth.style.backgroundSize="100%";
+            smth.style.zIndex=10;
         } else {
             mCanvas.style.opacity = 1;
             smth.style.backgroundImage="url()";
@@ -4014,7 +4015,7 @@ function main(){
         //styleUpdate();
         flagsOff();
         writeKey=true;
-        setTimeout(memoryFunc, 300);
+        setTimeout(memoryFunc, 2000);
     }
     else if (document.URL.indexOf("memory") != -1 && !memoryKey){
         //Блок перерисовки картинки
