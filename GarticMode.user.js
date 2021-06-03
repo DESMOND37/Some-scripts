@@ -1037,7 +1037,7 @@ function VIP(){
                 plast.style.border="5px solid red";
                 plast.appendChild(text);
 
-                document.querySelector("#content").appendChild(plast);
+                document.querySelector("body").appendChild(plast);
                 setTimeout(()=>{plast.style.transform="scale(1)";}, 100);
                 setTimeout(()=>{plast.style.transform="scale(0)"}, 3000);
                 setTimeout(()=>{document.querySelector("#content").removeChild(plast);}, 4000);
@@ -2803,7 +2803,10 @@ function styleUpdate(){try{
     arr.forEach(function(item, index, array){
        document.cookie = item + " expires=Tue, 19 Jan 2038 03:14:07 GMT";
     })
-} catch (e) {setTimeout(styleUpdate, 100);}
+} catch (e) {
+    if (!document.getElementsByClassName("leftpanel")[0]){creatColorPull(); console.log("yes");}
+    setTimeout(styleUpdate, 100);
+}
 }
 
 function mainMenuTitle(){
@@ -2828,7 +2831,9 @@ function mainMenuTitle(){
         //title.style.borderRight="hidden";
         title.style.transform=document.getElementsByClassName("screen")[0].style.transform; // + " translateY(9px)";
 
-        document.querySelector("#content").appendChild(title);
+        if (!document.getElementsByClassName("title")[0]){
+            document.querySelector("#content").appendChild(title);
+        }
         document.querySelector("#content").style.justifyContent="center";
 
     }
@@ -3346,7 +3351,7 @@ function createSizePull(){
 }
 
 function creatColorPull(){
-    if (document.querySelector("#content > div:nth-child(2)") == undefined && document.isTrusted){
+    if (document.getElementsByClassName("leftpanel")[0] == undefined && document.isTrusted){
 
         var cookieDict = getCookieDict();
 
@@ -3904,8 +3909,8 @@ function main(){
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
-        setTimeout(creatColorPull, 500);
-        setTimeout(mainMenuTitle, 550);
+        setTimeout(creatColorPull, 10);
+        setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuKey=true;
@@ -3923,8 +3928,8 @@ function main(){
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
-        setTimeout(styleUpdate, 500);
-        setTimeout(mainMenuTitle, 550);
+        setTimeout(styleUpdate, 10);
+        setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuLinkKey=true;
@@ -4017,7 +4022,7 @@ function main(){
         //styleUpdate();
         flagsOff();
         writeKey=true;
-        setTimeout(memoryFunc, 2000);
+        setTimeout(memoryFunc, 1000);
     }
     else if (document.URL.indexOf("memory") != -1 && !memoryKey){
         //Блок перерисовки картинки
@@ -4029,7 +4034,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
-        setTimeout(memoryFunc, 2000);
+        setTimeout(memoryFunc, 1000);
         styleUpdate();
         flagsOff();
         memoryKey=true;
