@@ -2084,6 +2084,7 @@ function addTitle(){
     title.style.position="absolute";
     title.style.backgroundColor="rgb(255, 239, 181)";
     title.style.padding="1px 5px";
+    title.hidden=true;
     pointerCanvas.addEventListener("pointermove", (e)=>{
         if (!title.hidden){
             var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
@@ -2129,14 +2130,14 @@ function addPipetButton(){
         };
 
 
-        /*toolBar.addEventListener('click', (e)=>{
-            if (e.target != pipetButton && document.getElementsByClassName("act").length != 0){
+        toolBar.addEventListener('click', (e)=>{
+            if (e.target != pipetButton && document.getElementsByClassName("act").length != 0 && !e.target.classList.contains("undo")){
                 document.querySelector("#__next").removeChild(document.getElementsByClassName("pipet-title")[0]);
                 prevElem.classList.add("sel");
                 pipetButton.classList.remove("act");
                 pipetButton.classList.remove("sel");
             }
-        });*/
+        });
 
 
     } else { console.log("PIP-button already exists or pointerCanvas is undefined") }
