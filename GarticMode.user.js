@@ -2831,7 +2831,9 @@ function mainMenuTitle(){
         if (document.getElementsByClassName("screen")[0].firstChild.classList.contains("lobby")){
             title.style.transform=document.getElementsByClassName("screen")[0].style.transform + " translateY(9px)";
         }
-        document.getElementsByClassName("screen")[0].firstChild.insertAdjacentElement('beforebegin', title);
+        if (!document.getElementsByClassName("title")[0]){
+            document.getElementsByClassName("screen")[0].firstChild.insertAdjacentElement('beforebegin', title);
+        }
     }
 }
 
