@@ -2831,9 +2831,13 @@ function mainMenuTitle(){
         if (document.getElementsByClassName("screen")[0].firstChild.classList.contains("lobby")){
             title.style.transform=document.getElementsByClassName("screen")[0].style.transform + " translateY(9px)";
         }
+        if (document.getElementsByClassName("screen")[0].firstChild.classList.contains("draw")){
+            title.style.transform=document.getElementsByClassName("screen")[0].style.transform + " translateY(16px)";
+        }
         if (!document.getElementsByClassName("title")[0]){
             document.getElementsByClassName("screen")[0].firstChild.insertAdjacentElement('beforebegin', title);
         }
+
     }
 }
 
