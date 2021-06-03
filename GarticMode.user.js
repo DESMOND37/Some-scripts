@@ -2817,26 +2817,19 @@ function mainMenuTitle(){
         title.style.color="white";
         title.style.right="0px";
         title.style.fontSize="100%";
-        title.style.heigth="auto";
+        title.style.height="15px";
         title.style.width="auto";
         title.style.fontFamily="Black";
         title.style.padding="1px 10px 1px 10px";
         //title.style.border="2px solid red";
         title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
         title.style.cursor="pointer";
-        title.style.borderBlockStart="none";
-        title.style.borderRight="hidden";
+        //title.style.borderBlockStart="none";
+        //title.style.borderRight="hidden";
         title.style.transform=document.getElementsByClassName("screen")[0].style.transform; // + " translateY(9px)";
 
-        if (document.getElementsByClassName("screen")[0].firstChild.classList.contains("lobby")){
-            title.style.transform=document.getElementsByClassName("screen")[0].style.transform + " translateY(9px)";
-        }
-        if (document.getElementsByClassName("screen")[0].firstChild.classList.contains("draw")){
-            title.style.transform=document.getElementsByClassName("screen")[0].style.transform + " translateY(16px)";
-        }
-        if (!document.getElementsByClassName("title")[0]){
-            document.getElementsByClassName("screen")[0].firstChild.insertAdjacentElement('beforebegin', title);
-        }
+        document.querySelector("#content").appendChild(title);
+        document.querySelector("#content").style.justifyContent="center";
 
     }
 }
@@ -3912,7 +3905,7 @@ function main(){
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
-        setTimeout(mainMenuTitle, 100);
+        setTimeout(mainMenuTitle, 550);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuKey=true;
@@ -3931,7 +3924,7 @@ function main(){
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
         setTimeout(styleUpdate, 500);
-        setTimeout(mainMenuTitle, 100);
+        setTimeout(mainMenuTitle, 550);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuLinkKey=true;
@@ -3955,7 +3948,6 @@ function main(){
         //    mainDrawFunc();
         //}
         createSizePull();
-        setTimeout(mainDrawFunc, 500);
         setTimeout(styleUpdate, 500);
         setTimeout(mainMenuTitle, 500);
         //setTimeout(console.clear, 2000);
@@ -3974,7 +3966,6 @@ function main(){
         //setTimeout(console.clear, 2000);
         //styleUpdate();
         //VIP();
-        setTimeout(mainMenuTitle, 500);
         flagsOff();
         lobbyKey=true;
     }
@@ -3989,7 +3980,6 @@ function main(){
         //styleUpdate();
         offBgMenu();
         //setTimeout(console.clear, 2000);
-        setTimeout(mainMenuTitle, 500);
         VIP();
         flagsOff();
         bookKey=true;
@@ -4003,7 +3993,6 @@ function main(){
         //}
         setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
-        setTimeout(mainMenuTitle, 500);
 
         //styleUpdate();
         setTimeout(extendTextInput , 500);
@@ -4015,7 +4004,6 @@ function main(){
         //window.onload=()=>{
         //    extendTextInput();
         //    styleUpdate();
-        setTimeout(mainMenuTitle, 500);
         //}
         offBgMenu();
         setTimeout(styleUpdate, 500);
@@ -4026,7 +4014,6 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //extendTextInput();
-        setTimeout(mainMenuTitle, 500);
         //styleUpdate();
         flagsOff();
         writeKey=true;
@@ -4042,7 +4029,6 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
-        setTimeout(mainMenuTitle, 500);
         setTimeout(memoryFunc, 2000);
         styleUpdate();
         flagsOff();
@@ -4062,7 +4048,6 @@ function main(){
         setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
         setTimeout(waitVideo, 500);
-        setTimeout(mainMenuTitle, 500);
         flagsOff();
         waitingKey=true;
     }
