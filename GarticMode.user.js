@@ -4026,7 +4026,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
-        setTimeout(memoryFunc, 300);
+        setTimeout(memoryFunc, 2000);
         styleUpdate();
         flagsOff();
         memoryKey=true;
