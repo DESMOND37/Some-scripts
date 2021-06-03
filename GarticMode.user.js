@@ -2764,9 +2764,8 @@ function styleUpdate(){try{
     var p2 = decToHex(Number(opacity2.value));
     if (p2.length == 1){p2="0"+p2;}
 
-    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[0].style.backgroundColor=colorInput4.value+p2;
-    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[0].style.borderRadius="10px";
-
+    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[1].style.backgroundColor=colorInput4.value+p2;
+    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[1].style.borderRadius="10px";
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     document.querySelector("body").style.backgroundImage=`linear-gradient(${degRange1.value}deg, ${colorInput1.value} ${percentRange1.value}%, ${colorInput2.value} ${percentRange2.value}%)`;
@@ -2813,21 +2812,26 @@ function mainMenuTitle(){
         title.classList.add("title");
         title.innerText=`GarticMode By Doctor Death D. Drac v${VERSION}`;
         title.style.backgroundColor="rgba(0,0,0, 0.5)";
-        title.style.borderRadius="0px 0px 0px 5px";
-        title.style.position="absolute";
-        title.style.animation="10s linear 0s infinite normal none running rainbow";
+        title.style.borderRadius="0px 0px 5px 5px";
+        //title.style.animation="10s linear 0s infinite normal none running rainbow";
+        title.style.color="white";
         title.style.right="0px";
         title.style.fontSize="100%";
         title.style.heigth="auto";
         title.style.width="auto";
         title.style.fontFamily="Black";
-        title.style.padding="1px 5px 1px 10px";
+        title.style.padding="1px 10px 1px 10px";
         //title.style.border="2px solid red";
-        document.querySelector("#content").appendChild(title);
         title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
         title.style.cursor="pointer";
         title.style.borderBlockStart="none";
         title.style.borderRight="hidden";
+        title.style.transform=document.getElementsByClassName("screen")[0].style.transform; // + " translateY(9px)";
+
+        if (document.getElementsByClassName("screen")[0].firstChild.classList.contains("lobby")){
+            title.style.transform=document.getElementsByClassName("screen")[0].style.transform + " translateY(9px)";
+        }
+        document.getElementsByClassName("screen")[0].firstChild.insertAdjacentElement('beforebegin', title);
     }
 }
 
@@ -3902,7 +3906,7 @@ function main(){
         setTimeout(deletBanner, 10);
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
-        setTimeout(mainMenuTitle, 500);
+        setTimeout(mainMenuTitle, 100);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuKey=true;
@@ -3921,7 +3925,7 @@ function main(){
         setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
         setTimeout(styleUpdate, 500);
-        setTimeout(mainMenuTitle, 500);
+        setTimeout(mainMenuTitle, 100);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuLinkKey=true;
@@ -3947,7 +3951,7 @@ function main(){
         createSizePull();
         setTimeout(mainDrawFunc, 500);
         setTimeout(styleUpdate, 500);
-
+        setTimeout(mainMenuTitle, 500);
         //setTimeout(console.clear, 2000);
         //styleUpdate();
         //mainDrawFunc();
@@ -3964,6 +3968,7 @@ function main(){
         //setTimeout(console.clear, 2000);
         //styleUpdate();
         //VIP();
+        setTimeout(mainMenuTitle, 500);
         flagsOff();
         lobbyKey=true;
     }
@@ -3978,6 +3983,7 @@ function main(){
         //styleUpdate();
         offBgMenu();
         //setTimeout(console.clear, 2000);
+        setTimeout(mainMenuTitle, 500);
         VIP();
         flagsOff();
         bookKey=true;
@@ -3991,6 +3997,7 @@ function main(){
         //}
         setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
+        setTimeout(mainMenuTitle, 500);
 
         //styleUpdate();
         setTimeout(extendTextInput , 500);
@@ -4002,6 +4009,7 @@ function main(){
         //window.onload=()=>{
         //    extendTextInput();
         //    styleUpdate();
+        setTimeout(mainMenuTitle, 500);
         //}
         offBgMenu();
         setTimeout(styleUpdate, 500);
@@ -4012,6 +4020,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //extendTextInput();
+        setTimeout(mainMenuTitle, 500);
         //styleUpdate();
         flagsOff();
         writeKey=true;
@@ -4027,6 +4036,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
+        setTimeout(mainMenuTitle, 500);
         setTimeout(memoryFunc, 2000);
         styleUpdate();
         flagsOff();
@@ -4046,6 +4056,7 @@ function main(){
         setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
         setTimeout(waitVideo, 500);
+        setTimeout(mainMenuTitle, 500);
         flagsOff();
         waitingKey=true;
     }
