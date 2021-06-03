@@ -844,6 +844,7 @@ function kok() {
                 contextmenu.style.top=e.clientY+"px";
                 contextmenu.style.display="grid";
                 contextmenu.style.padding="3px";
+                contextmenu.style.transform=document.getElementsByClassName("jsx-2562723607 jsx-3822683434 screen fade-enter-done")[0].style.transform;
 
                 var copy = document.createElement("a");
                 copy.classList.add("ctxmbutton");
