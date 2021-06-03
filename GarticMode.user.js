@@ -2823,7 +2823,7 @@ function mainMenuTitle(){
         title.style.height="15px";
         title.style.width="auto";
         title.style.fontFamily="Black";
-        title.style.padding="1px 10px 1px 10px";
+        title.style.padding="5px 10px 3px";
         //title.style.border="2px solid red";
         title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
         title.style.cursor="pointer";
@@ -2833,6 +2833,9 @@ function mainMenuTitle(){
 
         if (!document.getElementsByClassName("title")[0]){
             document.querySelector("#content").appendChild(title);
+            window.addEventListener("resize", ()=>{
+                title.style.transform=document.getElementsByClassName("screen")[0].style.transform;
+            })
         }
         document.querySelector("#content").style.justifyContent="center";
 
