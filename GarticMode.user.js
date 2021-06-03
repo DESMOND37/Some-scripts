@@ -3881,7 +3881,7 @@ function main(){
         window.onkeydown=(e)=>{
             var input = document.getElementsByClassName("jsx-856742297 ")[0];
             if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
-                var p = prompt("Ты клоун?", "") ;
+                var p = prompt("Ты клоун?", " ") ;
                 if (p == "0"){
                     document.cookie="badguy=0";
                     setValue(input, "");
