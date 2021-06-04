@@ -1610,7 +1610,7 @@ function firstLevelFunctions(){
             clearActiveelements();
             setTimeout(()=>{
                 if (document.getElementsByClassName("jsx-1553483530 pencil")[0] == undefined){
-                    mainDrawFunc();
+                    //mainDrawFunc();
                 }
             }, 300);
         })
@@ -3977,10 +3977,9 @@ function main(){
         //}
         createSizePull();
         setTimeout(styleUpdate, 500);
-        setTimeout(mainMenuTitle, 500);
         //setTimeout(console.clear, 2000);
         //styleUpdate();
-        mainDrawFunc();
+        setTimeout(mainDrawFunc, 500);
         flagsOff();
         if (m != undefined){m.play()};
         drawKey=true;
