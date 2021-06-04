@@ -987,7 +987,7 @@ function VIP(){
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
-            arr[i].parentNode.title="Создатель модификации";
+            arr[i].parentNode.title="Создатель модификации & Рисователь Гаечек";
             arr[i].href="https://t.me/DoctorDeathDDracula";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
@@ -1000,9 +1000,9 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
             arr[i].parentNode.style.backgroundPosition="60px -70px";
-            arr[i].parentNode.style.backgroundImage="url(https://i.makeagif.com/media/6-22-2015/CqH5tw.gif)";
-            arr[i].parentNode.style.backgroundPosition="-3px -70px";
-            arr[i].parentNode.style.backgroundSize="400px 400%";
+            arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/850169507002580992/ChipNDale.gif)";
+            arr[i].parentNode.style.backgroundPosition="55px -20px";
+            arr[i].parentNode.style.backgroundSize="70%";
             //arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             //arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
             arr[i].parentNode.style.transition="";
@@ -1026,6 +1026,7 @@ function VIP(){
                 plast.style.borderRadius="20px";
                 plast.style.transition="1s";
                 plast.style.transform="scale(0)";
+                plast.style.position="absolute";
 
                 var text = document.createElement("p");
                 text.innerText = "Doctor в игре!";
@@ -1037,10 +1038,11 @@ function VIP(){
                 plast.style.border="5px solid red";
                 plast.appendChild(text);
 
-                document.querySelector("body").appendChild(plast);
+                document.querySelector("#__next").style.justifyContent="center";
+                document.querySelector("#__next").appendChild(plast);
                 setTimeout(()=>{plast.style.transform="scale(1)";}, 100);
                 setTimeout(()=>{plast.style.transform="scale(0)"}, 3000);
-                setTimeout(()=>{document.querySelector("#content").removeChild(plast);}, 4000);
+                setTimeout(()=>{document.querySelector("#__next").removeChild(plast);}, 4000);
 
             }
             doctorwas = true;
