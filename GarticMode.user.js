@@ -1300,6 +1300,23 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848596567120281670/unknown.png?width=726&height=676)";
         }
+        else if (arr[i].innerText.toLowerCase() == "IV547".toLowerCase()){
+            arr[i].parentNode.title="Донатер";
+            arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/850471589543936000/blog-post-01-1.gif)";
+            arr[i].parentNode.style.backgroundPosition="180px -10px";
+            arr[i].parentNode.style.backgroundSize="70%";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="white";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/850469025221443624/unknown.png?width=728&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -5px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             console.log(arr[i].innerText);
             var text1 = arr[i].innerText
