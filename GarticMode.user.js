@@ -2831,6 +2831,7 @@ function mainMenuTitle(){
         title.style.cursor="pointer";
         //title.style.borderBlockStart="none";
         //title.style.borderRight="hidden";
+        title.style.transformOrigin="top";
         title.style.transform=document.getElementsByClassName("screen")[0].style.transform; // + " translateY(9px)";
 
         if (!document.getElementsByClassName("title")[0]){
@@ -3962,7 +3963,7 @@ function main(){
         setTimeout(mainMenuTitle, 500);
         //setTimeout(console.clear, 2000);
         //styleUpdate();
-        //mainDrawFunc();
+        mainDrawFunc();
         flagsOff();
         if (m != undefined){m.play()};
         drawKey=true;
