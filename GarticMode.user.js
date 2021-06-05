@@ -990,22 +990,23 @@ function VIP(){
             arr[i].parentNode.title="Создатель модификации & Рисователь Гаечек";
             arr[i].href="https://t.me/DoctorDeathDDracula";
             arr[i].parentNode.style.cursor="pointer";
+            arr[i].style.color="black";
             arr[i].parentNode.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
-            arr[i].style.animation="rainbow 5s linear";
-            arr[i].style.animationIterationCount="infinite";
+            //arr[i].style.animation="rainbow 5s linear";
+            //arr[i].style.animationIterationCount="infinite";
             arr[i].style.opacity=1;
             arr[i].parentNode.style.backgroundColor="rgb(0, 0, 0)";
-            arr[i].parentElement.style.border="2px rgb(255, 0, 0) solid";
+            arr[i].parentElement.style.border="2px solid black";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
             arr[i].parentNode.style.backgroundPosition="60px -70px";
             arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/850169507002580992/ChipNDale.gif)";
-            arr[i].parentNode.style.backgroundPosition="55px -20px";
-            arr[i].parentNode.style.backgroundSize="70%";
+            arr[i].parentNode.style.backgroundPosition="0px -20px";
+            arr[i].parentNode.style.backgroundSize="324px 100px";
             //arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             //arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
-            arr[i].parentNode.style.transition="";
+            arr[i].parentNode.style.transition="none";
             //arr[i].parentNode.style.boxShadow="0px 10px 15px";
 
             if (!doctorwas){
@@ -1646,7 +1647,7 @@ function palitEdit(){
 function drawKeys (evt){
     evt = evt || window.event;
     var isEscape = false;
-    if ("key" in evt) {
+    if ("key" in evt && document.URL.indexOf("draw") != -1) {
         if (evt.key === "Escape" || evt.key === "Esc" || evt.keyCode === 27) {
             if (document.getElementsByClassName("act").length != 0 || document.getElementsByClassName("act1").length != 0){
                 clearActiveelements();
@@ -2548,6 +2549,7 @@ function moveCanvases(){
     if (document.getElementsByClassName("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length > 0){
         drawContainer.parentNode.removeChild(drawContainer);
         drawContainer.style.position="absolute";
+        drawContainer.style.left="0px";
         for (let i=0; i<contCanvases.length; i++){
             contCanvases[i].style.width=`${window.innerWidth}px`;
             contCanvases[i].style.height=`${window.innerHeight}px`;
@@ -2558,6 +2560,7 @@ function moveCanvases(){
         whiteZone.style.backgroundColor="white";
         whiteZone.style.width=`${window.innerWidth}px`;
         whiteZone.style.height=`${window.innerHeight}px`;
+        whiteZone.style.position="absolute";
         whiteZone.style.zIndex=1;
         whiteZone.style.backgroundImage=document.getElementsByClassName("jsx-1307288772 core")[0].style.backgroundImage;
         nWindow.appendChild(whiteZone);
@@ -2843,6 +2846,13 @@ function mainMenuTitle(){
         title.style.width="auto";
         title.style.fontFamily="Black";
         title.style.padding="5px 10px 3px";
+        title.style.transition="0.5s";
+        title.onmouseenter=()=>{
+            title.style.height="60px";
+        };
+        title.onmouseleave=()=>{
+            title.style.height="15px";
+        };
         //title.style.border="2px solid red";
         title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
         title.style.cursor="pointer";
@@ -3866,6 +3876,7 @@ function flagsOff(){
 }
 
 function memoryFunc(){
+    if (document.URL.indexOf("draw") != -1){return}
     var smth = document.getElementsByClassName("jsx-1307288772 core")[0];
     var mCanvas = document.getElementsByClassName("jsx-3193114933 ")[0];
     smth.style.backgroundImage="url()";
@@ -3873,12 +3884,16 @@ function memoryFunc(){
     smth.onclick = ()=>{
         if (mCanvas.style.opacity == "" || mCanvas.style.opacity == "1"){
             mCanvas.style.opacity = 0;
-            smth.style.backgroundImage="url(https://images-ext-1.discordapp.net/external/4j6MAS7dlRdJgi1KciurS5q6zKYnF3KbhUzq9YP1xFs/https/static-prod.weplay.tv/2018-12-19/f2e481db44650925f3f5bb8a840181ab_large_cover.jpeg?width=1202&height=676)";
+            //smth.style.backgroundImage="url(https://images-ext-1.discordapp.net/external/4j6MAS7dlRdJgi1KciurS5q6zKYnF3KbhUzq9YP1xFs/https/static-prod.weplay.tv/2018-12-19/f2e481db44650925f3f5bb8a840181ab_large_cover.jpeg?width=1202&height=676)";
+            smth.style.backgroundColor="black";
             smth.style.backgroundSize="100%";
+            smth.style.border="4px solid red";
             smth.style.zIndex=10;
         } else {
             mCanvas.style.opacity = 1;
-            smth.style.backgroundImage="url()";
+            //smth.style.backgroundImage="url()";
+            smth.style.backgroundColor="";
+            smth.style.border="";
         }
     }
 
@@ -3903,23 +3918,27 @@ function offBgMenu(){
         }
     }
 
+    window.onkeydown=(e)=>{
+        var input = document.getElementsByClassName("jsx-856742297 ")[0];
+        if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
+            var p = prompt("Ты клоун?", " ") ;
+            if (p == "0"){
+                document.cookie="badguy=0";
+                setValue(input, "");
+                alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
+            } else if (p == "1"){
+                document.cookie="badguy=1;";
+                setValue(input, "vinegative");
+                alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
+            } else if (p == "123"){
+                setValue(input, "DoctorDeathDDracula ");
+            } else {alert("Такой команды не существует");}
+        }
+    }
+
+
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
-        window.onkeydown=(e)=>{
-            var input = document.getElementsByClassName("jsx-856742297 ")[0];
-            if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
-                var p = prompt("Ты клоун?", " ") ;
-                if (p == "0"){
-                    document.cookie="badguy=0";
-                    setValue(input, "");
-                    alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
-                } else if (p == "1"){
-                    document.cookie="badguy=1;";
-                    setValue(input, "vinegative");
-                    alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
-                } else {alert("Такой команды не существует")}
-            }
-        }
         //Блок главного меню
         //alert("menuKey");
         window.onload=()=>{
@@ -4044,7 +4063,7 @@ function main(){
         //styleUpdate();
         flagsOff();
         writeKey=true;
-        setTimeout(memoryFunc, 1000);
+        setTimeout(memoryFunc, 500);
     }
     else if (document.URL.indexOf("memory") != -1 && !memoryKey){
         //Блок перерисовки картинки
@@ -4056,7 +4075,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
-        setTimeout(memoryFunc, 1000);
+        setTimeout(memoryFunc, 500);
         styleUpdate();
         flagsOff();
         memoryKey=true;
