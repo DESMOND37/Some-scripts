@@ -1318,6 +1318,23 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
+        else if (arr[i].innerText.toLowerCase() == "sebadavinch"){
+            arr[i].parentNode.title="Стример";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/850676778766958602/unknown.png)";
+            arr[i].parentNode.style.backgroundPosition="0px -40px";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="white";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851021557958836224/671841e8-c785-424b-b637-32e00e3a77fb-profile_image-300x300.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             console.log(arr[i].innerText);
             var text1 = arr[i].innerText
