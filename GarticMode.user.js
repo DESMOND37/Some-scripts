@@ -332,7 +332,13 @@ document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+var cssAnimation22 = document.createElement('style');
+cssAnimation.type = 'text/css';
+var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: 0px -40px;} 50% {background-position: 0px -60px;}}")
+cssAnimation.appendChild(rules002);
+document.getElementsByTagName("head")[0].appendChild(cssAnimation22);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Активация кнопки кастомного контекстного меню
 var styleInputRange0201 = document.createElement('style');
 styleInputRange0201.type = 'text/css';
@@ -1324,7 +1330,11 @@ function VIP(){
             arr[i].parentNode.style.backgroundPosition="0px -40px";
             arr[i].parentNode.style.backgroundSize="100%";
             arr[i].parentNode.style.border="none";
-            arr[i].style.color="white";
+            arr[i].parentNode.style.animation="plane 5s linear";
+            arr[i].parentNode.style.animationIterationCount="infinite";
+            arr[i].style.color="red";
+            arr[i].style.fontFamily="fantasy";
+            arr[i].parentNode.style.transition="all 1s cubic-bezier(0.62, 0.66, 0.15, 1.5) 0.3s";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851021557958836224/671841e8-c785-424b-b637-32e00e3a77fb-profile_image-300x300.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
