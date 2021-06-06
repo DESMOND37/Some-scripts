@@ -1314,6 +1314,7 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="70%";
             arr[i].parentNode.style.border="none";
             arr[i].style.color="white";
+            arr[i].parentNode.style.cursor="pointer";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/850469025221443624/unknown.png?width=728&height=676)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
@@ -2964,7 +2965,7 @@ function mainMenuTitle(){
         donateTitle.style.width="auto";
         donateTitle.style.fontFamily="Black";
         donateTitle.style.padding="5px 10px 3px";
-        donateTitle.onclick=()=>{ window.open("https://www.donationalerts.com/r/doctordeathddracula", '_blank'); };
+        donateTitle.onclick=()=>{ window.open("http://bit.ly/helpForDoctor", '_blank'); };
         donateTitle.style.cursor="pointer";
         donateTitle.style.transformOrigin="top";
         donateTitle.style.transition=0.5+"s";
