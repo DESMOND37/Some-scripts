@@ -1324,7 +1324,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
-        else if (arr[i].innerText.toLowerCase() == "sebadavinch"){
+        else if (arr[i].innerText.toLowerCase() == "sеbаdavinсh "){
             arr[i].parentNode.title="Стример";
             arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/850676778766958602/unknown.png)";
             arr[i].parentNode.style.backgroundPosition="0px -40px";
@@ -1334,6 +1334,7 @@ function VIP(){
             arr[i].parentNode.style.animationIterationCount="infinite";
             arr[i].style.color="red";
             arr[i].style.fontFamily="fantasy";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/sebadavinch", '_blank'); };
             arr[i].parentNode.style.transition="all 1s cubic-bezier(0.62, 0.66, 0.15, 1.5) 0.3s";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851021557958836224/671841e8-c785-424b-b637-32e00e3a77fb-profile_image-300x300.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
@@ -3948,7 +3949,7 @@ function offBgMenu(){
     window.onkeydown=(e)=>{
         var input = document.getElementsByClassName("jsx-856742297 ")[0];
         if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
-            var p = prompt("Ты клоун?", " ") ;
+            var p = prompt("Введите команду:", " ") ;
             if (p == "0"){
                 document.cookie="badguy=0";
                 setValue(input, "");
