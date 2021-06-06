@@ -1332,6 +1332,7 @@ function VIP(){
             arr[i].parentNode.style.border="none";
             arr[i].parentNode.style.animation="plane 5s linear";
             arr[i].parentNode.style.animationIterationCount="infinite";
+            arr[i].parentNode.style.сursor="pointer";
             arr[i].style.color="red";
             arr[i].style.fontFamily="fantasy";
             arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/sebadavinch", '_blank'); };
@@ -1442,6 +1443,14 @@ function clearActiveelements(){
     zoomC.hidden = true;
 }
 
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////DRAW FUNCS/////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1532,7 +1541,7 @@ function drawStyleChange(){
     underDrawContainer.style.backgroundImage="url()";
     var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
     toolBar.style.height="auto";
-        //Изменение местоположение тайтлов
+    //Изменение местоположение тайтлов
     document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header > h4").style.margin="20px 0px 10px";
     //Убираем лишнее с хослта
     var hos = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
@@ -1558,12 +1567,12 @@ function drawStyleChange(){
     }
     //Изменение цвета рамки
     var book1 = document.getElementsByClassName("jsx-1307288772 book")[0];
-    book1.style.backgroundColor="rgb(0 0 0)";
-    book1.style.boxShadow="rgb(0 0 0) 0px -3px 0px 0px, rgb(1 25 70) 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px";
+    //book1.style.backgroundColor="rgb(0 0 0)";
+    //book1.style.boxShadow="rgb(0 0 0) 0px -3px 0px 0px, rgb(1 25 70) 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px";
     var header1 = document.getElementsByClassName("jsx-1307288772 header")[0];
-    header1.style.backgroundColor="rgb(0 0 0)";
-    header1.style.boxShadow="rgb(0 0 0) 0px -2px 0px 0px inset";
-    header1.style.borderBottom="6px solid rgb(0 0 0)";
+    //header1.style.backgroundColor="rgb(0 0 0)";
+    //header1.style.boxShadow="rgb(0 0 0) 0px -2px 0px 0px inset";
+    //header1.style.borderBottom="6px solid rgb(0 0 0)";
     var newDiv = document.createElement("div");
     newDiv.classList.add("newdiv");
     newDiv.style.width="758px";
@@ -1574,6 +1583,39 @@ function drawStyleChange(){
     try{
         document.getElementsByClassName("jsx-3193114933")[0].insertAdjacentElement('beforeBegin', newDiv);
     }catch{}
+        //Добавление выбора цвета рамки;
+    var c=localStorage.getItem("draw-block-color");
+    if(!(!c)){c="#000000";}
+    var i=document.createElement("input");
+    i.value=c;
+    header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
+    book1.style.boxShadow=`${c} 0px -3px 0px 0px, black 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px`;
+    book1.style.backgroundColor=c;
+    header1.style.borderBottom="6px solid" + c;
+    header1.style.backgroundColor=c;
+    i.type="color";
+    i.style.left="55px";
+    i.style.top="4px";
+    i.style.width="70px";
+    i.style.height="28px";
+    i.style.position="absolute";
+    i.style.border="2px solid white";
+    i.style.borderRadius="5px";
+    i.style.cursor="pointer";
+    i.style.appearance="none";
+    i.style.background=`none ${c}`;
+    i.style.margin="5px";
+    i.oninput=()=>{
+        var c=i.value;
+        localStorage.setItem("draw-block-color", c);
+        i.style.background=`none ${c}`;
+        header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
+        book1.style.boxShadow=`${c} 0px -3px 0px 0px, black 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px`;
+        book1.style.backgroundColor=c;
+        header1.style.borderBottom="6px solid" + c;
+        header1.style.backgroundColor=c;
+    }
+    header1.appendChild(i);
 }
 
 var curElementOverCursor;
@@ -2814,7 +2856,7 @@ function styleUpdate(){try{
     var p2 = decToHex(Number(opacity2.value));
     if (p2.length == 1){p2="0"+p2;}
 
-    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[1].style.backgroundColor=colorInput4.value+p2;
+    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[0].style.backgroundColor=colorInput4.value+p2;
     document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[1].style.borderRadius="10px";
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2860,13 +2902,42 @@ function styleUpdate(){try{
 }
 
 function mainMenuTitle(){
-    if (document.getElementsByClassName("title") != []){
+    if (!document.getElementsByClassName("top-menu").length){
+        var topMenu = document.createElement("div");
+        topMenu.classList.add("top-menu");
+        topMenu.style.width="auto";
+        topMenu.style.height="fit-content";
+        topMenu.style.display="inline-flex";
+        topMenu.style.transformOrigin="top";
+        topMenu.style.transform=document.getElementsByClassName("screen")[0].style.transform;
+        window.addEventListener("resize", ()=>{
+            topMenu.style.transform=document.getElementsByClassName("screen")[0].style.transform;
+        })
+        document.querySelector("#content").appendChild(topMenu);
+        document.querySelector("#content").style.justifyContent="center";
+
+        var settingTitle = document.createElement("div");
+        settingTitle.classList.add("title");
+        settingTitle.innerText=`Settings`;
+        settingTitle.style.backgroundColor="rgba(0,0,0, 0.5)";
+        settingTitle.style.borderRadius="0px 0px 5px 5px";
+        settingTitle.style.color="white";
+        settingTitle.style.right="0px";
+        settingTitle.style.fontSize="100%";
+        settingTitle.style.height="15px";
+        settingTitle.style.width="auto";
+        settingTitle.style.fontFamily="Black";
+        settingTitle.style.padding="5px 10px 3px";
+        settingTitle.onclick=()=>{alert("Секция в разработке");};
+        settingTitle.style.cursor="pointer";
+
+        topMenu.appendChild(settingTitle);
+
         var title = document.createElement("div");
         title.classList.add("title");
         title.innerText=`GarticMode By Doctor Death D. Drac v${VERSION}`;
         title.style.backgroundColor="rgba(0,0,0, 0.5)";
         title.style.borderRadius="0px 0px 5px 5px";
-        //title.style.animation="10s linear 0s infinite normal none running rainbow";
         title.style.color="white";
         title.style.right="0px";
         title.style.fontSize="100%";
@@ -2874,29 +2945,31 @@ function mainMenuTitle(){
         title.style.width="auto";
         title.style.fontFamily="Black";
         title.style.padding="5px 10px 3px";
-        title.style.transition="0.5s";
-        title.onmouseenter=()=>{
-            title.style.height="60px";
-        };
-        title.onmouseleave=()=>{
-            title.style.height="15px";
-        };
-        //title.style.border="2px solid red";
+        title.style.margin="0px 7px";
         title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
         title.style.cursor="pointer";
-        //title.style.borderBlockStart="none";
-        //title.style.borderRight="hidden";
-        title.style.transformOrigin="top";
-        title.style.transform=document.getElementsByClassName("screen")[0].style.transform; // + " translateY(9px)";
 
-        if (!document.getElementsByClassName("title")[0]){
-            document.querySelector("#content").appendChild(title);
-            window.addEventListener("resize", ()=>{
-                title.style.transform=document.getElementsByClassName("screen")[0].style.transform;
-            })
-        }
-        document.querySelector("#content").style.justifyContent="center";
+        topMenu.appendChild(title);
 
+        var donateTitle = document.createElement("div");
+        donateTitle.classList.add("title");
+        donateTitle.innerText=`Donate`;
+        donateTitle.title="Поддержите мой проект";
+        donateTitle.style.backgroundColor="skyblue";
+        donateTitle.style.borderRadius="0px 0px 5px 5px";
+        donateTitle.style.color="white";
+        donateTitle.style.right="0px";
+        donateTitle.style.fontSize="100%";
+        donateTitle.style.height="15px";
+        donateTitle.style.width="auto";
+        donateTitle.style.fontFamily="Black";
+        donateTitle.style.padding="5px 10px 3px";
+        donateTitle.onclick=()=>{ window.open("https://www.donationalerts.com/r/doctordeathddracula", '_blank'); };
+        donateTitle.style.cursor="pointer";
+        donateTitle.style.transformOrigin="top";
+        donateTitle.style.transition=0.5+"s";
+
+        topMenu.appendChild(donateTitle);
     }
 }
 
@@ -3949,7 +4022,7 @@ function offBgMenu(){
     window.onkeydown=(e)=>{
         var input = document.getElementsByClassName("jsx-856742297 ")[0];
         if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
-            var p = prompt("Введите команду:", " ") ;
+            var p = prompt("Введите команду:", "") ;
             if (p == "0"){
                 document.cookie="badguy=0";
                 setValue(input, "");
