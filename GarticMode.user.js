@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.0.8";
+var VERSION = "2.2.0.9";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Добавлена возможность копирования холста (хотя она и раньше была x) )`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Исправлены ошибки 10+`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -653,7 +653,7 @@ function glass(point){
     if (AN<0){alpha = 180 + (alpha-90)}
     //Угол BAN
     var BAN = (alpha - beta) + alpha;
-    //Гипотенузв AC = AB
+    //Гипотенузы AC = AB
     var AC = Math.sqrt(AN ** 2 + CN ** 2);
     //Катет BM
     var BM = Math.sin(Math.PI/180 * BAN) * AC;
@@ -1236,9 +1236,11 @@ function VIP(){
         }
         else if (arr[i].innerText.toLowerCase() == "бpaйc"){
             arr[i].parentNode.title="Художник";
-            arr[i].innerText="";
-            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846076813830520902/unknown.png)";
-            arr[i].parentNode.style.backgroundSize="150%";
+            arr[i].style.opacity=1;
+            arr[i].style.animation="rainbow 5s linear";
+            arr[i].style.animationIterationCount="infinite";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851498681952632933/unknown.png)";
+            arr[i].parentNode.style.backgroundSize="110%";
             arr[i].parentNode.style.backgroundPosition="-10px";
             arr[i].parentNode.style.transition="all 0s linear 0s";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
@@ -1681,7 +1683,7 @@ function firstLevelFunctions(){
             clearActiveelements();
             setTimeout(()=>{
                 if (document.getElementsByClassName("jsx-1553483530 pencil")[0] == undefined){
-                    //mainDrawFunc();
+                    mainDrawFunc();
                 }
             }, 300);
         })
@@ -2531,9 +2533,8 @@ function mainDrawFunc(){
     document.onkeydown = drawKeys;
 
     //Вилинговое увеличение экрана
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0]// <- самый верхний холст
+    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];// <- самый верхний холст
     pointerCanvas.onwheel=onDrawWheel;
-
     //Изменение настроек прозрачности
     nessEdit();
 
@@ -2636,9 +2637,11 @@ function moveCanvases(){
         nWindow.appendChild(whiteZone);
         nWindow.appendChild(drawContainer);
     } else {
+        drawContainer.style.left="";
         for (let i=0; i<contCanvases.length; i++){
             contCanvases[i].style.width=`758px`;
             contCanvases[i].style.height=`424px`;
+            contCanvases[i].style.zIndex="";
         }
         document.getElementsByClassName("class100")[0].parentNode.removeChild(document.getElementsByClassName("class100")[0]);
         nWindow.removeChild(drawContainer);
