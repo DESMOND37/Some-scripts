@@ -348,6 +348,16 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange0201);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+var styleInputRange0202 = document.createElement('style');
+styleInputRange0202.type = 'text/css';
+var rules0202 = document.createTextNode(".reded:hover {background-color: rgba(255, 100, 100, 0.7);}");
+styleInputRange0202.appendChild(rules0202);
+document.getElementsByTagName("head")[0].appendChild(styleInputRange0202);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 function createCanvas(height=800, width=800){
     var canvas = document.createElement("canvas");
     canvas.width = width;
@@ -1398,17 +1408,6 @@ var Key = false
 var minusActive = false;
 var pipetKey = false;
 
-function mainMenuEdits(){
-    document.onkeydown = function(evt) {
-        evt = evt || window.event;
-        var isEscape = false;
-        if ("key" in evt) {
-            if (evt.key === "Enter" || evt.key === "Ent" || evt.keyCode === 13) {
-                document.getElementsByClassName("jsx-4289504161 big")[0].click();
-            }
-        }
-    }
-}
 
 function addMultEventsListener(events, func, element){
     for (let i=0; i<events.length; i++){
@@ -1586,7 +1585,7 @@ function drawStyleChange(){
     }catch{}
         //Добавление выбора цвета рамки;
     var c=localStorage.getItem("draw-block-color");
-    if(!(!c)){c="#000000";}
+    if(!c){c="#000000";}
     var i=document.createElement("input");
     i.value=c;
     header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
@@ -2936,6 +2935,7 @@ function mainMenuTitle(){
 
         var title = document.createElement("div");
         title.classList.add("title");
+        title.title="Инструкция";
         title.innerText=`GarticMode By Doctor Death D. Drac v${VERSION}`;
         title.style.backgroundColor="rgba(0,0,0, 0.5)";
         title.style.borderRadius="0px 0px 5px 5px";
@@ -2969,6 +2969,9 @@ function mainMenuTitle(){
         donateTitle.style.cursor="pointer";
         donateTitle.style.transformOrigin="top";
         donateTitle.style.transition=0.5+"s";
+        donateTitle.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851193266706710538/dfd_1.gif?width=1202&height=676)";
+        donateTitle.style.backgroundSize="150%";
+        donateTitle.style.backgroundPositionY="-5px";
 
         topMenu.appendChild(donateTitle);
     }
@@ -3030,6 +3033,12 @@ function clearMidCanvas(){
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, middleCanvas.width, middleCanvas.height);
     context.restore();
+}
+
+function lobbyEdit(){
+    var s = document.getElementsByClassName("jsx-2855609897 game")[0];
+    s.classList.add("reded");
+    document.getElementsByClassName("jsx-2855609897")[4].innerText += "\nДоктор не рекомендует"
 }
 
 function createSizePull(){
@@ -3955,6 +3964,38 @@ var writeKey = false;
 var memoryKey = false;
 var waitingKey = false;
 
+    window.onkeydown=(e)=>{
+        console.log(e);
+        if (e.key === "Enter" || e.key === "Ent" || e.keyCode === 13) {
+            document.getElementsByClassName("jsx-4289504161 big")[0].click();
+        }
+        var input = document.getElementsByClassName("jsx-856742297 ")[0];
+        if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
+            var p = prompt("Введите команду:", "100") ;
+            if (p == "0"){
+                document.cookie="badguy=0";
+                setValue(input, "");
+                alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
+            } else if (p == "1"){
+                document.cookie="badguy=1;";
+                setValue(input, "vinegative");
+                alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
+            } else if (p == "123"){
+                setValue(input, "DoctorDeathDDracula ");
+            } else if (p == "100"){
+                var r = localStorage.getItem("room");
+                if (!r){alert("Ошибка"); return;}
+                localStorage.setItem("uuid", "" + Math.random());
+                document.location.replace(r);
+            } else {alert("Такой команды не существует");}
+        }
+        if ((e.key=="=" || e.code=="Equal" || e.keyCode=="187") && e.altKey){
+            localStorage.setItem("uuid", "" + Math.random());
+            window.open(localStorage.getItem("room"), '_blank');
+        }
+    }
+
+
 function flagsOff(){
 
     if (drawKey && document.getElementsByClassName("jsx-1553483530 pencil")[0]){
@@ -4002,13 +4043,13 @@ function memoryFunc(){
 }
 
 function offBgMenu(){
-    var panel = document.getElementsByClassName("rightpanel");
-    if (panel.length != 0){
-        panel[0].parentNode.removeChild(panel[0]);
+        var panel = document.getElementsByClassName("rightpanel");
+        if (panel.length != 0){
+            panel[0].parentNode.removeChild(panel[0]);
+        }
     }
-}
 
-    function clown(){
+function clown(){
         if (getCookieDict().badguy=="1"){
             var input = document.getElementsByClassName("jsx-856742297 ")[0];
             setValue(input, "vinegative");
@@ -4020,23 +4061,6 @@ function offBgMenu(){
         }
     }
 
-    window.onkeydown=(e)=>{
-        var input = document.getElementsByClassName("jsx-856742297 ")[0];
-        if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
-            var p = prompt("Введите команду:", "") ;
-            if (p == "0"){
-                document.cookie="badguy=0";
-                setValue(input, "");
-                alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
-            } else if (p == "1"){
-                document.cookie="badguy=1;";
-                setValue(input, "vinegative");
-                alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
-            } else if (p == "123"){
-                setValue(input, "DoctorDeathDDracula ");
-            } else {alert("Такой команды не существует");}
-        }
-    }
 
 
 function main(){
@@ -4047,12 +4071,10 @@ function main(){
         //    deletBanner();
             creatColorPull();
         }
-
         setTimeout(clown, 100);
         styleUpdate();
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
-        setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 10);
         setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
@@ -4060,6 +4082,7 @@ function main(){
         menuKey=true;
     }
     else if (document.URL.indexOf("?c=") != -1 && !menuLinkKey){
+        localStorage.setItem("room", document.URL);
         //Блок главного меню при входе по ссылке
         //alert("menuLinkKey");
         //window.onload=()=>{
@@ -4070,7 +4093,6 @@ function main(){
         setTimeout(clown, 100);
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
-        setTimeout(mainMenuEdits, 500);
         setTimeout(creatColorPull, 500);
         setTimeout(styleUpdate, 10);
         setTimeout(mainMenuTitle, 10);
@@ -4106,6 +4128,7 @@ function main(){
         drawKey=true;
     }
     else if (document.URL.indexOf("lobby") != -1 && !lobbyKey){
+        setTimeout(lobbyEdit, 300);
         //Блок лобби с игроками
         //alert("lobbyKey");
         //window.onload=()=>{styleUpdate();}
