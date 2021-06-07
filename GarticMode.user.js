@@ -1,8 +1,20 @@
+// ==UserScript==
+// @name         MAIN GARTIC VERSION
+// @namespace    http://tampermonkey.net/
+// @version      0.0
+// @description  try to take over the world!
+// @author       You
+// @match        https://garticphone.com/*
+// @grant        none
+// ==/UserScript==
 
-var VERSION = "2.2.0.9";
+document.isTrusted=true;
+
+
+var VERSION = "2.2.0";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Исправлены ошибки 10+`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Добавлена возможность копирования холста (хотя она и раньше была x) )`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -1237,6 +1249,10 @@ function VIP(){
         else if (arr[i].innerText.toLowerCase() == "бpaйc"){
             arr[i].parentNode.title="Художник";
             arr[i].style.opacity=1;
+            arr[i].style.webkitTextStrokeWidth="1px";
+            arr[i].style.webkitTextStrokeColor="#000";
+            arr[i].style.letterSpacing="3px";
+            arr[i].style.fontSize="20px";
             arr[i].style.animation="rainbow 5s linear";
             arr[i].style.animationIterationCount="infinite";
             arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851498681952632933/unknown.png)";
@@ -1361,7 +1377,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
         else if (arr[i].innerText.indexOf("#") != -1){
-            console.log(arr[i].innerText);
+            arr[i].title="Игрок";
             var text1 = arr[i].innerText
             var index = text1.lastIndexOf("#");
             arr[i].parentNode.style.backgroundColor=text1.substring(index, text1.length);
@@ -1983,7 +1999,8 @@ function addLoopaButton(){
 var mapArray = [];
 var startPoint, endPoint;
 var onWorkingKey = false;
-var sLevel = 1;
+var sLevel = localStorage.getItem("sLevel");
+if (!sLevel){sLevel=1;}
 var firstTimeAddWindowSmooth = true;
 function addSmoothingTool(){
         if (!document.getElementsByClassName("jsx-3659451671 tool smooth").length){
@@ -2035,7 +2052,7 @@ function addSmoothingTool(){
             degRange1.min = 1;
             degRange1.max = 10;
             degRange1.step = 1;
-            degRange1.value="0";
+            degRange1.value=String(sLevel);
             degRange1.style.margin="23px 5px";
             degRange1.style.width="190px";
             degRange1.style.height="4px";
@@ -2043,10 +2060,11 @@ function addSmoothingTool(){
             degRange1.oninput=()=>{
                 sCounter.innerText = degRange1.value
                 sLevel = Number(degRange1.value);
+                localStorage.setItem("sLevel", sLevel);
             };
 
             var sCounter = document.createElement("div");
-            sCounter.innerText = "1";
+            sCounter.innerText = String(sLevel);
             sCounter.style.fontFamily="Black";
             sCounter.style.color="rgb(67, 222, 153)";
             sCounter.style.width="30px";
@@ -2551,8 +2569,9 @@ function mainDrawFunc(){
     addMirrorBase();
     //Блок функционала исправленной заливки
     fixedBucket()
-
-
+    //Активация сглаживания
+    document.getElementsByClassName("jsx-3659451671 tool smooth")[0].click();
+    document.getElementsByClassName("jsx-3659451671 deg-range-border")[0].style.display="none";
     debugName();
 }
 
