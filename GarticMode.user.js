@@ -195,7 +195,7 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange22);
 
 var cssAnimation1 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules0 = document.createTextNode("@keyframes pulsing {100%, 0% { background-color: rgba(255,255,255, 0.8); } 50% { background-color: rgba(255,255,155, 0.1); }}")
+var rules0 = document.createTextNode("@keyframes pulsing {100%, 0% { background-color: rgba(255,255,255, 0.8); } 50% { background-color: rgba(255,255,155, 0.1); }}");
 cssAnimation.appendChild(rules0);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation1);
 
@@ -263,7 +263,7 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange23);
 
 var cssAnimation2 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules00 = document.createTextNode("@keyframes here {100%, 0% { background-color: rgba(255, 255, 255, 0.13); } 50% { background-color: rgba(255, 255, 255, 1); }}")
+var rules00 = document.createTextNode("@keyframes here {100%, 0% { background-color: rgba(255, 255, 255, 0.13); } 50% { background-color: rgba(255, 255, 255, 1); }}");
 cssAnimation.appendChild(rules00);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation2);
 
@@ -326,7 +326,7 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange29);
 
 var cssAnimation21 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules001 = document.createTextNode("@keyframes viper {100%, 0% { color: #8a2be2; } 9% { color: #945cca; } 18% {color: #9781b1;} 27% {color: #92a297;} 36% {color: #83c17a;} 45% {color: #67e056;} 54% {color: #0eff0e;} 63% {color: #67e056;} 72% {color: #83c17a;} 81% {color: #92a297;} 90% {color: #9781b1;}}")
+var rules001 = document.createTextNode("@keyframes viper {100%, 0% { color: #8a2be2; } 9% { color: #945cca; } 18% {color: #9781b1;} 27% {color: #92a297;} 36% {color: #83c17a;} 45% {color: #67e056;} 54% {color: #0eff0e;} 63% {color: #67e056;} 72% {color: #83c17a;} 81% {color: #92a297;} 90% {color: #9781b1;}}");
 cssAnimation.appendChild(rules001);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
 
@@ -334,7 +334,7 @@ document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
 
 var cssAnimation22 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: 0px -40px;} 50% {background-position: 0px -60px;}}")
+var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: 0px -40px;} 50% {background-position: 0px -60px;}}");
 cssAnimation.appendChild(rules002);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation22);
 
@@ -367,7 +367,7 @@ function createCanvas(height=800, width=800){
     canvas.style.position = "absolute";
     canvas.style.borderRadius = "200px";
     canvas.style.border = "2px solid";
-    canvas.style.zIndex=99999
+    canvas.style.zIndex=99999;
     canvas.style.boxShadow = "0px 5px 5px 0px rgb(0 0 0 / 50)";
     var ctx = canvas.getContext("2d");
     ctx.fillStyle = "white";
@@ -384,7 +384,7 @@ var height;
 
 function clientMouseMove(x, y){
     var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var event = new Event('mousemove', { bubbles: true, cancelable: true})
+    var event = new Event('mousemove', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
     pointerCanvas.dispatchEvent(event);
@@ -392,7 +392,7 @@ function clientMouseMove(x, y){
 
 function clientMouseDown(x, y){
     var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var event = new Event('mousedown', { bubbles: true, cancelable: true})
+    var event = new Event('mousedown', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
     pointerCanvas.dispatchEvent(event);
@@ -400,7 +400,7 @@ function clientMouseDown(x, y){
 
 function clientMouseUp(x, y){
     var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var event = new Event('mouseup', { bubbles: true, cancelable: true})
+    var event = new Event('mouseup', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
     pointerCanvas.dispatchEvent(event);
@@ -412,7 +412,7 @@ function mouseDown(x, y){
     var top = pos.y;
     var width = pos.width;
     var height = pos.height;
-    var event = new Event('mousedown', { bubbles: true, cancelable: true} )
+    var event = new Event('mousedown', { bubbles: true, cancelable: true} );
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
     canvas300.dispatchEvent(event);
@@ -425,14 +425,14 @@ function mouseMove(x, y){
     var top = pos.y;
     var width = pos.width;
     var height = pos.height;
-    let event = new Event('mousemove', { bubbles: true, cancelable: true})
+    let event = new Event('mousemove', { bubbles: true, cancelable: true});
     event.clientX=left+(x*width/1516);
     event.clientY=top+(y*height/848);
     canvas300.dispatchEvent(event);
 }
 
 function mouseUp(){
-    var event = new Event('mouseup', { bubbles: true, cancelable: true} )
+    var event = new Event('mouseup', { bubbles: true, cancelable: true} );
     canvas300.dispatchEvent(event);
 }
 
@@ -446,7 +446,7 @@ function drawSolidLine(arr){
         width = pos.width;
         height = pos.height;
         mouseDown(arr[0][0], arr[0][1]);
-        arr.forEach(function (point){mouseMove(point[0], point[1]);})
+        arr.forEach(function (point){mouseMove(point[0], point[1]);});
         mouseUp();
     }
 }
@@ -517,7 +517,7 @@ function sortBorderArray(arr){
     arr.splice(0, 1);
     var index;
     var minS;
-    var realLengthOfArray = arr.length
+    var realLengthOfArray = arr.length;
     for (let i=0; i< realLengthOfArray; i++){
         var c = newArr[newArr.length-1]; // последняя точка
         var lastIndex;
@@ -562,7 +562,7 @@ function drawNsort(arr){
     var index;
     var minS;
     var key = false;
-    var realLengthOfArray = arr.length
+    var realLengthOfArray = arr.length;
     for (let i=0; i<realLengthOfArray; i++){
         var lastIndex;
         minS = 10000;
@@ -601,12 +601,12 @@ function drawArray(arr){
     var width = pos.width;
     var height = pos.height;
     for (let i=0; i<arr.length; i++){
-        let event = new Event('mousedown', { bubbles: true, cancelable: true} )
+        let event = new Event('mousedown', { bubbles: true, cancelable: true} );
         event.clientX=left+(arr[i][0]*width/1516);
         event.clientY=top+(arr[i][1]*height/848);
 
         canvas.dispatchEvent(event);
-        event = new Event('mouseup', { bubbles: true, cancelable: true} )
+        event = new Event('mouseup', { bubbles: true, cancelable: true} );
         canvas.dispatchEvent(event);
     }
 }
@@ -692,14 +692,14 @@ function getPix(x, y, canvas){
 
 function draw(x1, y1){
     canvas = document.getElementsByClassName("jsx-150592943")[0];
-    var pos = canvas.getBoundingClientRect()
+    var pos = canvas.getBoundingClientRect();
     let x = pos.x;
     let y = pos.y;
-    let event = new Event('mousedown', { bubbles: true, cancelable: true} )
+    let event = new Event('mousedown', { bubbles: true, cancelable: true} );
     event.clientY=y+y1;
     event.clientX=x+x1;
     canvas.dispatchEvent(event);
-    event = new Event('mouseup', { bubbles: true, cancelable: true} )
+    event = new Event('mouseup', { bubbles: true, cancelable: true} );
     canvas.dispatchEvent(event);
 }
 
@@ -741,7 +741,7 @@ function globalDraw(){
             }
         }
         alert("END");
-    }
+    };
 
     img.onerror=function(){
         alert('Error to load image');
@@ -821,7 +821,7 @@ function kok() {
             items[i].style.backgroundColor="rgba(0,0,0,0)";
         }*/
 
-        items[i].oncontextmenu=()=>{}
+        items[i].oncontextmenu=()=>{};
 
         if (items[i].was == undefined){
             items[i].onclick=(e)=>{
@@ -1031,36 +1031,6 @@ function VIP(){
                 music0.autoplay=true;
                 music0.volume=0.3;
                 doctorwas = true;
-
-                var plast = document.createElement("div");
-                plast.style.backgroundColor = "rgb(214 70 70 / 80%)";
-                plast.width=500;
-                plast.height = 1000;
-                plast.style.width = "700px";
-                plast.style.height = "200px";
-                plast.style.margin = "60px auto";
-                plast.style.zIndex="2";
-                plast.style.borderRadius="20px";
-                plast.style.transition="1s";
-                plast.style.transform="scale(0)";
-                plast.style.position="absolute";
-
-                var text = document.createElement("p");
-                text.innerText = "Doctor в игре!";
-                text.style.color="#6f0000;"
-                text.style.fontSize="65px"
-                text.style.fontFamily="'Black'"
-                text.style.margin="60px 120px";
-                text.style.textShadow="4px 5px 4px #f90000";
-                plast.style.border="5px solid red";
-                plast.appendChild(text);
-
-                document.querySelector("#__next").style.justifyContent="center";
-                document.querySelector("#__next").appendChild(plast);
-                setTimeout(()=>{plast.style.transform="scale(1)";}, 100);
-                setTimeout(()=>{plast.style.transform="scale(0)"}, 3000);
-                setTimeout(()=>{document.querySelector("#__next").removeChild(plast);}, 4000);
-
             }
             doctorwas = true;
         }
@@ -1310,7 +1280,7 @@ function VIP(){
                 document.querySelector("body > audio").currentTime="2";
                 document.querySelector("body > audio").play();
 
-            }
+            };
 
             //arr[i].style.fontFamily="cursive";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
@@ -1434,7 +1404,7 @@ function clearActiveelements(){
     var degRangeBorder = document.getElementsByClassName("deg-range-border")[0];
     smoothButton.classList.remove("act1");
     degRangeBorder.style.display="none";
-    sLevel = 1;
+    //sLevel = 1;
     if (prevElem){
         prevElem.classList.add("sel");
         var pipetButton = document.getElementsByClassName("jsx-3659451671 tool pipet")[0];
@@ -1984,13 +1954,14 @@ function addLoopaButton(){
 
 
 //Функционал иструмент сглаживания
-var mapArray = [];
 var startPoint, endPoint;
 var onWorkingKey = false;
 var sLevel = localStorage.getItem("sLevel");
 if (!sLevel){sLevel=1;}
 var firstTimeAddWindowSmooth = true;
+var mapArray = [];
 function addSmoothingTool(){
+    mapArray = [];
         if (!document.getElementsByClassName("jsx-3659451671 tool smooth").length){
             var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
 
@@ -2072,24 +2043,13 @@ function addSmoothingTool(){
             smoothButton.classList.add("jsx-3659451671");
             smoothButton.classList.add("tool");
             smoothButton.classList.add("smooth");
+            smoothButton.style.backgroundColor="#ff000030";
             smoothButton.style.margin="0px";
 
-            smoothButton.onclick=()=>{
-                if (!smoothButton.classList.contains("act1") && !document.getElementsByClassName("jsx-1553483530 pencil").length){
-                    smoothButton.classList.add("act1");
-                    degRangeBorder.style.display="";
-                    sLevel = Number(degRange1.value);
-                } else {
-                    smoothButton.classList.remove("act1");
-                    degRangeBorder.style.display="none";
-                    sLevel = 1;
-                }
-            };
+            sLevel = Number(degRange1.value);
 
             smoothButton.onmouseenter=()=>{
-                if (smoothButton.classList.contains("act1")){
-                    degRangeBorder.style.display="";
-                }
+                 degRangeBorder.style.display="";
             }
 
             smoothButton.onmouseleave=()=>{
@@ -2099,7 +2059,6 @@ function addSmoothingTool(){
                     degRange1,
                     degRangeBorder,
                 ].indexOf(curElementOverCursor) != -1){
-                    console.log("over")
                 } else {
                     degRangeBorder.style.display="none";
                 }
@@ -2111,7 +2070,6 @@ function addSmoothingTool(){
             if (firstTimeAddWindowSmooth){
             window.addEventListener('pointerup', (e)=>{
                 if (onWorkingKey){
-                    console.log(sLevel);
                     onWorkingKey=false;
                     endPoint = [e.clientX, e.clientY];
                     clientMouseDown(startPoint[0], startPoint[1]);
@@ -2148,7 +2106,6 @@ function addSmoothingTool(){
 
         pointerCanvas.addEventListener('pointerup', (e)=>{
             if (onWorkingKey){
-                console.log(sLevel);
                 onWorkingKey=false;
                 endPoint = [e.clientX, e.clientY];
                 clientMouseDown(startPoint[0], startPoint[1]);
@@ -2513,7 +2470,6 @@ var loopaKey = false;
 
 
 function mainDrawFunc(){
-    console.log("draw func");
     //Добавление зума
     addZoom(); //Вызывается через unhide элемента класса zoomC
 
@@ -2558,8 +2514,6 @@ function mainDrawFunc(){
     //Блок функционала исправленной заливки
     fixedBucket()
     //Активация сглаживания
-    document.getElementsByClassName("jsx-3659451671 tool smooth")[0].click();
-    document.getElementsByClassName("jsx-3659451671 deg-range-border")[0].style.display="none";
     debugName();
 }
 
@@ -2617,6 +2571,11 @@ function getCookieDict(){
         dict[newArr[0].replace(' ','')]=newArr[1];
     }
     return dict
+}
+
+function debagDrawinfContainerOnExit(){
+    document.getElementsByClassName("jsx-1562482592 drawingContainer")[0].parentNode.removeChild(document.getElementsByClassName("jsx-1562482592 drawingContainer")[0]);
+    document.getElementsByClassName("class100")[0].parentNode.removeChild(document.getElementsByClassName("class100")[0]);
 }
 
 function moveCanvases(){
@@ -2940,6 +2899,7 @@ function mainMenuTitle(){
         settingTitle.style.padding="5px 10px 3px";
         settingTitle.onclick=()=>{alert("Секция в разработке");};
         settingTitle.style.cursor="pointer";
+        settingTitle.style.opacity=0.3;
 
         topMenu.appendChild(settingTitle);
 
@@ -4151,6 +4111,7 @@ function main(){
         lobbyKey=true;
     }
     else if (document.URL.indexOf("book") != -1 && !bookKey){
+        debagDrawinfContainerOnExit();
         //Блок просмотра результатов
         //alert("bookKey");
         //window.onload=()=>{styleUpdate();}
@@ -4181,6 +4142,7 @@ function main(){
         startKey=true;
     }
     else if (document.URL.indexOf("write") != -1 && !writeKey){
+        debagDrawinfContainerOnExit();
         //Блок названия картинки
         //window.onload=()=>{
         //    extendTextInput();
@@ -4202,6 +4164,7 @@ function main(){
     }
     else if (document.URL.indexOf("memory") != -1 && !memoryKey){
         //Блок перерисовки картинки
+        debagDrawinfContainerOnExit();
         //alert("memoryKey");
         //window.onload=()=>{styleUpdate();}
         offBgMenu();
