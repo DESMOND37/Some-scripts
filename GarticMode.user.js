@@ -2574,8 +2574,10 @@ function getCookieDict(){
 }
 
 function debagDrawinfContainerOnExit(){
+    try{
     document.getElementsByClassName("jsx-1562482592 drawingContainer")[0].parentNode.removeChild(document.getElementsByClassName("jsx-1562482592 drawingContainer")[0]);
     document.getElementsByClassName("class100")[0].parentNode.removeChild(document.getElementsByClassName("class100")[0]);
+    } catch{};
 }
 
 function moveCanvases(){
