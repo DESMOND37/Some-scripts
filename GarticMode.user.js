@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.0.9";
+var VERSION = "2.2.1.0
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Кто-то это читает?`);
+    alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Появился новый инструмент, только аккуратней!`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -553,7 +553,6 @@ function sortBorderArray(arr){
 
 
 function drawNsort(arr){
-    console.log(arr);
     canvas300 = document.getElementsByClassName("jsx-3193114933 ")[0];
     pos = canvas300.getBoundingClientRect();
     var lastPoint=arr[0];
@@ -564,32 +563,36 @@ function drawNsort(arr){
     var key = false;
     var realLengthOfArray = arr.length;
     for (let i=0; i<realLengthOfArray; i++){
-        var lastIndex;
-        minS = 10000;
-        for (let k=0; k<arr.length; k++){
-            let x0 = lastPoint[0];
-            let y0 = lastPoint[1];
-            let x1 = arr[k][0];
-            let y1 = arr[k][1];
-            let curS = ((x0-x1)**2+(y0-y1)**2)**0.5;
-            if (curS < minS){
-                minS = curS;
-                lastIndex = k;
+           var lastIndex;
+           minS = 1E38;
+            for (let k=0; k<arr.length; k++){
+                let x0 = lastPoint[0];
+                let y0 = lastPoint[1];
+                let x1 = arr[k][0];
+                let y1 = arr[k][1];
+                let curS = ((x0-x1)**2+(y0-y1)**2)**0.5;
+                if (curS < minS){
+                    minS = curS;
+                    lastIndex = k;
+                }
             }
-        }
-        lastPoint = arr[lastIndex];
-        arr.splice(lastIndex, 1);
+           lastPoint = arr[lastIndex];
+           arr.splice(lastIndex, 1);
 
-        if (key){
-            mouseDown(lastPoint[0], lastPoint[1]);
-        }
+            if (key){
+                mouseDown(lastPoint[0], lastPoint[1]);
+            }
 
-        if (minS>2){
+            if (minS>2){
+                mouseUp();
+                key = true;
+            } else {mouseMove(lastPoint[0], lastPoint[1]); key=false;}
+        if (i==realLengthOfArray-1){
             mouseUp();
-            key = true;
-        } else {mouseMove(lastPoint[0], lastPoint[1]); key=false;}
+            curThicc.click();
+            document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
+        }
     }
-    mouseUp();
 }
 
 
@@ -951,6 +954,9 @@ function asyncSlowSpace(){
     }
 }
 
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
 
 function f1() {
     if (MyVar1== 255){Checker1=1};
@@ -1417,6 +1423,7 @@ function clearActiveelements(){
     loopaButton.classList.remove("sel");
     zoomCHidden = true;
     zoomC.hidden = true;
+    document.getElementsByClassName("color-gradient")[0].style.display="none";
 }
 
 function getRandomColor() {
@@ -1919,7 +1926,6 @@ function addTools(){
 ///////////////////////////////////tools////////////////////////////////////////
 
 //Функционал луппы
-
 function addLoopaButton(){
     var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
     var zoomC = document.getElementsByClassName("zoomC")[0];
@@ -1951,7 +1957,6 @@ function addLoopaButton(){
         toolBar.appendChild(loopaButton);
     }
 }
-
 
 //Функционал иструмент сглаживания
 var startPoint, endPoint;
@@ -2049,7 +2054,8 @@ function addSmoothingTool(){
             sLevel = Number(degRange1.value);
 
             smoothButton.onmouseenter=()=>{
-                 degRangeBorder.style.display="";
+                degRangeBorder.style.display="";
+                document.getElementsByClassName("color-gradient")[0].style.display="none";
             }
 
             smoothButton.onmouseleave=()=>{
@@ -2220,22 +2226,205 @@ function addPipetButton(){
 }
 
 //Кноака рандомного цвета
+var colorInput1;
+var colorInput2;
+var defaultButton;
 function randomColorButton(){
     var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
     if (!document.getElementsByClassName("rand").length){
-        var randomButton = document.createElement("div");
-        randomButton.classList.add("jsx-3659451671");
-        randomButton.classList.add("tool");
-        randomButton.classList.add("rand");
-        randomButton.style.margin="7px 0px 0px 0px";
-        toolBar.appendChild(randomButton);
-        randomButton.onclick = function(){
-            setColor(rgb2hex(getRandomInt(256), getRandomInt(256), getRandomInt(256)));
+        var gradientButton = document.createElement("div");
+        gradientButton.classList.add("jsx-3659451671");
+        gradientButton.classList.add("tool");
+        gradientButton.classList.add("rand");
+        gradientButton.style.margin="7px 0px 0px 0px";
+        toolBar.appendChild(gradientButton);
+
+        var smoothBorder = document.createElement("div");
+        smoothBorder.width = 300;
+        smoothBorder.height = 100;
+        smoothBorder.style.position = "relative";
+        smoothBorder.style.top = "200px;";
+        smoothBorder.style.display = "flex";
+        smoothBorder.style.width = "auto";
+        smoothBorder.style.height = "auto";
+        smoothBorder.style.right="0px"; //->210px
+        toolBar.appendChild(smoothBorder);
+
+        var degRangeBorder = document.createElement("div");
+        degRangeBorder.classList.add("jsx-3659451671");
+        degRangeBorder.classList.add("color-gradient");
+        degRangeBorder.style.width="200px";
+        degRangeBorder.style.height="auto";
+        degRangeBorder.style.border="2px solid black";
+        degRangeBorder.style.borderRadius="5px";
+        degRangeBorder.style.margin="0px 5px 0px 0px";
+        degRangeBorder.style.backgroundColor = "rgba(94, 25, 51, 0.5)";
+        degRangeBorder.style.zIndex = "10";
+        degRangeBorder.style.position = "absolute";
+        degRangeBorder.style.right="58px";
+        degRangeBorder.style.display="none";
+        degRangeBorder.style.top="7px";
+
+        colorInput1 = document.createElement('input');
+        colorInput1.classList.add("color-input1");
+        colorInput1.type="color";
+        colorInput1.value="#000000";
+        colorInput1.style.border="2px solid rgba(255, 255, 255, 0.8)";
+        colorInput1.style.borderRadius="5px";
+        colorInput1.style.width="82px";
+        colorInput1.style.height="32px";
+        colorInput1.style.cursor="pointer";
+        colorInput1.style.appearance="none";
+        colorInput1.style.background="none";
+        colorInput1.style.margin="5px";
+        colorInput1.style.backgroundColor="#000000";
+        colorInput1.oninput=()=>{colorInput1.style.backgroundColor=colorInput1.value;};
+        degRangeBorder.appendChild(colorInput1);
+
+        colorInput2 = document.createElement('input');
+        colorInput2.classList.add("color-input1");
+        colorInput2.type="color";
+        colorInput2.value="#FFFFFF";
+        colorInput2.style.border="2px solid rgba(255, 255, 255, 0.8)";
+        colorInput2.style.borderRadius="5px";
+        colorInput2.style.width="82px";
+        colorInput2.style.height="32px";
+        colorInput2.style.cursor="pointer";
+        colorInput2.style.appearance="none";
+        colorInput2.style.background="none";
+        colorInput2.style.margin="5px";
+        colorInput2.style.backgroundColor="#FFFFFF";
+        colorInput2.oninput=()=>{colorInput2.style.backgroundColor=colorInput2.value;};
+        degRangeBorder.appendChild(colorInput2);
+
+        defaultButton = document.createElement('button');
+        defaultButton.style.fontFamily="Black";
+        defaultButton.style.width="190px";
+        defaultButton.style.height="";
+        defaultButton.innerText="print";
+        defaultButton.style.fontSize="18px";
+        defaultButton.style.margin="5px 5px 10px 5px";
+        defaultButton.style.borderRadius="5px";
+        defaultButton.style.height="40px";
+        defaultButton.style.color="#301A6B";
+        defaultButton.style.borderColor="rgba(0, 0, 0, 0)";
+        defaultButton.style.boxShadow="0px 6px 0px 0px #301a6b";
+        degRangeBorder.appendChild(defaultButton);
+
+        defaultButton.onmouseenter=function(){
+            defaultButton.style.backgroundColor="#cbb6e9";
+        };
+        defaultButton.onmouseleave=function(){
+            defaultButton.style.backgroundColor="#ffffff";
+            defaultButton.style.boxShadow="0px 6px 0px 0px";
+            defaultButton.style.margin="5px 5px 10px 5px";
+        };
+        defaultButton.onmousedown=function(){
+            defaultButton.style.boxShadow="0px 2px 0px 0px";
+            defaultButton.style.margin="10px 5px 5px 5px";
+        };
+        defaultButton.onmouseup=function(){
+            defaultButton.style.boxShadow="0px 6px 0px 0px";
+            defaultButton.style.margin="5px 5px 10px 5px";
+        };
+
+
+        degRangeBorder.onmouseleave=()=>{
+            setTimeout(()=>{if ([
+                gradientButton,
+                degRangeBorder,
+                colorInput1,
+                colorInput2,
+                defaultButton
+            ].indexOf(curElementOverCursor) != -1){
+                console.log("over")
+            } else {
+                degRangeBorder.style.display="none";
+            }
+                           }, 1000)
+        }
+
+        smoothBorder.appendChild(degRangeBorder);
+
+        gradientButton.onmouseenter=()=>{
+            if(document.getElementsByClassName("jsx-1553483530 pencil").length){return;}
+            degRangeBorder.style.display="";
+            document.getElementsByClassName("deg-range-border")[0].style.display="none";
+        }
+
+        gradientButton.onmouseleave=()=>{
+            setTimeout(()=>{if ([
+                gradientButton,
+                degRangeBorder,
+                colorInput1,
+                colorInput2,
+                defaultButton
+            ].indexOf(curElementOverCursor) != -1){
+            } else {
+                degRangeBorder.style.display="none";
+            }
+                           }, 1000)
+
+        }
+
+
+    }
+
+    var hc = document.createElement("canvas");
+    hc.width=1;
+    hc.height=424;
+    function changeColor2(i, c1, c2){
+        var ctx=hc.getContext("2d");
+        var my_gradient=ctx.createLinearGradient(0,0,1,424);
+        my_gradient.addColorStop(0,c1);
+        my_gradient.addColorStop(1,c2);
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(0,0,1,424);
+        var context = hc.getContext("2d");
+        var c = context.getImageData(0, i, 1, 1).data;
+        setColor(rgbToHex(c[0], c[1], c[2]));
+        console.log(rgbToHex(c[0], c[1], c[2]));
+    }
+    var canvas = document.getElementsByClassName("jsx-150592943")[0];
+    var rect = canvas.getBoundingClientRect();
+    var x0 = rect.x;
+    var x1 = rect.x+rect.width;
+    var y0 = rect.y;
+    var coef = rect.height/424;
+
+    defaultButton.onclick=()=>{
+        console.log(x0, x1, y0, coef, colorInput1.value, colorInput2.value);
+        for (let i=0;i<424;i++){
+            setTimeout(()=>{
+                changeColor2(i, colorInput1.value, colorInput2.value)
+                mouseDown(x0, y0+i*coef);
+                mouseMove(x0, y0+i*coef);
+                mouseMove(x1, y0+i*coef);
+                mouseUp();
+            }, 0);
         }
     }
-}
 
-/////////////////////////////////
+    function mouseDown(x, y){
+        let event = new Event('mousedown', { bubbles: true, cancelable: true} );
+        event.clientX=x;
+        event.clientY=y;
+        canvas.dispatchEvent(event);
+    }
+
+    function mouseMove(x, y){
+        let event = new Event('mousemove', { bubbles: true, cancelable: true} );
+        event.clientX=x;
+        event.clientY=y;
+        canvas.dispatchEvent(event);
+    }
+
+    function mouseUp(){
+        var event = new Event('mouseup', { bubbles: true, cancelable: true} );
+        canvas.dispatchEvent(event);
+    }
+}
+    /////////////////////////////////
 
 //Функционал кнопки зеркала
 function addMirrorButton(){
@@ -2373,6 +2562,7 @@ function addMirrorBase(){
 /////////////////////////////////
 
 //Функционал исправленной заливки
+var curThicc;
 function fixedBucket(){
     var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
     var canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
@@ -2386,7 +2576,6 @@ function fixedBucket(){
 
     evtCanvas.addEventListener('pointerdown', (e)=>{
         if (document.getElementsByClassName("jsx-3659451671 tool fil sel").length != 0 && document.getElementsByClassName("fi")[0].checked && e.which != 3){
-            console.log("ok");
             prevCanvas = convert0Dto2D(canvas.getContext("2d").getImageData(0, 0, 1516, 848).data);
         }
     })
@@ -2411,16 +2600,12 @@ function fixedBucket(){
             }
 
             setTimeout(()=>{
-            time = performance.now() - time;
-            console.log('Время выполнения = ', time);
             document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
-            var curThicc = document.getElementsByClassName("jsx-340028725 thickness sel")[0];
+            curThicc = document.getElementsByClassName("jsx-340028725 thickness sel")[0];
             document.getElementsByClassName("jsx-340028725 thickness")[0].click();
 
             drawNsort(getBorderOfNew(newList));
 
-            curThicc.click();
-            document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
             }, 30);
         }
     }, 2)})
@@ -3830,36 +4015,36 @@ function creatColorPull(){
         d.appendChild(linkTitle2);
         d.appendChild(linkInput2);
 
-        var randomButton = document.createElement('button');
-        randomButton.style.fontFamily="Black";
-        randomButton.style.width="190px";
-        randomButton.style.height="";
-        randomButton.innerText="random";
-        randomButton.style.fontSize="18px";
-        randomButton.style.margin="5px 5px 10px 5px";
-        randomButton.style.borderRadius="5px";
-        randomButton.style.height="40px";
-        randomButton.style.color="#301A6B";
-        randomButton.style.borderColor="rgba(0, 0, 0, 0)";
-        randomButton.style.boxShadow="0px 6px 0px 0px #301a6b";
-        randomButton.onmouseenter=function(){
-            randomButton.style.backgroundColor="#cbb6e9";
+        var gradientButton = document.createElement('button');
+        gradientButton.style.fontFamily="Black";
+        gradientButton.style.width="190px";
+        gradientButton.style.height="";
+        gradientButton.innerText="random";
+        gradientButton.style.fontSize="18px";
+        gradientButton.style.margin="5px 5px 10px 5px";
+        gradientButton.style.borderRadius="5px";
+        gradientButton.style.height="40px";
+        gradientButton.style.color="#301A6B";
+        gradientButton.style.borderColor="rgba(0, 0, 0, 0)";
+        gradientButton.style.boxShadow="0px 6px 0px 0px #301a6b";
+        gradientButton.onmouseenter=function(){
+            gradientButton.style.backgroundColor="#cbb6e9";
         };
-        randomButton.onmouseleave=function(){
-            randomButton.style.backgroundColor="#ffffff";
-            randomButton.style.boxShadow="0px 6px 0px 0px";
-            randomButton.style.margin="5px 5px 10px 5px";
+        gradientButton.onmouseleave=function(){
+            gradientButton.style.backgroundColor="#ffffff";
+            gradientButton.style.boxShadow="0px 6px 0px 0px";
+            gradientButton.style.margin="5px 5px 10px 5px";
         };
-        randomButton.onmousedown=function(){
-            randomButton.style.boxShadow="0px 2px 0px 0px";
-            randomButton.style.margin="10px 5px 5px 5px";
+        gradientButton.onmousedown=function(){
+            gradientButton.style.boxShadow="0px 2px 0px 0px";
+            gradientButton.style.margin="10px 5px 5px 5px";
         };
-        randomButton.onmouseup=function(){
-            randomButton.style.boxShadow="0px 6px 0px 0px";
-            randomButton.style.margin="5px 5px 10px 5px";
+        gradientButton.onmouseup=function(){
+            gradientButton.style.boxShadow="0px 6px 0px 0px";
+            gradientButton.style.margin="5px 5px 10px 5px";
         };
 
-        randomButton.onclick=()=>{
+        gradientButton.onclick=()=>{
             let colorInput1 = document.getElementsByClassName("color-input1")[0];
             let colorInput2 = document.getElementsByClassName("color-input2")[0];
             let colorInput3 = document.getElementsByClassName("color-input3")[0];
@@ -3882,7 +4067,7 @@ function creatColorPull(){
             styleUpdate();
         }
 
-        d.appendChild(randomButton);
+        d.appendChild(gradientButton);
 
 
         var defaultButton = document.createElement('button');
