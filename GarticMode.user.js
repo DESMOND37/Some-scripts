@@ -1,5 +1,5 @@
 
-var VERSION = "2.2.1.0
+var VERSION = "2.2.1.0";
 
 if (getCookieDict().VERSION != VERSION){
     alert(`НОВАЯ ВЕРСИЯ! ${VERSION} Появился новый инструмент, только аккуратней!`);
