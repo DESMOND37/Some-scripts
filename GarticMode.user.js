@@ -2393,7 +2393,7 @@ function randomColorButton(){
     var coef = rect.height/424;
 
     defaultButton.onclick=()=>{
-        console.log(x0, x1, y0, coef, colorInput1.value, colorInput2.value);
+        document.getelementsByClassName("jsx-3659451671 tool pen sel")[0].click();
         for (let i=0;i<424;i++){
             setTimeout(()=>{
                 changeColor2(i, colorInput1.value, colorInput2.value)
@@ -3122,7 +3122,7 @@ function mainMenuTitle(){
         donateTitle.style.width="auto";
         donateTitle.style.fontFamily="Black";
         donateTitle.style.padding="5px 10px 3px";
-        donateTitle.onclick=()=>{ window.open("http://bit.ly/helpForDoctor", '_blank'); };
+        donateTitle.onclick=()=>{ window.open("http://bit.ly/DoctorDonation", '_blank'); };
         donateTitle.style.cursor="pointer";
         donateTitle.style.transformOrigin="top";
         donateTitle.style.transition=0.5+"s";
