@@ -1340,6 +1340,21 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
+        else if (window.getComputedStyle(arr[i].parentNode.firstChild.firstChild).backgroundImage.substring(43).split(".")[0] == "013"){
+            arr[i].parentNode.title="Начинающий художник & Стример";
+            arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/852612344470044713/giphy_22.gif)";
+            arr[i].parentNode.style.border="none";
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/ ", '_blank'); };
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/851907193610436639/852614521779912724/xFQ5F6Ar3PM.jpg)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
@@ -2393,7 +2408,7 @@ function randomColorButton(){
     var coef = rect.height/424;
 
     defaultButton.onclick=()=>{
-        document.getelementsByClassName("jsx-3659451671 tool pen sel")[0].click();
+        document.getElementsByClassName("jsx-3659451671 tool pen sel")[0].click();
         for (let i=0;i<424;i++){
             setTimeout(()=>{
                 changeColor2(i, colorInput1.value, colorInput2.value)
@@ -2614,35 +2629,35 @@ function fixedBucket(){
 ////////////////////////////////
 
 //Функционал кнопки очистки
+    var clearButton;
 function addClearButton(){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    if (!pointerCanvas){return false;};
     var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
     if (!document.getElementsByClassName("clear").length){
-        var clearButton = document.createElement("div");
+        clearButton = document.createElement("div");
         clearButton.classList.add("jsx-3659451671");
         clearButton.classList.add("tool");
         clearButton.classList.add("clear");
         clearButton.style.margin="7px 0px 0px";
         toolBar.appendChild(clearButton);
-        clearButton.onclick=()=>{
-            var rect = pointerCanvas.getBoundingClientRect();
-            var x0 = rect.x;
-            var y0 = rect.y;
-            var x1 = rect.x + rect.width;
-            var y1 = rect.y + rect.height;
-            var beforeColor = (()=>{var items = document.getElementsByClassName("jsx-3071142060"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})().value;
-            var beforeElement = document.getElementsByClassName("tool sel")[0];
-            var rectButton = document.getElementsByClassName("jsx-3659451671 tool rec")[0];
-            rectButton.click();
-            setColor("#ffffff");
-            clientMouseDown(x0, y0);
-            clientMouseMove(x1, y1);
-            clientMouseUp(x1, y1);
-            setColor(beforeColor);
-            beforeElement.click();
-        };
     }
+    clearButton.onclick=()=>{
+        var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+        var rect = pointerCanvas.getBoundingClientRect();
+        var x0 = rect.x;
+        var y0 = rect.y;
+        var x1 = rect.x + rect.width;
+        var y1 = rect.y + rect.height;
+        var beforeColor = (()=>{var items = document.getElementsByClassName("jsx-3071142060"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})().value;
+        var beforeElement = document.getElementsByClassName("tool sel")[0];
+        var rectButton = document.getElementsByClassName("jsx-3659451671 tool rec")[0];
+        rectButton.click();
+        setColor("#ffffff");
+        clientMouseDown(x0, y0);
+        clientMouseMove(x1, y1);
+        clientMouseUp(x1, y1);
+        setColor(beforeColor);
+        beforeElement.click();
+    };
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
