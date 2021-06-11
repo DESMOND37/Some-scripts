@@ -1344,6 +1344,7 @@ function VIP(){
             arr[i].parentNode.title="Начинающий художник & Стример";
             arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/852612344470044713/giphy_22.gif)";
             arr[i].parentNode.style.border="none";
+            arr[i].parentNode.style.cursor="pointer";
             arr[i].parentNode.onclick=()=>{ window.open("twitch.tv/skatertioo_dorozhka", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/851907193610436639/852614521779912724/xFQ5F6Ar3PM.jpg)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
