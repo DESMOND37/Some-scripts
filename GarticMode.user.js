@@ -2,7 +2,7 @@
 var VERSION = "2.2.1.1";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\nПоявился новый инструмент - градиент, только аккуратней!\n\nФикс багов:\nБаги, баги и еще раз баги. Это, конечно плохо, но еще хуже когда они не исправляются. По сути баги - неизбежное следствие любой программы, любой системы ... так что их поиск и исправление считаются серьезной работой. Я несу ответственность за своё творение и за всех людей, которые им пользуются. Днем и ночью, не покладая рук, я постоянно улучшаю и исправляю его. Если вы столкнулись с проблемой или что-то из использования модификации вам непонятно - то обратитесь к инструкции, если же и она не помогла, то пишите напрямую мне, я всегда готов помочь, а в случае багов - незамедлительно их исправить :)\n\nP.S. DDDD`);
+    //alert(`НОВАЯ ВЕРСИЯ ${VERSION}\nПоявился новый инструмент - градиент, только аккуратней!\n\nФикс багов:\nБаги, баги и еще раз баги. Это, конечно плохо, но еще хуже когда они не исправляются. По сути баги - неизбежное следствие любой программы, любой системы ... так что их поиск и исправление считаются серьезной работой. Я несу ответственность за своё творение и за всех людей, которые им пользуются. Днем и ночью, не покладая рук, я постоянно улучшаю и исправляю его. Если вы столкнулись с проблемой или что-то из использования модификации вам непонятно - то обратитесь к инструкции, если же и она не помогла, то пишите напрямую мне, я всегда готов помочь, а в случае багов - незамедлительно их исправить :)\n\nP.S. DDDD`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -2274,6 +2274,7 @@ function addPipetButton(){
 var colorInput1;
 var colorInput2;
 var defaultButton;
+var uKey = false;
 function randomColorButton(){
     var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
     if (!document.getElementsByClassName("rand").length){
@@ -2395,6 +2396,17 @@ function randomColorButton(){
             if(document.getElementsByClassName("jsx-1553483530 pencil").length){return;}
             degRangeBorder.style.display="";
             document.getElementsByClassName("deg-range-border")[0].style.display="none";
+            if (!document.getElementsByClassName("jsx-4289504161 small")[0].disabled){
+                defaultButton.style.cursor="no-drop";
+                defaultButton.title="Нельзя использовать если что-то уже нарисовано";
+                defaultButton.style.opacity=0.5;
+                uKey=true;
+            } else {
+                defaultButton.style.cursor="";
+                defaultButton.title="";
+                defaultButton.style.opacity=1;
+                uKey=false;
+            }
         }
 
         gradientButton.onmouseleave=()=>{
@@ -2428,7 +2440,6 @@ function randomColorButton(){
         var context = hc.getContext("2d");
         var c = context.getImageData(0, i, 1, 1).data;
         setColor(rgbToHex(c[0], c[1], c[2]));
-        console.log(rgbToHex(c[0], c[1], c[2]));
     }
     var canvas = document.getElementsByClassName("jsx-150592943")[0];
     var rect = canvas.getBoundingClientRect();
@@ -2438,6 +2449,7 @@ function randomColorButton(){
     var coef = rect.height/424;
 
     defaultButton.onclick=()=>{
+        if (uKey){return;}
         document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
         for (let i=0;i<424;i++){
             setTimeout(()=>{
