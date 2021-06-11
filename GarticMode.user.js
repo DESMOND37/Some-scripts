@@ -1265,6 +1265,35 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
+        else if (arr[i].innerText.toLowerCase() == "unchechan"){
+            arr[i].parentNode.title="Художник";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/852638910257037333/852680550824017930/4.png?width=1440&height=480)";
+            arr[i].parentNode.style.backgroundPosition="-30px -43px";
+            arr[i].parentNode.style.backgroundSize="127%";
+            arr[i].parentNode.style.border="none";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.style.backgroundColor="black";
+            arr[i].parentNode.firstChild.style.backgroundColor="black";
+            arr[i].parentNode.firstChild.style.border="none";
+            arr[i].parentNode.style.transition="0s";
+            arr[i].style.color="#7b2121";
+            arr[i].style.fontSize="15px";
+            arr[i].style.fontWeight="900";
+            arr[i].style.fontFamily="sans-serif";
+            arr[i].style.letterSpacing="-1px";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/852638910257037333/852680536761827348/1.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="5px -2px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="90%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundColor="black";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            var o=arr[i].parentNode.firstChild.children[1];
+            if(o){o.parentNode.removeChild(o);}
+        }
         else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
             document.cookie = "badguy=1;" + "expires=Tue, 19 Jan 2038 03:14:07 GMT";
             arr[i].parentNode.title="Клоун";
