@@ -2,7 +2,7 @@
 var VERSION = "2.2.1.1";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\nПоявился новый инструмент - градиент, только аккуратней!\n\nФикс багов:\nБаги, баги и еще раз баги. Это, конечно плохо, но еще хуже когда они не исправляются. По сути баги - неизбежное следствие любой программы, любой системы ... так что их поиск и справление считаются серьезной работой. Я несу ответсвенность за своё творение и за всех людей, которые им пользуется. Днем и ночью, непокладая рук, я потсоянно улучашаю и исправляю его. Если вы столкнулись с проблемой или что-то из использования модификации вам непонятно - то обратитесь к инструкции, если же и она не помогла, то пишите напрямую мне, я всегда готов помочь, а в случае багов - незамедлительно их исправить :)\n\nP.S. DDDD`);
+    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\nПоявился новый инструмент - градиент, только аккуратней!\n\nФикс багов:\nБаги, баги и еще раз баги. Это, конечно плохо, но еще хуже когда они не исправляются. По сути баги - неизбежное следствие любой программы, любой системы ... так что их поиск и исправление считаются серьезной работой. Я несу ответственность за своё творение и за всех людей, которые им пользуются. Днем и ночью, не покладая рук, я постоянно улучшаю и исправляю его. Если вы столкнулись с проблемой или что-то из использования модификации вам непонятно - то обратитесь к инструкции, если же и она не помогла, то пишите напрямую мне, я всегда готов помочь, а в случае багов - незамедлительно их исправить :)\n\nP.S. DDDD`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -1344,12 +1344,12 @@ function VIP(){
             arr[i].parentNode.title="Начинающий художник & Стример";
             arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/852612344470044713/giphy_22.gif)";
             arr[i].parentNode.style.border="none";
-            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/ ", '_blank'); };
+            arr[i].parentNode.onclick=()=>{ window.open("twitch.tv/skatertioo_dorozhka", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/851907193610436639/852614521779912724/xFQ5F6Ar3PM.jpg)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center 0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
