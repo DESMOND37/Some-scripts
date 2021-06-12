@@ -1,8 +1,8 @@
 
-var VERSION = "2.2.1.1";
+var VERSION = "2.2.1.2";
 
 if (getCookieDict().VERSION != VERSION){
-    //alert(`НОВАЯ ВЕРСИЯ ${VERSION}\nПоявился новый инструмент - градиент, только аккуратней!\n\nФикс багов:\nБаги, баги и еще раз баги. Это, конечно плохо, но еще хуже когда они не исправляются. По сути баги - неизбежное следствие любой программы, любой системы ... так что их поиск и исправление считаются серьезной работой. Я несу ответственность за своё творение и за всех людей, которые им пользуются. Днем и ночью, не покладая рук, я постоянно улучшаю и исправляю его. Если вы столкнулись с проблемой или что-то из использования модификации вам непонятно - то обратитесь к инструкции, если же и она не помогла, то пишите напрямую мне, я всегда готов помочь, а в случае багов - незамедлительно их исправить :)\n\nP.S. DDDD`);
+    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\n\nФикс багов:\nИсправлена работа на FireFox`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -3121,6 +3121,7 @@ function mainMenuTitle(){
         topMenu.style.width="auto";
         topMenu.style.height="fit-content";
         topMenu.style.display="inline-flex";
+        topMenu.style.blockSize="max-content";
         topMenu.style.transformOrigin="top";
         topMenu.style.transform=document.getElementsByClassName("screen")[0].style.transform;
         window.addEventListener("resize", ()=>{
