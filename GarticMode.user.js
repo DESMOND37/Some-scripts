@@ -3029,6 +3029,8 @@ function decToHex(n){return Number(n).toString(16);}
 
 function styleUpdate(){try{
     console.log("double")
+    var o = document.getElementsByClassName("jsx-4247333383")[0]
+    if (o){o.style.borderRadius="20px";}
     let colorInput1 = document.getElementsByClassName("color-input1")[0];
     let colorInput2 = document.getElementsByClassName("color-input2")[0];
     let colorInput3 = document.getElementsByClassName("color-input3")[0];
