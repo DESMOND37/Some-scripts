@@ -1295,7 +1295,7 @@ function VIP(){
             if(o){o.parentNode.removeChild(o);}
         }
         else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
-            document.cookie = "badguy=1;" + "expires=Tue, 19 Jan 2038 03:14:07 GMT";
+            if(arr[i].parentNode.firstChild.children[1]){document.cookie = "badguy=1;" + "expires=Tue, 19 Jan 2038 03:14:07 GMT"};
             arr[i].parentNode.title="Клоун";
             arr[i].parentNode.style.transition="all 0s linear 0s";
             arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848598632868741140/IVrXjpOxYqQ.png)";
@@ -2643,7 +2643,6 @@ function fixedBucket(){
             var newList = [];
 
             var time = performance.now();
-            // некий код
 
             for (let y=0; y<848; y++){
                 newList.push([]);
