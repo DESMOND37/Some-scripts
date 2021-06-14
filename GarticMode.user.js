@@ -1374,6 +1374,30 @@ function VIP(){
             o=arr[i].parentNode.firstChild.children[1];
             if(o){o.parentNode.removeChild(o);}
         }
+        else if (arr[i].innerText.toLowerCase() == "dоublеfrееzе"){
+            arr[i].parentNode.title="Ноунейм";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="3px solid #000000";
+            arr[i].style.color="#ffffff";
+            arr[i].style.fontSize="x-large";
+            arr[i].style.fontFamily='Bold';
+            arr[i].style.fontStyle="italic";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/785888608497696778/854033065247637524/c48f5846b55f5819.png)";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.backgroundPosition="0px -20px";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.style.transition="none";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/785888608497696778/854033634654552134/d0617d2ac69625cb.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="0px 0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
