@@ -1005,7 +1005,7 @@ function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     was0 = false;
     for (let i=0; i<arr.length; i++){
-        if (arr[i].innerText.toLowerCase() == "doctordeathddracula " && window.btoa(window.window.getComputedStyle(arr[i].parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0] == 'MjA0OA==')){
+        if (arr[i].innerText.toLowerCase() == "doctordeathddracula " && window.btoa(window.window.getComputedStyle(arr[i].parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]) == 'MjA0OA=='){
             was0=true;
             arr[i].innerText="DoctorDeathDDracula"
             //arr[i].innerText="Doctor ";
@@ -4470,3 +4470,4 @@ function exec() {
     var asyncDes = setInterval(asyncSpace, 0);
     var asyncTres = setInterval(asyncSlowSpace, 100);
 }
+5
