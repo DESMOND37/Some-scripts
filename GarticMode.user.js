@@ -1294,40 +1294,6 @@ function VIP(){
             var o=arr[i].parentNode.firstChild.children[1];
             if(o){o.parentNode.removeChild(o);}
         }
-        else if (arr[i].innerText.toLowerCase().indexOf("vinegative") != -1){
-            if(arr[i].parentNode.firstChild.children[1]){document.cookie = "badguy=1;" + "expires=Tue, 19 Jan 2038 03:14:07 GMT"};
-            arr[i].parentNode.title="Клоун";
-            arr[i].parentNode.style.transition="all 0s linear 0s";
-            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848598632868741140/IVrXjpOxYqQ.png)";
-            arr[i].parentNode.style.border="none";
-            arr[i].parentNode.style.cursor="pointer";
-
-            if (!document.getElementsByClassName("clone").length){
-                var music1 = document.createElement("audio");
-                music1.classList.add("clone");
-                music1.src="https://cdn.discordapp.com/attachments/833410401366573066/848599758342848542/Cirkovaya_muzyka_-_leto_2012_Gybka.com.mp3";
-                document.querySelector("body").appendChild(music1);
-                document.querySelector("body > audio").volume=0.3;
-                document.querySelector("body > audio").currentTime="2";
-            }
-
-            arr[i].parentNode.onclick=()=>{
-                document.querySelector("body > audio").currentTime="2";
-                document.querySelector("body > audio").play();
-
-            };
-
-            //arr[i].style.fontFamily="cursive";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="140%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px -10px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848596567120281670/unknown.png?width=726&height=676)";
-        }
         else if (arr[i].innerText.toLowerCase() == "IV547".toLowerCase()){
             arr[i].parentNode.title="Донатер";
             arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/850471589543936000/blog-post-01-1.gif)";
@@ -1384,6 +1350,29 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        }
+        else if (window.getComputedStyle(arr[i].parentNode.firstChild.firstChild).backgroundImage.substring(43).split(".")[0] == "228"){
+            arr[i].innerText="";
+            arr[i].parentNode.title="Xудожник & Аниматор";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/851530974880595988/854001745797316638/0dadaa53c1657664.gif)";
+            arr[i].parentNode.style.backgroundPosition="-30px 190px";
+            arr[i].parentNode.style.backgroundSize="400px";
+            arr[i].parentNode.style.border="2px solid black";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.style.transition="0s";
+            arr[i].parentNode.firstChild.style.backgroundColor="white";
+            arr[i].parentNode.firstChild.style.borderColor="black";
+            //arr[i].parentNode.onclick=()=>{ window.open("https://twitch.tv/skatertioo_dorozhka", '_blank'); };
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/851530974880595988/853984885411545098/7aeaf655964b606b.png?width=646&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center 0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="110%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            o=arr[i].parentNode.firstChild.children[1];
+            if(o){o.parentNode.removeChild(o);}
         }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
