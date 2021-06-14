@@ -999,12 +999,15 @@ function debugName(){
 var doctorwas = false;
 var was0;
 var blackArr = [];
+
+
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
     was0 = false;
     for (let i=0; i<arr.length; i++){
-        if (arr[i].innerText.toLowerCase() == "doctordeathddracula " || arr[i].innerText.toLowerCase() == "Doctor "){
+        if (arr[i].innerText.toLowerCase() == "doctordeathddracula " && window.btoa(window.window.getComputedStyle(arr[i].parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0] == 'MjA0OA==')){
             was0=true;
+            arr[i].innerText="DoctorDeathDDracula"
             //arr[i].innerText="Doctor ";
             //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
