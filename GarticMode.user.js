@@ -1401,6 +1401,32 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
         }
+        else if (arr[i].innerText.toLowerCase() == "mamoru"){
+            arr[i].innerText="Mаmоru";
+            arr[i].parentNode.title="Меценат";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="3px solid rgb(115 28 28)";
+            arr[i].style.color="#ffffff";
+            //arr[i].style.fontSize="x-large";
+            //arr[i].style.fontFamily='Bold';
+            //arr[i].style.fontStyle="italic";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/855033465615286272/unknown.png?width=1440&height=666)";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.backgroundPosition="0px -20px";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.style.transition="none";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/855033335223287828/unknown.png?width=676&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="200%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-20px -20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
@@ -3780,8 +3806,13 @@ function creatColorPull(){
         colorInput1.style.background="none";
         colorInput1.style.margin="5px";
         //colorInput1.value="#5c1ea6";
-        colorInput1.value=`${cookieDict.colorInput1}`;
-        colorInput1.oninput=function(){styleUpdate();}
+        if(!localStorage.getItem("gc1")){localStorage.setItem("gc1", "#5c1ea6")}
+        colorInput1.value=localStorage.getItem("gc1");
+        colorInput1.style.backgroundColor=localStorage.getItem("gc1");
+        colorInput1.oninput=function(){
+            localStorage.setItem("gc1", colorInput1.value);
+            colorInput1.style.backgroundColor=colorInput1.value;
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;        }
         d.appendChild(colorInput1);
 
         var colorInput2 = document.createElement('input');
@@ -3796,8 +3827,13 @@ function creatColorPull(){
         colorInput2.style.background="none";
         colorInput2.style.margin="5px";
         //colorInput2.value="#c8435e";
-        colorInput2.value=`${cookieDict.colorInput2}`;
-        colorInput2.oninput=function(){styleUpdate();}
+        if(!localStorage.getItem("gc2")){localStorage.setItem("gc2", "#c8435e")}
+        colorInput2.style.backgroundColor=localStorage.getItem("gc2");
+        colorInput2.value=localStorage.getItem("gc2");
+        colorInput2.oninput=function(){
+            localStorage.setItem("gc2", colorInput2.value);
+            colorInput2.style.backgroundColor=colorInput2.value;
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;        }
         d.appendChild(colorInput2);
 
         var degRange1 = document.createElement('input');
@@ -3813,7 +3849,13 @@ function creatColorPull(){
         degRange1.style.height="4px";
         //degRange1.style.heigt="15px";
         degRange1.style.borderRadius="10px";
-        degRange1.oninput=()=>{styleUpdate();};
+        if(!localStorage.getItem("gd")){localStorage.setItem("gd", "200")}
+        degRange1.style.backgroundColor=localStorage.getItem("gd");
+        degRange1.value=localStorage.getItem("gd");
+        degRange1.oninput=function(){
+            localStorage.setItem("gd", degRange1.value);
+            degRange1.style.backgroundColor=degRange1.value;
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;        }
         d.appendChild(degRange1);
 
         var percentRange = document.createElement('input');
@@ -3829,7 +3871,13 @@ function creatColorPull(){
         percentRange.style.borderRadius="10px";
         percentRange.style.margin="10px 5px";
         percentRange.style.height="4px";
-        percentRange.oninput=()=>{styleUpdate();};
+        if(!localStorage.getItem("pc1")){localStorage.setItem("pc1", "0")}
+        percentRange.style.backgroundColor=localStorage.getItem("pc1");
+        percentRange.value=localStorage.getItem("pc1");
+        percentRange.oninput=function(){
+            localStorage.setItem("pc1", percentRange.value);
+            percentRange.style.backgroundColor=percentRange.value;
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;}
         d.appendChild(percentRange);
 
         var percentRange1 = document.createElement('input');
@@ -3845,7 +3893,14 @@ function creatColorPull(){
         //percentRange1.style.heigt="15px";
         percentRange1.style.borderRadius="10px";
         percentRange1.style.height="4px";
-        percentRange1.oninput=()=>{styleUpdate();};
+        if(!localStorage.getItem("pc2")){localStorage.setItem("pc2", "85")}
+        percentRange1.style.backgroundColor=localStorage.getItem("pc2");
+        percentRange1.value=localStorage.getItem("pc2");
+        percentRange1.oninput=function(){
+            localStorage.setItem("pc2", percentRange1.value);
+            percentRange1.style.backgroundColor=percentRange1.value;
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
+        }
         d.appendChild(percentRange1);
 
         var title2 = document.createElement('div');
