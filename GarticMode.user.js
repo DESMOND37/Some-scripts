@@ -3068,94 +3068,7 @@ function asyncSpace(){
 
 function decToHex(n){return Number(n).toString(16);}
 
-function styleUpdate(){try{
-    console.log("double")
-    var o = document.getElementsByClassName("jsx-4247333383")[0]
-    if (o){o.style.borderRadius="20px";}
-    let colorInput1 = document.getElementsByClassName("color-input1")[0];
-    let colorInput2 = document.getElementsByClassName("color-input2")[0];
-    let colorInput3 = document.getElementsByClassName("color-input3")[0];
-    let colorInput4 = document.getElementsByClassName("color-input4")[0];
-    let degRange1 = document.getElementsByClassName("deg-input")[0];
-    let percentRange1 = document.getElementsByClassName("prec-input1")[0];
-    let percentRange2 = document.getElementsByClassName("prec-input2")[0];
-    let linkInput1 = document.getElementsByClassName("link-input")[0];
-    let linkInput2 = document.getElementsByClassName("link-input-2")[0];
-    let opacity1 = document.getElementsByClassName("opacity1")[0];
-    let opacity2 = document.getElementsByClassName("opacity2")[0];
 
-    var test = getCookieDict();
-    if (test.colorInput1 == undefined){
-        console.log(test.colorInput1, test);
-        colorInput1.value="#7213e7";
-        colorInput2.value="#c8435e";
-        colorInput3.value="#000000";
-        colorInput4.value="#000000";
-        degRange1.value="209";
-        percentRange1.value="22";
-        percentRange2.value="85";
-        linkInput1.value="";
-        linkInput2.value="";
-        opacity1.value=0;
-        opacity2.value=0;
-    }
-
-
-    colorInput1.style.backgroundColor=colorInput1.value;
-    colorInput2.style.backgroundColor=colorInput2.value;
-    colorInput3.style.backgroundColor=colorInput3.value;
-    colorInput4.style.backgroundColor=colorInput4.value;
-
-    var p1 = decToHex(Number(opacity1.value));
-    if (p1.length == 1){p1="0"+p1;}
-    document.getElementsByClassName("jsx-2562723607")[0].style.backgroundColor=colorInput3.value+p1;
-    var p2 = decToHex(Number(opacity2.value));
-    if (p2.length == 1){p2="0"+p2;}
-
-    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[0].style.backgroundColor=colorInput4.value+p2;
-    document.getElementsByClassName("jsx-2562723607")[1].getElementsByTagName("div")[1].style.borderRadius="10px";
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    document.querySelector("body").style.backgroundImage=`linear-gradient(${degRange1.value}deg, ${colorInput1.value} ${percentRange1.value}%, ${colorInput2.value} ${percentRange2.value}%)`;
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    if (linkInput1.value != ""){
-        document.querySelector("#__next").style.backgroundImage=`url(${linkInput1.value})`;
-    } else {document.querySelector("#__next").style.backgroundImage=`url(https://garticphone.com/images/textura.png)`;}
-    //////////////////////////////////////////////////////////////////////////////////////
-    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
-    document.getElementsByClassName("jsx-2562723607")[1].style.border="none";
-
-    if (linkInput2.value == ""){
-        document.getElementsByClassName("jsx-2562723607")[1].style.border="";
-    }
-
-    document.getElementsByClassName("jsx-2562723607")[1].style.borderRadius="10px";
-    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
-    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
-    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
-    //////////////////////////////////////////////////////////////////////////////////////
-    var arr = [
-        `colorInput1=${colorInput1.value};`,
-        `colorInput2=${colorInput2.value};`,
-        `colorInput3=${colorInput3.value};`,
-        `colorInput4=${colorInput4.value};`,
-        `degRange1=${degRange1.value};`,
-        `precentRange1=${percentRange1.value};`,
-        `precentRange2=${percentRange2.value};`,
-        `linkInput1=${linkInput1.value};`,
-        `linkInput2=${linkInput2.value};`,
-        `opacity1=${opacity1.value};`,
-        `opacity2=${opacity2.value};`
-    ];
-
-    arr.forEach(function(item, index, array){
-       document.cookie = item + " expires=Tue, 19 Jan 2038 03:14:07 GMT";
-    })
-} catch (e) {
-    if (!document.getElementsByClassName("leftpanel")[0]){creatColorPull(); console.log("yes");}
-    setTimeout(styleUpdate, 100);
-}
-}
 
 function mainMenuTitle(){
     if (!document.getElementsByClassName("top-menu").length){
@@ -3986,7 +3899,13 @@ function creatColorPull(){
         var linkInput1 = document.createElement('input');
         linkInput1.classList.add("link-input");
         linkInput1.type="text";
-        linkInput1.value=`${cookieDict.linkInput1}`;
+        if(!localStorage.getItem("sl1")){localStorage.setItem("sl1", "")}
+        linkInput1.value=localStorage.getItem("sl1");
+        if (linkInput1.value != ""){
+            document.querySelector("#__next").style.backgroundImage=`url(${linkInput1.value})`;
+        } else {
+            document.querySelector("#__next").style.backgroundImage=`url(https://garticphone.com/images/textura.png)`;
+        }
         linkInput1.placeholder="URL";
         linkInput1.style.color="white";
         linkInput1.style.fontSize="20px";
@@ -3998,7 +3917,14 @@ function creatColorPull(){
         linkInput1.style.margin="5px";
         linkInput1.style.fontFamily='Black';
         linkInput1.style.padding="0px 10px";
-        linkInput1.oninput=()=>{styleUpdate();};
+        linkInput1.oninput=()=>{
+            localStorage.setItem("sl1", linkInput1.value);
+            if (linkInput1.value != ""){
+                document.querySelector("#__next").style.backgroundImage=`url(${linkInput1.value})`;
+            } else {
+                document.querySelector("#__next").style.backgroundImage=`url(https://garticphone.com/images/textura.png)`;
+            }
+        };
         linkInput1.disabled=true;
 
         var linkTitle2 = document.createElement('div');
@@ -4011,7 +3937,11 @@ function creatColorPull(){
         var linkInput2 = document.createElement('input');
         linkInput2.classList.add("link-input-2");
         linkInput2.type="text";
-        linkInput2.value=`${cookieDict.linkInput2}`;
+        if(!localStorage.getItem("sl2")){localStorage.setItem("sl2", "")}
+        linkInput2.value=localStorage.getItem("sl2");
+        if (linkInput2.value != ""){
+            document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
+        }
         linkInput2.placeholder="URL";
         linkInput2.style.color="white";
         linkInput2.style.fontSize="20px";
@@ -4023,8 +3953,19 @@ function creatColorPull(){
         linkInput2.style.margin="5px";
         linkInput2.style.fontFamily='Black';
         linkInput2.style.padding="0px 10px";
-        linkInput2.oninput=()=>{styleUpdate();};
+        linkInput2.oninput=()=>{
+                console.log("1");
+                localStorage.setItem("sl2", linkInput2.value);
+                if (linkInput2.value != ""){
+                    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
+                } else {
+                    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`none`;
+                }
+        };
         linkInput2.disabled=true;
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
 
 
         d.appendChild(linkTitle);
@@ -4062,26 +4003,19 @@ function creatColorPull(){
         };
 
         gradientButton.onclick=()=>{
-            let colorInput1 = document.getElementsByClassName("color-input1")[0];
-            let colorInput2 = document.getElementsByClassName("color-input2")[0];
-            let colorInput3 = document.getElementsByClassName("color-input3")[0];
-            let colorInput4 = document.getElementsByClassName("color-input4")[0];
-            let degRange1 = document.getElementsByClassName("deg-input")[0];
-            let percentRange1 = document.getElementsByClassName("prec-input1")[0];
-            let percentRange2 = document.getElementsByClassName("prec-input2")[0];
-            let linkInput1 = document.getElementsByClassName("link-input")[0];
-            let linkInput2 = document.getElementsByClassName("link-input-2")[0];
-            let opacity1 = document.getElementsByClassName("opacity1")[0];
-            let opacity2 = document.getElementsByClassName("opacity2")[0];
-
-
             colorInput1.value=rgb2hex(getRandomInt(255), getRandomInt(255), getRandomInt(255));
+            colorInput1.style.backgroundColor=colorInput1.value;
             colorInput2.value=rgb2hex(getRandomInt(255), getRandomInt(255), getRandomInt(255));
+            colorInput2.style.backgroundColor=colorInput2.value;
             degRange1.value=getRandomInt(360);
+            percentRange.value=getRandomInt(100);
             percentRange1.value=getRandomInt(100);
-            percentRange2.value=getRandomInt(100);
-
-            styleUpdate();
+            localStorage.setItem("gc1", colorInput1.value);
+            localStorage.setItem("gc2", colorInput2.value);
+            localStorage.setItem("gd", degRange1.value);
+            localStorage.setItem("pc1", percentRange.value);
+            localStorage.setItem("pc2", percentRange1.value);
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
         }
 
         d.appendChild(gradientButton);
@@ -4124,6 +4058,17 @@ function creatColorPull(){
     }
 }
 
+    function styleUpdate(){
+        console.log("double")
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
+        document.querySelector("#__next").style.backgroundImage=`url(${localStorage.getItem("sl1")})`;
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${localStorage.getItem("sl2")})`;
+        document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
+    }
+
+
 if (document.isTrusted){
     exec();
 }
@@ -4139,7 +4084,6 @@ var memoryKey = false;
 var waitingKey = false;
 
     window.onkeydown=(e)=>{
-        console.log(e);
         if (e.key === "Enter" || e.key === "Ent" || e.keyCode === 13) {
             document.getElementsByClassName("jsx-4289504161 big")[0].click();
         }
