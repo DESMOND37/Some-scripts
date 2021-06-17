@@ -1491,8 +1491,6 @@ function clearActiveelements(){
     clearMidCanvas();
     mirorButton.classList.remove("act1");
     document.getElementsByClassName("rightpanel")[0].style.right="-220px";
-    document.querySelector("#content > div.rightpanel > div:nth-child(3)").style.opacity = 0.5;
-    document.querySelector("#content > div.rightpanel > div:nth-child(3)").style.animation="";
     var smoothButton = document.getElementsByClassName("jsx-3659451671 tool  smooth")[0];
     var degRangeBorder = document.getElementsByClassName("deg-range-border")[0];
     smoothButton.classList.remove("act1");
@@ -2653,60 +2651,7 @@ function addMirrorBase(){
                 clientMouseMove(e.clientX, e.clientY);
             }
         }, 10);
-
     })
-
-}
-
-/////////////////////////////////
-
-//Функционал исправленной заливки
-var curThicc;
-function fixedBucket(){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
-    var prevCanvas;
-
-    //document.getElementsByClassName("jsx-3659451671 tool fil")[0].addEventListener('click', ()=>{
-    //    prevCanvas = convert0Dto2D(canvas.getContext("2d").getImageData(0, 0, 1516, 848).data);
-    //})
-
-    var evtCanvas = pointerCanvas;
-
-    evtCanvas.addEventListener('pointerdown', (e)=>{
-        if (document.getElementsByClassName("jsx-3659451671 tool fil sel").length != 0 && document.getElementsByClassName("fi")[0].checked && e.which != 3){
-            prevCanvas = convert0Dto2D(canvas.getContext("2d").getImageData(0, 0, 1516, 848).data);
-        }
-    })
-
-    evtCanvas.addEventListener("pointerup", (e)=>{setTimeout(()=>{
-        if (document.getElementsByClassName("jsx-3659451671 tool fil sel").length != 0 && document.getElementsByClassName("fi")[0].checked){
-            var curCanvas = convert0Dto2D(canvas.getContext("2d").getImageData(0, 0, 1516, 848).data);
-            var newList = [];
-
-            var time = performance.now();
-
-            for (let y=0; y<848; y++){
-                newList.push([]);
-                for (let x=0; x<1516; x++){
-                    if (isArrayEqual2(curCanvas[y][x], prevCanvas[y][x])){
-                        newList[newList.length-1].push(0);
-                    } else {
-                        newList[newList.length-1].push(1);
-                    }
-                }
-            }
-
-            setTimeout(()=>{
-            document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
-            curThicc = document.getElementsByClassName("jsx-340028725 thickness sel")[0];
-            document.getElementsByClassName("jsx-340028725 thickness")[0].click();
-
-            drawNsort(getBorderOfNew(newList));
-
-            }, 30);
-        }
-    }, 2)})
 }
 
 ////////////////////////////////
@@ -2794,8 +2739,6 @@ function mainDrawFunc(){
     //Добавление блоков функционала инструментов
     //Блок функционала зеркала
     addMirrorBase();
-    //Блок функционала исправленной заливки
-    fixedBucket()
     //Активация сглаживания
     debugName();
 }
