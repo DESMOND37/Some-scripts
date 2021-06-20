@@ -3187,6 +3187,7 @@ function createSizePull(){
 
     rightPannel.onmouseenter=function(){
         backgroundMenuKey=true;
+        linkInput.disabled=false;
         rightPannel.style.right="0px";
     }
 
@@ -3194,6 +3195,7 @@ function createSizePull(){
         backgroundMenuKey=false;
         setTimeout(()=>{
             if (!backgroundMenuKey && document.getElementsByClassName("miror sel").length == 0){
+                linkInput.disabled=true;
                 rightPannel.style.right="-220px";
             }
         }, 2000);
@@ -3241,6 +3243,7 @@ function createSizePull(){
     linkInput.style.margin="5px";
     linkInput.style.fontFamily='Black';
     linkInput.style.padding="0px 10px";
+    linkInput.disabled=true;
     linkInput.oninput=()=>{backgroundUpdate();};
     mainBackImage.appendChild(linkInput);
 
