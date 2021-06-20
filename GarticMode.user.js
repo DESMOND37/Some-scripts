@@ -3668,7 +3668,7 @@ function creatColorPull(){
         colorInput1.oninput=function(){
             localStorage.setItem("gc1", colorInput1.value);
             colorInput1.style.backgroundColor=colorInput1.value;
-            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;        }
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;}
         d.appendChild(colorInput1);
 
         var colorInput2 = document.createElement('input');
@@ -3689,7 +3689,7 @@ function creatColorPull(){
         colorInput2.oninput=function(){
             localStorage.setItem("gc2", colorInput2.value);
             colorInput2.style.backgroundColor=colorInput2.value;
-            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;        }
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;}
         d.appendChild(colorInput2);
 
         var degRange1 = document.createElement('input');
@@ -3699,7 +3699,6 @@ function creatColorPull(){
         degRange1.max = 360;
         degRange1.step = 1;
         //degRange1.value = 200;
-        degRange1.value=`${cookieDict.degRange1}`;
         degRange1.style.margin="10px 5px";
         degRange1.style.width="190px";
         degRange1.style.height="4px";
@@ -3711,7 +3710,7 @@ function creatColorPull(){
         degRange1.oninput=function(){
             localStorage.setItem("gd", degRange1.value);
             degRange1.style.backgroundColor=degRange1.value;
-            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;        }
+            document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;}
         d.appendChild(degRange1);
 
         var percentRange = document.createElement('input');
@@ -3721,7 +3720,6 @@ function creatColorPull(){
         percentRange.max = 100;
         percentRange.step = 1;
         //percentRange.value = 0;
-        percentRange.value = `${cookieDict.precentRange1}`;
         percentRange.style.width="190px";
         //percentRange.style.heigt="15px";
         percentRange.style.borderRadius="10px";
@@ -3743,7 +3741,6 @@ function creatColorPull(){
         percentRange1.max = 100;
         percentRange1.step = 1;
         //percentRange1.value = 85;
-        percentRange1.value = `${cookieDict.precentRange2}`;
         percentRange1.style.margin="10px 5px";
         percentRange1.style.width="190px";
         //percentRange1.style.heigt="15px";
@@ -3779,9 +3776,17 @@ function creatColorPull(){
         colorInput3.style.background="none";
         colorInput3.style.margin="5px";
         //colorInput2.value="#c8435e";
-        colorInput3.value=`${cookieDict.colorInput3}`;
-        colorInput3.style.backgroundColor=colorInput3.value;
-        colorInput3.oninput=function(){styleUpdate();}
+        if(!localStorage.getItem("sc3")){
+            localStorage.setItem("sc3", "#000000");
+            localStorage.setItem("sc3o", "00");
+        }
+        colorInput3.style.backgroundColor=localStorage.getItem("sc3");
+        colorInput3.value=localStorage.getItem("sc3");
+        colorInput3.oninput=function(){
+            localStorage.setItem("sc3", colorInput3.value);
+            colorInput3.style.backgroundColor=colorInput3.value;
+            document.querySelector("#content").style.backgroundColor=colorInput3.value + localStorage.getItem("sc3o");
+        }
         d.appendChild(colorInput3);
 
         var opacity1 = document.createElement('input');
@@ -3791,13 +3796,19 @@ function creatColorPull(){
         opacity1.max = 255;
         opacity1.step = 1;
         //percentRange1.value = 85;
-        opacity1.value = `${cookieDict.opacity1}`;
         opacity1.style.margin="10px 5px";
         opacity1.style.width="190px";
         //percentRange1.style.heigt="15px";
         opacity1.style.borderRadius="10px";
         opacity1.style.height="4px";
-        opacity1.oninput=()=>{styleUpdate();};
+        opacity1.value=parseInt(localStorage.getItem("sc3o"), 16);
+        document.querySelector("#content").style.backgroundColor=localStorage.getItem("sc3") + localStorage.getItem("sc3o");
+        opacity1.oninput=()=>{
+            var v = Number(opacity1.value).toString(16);
+            if (v.length==1){v="0"+v};
+            localStorage.setItem("sc3o", v);
+            document.querySelector("#content").style.backgroundColor=localStorage.getItem("sc3") + localStorage.getItem("sc3o");
+        };
         d.appendChild(opacity1);
 
         var colorInput4 = document.createElement('input');
@@ -3811,10 +3822,18 @@ function creatColorPull(){
         colorInput4.style.appearance="none";
         colorInput4.style.background="none";
         colorInput4.style.margin="5px";
-        //colorInput2.value="#c8435e";
-        colorInput4.value=`${cookieDict.colorInput4}`;
-        colorInput4.style.backgroundColor=colorInput4.value;
-        colorInput4.oninput=function(){styleUpdate();}
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundBlendMode="color-dodge";
+        if(!localStorage.getItem("sc4")){
+            localStorage.setItem("sc4", "#000000");
+            localStorage.setItem("sc4o", "00");
+        }
+        colorInput4.style.backgroundColor=localStorage.getItem("sc4");
+        colorInput4.value=localStorage.getItem("sc4");
+        colorInput4.oninput=function(){
+            localStorage.setItem("sc4", colorInput4.value);
+            colorInput4.style.backgroundColor=colorInput4.value;
+            document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=colorInput4.value + localStorage.getItem("sc4o");
+        }
         d.appendChild(colorInput4);
 
         var opacity2 = document.createElement('input');
@@ -3829,7 +3848,14 @@ function creatColorPull(){
         //percentRange1.style.heigt="15px";
         opacity2.style.borderRadius="10px";
         opacity2.style.height="4px";
-        opacity2.oninput=()=>{styleUpdate();};
+        opacity2.value=parseInt(localStorage.getItem("sc4o"), 16);
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
+        opacity2.oninput=()=>{
+            var v = Number(opacity2.value).toString(16);
+            if (v.length==1){v="0"+v};
+            localStorage.setItem("sc4o", v);
+            document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
+        };
         d.appendChild(opacity2);
 
         var linkTitle = document.createElement('div');
@@ -4003,6 +4029,7 @@ function creatColorPull(){
 
     function styleUpdate(){
         console.log("double")
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundBlendMode="color-dodge";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
