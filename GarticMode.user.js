@@ -2871,7 +2871,7 @@ function deletBanner(){
     if (banner != null){banner.parentNode.removeChild(banner)};
 }
 
-function dialogWindow(title, text){
+function dialogWindow(title, text, funcYes, funcNo=()=>{}){
     var d=document.createElement('div');
     d.style.position="absolute";
     d.style.display="flex";
@@ -2943,33 +2943,7 @@ function dialogWindow(title, text){
     yesButton.onmouseleave=function(){yesButton.style.backgroundColor="rgb(86, 53, 220)";};
     yesButton.onclick=function(){
         d.parentNode.removeChild(d);
-
-        let colorInput1 = document.getElementsByClassName("color-input1")[0];
-        let colorInput2 = document.getElementsByClassName("color-input2")[0];
-        let colorInput3 = document.getElementsByClassName("color-input3")[0];
-        let colorInput4 = document.getElementsByClassName("color-input4")[0];
-        let degRange1 = document.getElementsByClassName("deg-input")[0];
-        let percentRange1 = document.getElementsByClassName("prec-input1")[0];
-        let percentRange2 = document.getElementsByClassName("prec-input2")[0];
-        let linkInput1 = document.getElementsByClassName("link-input")[0];
-        let linkInput2 = document.getElementsByClassName("link-input-2")[0];
-        let opacity1 = document.getElementsByClassName("opacity1")[0];
-        let opacity2 = document.getElementsByClassName("opacity2")[0];
-
-        colorInput1.value="#7213e7";
-        colorInput2.value="#c8435e";
-        colorInput3.value="#000000";
-        colorInput4.value="#000000";
-        degRange1.value=209;
-        percentRange1.value=22;
-        percentRange2.value=85;
-        linkInput1.value="";
-        linkInput2.value="";
-        opacity1.value=0;
-        opacity2.value=0;
-
-        styleUpdate();
-
+        funcYes();
     };
     buttonBox.appendChild(yesButton);
 
@@ -2989,7 +2963,10 @@ function dialogWindow(title, text){
     noButton.innerText="No";
     noButton.onmouseenter=function(){noButton.style.backgroundColor="rgb(64, 49, 194)";};
     noButton.onmouseleave=function(){noButton.style.backgroundColor="rgb(86, 53, 220)";};
-    noButton.onclick=function(){d.parentNode.removeChild(d);};
+    noButton.onclick=function(){
+        d.parentNode.removeChild(d);
+        funcNo();
+    };
     buttonBox.appendChild(noButton);
 }
 
@@ -3495,7 +3472,7 @@ function createSizePull(){
 
 }
 
-function creatColorPull(){
+function createColorPull(){
     if (document.getElementsByClassName("leftpanel")[0] == undefined && document.isTrusted){
 
         var cookieDict = getCookieDict();
@@ -3709,7 +3686,6 @@ function creatColorPull(){
         degRange1.value=localStorage.getItem("gd");
         degRange1.oninput=function(){
             localStorage.setItem("gd", degRange1.value);
-            degRange1.style.backgroundColor=degRange1.value;
             document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;}
         d.appendChild(degRange1);
 
@@ -3730,7 +3706,6 @@ function creatColorPull(){
         percentRange.value=localStorage.getItem("pc1");
         percentRange.oninput=function(){
             localStorage.setItem("pc1", percentRange.value);
-            percentRange.style.backgroundColor=percentRange.value;
             document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;}
         d.appendChild(percentRange);
 
@@ -3751,7 +3726,6 @@ function creatColorPull(){
         percentRange1.value=localStorage.getItem("pc2");
         percentRange1.oninput=function(){
             localStorage.setItem("pc2", percentRange1.value);
-            percentRange1.style.backgroundColor=percentRange1.value;
             document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
         }
         d.appendChild(percentRange1);
@@ -3822,7 +3796,7 @@ function creatColorPull(){
         colorInput4.style.appearance="none";
         colorInput4.style.background="none";
         colorInput4.style.margin="5px";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundBlendMode="color-dodge";
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundBlendMode="color-burn";
         if(!localStorage.getItem("sc4")){
             localStorage.setItem("sc4", "#000000");
             localStorage.setItem("sc4o", "00");
@@ -4019,8 +3993,60 @@ function creatColorPull(){
             defaultButton.style.margin="5px 5px 5px 5px";
         };
         defaultButton.onclick=function(){
-            dialogWindow('reset all style settings?', 'All style settings will be reset to the default settings without the possibility of recovery');
-        };
+            linkInput1.disabled=true;
+            linkInput2.disabled=true;
+            leftPannel.style.left="-220px";
+            dialogWindow('reset all style settings?', 'All style settings will be reset to the default settings without the possibility of recovery', ()=>{
+                let colorInput1 = document.getElementsByClassName("color-input1")[0];
+                let colorInput2 = document.getElementsByClassName("color-input2")[0];
+                let colorInput3 = document.getElementsByClassName("color-input3")[0];
+                let colorInput4 = document.getElementsByClassName("color-input4")[0];
+                let degRange1 = document.getElementsByClassName("deg-input")[0];
+                let percentRange1 = document.getElementsByClassName("prec-input1")[0];
+                let percentRange2 = document.getElementsByClassName("prec-input2")[0];
+                let linkInput1 = document.getElementsByClassName("link-input")[0];
+                let linkInput2 = document.getElementsByClassName("link-input-2")[0];
+                let opacity1 = document.getElementsByClassName("opacity1")[0];
+                let opacity2 = document.getElementsByClassName("opacity2")[0];
+
+                colorInput1.value="#7213e7";
+                colorInput2.value="#c8435e";
+                colorInput3.value="#000000";
+                colorInput4.value="#000000";
+                degRange1.value=200;
+                percentRange1.value=0;
+                percentRange2.value=100;
+                linkInput1.value="";
+                linkInput2.value="";
+                opacity1.value=0;
+                opacity2.value=0;
+
+                localStorage.setItem("gc1", colorInput1.value);
+                colorInput1.style.backgroundColor=colorInput1.value;
+                localStorage.setItem("gc2", colorInput2.value);
+                colorInput2.style.backgroundColor=colorInput2.value;
+                localStorage.setItem("gd", degRange1.value);
+                localStorage.setItem("pc1", percentRange1.value);
+                localStorage.setItem("pc2", percentRange2.value);
+                localStorage.setItem("sl1", linkInput1.value);
+                localStorage.setItem("sl2", linkInput2.value);
+                localStorage.setItem("sc3", colorInput3.value);
+                localStorage.setItem("sc3o", "00");
+                colorInput3.style.backgroundColor=colorInput3.value;
+                localStorage.setItem("sc4", colorInput4.value);
+                localStorage.setItem("sc4o", "00");
+                colorInput4.style.backgroundColor=colorInput4.value;
+
+                document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor="#00000000";
+                document.querySelector("#content").style.backgroundColor="#00000000";
+                document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
+                document.querySelector("#__next").style.backgroundImage="";
+            }, ()=>{
+                linkInput1.disabled=false;
+                linkInput2.disabled=false;
+                leftPannel.style.left="0px";
+            })
+            };
 
         d.appendChild(defaultButton);
         setTimeout(styleUpdate, 500);
@@ -4033,7 +4059,7 @@ function creatColorPull(){
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
-        document.querySelector("#__next").style.backgroundImage=`url(${localStorage.getItem("sl1")})`;
+        if(localStorage.getItem("sl1") != ""){document.querySelector("#__next").style.backgroundImage=`url(${localStorage.getItem("sl1")})`;}
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${localStorage.getItem("sl2")})`;
         document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
     }
@@ -4157,13 +4183,13 @@ function main(){
         //alert("menuKey");
         window.onload=()=>{
         //    deletBanner();
-            creatColorPull();
+            createColorPull();
         }
         setTimeout(clown, 100);
         styleUpdate();
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
-        setTimeout(creatColorPull, 10);
+        setTimeout(createColorPull, 10);
         setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
         flagsOff();
@@ -4175,13 +4201,13 @@ function main(){
         //alert("menuLinkKey");
         //window.onload=()=>{
             //deletBanner();
-            //creatColorPull();
+            //createColorPull();
             //styleUpdate();
         //}
         setTimeout(clown, 100);
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
-        setTimeout(creatColorPull, 500);
+        setTimeout(createColorPull, 500);
         setTimeout(styleUpdate, 10);
         setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
