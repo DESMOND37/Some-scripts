@@ -992,7 +992,7 @@ function AddButton(){
 function debugName(){
     var name = document.getElementsByTagName("h3")[0];
     if (name.innerText == ""){
-        document.getElementsByClassName("jsx-1307288772 drawing")[0].style.margin="55px 0px 10px";
+        document.getElementsByClassName("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
     }
 }
 
@@ -1597,8 +1597,8 @@ function drawStyleChange(){
     //Растяжение палитры
     var palitra = document.getElementsByClassName("jsx-3071142060")[1];
     palitra.style.height="auto";
-    var book = document.getElementsByClassName("jsx-1307288772 book")[0];
-    book.style.padding="0px 0px 20px 0px";
+    //var book = document.getElementsByClassName("jsx-1307288772 book")[0];
+    //book.style.padding="0px 0px 20px 0px";
     //Изменеине в иснтрументах
     var undo = document.getElementsByClassName("jsx-3659451671 tool undo")[0];
     var redo = document.getElementsByClassName("jsx-3659451671 tool redo")[0];
@@ -1607,37 +1607,41 @@ function drawStyleChange(){
     //Очистка задней картинки
     var underDrawContainer = document.getElementsByClassName("jsx-1307288772 core")[0];
     underDrawContainer.style.backgroundImage="url()";
+    underDrawContainer.style.boxShadow="none";
     var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
     toolBar.style.height="auto";
+
+    //Изменения расположения тайтлов
+    //document.getElementsByClassName("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
     //Изменение местоположение тайтлов
-    document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header > h4").style.margin="20px 0px 10px";
+    //document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header > h4").style.margin="20px 0px 10px";
     //Убираем лишнее с хослта
-    var hos = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
-    hos.style.boxShadow="none";
-    hos.style.margin="0px 6px 6px";
+    //var hos = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
+    //hos.style.boxShadow="none";
+    //hos.style.margin="0px 6px 6px";
     //Book edit
-    book.style.height="538px";
-    book.style.borderRadius="10px";
+    //book.style.height="538px";
+    //book.style.borderRadius="10px";
     //Слой книги
-    var bookLayer = document.querySelector("#content > div > div > div.jsx-1562482592.center");
-    bookLayer.style.padding="50px 0px 0px";
+    //var bookLayer = document.querySelector("#content > div > div > div.jsx-1562482592.center");
+    //bookLayer.style.padding="50px 0px 0px";
     //Надхолсьтье
     var canvasLayer = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
     canvasLayer.style.borderRadius="0px 0px 0px 0px";
     //document.querySelector("#content > div.jsx-2562723607.jsx-3822683434.screen.fade-enter-done > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header").style.borderRadius="0px"
     //Нижняя планка
-    var but = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1562482592.bottom");
-    but.style.height="110px";
+    //var but = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1562482592.bottom");
+    //but.style.height="110px";
     //Удаление лого
-    var logo = document.getElementsByClassName("jsx-1307288772 logo")[0];
-    if (logo != undefined){
-        logo.parentNode.removeChild(logo);
-    }
+    //var logo = document.getElementsByClassName("jsx-1307288772 logo")[0];
+    //if (logo != undefined){
+    //    logo.parentNode.removeChild(logo);
+    //}
     //Изменение цвета рамки
-    var book1 = document.getElementsByClassName("jsx-1307288772 book")[0];
+    //var book1 = document.getElementsByClassName("jsx-1307288772 book")[0];
     //book1.style.backgroundColor="rgb(0 0 0)";
     //book1.style.boxShadow="rgb(0 0 0) 0px -3px 0px 0px, rgb(1 25 70) 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px";
-    var header1 = document.getElementsByClassName("jsx-1307288772 header")[0];
+    //var header1 = document.getElementsByClassName("jsx-1307288772 header")[0];
     //header1.style.backgroundColor="rgb(0 0 0)";
     //header1.style.boxShadow="rgb(0 0 0) 0px -2px 0px 0px inset";
     //header1.style.borderBottom="6px solid rgb(0 0 0)";
@@ -1651,39 +1655,39 @@ function drawStyleChange(){
     try{
         document.getElementsByClassName("jsx-3193114933")[0].insertAdjacentElement('beforeBegin', newDiv);
     }catch{}
-        //Добавление выбора цвета рамки;
-    var c=localStorage.getItem("draw-block-color");
-    if(!c){c="#000000";}
-    var i=document.createElement("input");
-    i.value=c;
-    header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
-    book1.style.boxShadow=`${c} 0px -3px 0px 0px, black 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px`;
-    book1.style.backgroundColor=c;
-    header1.style.borderBottom="6px solid" + c;
-    header1.style.backgroundColor=c;
-    i.type="color";
-    i.style.left="55px";
-    i.style.top="4px";
-    i.style.width="70px";
-    i.style.height="28px";
-    i.style.position="absolute";
-    i.style.border="2px solid white";
-    i.style.borderRadius="5px";
-    i.style.cursor="pointer";
-    i.style.appearance="none";
-    i.style.background=`none ${c}`;
-    i.style.margin="5px";
-    i.oninput=()=>{
-        var c=i.value;
-        localStorage.setItem("draw-block-color", c);
-        i.style.background=`none ${c}`;
-        header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
-        book1.style.boxShadow=`${c} 0px -3px 0px 0px, black 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px`;
-        book1.style.backgroundColor=c;
-        header1.style.borderBottom="6px solid" + c;
-        header1.style.backgroundColor=c;
-    }
-    header1.appendChild(i);
+//         //Добавление выбора цвета рамки;
+//         var c=localStorage.getItem("draw-block-color");
+//     if(!c){c="#000000";}
+//     var i=document.createElement("input");
+//     i.value=c;
+//     header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
+//     book1.style.boxShadow=`${c} 0px -3px 0px 0px, black 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px`;
+//     book1.style.backgroundColor=c;
+//     header1.style.borderBottom="6px solid" + c;
+//     header1.style.backgroundColor=c;
+//     i.type="color";
+//     i.style.left="55px";
+//     i.style.top="4px";
+//     i.style.width="70px";
+//     i.style.height="28px";
+//     i.style.position="absolute";
+//     i.style.border="2px solid white";
+//     i.style.borderRadius="5px";
+//     i.style.cursor="pointer";
+//     i.style.appearance="none";
+//     i.style.background=`none ${c}`;
+//     i.style.margin="5px";
+//     i.oninput=()=>{
+//         var c=i.value;
+//         localStorage.setItem("draw-block-color", c);
+//         i.style.background=`none ${c}`;
+//         header1.style.boxShadow=`${c} 0px -2px 0px 0px inset`;
+//         book1.style.boxShadow=`${c} 0px -3px 0px 0px, black 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px`;
+//         book1.style.backgroundColor=c;
+//         header1.style.borderBottom="6px solid" + c;
+//         header1.style.backgroundColor=c;
+//     }
+//     header1.appendChild(i);
 }
 
 var curElementOverCursor;
