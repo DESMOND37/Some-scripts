@@ -1026,7 +1026,7 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
             arr[i].parentNode.style.backgroundPosition="60px -70px";
-            arr[i].parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/850169507002580992/ChipNDale.gif)";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/819675495490125834/855839018000318464/untitled.gif)";
             arr[i].parentNode.style.backgroundPosition="0px -20px";
             arr[i].parentNode.style.backgroundSize="324px 100px";
             //arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
@@ -3024,6 +3024,25 @@ function mainMenuTitle(){
 
         topMenu.appendChild(settingTitle);
 
+        var telegramTitle = document.createElement("div");
+        telegramTitle.classList.add("title");
+        telegramTitle.title="свяжтесь со мной!"
+        telegramTitle.innerText=`Telegram`;
+        telegramTitle.style.backgroundColor="#17bde2";
+        telegramTitle.style.borderRadius="0px 0px 5px 5px";
+        telegramTitle.style.color="white";
+        telegramTitle.style.right="0px";
+        telegramTitle.style.fontSize="100%";
+        telegramTitle.style.height="14px";
+        telegramTitle.style.width="auto";
+        telegramTitle.style.fontFamily="Black";
+        telegramTitle.style.padding="5px 10px 3px";
+        telegramTitle.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
+        telegramTitle.style.cursor="pointer";
+        telegramTitle.style.margin="0px 0px 0px 7px";
+
+        topMenu.appendChild(telegramTitle);
+
         var title = document.createElement("div");
         title.classList.add("title");
         title.title="Инструкция";
@@ -3042,6 +3061,25 @@ function mainMenuTitle(){
         title.style.cursor="pointer";
 
         topMenu.appendChild(title);
+
+        var discordTitle = document.createElement("div");
+        discordTitle.classList.add("title");
+        discordTitle.title="Присоединятесь к русскому сообществу в дискорде!"
+        discordTitle.innerText=`Discord`;
+        discordTitle.style.backgroundColor="#9163ff";
+        discordTitle.style.borderRadius="0px 0px 5px 5px";
+        discordTitle.style.color="white";
+        discordTitle.style.right="0px";
+        discordTitle.style.fontSize="100%";
+        discordTitle.style.height="15px";
+        discordTitle.style.width="auto";
+        discordTitle.style.fontFamily="Black";
+        discordTitle.style.padding="5px 10px 3px";
+        discordTitle.onclick=()=>{ window.open("https://bit.ly/3uZqiG7", '_blank'); };
+        discordTitle.style.cursor="pointer";
+        discordTitle.style.margin="0px 7px 0px 0px";
+
+        topMenu.appendChild(discordTitle);
 
         var donateTitle = document.createElement("div");
         donateTitle.classList.add("title");
@@ -3520,8 +3558,8 @@ function createColorPull(){
 
         var textWindow2 = document.createElement('div');
         textWindow2.style.width='200px';
-        textWindow2.style.height="115px";
-        textWindow2.style.padding="5px 0px 12px";
+        textWindow2.style.height="fit-content";
+        textWindow2.style.padding="5px 0px 19px";
         textWindow2.style.background='rgba(255, 255, 255, 0.13)';
         textWindow2.style.borderRadius="10px";
         //textWindow.style.position="absolute";
@@ -3531,7 +3569,7 @@ function createColorPull(){
         textWindow2.style.color="#ffffff";
         textWindow2.style.fontFamily="Black";
         textWindow2.style.textAlign="center";
-        textWindow2.innerText="Присоединятесь к нашему русскому сообществу в дискорде!\n\n";
+        textWindow2.innerText="Можете и мой дискорд глянуть!)\n\n";
         textWindow2.style.margin="0px 10px 10px 10px";
         textWindow2.style.letterSpacing="1px";
         textWindow2.style.size="18px";
@@ -3539,12 +3577,12 @@ function createColorPull(){
         leftPannel.appendChild(textWindow2);
 
         var dsLink = document.createElement('a');
-        dsLink.innerText="Gartic Phone Ru";
-        dsLink.href="https://bit.ly/3uZqiG7";
+        dsLink.innerText="Doctor's Server";
+        dsLink.href="https://discord.gg/eSZyC9JeAF";
         dsLink.style.opacity=1;
         dsLink.style.fontSize="20px"
         dsLink.style.textDecoration="none";
-        dsLink.onclick=()=>{ window.open("https://bit.ly/3uZqiG7", '_blank'); }
+        dsLink.onclick=()=>{ window.open("https://discord.gg/eSZyC9JeAF", '_blank'); }
         dsLink.style.border="2px solid";
         dsLink.style.padding="6px 6px";
         dsLink.style.borderRadius="5px";
@@ -3567,57 +3605,57 @@ function createColorPull(){
         d.style.margin="10px";
         leftPannel.appendChild(d);
 
-        var textWindow = document.createElement('div');
-        textWindow.style.width='200px';
-        textWindow.style.height='auto';
-        textWindow.style.background='rgba(255, 255, 255, 0.13)';
-        textWindow.style.borderRadius="10px";
-        //textWindow.style.position="absolute";
-        //textWindow.style.transform="translateY(170%)";
-        //textWindow.style.position="fixed";
-        textWindow.style.border="3px rgba(255,255,255, 0.5) solid";
-        textWindow.style.color="#ffffff";
-        textWindow.style.fontFamily="Black";
-        textWindow.style.textAlign="center";
-        textWindow.innerText="По всем вопросам и предложениям обращайтесь ко мне:\n";
-        textWindow.style.margin="10px";
-        textWindow.style.letterSpacing="1px";
-        textWindow.style.size="18px";
-        textWindow.style.lineHeight="18px";
-        textWindow.style.padding="5px 0px 0px 0px";
-        leftPannel.appendChild(textWindow);
+//         var textWindow = document.createElement('div');
+//         textWindow.style.width='200px';
+//         textWindow.style.height='auto';
+//         textWindow.style.background='rgba(255, 255, 255, 0.13)';
+//         textWindow.style.borderRadius="10px";
+//         //textWindow.style.position="absolute";
+//         //textWindow.style.transform="translateY(170%)";
+//         //textWindow.style.position="fixed";
+//         textWindow.style.border="3px rgba(255,255,255, 0.5) solid";
+//         textWindow.style.color="#ffffff";
+//         textWindow.style.fontFamily="Black";
+//         textWindow.style.textAlign="center";
+//         textWindow.innerText="По всем вопросам и предложениям обращайтесь ко мне:\n";
+//         textWindow.style.margin="10px";
+//         textWindow.style.letterSpacing="1px";
+//         textWindow.style.size="18px";
+//         textWindow.style.lineHeight="18px";
+//         textWindow.style.padding="5px 0px 0px 0px";
+//         leftPannel.appendChild(textWindow);
 
-        var tgLink = document.createElement('div');
-        tgLink.innerText="TELEGRAM";
-        tgLink.href="https://t.me/DoctorDeathDDracula";
-        tgLink.style.opacity=1;
-        tgLink.style.fontSize="20px"
-        tgLink.style.textDecoration="none";
-        tgLink.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); }
-        tgLink.style.border="2px solid";
-        tgLink.style.padding="9px 0px 9px 0px";
-        tgLink.style.borderRadius="5px";
-        tgLink.style.backgroundColor="rgb(43, 162, 223)";
-        tgLink.style.color="white";
-        tgLink.style.margin="5px";
-        tgLink.style.cursor="pointer";
-        textWindow.appendChild(tgLink);
+//         var tgLink = document.createElement('div');
+//         tgLink.innerText="TELEGRAM";
+//         tgLink.href="https://t.me/DoctorDeathDDracula";
+//         tgLink.style.opacity=1;
+//         tgLink.style.fontSize="20px"
+//         tgLink.style.textDecoration="none";
+//         tgLink.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); }
+//         tgLink.style.border="2px solid";
+//         tgLink.style.padding="9px 0px 9px 0px";
+//         tgLink.style.borderRadius="5px";
+//         tgLink.style.backgroundColor="rgb(43, 162, 223)";
+//         tgLink.style.color="white";
+//         tgLink.style.margin="5px";
+//         tgLink.style.cursor="pointer";
+//         textWindow.appendChild(tgLink);
 
-        var myDsLink = document.createElement('div');
-        myDsLink.innerText="DISCORD";
-        myDsLink.href="https://discord.gg/eSZyC9JeAF";
-        myDsLink.style.opacity=1;
-        myDsLink.style.fontSize="20px"
-        myDsLink.style.textDecoration="none";
-        myDsLink.onclick=()=>{ window.open("https://discord.gg/eSZyC9JeAF", '_blank'); }
-        myDsLink.style.border="2px solid";
-        myDsLink.style.padding="9px 0px 9px 0px";
-        myDsLink.style.borderRadius="5px";
-        myDsLink.style.backgroundColor="rgb(138, 155, 213)";
-        myDsLink.style.color="white";
-        myDsLink.style.margin="10px 5px 6px 5px";
-        myDsLink.style.cursor="pointer";
-        textWindow.appendChild(myDsLink);
+//         var myDsLink = document.createElement('div');
+//         myDsLink.innerText="DISCORD";
+//         myDsLink.href="https://discord.gg/eSZyC9JeAF";
+//         myDsLink.style.opacity=1;
+//         myDsLink.style.fontSize="20px"
+//         myDsLink.style.textDecoration="none";
+//         myDsLink.onclick=()=>{ window.open("https://discord.gg/eSZyC9JeAF", '_blank'); }
+//         myDsLink.style.border="2px solid";
+//         myDsLink.style.padding="9px 0px 9px 0px";
+//         myDsLink.style.borderRadius="5px";
+//         myDsLink.style.backgroundColor="rgb(138, 155, 213)";
+//         myDsLink.style.color="white";
+//         myDsLink.style.margin="10px 5px 6px 5px";
+//         myDsLink.style.cursor="pointer";
+//         textWindow.appendChild(myDsLink);
 
         var title1 = document.createElement('div');
         title1.innerText="Настрока градиента";
@@ -4049,7 +4087,7 @@ function createColorPull(){
             };
 
         d.appendChild(defaultButton);
-        setTimeout(styleUpdate, 500);
+        styleUpdate();
     }
 }
 
@@ -4059,6 +4097,8 @@ function createColorPull(){
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
+        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
+        document.querySelector("#content").style.backgroundColor=localStorage.getItem("sc3") + localStorage.getItem("sc3o");
         if(localStorage.getItem("sl1") != ""){document.querySelector("#__next").style.backgroundImage=`url(${localStorage.getItem("sl1")})`;}
         document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${localStorage.getItem("sl2")})`;
         document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
@@ -4185,7 +4225,6 @@ function main(){
         //    deletBanner();
             createColorPull();
         }
-        setTimeout(clown, 100);
         styleUpdate();
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
@@ -4204,11 +4243,10 @@ function main(){
             //createColorPull();
             //styleUpdate();
         //}
-        setTimeout(clown, 100);
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
-        setTimeout(createColorPull, 500);
-        setTimeout(styleUpdate, 10);
+        setTimeout(createColorPull, 10);
+        styleUpdate()
         setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
         flagsOff();
@@ -4225,7 +4263,6 @@ function main(){
             document.querySelector("#content").appendChild(m);
 
         }
-        if (getCookieDict().badguy == "1"){ setTimeout(()=>{document.getElementsByClassName("jsx-1307288772 core")[0].style.backgroundImage = "url(https://media.discordapp.net/attachments/833410401366573066/849034460543451197/unknown.png)"}, 1000)}
         //Блок рисования
         //alert("drawKey");
         //window.onload=()=>{
@@ -4233,9 +4270,9 @@ function main(){
         //    mainDrawFunc();
         //}
         createSizePull();
-        setTimeout(styleUpdate, 500);
+        //setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
-        //styleUpdate();
+        styleUpdate();
         setTimeout(mainDrawFunc, 500);
         flagsOff();
         if (m != undefined){m.play()};
@@ -4246,10 +4283,10 @@ function main(){
         //Блок лобби с игроками
         //alert("lobbyKey");
         //window.onload=()=>{styleUpdate();}
-        setTimeout(styleUpdate, 500);
+        //setTimeout(styleUpdate, 500);
         setTimeout(VIP, 200);
         //setTimeout(console.clear, 2000);
-        //styleUpdate();
+        styleUpdate();
         //VIP();
         flagsOff();
         lobbyKey=true;
@@ -4259,11 +4296,11 @@ function main(){
         //Блок просмотра результатов
         //alert("bookKey");
         //window.onload=()=>{styleUpdate();}
-        setTimeout(styleUpdate, 500);
+        //setTimeout(styleUpdate, 500);
         if (document.getElementsByClassName("zoomC").length){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
-        //styleUpdate();
+        styleUpdate();
         offBgMenu();
         //setTimeout(console.clear, 2000);
         VIP();
@@ -4277,10 +4314,10 @@ function main(){
         //    styleUpdate();
         //    extendTextInput();
         //}
-        setTimeout(styleUpdate, 500);
+        //setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
 
-        //styleUpdate();
+        styleUpdate();
         setTimeout(extendTextInput , 500);
         flagsOff();
         startKey=true;
@@ -4293,7 +4330,7 @@ function main(){
         //    styleUpdate();
         //}
         offBgMenu();
-        setTimeout(styleUpdate, 500);
+        //setTimeout(styleUpdate, 500);
         setTimeout(extendTextInput, 200);
         //setTimeout(console.clear, 2000);
         //alert("writeKey");
@@ -4301,7 +4338,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //extendTextInput();
-        //styleUpdate();
+        styleUpdate();
         flagsOff();
         writeKey=true;
         setTimeout(memoryFunc, 500);
@@ -4317,7 +4354,7 @@ function main(){
             document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
         }
         //setTimeout(console.clear, 2000);
-        setTimeout(memoryFunc, 500);
+        //setTimeout(memoryFunc, 500);
         styleUpdate();
         flagsOff();
         memoryKey=true;
@@ -4330,10 +4367,10 @@ function main(){
         //    waitVideo();
         //}
 
-        //styleUpdate();
+        styleUpdate();
         //waitVideo();
 
-        setTimeout(styleUpdate, 500);
+        //setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
         setTimeout(waitVideo, 500);
         flagsOff();
