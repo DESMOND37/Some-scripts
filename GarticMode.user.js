@@ -1433,7 +1433,7 @@ function VIP(){
             arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
             arr[i].parentNode.style.border="none";
             arr[i].style.color="#ffffff";
-            arr[i].style.fintFamily="'Regular'";
+            arr[i].style.fontFamily='Regular';
             //arr[i].style.fontSize="x-large";
             //arr[i].style.fontFamily='Bold';
             //arr[i].style.fontStyle="italic";
