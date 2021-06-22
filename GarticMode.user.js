@@ -37,7 +37,6 @@ font1.type='text/css';
 var rule = document.createTextNode(
     "@font-face {font-family: 'Majestic';" +
     "src: url(https://cdn.discordapp.com/attachments/833410401366573066/845238689352908800/Majestic_Regular.ttf);"+
-
     +"}"
                                   );
 font1.appendChild(rule);
@@ -256,8 +255,8 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange14);
 var styleInputRange23 = document.createElement('style');
 styleInputRange23.type = 'text/css';
 var rules23 = document.createTextNode(".book.jsx-1307288772::before {opacity: 0}");
-styleInputRange23.appendChild(rules23);
-document.getElementsByTagName("head")[0].appendChild(styleInputRange23);
+//styleInputRange23.appendChild(rules23);
+//document.getElementsByTagName("head")[0].appendChild(styleInputRange23);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1427,6 +1426,33 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
+        else if (arr[i].innerText.toLowerCase() == "niko"){
+            arr[i].innerText="NIKО";
+            arr[i].parentNode.title="Начинающий художник";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="#ffffff";
+            arr[i].style.fintFamily="'Regular'";
+            //arr[i].style.fontSize="x-large";
+            //arr[i].style.fontFamily='Bold';
+            //arr[i].style.fontStyle="italic";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/856881216048726036/103554.jpg?width=1202&height=676)";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.backgroundPosition="0px -40px";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.style.transition="none";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/856880987982921758/99e1598da4d3c75c25eeda0cd5e79773.jpg)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="200%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-20px -20px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
@@ -2542,16 +2568,16 @@ function addMirrorButton(){
                     mirorButton.classList.add("sel");
                     mirorButton.classList.add("act1");
                     updateMirrorLine();
-                    document.querySelector("#content > div.rightpanel > div:nth-child(3)").style.opacity = 1;
+                    document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.opacity = 1;
                     document.getElementsByClassName("rightpanel")[0].style.right="0px";
-                    document.querySelector("#content > div.rightpanel > div:nth-child(3)").style.animation="1s linear 0s normal none running here";
+                    document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.animation="1s linear 0s normal none running here";
                 } else {
                     mirorButton.classList.remove("sel");
                     clearMidCanvas();
                     mirorButton.classList.remove("act1");
                     document.getElementsByClassName("rightpanel")[0].style.right="-220px";
-                    document.querySelector("#content > div.rightpanel > div:nth-child(3)").style.opacity = 0.5;
-                    document.querySelector("#content > div.rightpanel > div:nth-child(3)").style.animation="";
+                    document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.opacity = 0.5;
+                    document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.animation="";
                 }
             }
         }
@@ -2702,6 +2728,8 @@ var loopaKey = false;
 
 
 function mainDrawFunc(){
+    console.log("draw func");
+    try{
     //Добавление зума
     addZoom(); //Вызывается через unhide элемента класса zoomC
 
@@ -2745,6 +2773,7 @@ function mainDrawFunc(){
     addMirrorBase();
     //Активация сглаживания
     debugName();
+    } catch {if (document.URL.indexOf("draw") != -1 && document.getElementsByClassName("jsx-1307288772 book dark").length==0) {setTimeout(mainDrawFunc, 10)} else {return}}
 }
 
 function waitVideo(){
@@ -3030,7 +3059,7 @@ function mainMenuTitle(){
 
         var telegramTitle = document.createElement("div");
         telegramTitle.classList.add("title");
-        telegramTitle.title="свяжтесь со мной!"
+        telegramTitle.title="свяжитесь со мной!"
         telegramTitle.innerText=`Telegram`;
         telegramTitle.style.backgroundColor="#17bde2";
         telegramTitle.style.borderRadius="0px 0px 5px 5px";
@@ -3068,7 +3097,7 @@ function mainMenuTitle(){
 
         var discordTitle = document.createElement("div");
         discordTitle.classList.add("title");
-        discordTitle.title="Присоединятесь к русскому сообществу в дискорде!"
+        discordTitle.title="Присоединяйтесь к русскому сообществу в дискорде!"
         discordTitle.innerText=`Discord`;
         discordTitle.style.backgroundColor="#9163ff";
         discordTitle.style.borderRadius="0px 0px 5px 5px";
@@ -4280,7 +4309,7 @@ function main(){
         //setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
         styleUpdate();
-        setTimeout(mainDrawFunc, 500);
+        mainDrawFunc();
         flagsOff();
         if (m != undefined){m.play()};
         drawKey=true;
