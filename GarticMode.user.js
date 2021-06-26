@@ -1,15 +1,3 @@
-// ==UserScript==
-// @name         MAIN VERSION
-// @description  Мой самый первый юзерскрипт
-// @author       Doctor Death D. Dracula
-// @license      MIT
-// @version      auto-version
-// @include      https://garticphone.com/*
-// @grant        none
-// @supportURL   t.me/DoctorDeathDDracula
-// ==/UserScript==
-
-document.isTrusted=true;
 
 var VERSION = "2.2.1.4";
 
@@ -367,6 +355,21 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange0202);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+var cssAnimation222 = document.createElement('style');
+cssAnimation.type = 'text/css';
+var rules0022 = document.createTextNode("@keyframes decay {100%, 0% {box-shadow: 0px 0px 8px -2px red;} 50% {box-shadow: 0px 0px 10px 1px red;}}");
+cssAnimation.appendChild(rules0022);
+document.getElementsByTagName("head")[0].appendChild(cssAnimation222);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var cssAnimation2222 = document.createElement('style');
+cssAnimation.type = 'text/css';
+var rules00222 = document.createTextNode("@keyframes bit {100%, 0% {background-position: 20px -25px; background-size: 100%;} 50% {background-position: -30px -30px; background-size: 130%;}}");
+cssAnimation.appendChild(rules00222);
+document.getElementsByTagName("head")[0].appendChild(cssAnimation2222);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function createCanvas(height=800, width=800){
@@ -1027,9 +1030,17 @@ function VIP(){
             arr[i].href="https://t.me/DoctorDeathDDracula";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].style.color="black";
-            arr[i].parentNode.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); };
-            //arr[i].style.animation="rainbow 5s linear";
-            //arr[i].style.animationIterationCount="infinite";
+            arr[i].parentNode.onclick=()=>{
+                console.log('Now playing: Sam Houghton & Joe Collinson "from bullet per minute"')
+                var a = document.getElementsByTagName("audio")[0];
+                if (!a){
+                    a = new Audio();
+                    a.src="https://cdn.discordapp.com/attachments/833410401366573066/858460021708029993/9ace5767d4fb21_1.mp3";
+                    document.querySelector("body").appendChild(a);
+                }
+                if (a.paused){a.play();}else{a.pause();}
+            };
+            arr[i].parentNode.style.animation="2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit";
             arr[i].style.opacity=1;
             arr[i].style.fontFamily="fantasy";
             arr[i].parentNode.style.backgroundColor="rgb(0, 0, 0)";
@@ -1526,7 +1537,7 @@ function VIP(){
             arr[i].parentNode.style.backgroundColor=text1.substring(index, text1.length);
             arr[i].innerText=text1.substring(0, index);
         }
-        else if (document.URL.indexOf("book") != -1){
+        else if (document.URL.indexOf("book") != -1 && arr[i].innerText.toLowerCase() != "doctordeathddracula"){
             arr[i].parentNode.onmouseenter=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.boxShadow="0px 0px 10px red"} };
             arr[i].parentNode.onmouseleave=()=>{if (arr[i].banned != true){ arr[i].parentNode.style.boxShadow=""} };
             arr[i].parentNode.style.cursor="pointer";
