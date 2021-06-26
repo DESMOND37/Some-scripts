@@ -4306,13 +4306,16 @@ function clown(){
 
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
-        if (document.getElementsByClassName("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || document.getElementsByClassName("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
-            localStorage.setItem("clown", "true");
-        };
-        if (localStorage.getItem("clown")=="true"){
-            document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener("click", ()=>{
-                setValue(document.getElementsByClassName("jsx-856742297 ")[0], "Шпилька");
-            })
+
+        if (!(localStorage.getItem("clown")=="false")){
+            if (document.getElementsByClassName("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || document.getElementsByClassName("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
+                localStorage.setItem("clown", "true");
+            };
+            if (localStorage.getItem("clown")=="true"){
+                document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener("click", ()=>{
+                    setValue(document.getElementsByClassName("jsx-856742297 ")[0], "Шпилька");
+                })
+            }
         }
         //Блок главного меню
         //alert("menuKey");
@@ -4330,6 +4333,17 @@ function main(){
         menuKey=true;
     }
     else if (document.URL.indexOf("?c=") != -1 && !menuLinkKey){
+
+        if (!(localStorage.getItem("clown")=="false")){
+            if (document.getElementsByClassName("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || document.getElementsByClassName("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
+                localStorage.setItem("clown", "true");
+            };
+            if (localStorage.getItem("clown")=="true"){
+                document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener("click", ()=>{
+                    setValue(document.getElementsByClassName("jsx-856742297 ")[0], "Шпилька");
+                })
+            }
+        }
         localStorage.setItem("room", document.URL);
         //Блок главного меню при входе по ссылке
         //alert("menuLinkKey");
