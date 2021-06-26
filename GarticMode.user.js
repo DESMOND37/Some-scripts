@@ -1023,7 +1023,7 @@ function VIP(){
             was0=true;
             arr[i].innerText="DoctorDeathDDracula"
             //arr[i].innerText="Doctor ";
-            arr[i].parentNode.style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
+            //arr[i].parentNode.style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
             arr[i].parentNode.title="Создатель модификации & Рисователь Гаечек";
@@ -1529,6 +1529,28 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
+        else if (arr[i].innerText.toLowerCase() == "ТРУБОЧКА".toLowerCase()){
+            arr[i].parentNode.title="стример";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            //arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="#ffffff";
+            arr[i].parentNode.style.background="linear-gradient(to right, rgb(19 196 231), rgb(255 0 200))";
+            arr[i].parentNode.firstChild.style.backgroundColor="black";
+            arr[i].style.fontFamily="cursive";
+            arr[i].parentNode.style.cursor="pointer";
+
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/turb4ik", '_blank'); };
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858473457896259638/57076064-91e6-4bb7-8a54-7b0e4ea62bdf-profile_image-300x300.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-4px -6px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
