@@ -1008,7 +1008,7 @@ function VIP(){
             was0=true;
             arr[i].innerText="DoctorDeathDDracula"
             //arr[i].innerText="Doctor ";
-            //arr[i].style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
+            arr[i].parentNode.style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
             //arr[i].style.webkitTextFillColor="transparent";
             //arr[i].style.webkitBackgroundClip="text";
             arr[i].parentNode.title="Создатель модификации & Рисователь Гаечек";
@@ -1019,14 +1019,17 @@ function VIP(){
             //arr[i].style.animation="rainbow 5s linear";
             //arr[i].style.animationIterationCount="infinite";
             arr[i].style.opacity=1;
+            arr[i].style.fontFamily="fantasy";
             arr[i].parentNode.style.backgroundColor="rgb(0, 0, 0)";
+            arr[i].parentNode.firstChild.style.backgroundColor="black";
+            arr[i].parentNode.firstChild.style.borderColor="red";
             arr[i].parentElement.style.border="2px solid black";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-1px 2px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-6px -3px";
             arr[i].parentNode.style.backgroundPosition="60px -70px";
-            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/819675495490125834/855839018000318464/untitled.gif)";
-            arr[i].parentNode.style.backgroundPosition="0px -20px";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858402910110744616/unknown.png?width=1440&height=400)";
+            arr[i].parentNode.style.backgroundPosition="20px -40px";
             arr[i].parentNode.style.backgroundSize="324px 100px";
             //arr[i].parentNode.onmouseenter=()=>{arr[i].parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
             //arr[i].parentNode.onmouseleave=()=>{arr[i].parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
@@ -1035,7 +1038,7 @@ function VIP(){
 
             if (!doctorwas){
                 var music0 = document.createElement("audio");
-                music0.src="https://cdn.discordapp.com/attachments/833410401366573066/846834550847963236/roundstart_main.mp3";
+                music0.src="https://cdn.discordapp.com/attachments/833410401366573066/858407902947704872/8307-obemnyi-stuk-v-dver.mp3";
                 music0.autoplay=true;
                 music0.volume=0.3;
                 doctorwas = true;
