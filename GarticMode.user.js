@@ -1,8 +1,20 @@
+// ==UserScript==
+// @name         MAIN VERSION
+// @description  Мой самый первый юзерскрипт
+// @author       Doctor Death D. Dracula
+// @license      MIT
+// @version      auto-version
+// @include      https://garticphone.com/*
+// @grant        none
+// @supportURL   t.me/DoctorDeathDDracula
+// ==/UserScript==
 
-var VERSION = "2.2.1.2";
+document.isTrusted=true;
+
+var VERSION = "2.2.1.4";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\n\nФикс багов:\nИсправлена работа на FireFox`);
+    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\n\nНововведение:\nФикс заливки 2.0 работает, как и предыдущая версия, со своими косяками, но она в десятки раз быстрее!`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
@@ -1040,7 +1052,7 @@ function VIP(){
                 var music0 = document.createElement("audio");
                 music0.src="https://cdn.discordapp.com/attachments/833410401366573066/858407902947704872/8307-obemnyi-stuk-v-dver.mp3";
                 music0.autoplay=true;
-                music0.volume=0.3;
+                music0.volume=1;
                 doctorwas = true;
             }
             doctorwas = true;
