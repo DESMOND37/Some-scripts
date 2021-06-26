@@ -2780,7 +2780,6 @@ var loopaKey = false;
 
 function mainDrawFunc(){
     if (localStorage.getItem("clown")=="true"){alert("Ага! Я узнал тебя, Шпилька. Ты меня просто так выгнал из комнаты, так что функции модификации будут ограничены для тебя, конечно, кроме пофикшенной заливки. Так, о чем это я ... А, да! Так вот ты меня обидел. Если хочешь продолжить пользоваться модом - напиши мне в личку и извинись. Ну а можешь просто перестать пользоваться модом, для тебя это не такая большая потеря, выбор за тобой.");
-                                               document.querySelector("#content").parentNode.removeChild(document.querySelector("#content"));
                                                return false;
                                               }
     console.log("draw func");
