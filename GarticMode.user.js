@@ -1479,6 +1479,31 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
+        else if (arr[i].innerText.toLowerCase() == "шпилька"){
+            arr[i].parentNode.title="этот клоун меня обидел";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="#ffffff";
+            //arr[i].style.fontSize="x-large";
+            //arr[i].style.fontFamily='Bold';
+            //arr[i].style.fontStyle="italic";
+            arr[i].parentNode.style.backgroundImage="url(https://www.culture.ru/storage/images/e6aba7c47c2d76ec25933d9d69df5c98/32500952e797730ca4779a160b56dbc2.jpeg/c_fill,g_center,w_400,h_292/3921e00947ff971782713787f4442096.jpeg)";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.backgroundPosition="0px -40px";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.style.transition="none";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/1b/1b1059abad5787e0fb1f1544fb41c7ddee4f9a5b_full.jpg)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-7px -5px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
@@ -4281,6 +4306,14 @@ function clown(){
 
 function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
+        if (document.getElementsByClassName("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || document.getElementsByClassName("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
+            localStorage.setItem("clown", "true");
+        };
+        if (localStorage.getItem("clown")=="true"){
+            document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener("click", ()=>{
+                setValue(document.getElementsByClassName("jsx-856742297 ")[0], "Шпилька");
+            })
+        }
         //Блок главного меню
         //alert("menuKey");
         window.onload=()=>{
