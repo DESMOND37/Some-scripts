@@ -1453,6 +1453,32 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
+        else if (arr[i].innerText.toLowerCase() == "marshy"){
+            arr[i].parentNode.title="EU MEMBER";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="#ffffff";
+            arr[i].style.fontFamily='Regular';
+            //arr[i].style.fontSize="x-large";
+            //arr[i].style.fontFamily='Bold';
+            //arr[i].style.fontStyle="italic";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/858136215307681833/858144088809668618/tumblr_1fba8fa4272a845e6fb7381a3c52bda5_884d3cc7_500.gif)";
+            arr[i].parentNode.style.backgroundSize="100%";
+            arr[i].parentNode.style.backgroundPosition="0px -40px";
+            arr[i].parentNode.style.backgroundRepeat="no-repeat";
+            arr[i].parentNode.style.transition="none";
+
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/858136215307681833/858143680878477342/6a91d21f339b8e236223cd0ec1a7ec29.png?width=676&height=676)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-7px -5px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
