@@ -1055,11 +1055,11 @@ function VIP(){
                 var a = document.getElementsByTagName("audio")[0];
                 if (!a){
                     a = new Audio();
-                    a.src="https://cdn.discordapp.com/attachments/833410401366573066/858720471314071572/b1d79b4b02fb8b_1.mp3";
-                    a.currentTime="227";
+                    a.src="https://cdn.discordapp.com/attachments/833410401366573066/858770595320037396/b1d79b4b02fb8b_mp3cut.net.mp3";
+                    a.currentTime="1";
                     document.querySelector("body").appendChild(a);
                 }
-                if(a.ended){a.currentTime="227";}
+                if(a.ended){a.currentTime="1";}
                 a.volume=0;
                 a.play();
                 clearInterval(intId);
