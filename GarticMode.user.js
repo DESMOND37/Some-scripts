@@ -1029,6 +1029,7 @@ var doctorwas = false;
 var was0;
 var blackArr = [];
 
+var intId;
 
 function VIP(){
     var arr = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
@@ -1049,7 +1050,7 @@ function VIP(){
             arr[i].href="https://t.me/DoctorDeathDDracula";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].style.color="black";
-            arr[i].parentNode.onclick=()=>{
+            arr[i].parentNode.onmouseenter=()=>{
                 console.log('Now playing: Sam Houghton & Joe Collinson "from bullet per minute"')
                 var a = document.getElementsByTagName("audio")[0];
                 if (!a){
@@ -1057,8 +1058,29 @@ function VIP(){
                     a.src="https://cdn.discordapp.com/attachments/833410401366573066/858460021708029993/9ace5767d4fb21_1.mp3";
                     document.querySelector("body").appendChild(a);
                 }
-                if (a.paused){a.play();}else{a.pause();}
-            };
+                a.volume=0;
+                a.play();
+                clearInterval(intId);
+                intId = setInterval(function(){
+                    a.volume+=0.01;
+                    if(a.volume >= 0.9){
+                        clearInterval(intId);
+                    }
+                },10);
+
+                };
+            arr[i].parentNode.onmouseleave=()=>{
+                clearInterval(intId);
+                var a = document.getElementsByTagName("audio")[0];
+                intId = setInterval(function(){
+                    a.volume-=0.01;
+                    if(a.volume <= 0.01){
+                        a.pause();
+                        clearInterval(intId);
+                    }
+                },10);
+                }
+
             arr[i].parentNode.style.animation="2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit";
             arr[i].style.opacity=1;
             arr[i].style.fontFamily="fantasy";
@@ -1608,7 +1630,7 @@ function VIP(){
                 if (arr[i].banned){
                     let popa = blackArr.indexOf(arr[i].innerText)
                     arr[i].banned=false;
-                    arr[i].parentNode.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+                    arr[i].parentNode.style.backgroundColor = "none";
                     blackArr.splice(popa, 1);
                 } else {
                     arr[i].banned=true;
