@@ -1,20 +1,8 @@
-// ==UserScript==
-// @name         MAIN VERSION
-// @description  Мой самый первый юзерскрипт
-// @author       Doctor Death D. Dracula
-// @license      MIT
-// @version      auto-version
-// @include      https://garticphone.com/*
-// @grant        none
-// @supportURL   t.me/DoctorDeathDDracula
-// ==/UserScript==
 
-document.isTrusted=true;
-
-var VERSION = "2.2.1.4";
+var VERSION = "2.4.0.0";
 
 if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\n\nНововведение:\nФикс заливки 2.0 работает, как и предыдущая версия, со своими косяками, но она в десятки раз быстрее!`);
+    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\n\nНововведение:\nФикс заливки 2.0 работает, как и предыдущая версия, со своими косяками, но она в десятки раз быстрее! Также была добавлена возможность вводить пользовательский размер кисти!`);
     document.cookie = `VERSION=${VERSION};`;
 }
 
