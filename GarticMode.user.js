@@ -1632,7 +1632,7 @@ function VIP(){
                 if (arr[i].banned){
                     let popa = blackArr.indexOf(arr[i].innerText)
                     arr[i].banned=false;
-                    arr[i].parentNode.style.backgroundColor = "none";
+                    arr[i].parentNode.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
                     blackArr.splice(popa, 1);
                 } else {
                     arr[i].banned=true;
