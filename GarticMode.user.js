@@ -944,18 +944,23 @@ function kok() {
 
         if (items[i].firstChild.children[1]){
             if (items[i].firstChild.children[1].firstChild.innerText == "DOCTORDEATHDDRACULA "){
-                items[i].firstChild.firstChild.firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-                items[i].firstChild.firstChild.firstChild.style.backgroundPosition="-2px 0px";
-                items[i].firstChild.children[1].firstChild.style.animation="rainbow 5s linear";
-                items[i].firstChild.children[1].firstChild.style.animationIterationCount="infinite";
+                items[i].firstChild.firstChild.firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png)";
+                items[i].firstChild.firstChild.firstChild.style.backgroundPosition="-4px 0px";
+                items[i].firstChild.firstChild.firstChild.style.backgroundSize="120%";
+                items[i].firstChild.children[1].firstChild.style.color="black";
                 items[i].firstChild.children[1].firstChild.style.opacity=1;
+                items[i].firstChild.firstChild.style.border="2px solid red";
+                items[i].firstChild.firstChild.style.backgroundColor="black";
+                items[i].firstChild.firstChild.style.transform="scale(-1, 1)";
             }
         }
         if (items[i].firstChild.firstChild.firstChild.innerText == "DOCTORDEATHDDRACULA "){
-            items[i].firstChild.children[1].firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/827569190072221746/9b4e9015e90d22c7.png)";
-            items[i].firstChild.children[1].firstChild.style.backgroundPosition="-2px 0px";
-            items[i].firstChild.firstChild.firstChild.style.animation="rainbow 5s linear";
-            items[i].firstChild.firstChild.firstChild.style.animationIterationCount="infinite";
+            items[i].firstChild.children[1].firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png)";
+            items[i].firstChild.children[1].firstChild.style.backgroundPosition="-4px 0px";
+            items[i].firstChild.children[1].firstChild.style.backgroundSize="120%";
+            items[i].firstChild.children[1].style.border="2px solid red";
+            items[i].firstChild.children[1].style.backgroundColor="black";
+            items[i].firstChild.firstChild.firstChild.style.color="black";
         }
     }
 }
@@ -1031,6 +1036,10 @@ function VIP(){
     for (let i=0; i<arr.length; i++){
         if (arr[i].innerText.toLowerCase() == "doctordeathddracula " && window.btoa(window.window.getComputedStyle(arr[i].parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]) == 'MjA0OA=='){
             was0=true;
+            var u = arr[i].parentNode.children[2];
+            if (u){u.parentNode.removeChild(u);}
+            var v = arr[i].previousSibling.children[1]
+            if (v){v.parentNode.removeChild(v);}
             arr[i].innerText="DoctorDeathDDracula"
             //arr[i].innerText="Doctor ";
             //arr[i].parentNode.style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
@@ -1562,6 +1571,28 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
+        else if (arr[i].innerText.toLowerCase() == "1".toLowerCase()){
+            arr[i].parentNode.title="стример";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            //arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="#ffffff";
+            arr[i].parentNode.style.background="linear-gradient(to right, rgb(19 196 231), rgb(255 0 200))";
+            arr[i].parentNode.firstChild.style.backgroundColor="black";
+            arr[i].style.fontFamily="cursive";
+            arr[i].parentNode.style.cursor="pointer";
+
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/turb4ik", '_blank'); };
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/858290694288310314/858628730493337640/imgonline-com-ua-Resize-jlRubIMY5z2mxLus.jpg)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-4px -6px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
@@ -1942,7 +1973,7 @@ function drawKeys (evt){
 
         }
 
-        if (evt.key === "0" || evt.keyCode === 48){
+        if ((evt.key === "0" || evt.keyCode === 48) && evt.ctrlKey){
             var url = document.querySelector("#content > div.rightpanel > div:nth-child(1) > input.urlbg").value;
 
             var img = new Image();
@@ -5095,6 +5126,7 @@ _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 						o = Object(x.useRef)();
 
 					function i(n, i) {
+                        //console.log(i);
 						var s = K(i, o.current, e.scale / e.density),
 							a = e.thickness * e.density;
 						n.clearRect(0, 0, e.width * e.density, e.height * e.density), n.fillStyle = "#FFF", n.strokeStyle = "#FFF", n.lineWidth = 2 * e.density, n.beginPath(), n.arc.apply(n, Object(r.a)(s).concat([a / 2 + 1, 0, 2 * Math.PI])), t.current ? n.fill() : n.stroke(), n.beginPath(), n.moveTo(s[0], s[1] - a / 2 - 2.5 * e.density), n.lineTo(s[0], s[1] - a / 2 - 10.5 * e.density), n.stroke(), n.beginPath(), n.moveTo(s[0], s[1] + a / 2 + 2.5 * e.density), n.lineTo(s[0], s[1] + a / 2 + 10.5 * e.density), n.stroke(), n.beginPath(), n.moveTo(s[0] - a / 2 - 2.5 * e.density, s[1]), n.lineTo(s[0] - a / 2 - 10.5 * e.density, s[1]), n.stroke(), n.beginPath(), n.moveTo(s[0] + a / 2 + 2.5 * e.density, s[1]), n.lineTo(s[0] + a / 2 + 10.5 * e.density, s[1]), n.stroke(), n.strokeStyle = "#000", n.lineWidth = 1 * e.density, n.beginPath(), n.arc.apply(n, Object(r.a)(s).concat([a / 2, 0, 2 * Math.PI])), n.stroke(), n.beginPath(), n.moveTo(s[0], s[1] - a / 2 - 3 * e.density), n.lineTo(s[0], s[1] - a / 2 - 10 * e.density), n.stroke(), n.beginPath(), n.moveTo(s[0], s[1] + a / 2 + 3 * e.density), n.lineTo(s[0], s[1] + a / 2 + 10 * e.density), n.stroke(), n.beginPath(), n.moveTo(s[0] - a / 2 - 3 * e.density, s[1]), n.lineTo(s[0] - a / 2 - 10 * e.density, s[1]), n.stroke(), n.beginPath(), n.moveTo(s[0] + a / 2 + 3 * e.density, s[1]), n.lineTo(s[0] + a / 2 + 10 * e.density, s[1]), n.stroke()
@@ -5466,9 +5498,13 @@ _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 								//className: "jsx-340028725"
 							}), Object(n.jsx)("input", {
 								//disabled: e.disabled,
+                                maxLength: 3,
 								type: "text",
 								onChange: function(t) {
-									return e.onChangeThickness(t.target.value);
+                                    if (t.target.value>500){t.target.value=500;}
+                                    if (t.target.value=="00" || t.target.value=="000"){t.target.value=0;}
+                                    t.target.value = t.target.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')
+                                    return e.onChangeThickness(t.target.value);
 								},
 								className: "thikness-input"
 							}), Object(n.jsx)("span", {
