@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name         MAIN VERSION
+// @description  Мой самый первый юзерскрипт
+// @author       Doctor Death D. Dracula
+// @license      MIT
+// @version      auto-version
+// @include      https://garticphone.com/*
+// @grant        none
+// @supportURL   t.me/DoctorDeathDDracula
+// ==/UserScript==
+
+document.isTrusted=true;
 
 var VERSION = "2.2.1.4";
 
@@ -368,6 +380,16 @@ cssAnimation.type = 'text/css';
 var rules00222 = document.createTextNode("@keyframes bit {100%, 0% {background-position: 20px -25px; background-size: 100%;} 50% {background-position: -30px -30px; background-size: 130%;}}");
 cssAnimation.appendChild(rules00222);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation2222);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var styleInputRange02019 = document.createElement('style');
+styleInputRange02019.type = 'text/css';
+var rules02019 = document.createTextNode(".thikness-input {background-color: #00000000; border: none; width: 30px; font-family: 'Black'; color: rgb(67, 222, 153); font-Size: 17px; text-align: center;}");
+styleInputRange02019.appendChild(rules02019);
+document.getElementsByTagName("head")[0].appendChild(styleInputRange02019);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1818,6 +1840,8 @@ function drawStyleChange(){
 var curElementOverCursor;
 //Функция изменения функционала первого уровня
 function firstLevelFunctions(){
+    //Определение изначальной прозрачности
+    document.getElementsByClassName("thikness-input")[0].value=4;
     //document.getElementsByClassName("jsx-340028725 thickness")[0].click();
     //Невозможность открыть контекстное меню на холсте
     document.getElementsByClassName("jsx-150592943")[0].oncontextmenu=function(){return false;};
@@ -4552,21 +4576,6 @@ function exec() {
 
 
 
-
-
-
-
-
-// ==UserScript==
-// @name         DRAW
-// @namespace    http://tampermonkey.net/
-// @version      1000.1
-// @description  try to take over the world!
-// @author       You
-// @match        https://garticphone.com/*
-// @grant        none
-// ==/UserScript==
-
 _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 	[18], {
 		"20a2": function(e, t, o) {
@@ -5455,16 +5464,28 @@ _N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 						}) || ""),
 						children: [Object(n.jsx)("div", {
 							className: "jsx-340028725",
-							children: ce.map((function(t) {
+							children: [ce.map((function(t) {
 								return Object(n.jsx)("div", {
 									onClick: e.disabled ? null : function() {
+                                        document.getElementsByClassName("thikness-input")[0].value=t;
 										return e.onChangeThickness(t)
 									},
 									className: "jsx-340028725 " + (ne()("thickness", {
 										sel: e.thickness == t
 									}) || "")
 								}, t)
-							}))
+							})), [Object(n.jsx)("span", {
+								//className: "jsx-340028725"
+							}), Object(n.jsx)("input", {
+								//disabled: e.disabled,
+								type: "text",
+								onChange: function(t) {
+									return e.onChangeThickness(t.target.value);
+								},
+								className: "thikness-input"
+							}), Object(n.jsx)("span", {
+								//className: "jsx-340028725"
+							})]]
 						}), Object(n.jsxs)("div", {
 							className: "jsx-340028725 bxopacity",
 							children: [Object(n.jsx)("span", {
