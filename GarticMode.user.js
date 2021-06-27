@@ -1064,8 +1064,8 @@ function VIP(){
                 a.play();
                 clearInterval(intId);
                 intId = setInterval(function(){
-                    a.volume+=0.01;
-                    if(a.volume >= 0.5){
+                    a.volume+=0.001;
+                    if(a.volume >= 0.2){
                         clearInterval(intId);
                     }
                 },20);
@@ -1075,7 +1075,7 @@ function VIP(){
                 clearInterval(intId);
                 var a = document.getElementsByTagName("audio")[0];
                 intId = setInterval(function(){
-                    a.volume-=0.01;
+                    a.volume-=0.002;
                     if(a.volume <= 0.01){
                         a.pause();
                         clearInterval(intId);
