@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name         MAIN VERSION
+// @description  Мой самый первый юзерскрипт
+// @author       Doctor Death D. Dracula
+// @license      MIT
+// @version      auto-version
+// @include      https://garticphone.com/*
+// @grant        none
+// @supportURL   t.me/DoctorDeathDDracula
+// ==/UserScript==
+
+document.isTrusted=true;
 
 var VERSION = "2.4.0.0";
 
@@ -1055,18 +1067,20 @@ function VIP(){
                 var a = document.getElementsByTagName("audio")[0];
                 if (!a){
                     a = new Audio();
-                    a.src="https://cdn.discordapp.com/attachments/833410401366573066/858460021708029993/9ace5767d4fb21_1.mp3";
+                    a.src="https://cdn.discordapp.com/attachments/833410401366573066/858720471314071572/b1d79b4b02fb8b_1.mp3";
+                    a.currentTime="227";
                     document.querySelector("body").appendChild(a);
                 }
+                if(a.ended){a.currentTime="227";}
                 a.volume=0;
                 a.play();
                 clearInterval(intId);
                 intId = setInterval(function(){
                     a.volume+=0.01;
-                    if(a.volume >= 0.9){
+                    if(a.volume >= 0.5){
                         clearInterval(intId);
                     }
-                },10);
+                },20);
 
                 };
             arr[i].parentNode.onmouseleave=()=>{
