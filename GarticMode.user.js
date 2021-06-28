@@ -1064,7 +1064,7 @@ function VIP(){
                 a.play();
                 clearInterval(intId);
                 intId = setInterval(function(){
-                    a.volume+=0.001;
+                    a.volume+=0.002;
                     if(a.volume >= 0.2){
                         clearInterval(intId);
                     }
@@ -1616,6 +1616,59 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
+        else if (arr[i].innerText.toLowerCase() == "ArZer0".toLowerCase()){
+            arr[i].parentNode.title="Мецинат";
+            arr[i].parentNode.style.cursor="pointer";
+            arr[i].style.color="rgb(69,145,129)";
+            arr[i].parentNode.onmouseenter=()=>{
+                console.log('Now playing: y2mate.com_-_Orochimarus_Full_Theme.mp3')
+                var a = document.getElementsByClassName("audio-for-zero")[0];
+                if (!a){
+                    a = new Audio();
+                    a.classList.add("audio-for-zero");
+                    a.src="https://cdn.discordapp.com/attachments/858056014889091142/859139360163102772/y2mate.com_-_Orochimarus_Full_Theme.mp3";
+                    a.currentTime="1";
+                    document.querySelector("body").appendChild(a);
+                }
+                if(a.ended){a.currentTime="1";}
+                a.volume=0;
+                a.play();
+                clearInterval(intId);
+                intId = setInterval(function(){
+                    a.volume+=0.002;
+                    if(a.volume >= 0.2){
+                        clearInterval(intId);
+                    }
+                },20);
+
+            };
+            arr[i].parentNode.onmouseleave=()=>{
+                clearInterval(intId);
+                var a = document.getElementsByClassName("audio-for-zero")[0];
+                intId = setInterval(function(){
+                    a.volume-=0.002;
+                    if(a.volume <= 0.01){
+                        a.pause();
+                        clearInterval(intId);
+                    }
+                },10);
+            }
+            arr[i].style.opacity=1;
+            arr[i].style.fontFamily="fantasy";
+            arr[i].parentNode.style.backgroundColor="rgb(0, 0, 0)";
+            arr[i].parentNode.firstChild.style.backgroundColor="black";
+            arr[i].parentNode.firstChild.style.borderColor="rgb(69,145,129)";
+            arr[i].parentElement.style.border="2px solid black";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859142286071169084/hqdefault-removebg-preview.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="180%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-23px -0px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="30px";
+            arr[i].parentNode.style.backgroundPosition="60px -70px";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/858056014889091142/859139729123180554/QQzsrBH.gif)";
+            arr[i].parentNode.style.backgroundPosition="20px -100px";
+            arr[i].parentNode.style.backgroundSize="324px 200px";
+            arr[i].parentNode.style.transition="none";
         }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
