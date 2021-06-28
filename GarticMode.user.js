@@ -1618,7 +1618,7 @@ function VIP(){
             //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
         else if (arr[i].innerText.toLowerCase() == "ArZer0".toLowerCase()){
-            arr[i].parentNode.title="Мецинат";
+            arr[i].parentNode.title="Меценат, филантроп, плэйбой, анимешник...";
             arr[i].parentNode.style.cursor="pointer";
             arr[i].style.color="rgb(69,145,129)";
             arr[i].parentNode.onmouseenter=()=>{
