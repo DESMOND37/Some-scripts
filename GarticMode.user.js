@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name         MAIN VERSION
+// @description  Мой самый первый юзерскрипт
+// @author       Doctor Death D. Dracula
+// @license      MIT
+// @version      auto-version
+// @include      https://garticphone.com/*
+// @grant        none
+// @supportURL   t.me/DoctorDeathDDracula
+// ==/UserScript==
+
+document.isTrusted=true;
 
 var VERSION = "2.4.0.0";
 
@@ -1670,6 +1682,28 @@ function VIP(){
             arr[i].parentNode.style.backgroundSize="324px 200px";
             arr[i].parentNode.style.transition="none";
         }
+        else if (arr[i].innerText.toLowerCase() == "2".toLowerCase()){
+            arr[i].parentNode.title="стример";
+            arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
+            //arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
+            arr[i].parentNode.style.border="none";
+            arr[i].style.color="#ffffff";
+            arr[i].parentNode.style.background="linear-gradient(to right, rgb(19 196 231), rgb(255 0 200))";
+            arr[i].parentNode.firstChild.style.backgroundColor="black";
+            arr[i].style.fontFamily="cursive";
+            arr[i].parentNode.style.cursor="pointer";
+
+            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/turb4ik", '_blank'); };
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859175678103650324/image0-removebg-preview.png)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="30px 0px 30px 30px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-8px -6px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
+            //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+        }
         else if (arr[i].innerText.indexOf("#") != -1){
             arr[i].title="Игрок";
             var text1 = arr[i].innerText
@@ -2947,11 +2981,7 @@ var loopaKey = false;
 
 
 function mainDrawFunc(){
-    if (localStorage.getItem("clown")=="true"){alert("Ага! Я узнал тебя, Шпилька. Ты меня просто так выгнал из комнаты, так что функции модификации будут ограничены для тебя, конечно, кроме пофикшенной заливки. Так, о чем это я ... А, да! Так вот ты меня обидел. Если хочешь продолжить пользоваться модом - напиши мне в личку и извинись. Ну а можешь просто перестать пользоваться модом, для тебя это не такая большая потеря, выбор за тобой.");
-                                               return false;
-                                              }
     console.log("draw func");
-    try{
     //Добавление зума
     addZoom(); //Вызывается через unhide элемента класса zoomC
 
@@ -2995,7 +3025,6 @@ function mainDrawFunc(){
     addMirrorBase();
     //Активация сглаживания
     debugName();
-    } catch {if (document.URL.indexOf("draw") != -1 && document.getElementsByClassName("jsx-1307288772 book dark").length==0) {setTimeout(mainDrawFunc, 10)} else {return}}
 }
 
 function waitVideo(){
@@ -4553,7 +4582,7 @@ function main(){
         //setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
         styleUpdate();
-        mainDrawFunc();
+        setTimeout(mainDrawFunc, 500);
         flagsOff();
         if (m != undefined){m.play()};
         drawKey=true;
