@@ -1,15 +1,3 @@
-// ==UserScript==
-// @name         MAIN VERSION
-// @description  Мой самый первый юзерскрипт
-// @author       Doctor Death D. Dracula
-// @license      MIT
-// @version      auto-version
-// @include      https://garticphone.com/*
-// @grant        none
-// @supportURL   t.me/DoctorDeathDDracula
-// ==/UserScript==
-
-document.isTrusted=true;
 
 var VERSION = "2.4.0.0";
 
@@ -1607,24 +1595,27 @@ function VIP(){
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
         }
-        else if (arr[i].innerText.toLowerCase() == "1".toLowerCase()){
-            arr[i].parentNode.title="стример";
+        else if (arr[i].innerText.toLowerCase().indexOf("линыч")!=-1){
+            o=arr[i].previousSibling.children[1];
+            if(o){o.parentNode.removeChild(o);};
+            arr[i].parentNode.title="Художник";
             arr[i].parentNode.style.backgroundColor="rgb(0 0 0)";
             //arr[i].parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-            arr[i].parentNode.style.border="none";
+            arr[i].parentNode.style.border="2px solid white";
             arr[i].style.color="#ffffff";
-            arr[i].parentNode.style.background="linear-gradient(to right, rgb(19 196 231), rgb(255 0 200))";
-            arr[i].parentNode.firstChild.style.backgroundColor="black";
-            arr[i].style.fontFamily="cursive";
             arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.style.backgroundPosition="center";
+            arr[i].parentNode.style.backgroundSize="330px";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/858290694288310314/859732181404745728/7b0e89d14bcc8b51f17a28711724351a.png?width=1369&height=676)";
+            arr[i].parentNode.firstChild.style.border="2px solid white";
+            arr[i].parentNode.style.transition="none";
 
-            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/turb4ik", '_blank'); };
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/858290694288310314/858628730493337640/imgonline-com-ua-Resize-jlRubIMY5z2mxLus.jpg)";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859729864022294528/imgonline-com-ua-Resize-jlRubIMY5z2mxLus-removebg-preview.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-4px -6px";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-4px -4px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.width="100%";
-            arr[i].parentElement.getElementsByTagName("span")[0].style.height="100%";
+            arr[i].parentElement.getElementsByTagName("span")[0].style.height="110%";
             arr[i].parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
             arr[i].parentElement.getElementsByTagName("span")[0].style.margin="0px";
             //arr[i].parentElement.getElementsByTagName("span")[0].style.border="1px solid";
@@ -1692,8 +1683,8 @@ function VIP(){
             arr[i].parentNode.firstChild.style.backgroundColor="black";
             arr[i].style.fontFamily="cursive";
             arr[i].parentNode.style.cursor="pointer";
+            arr[i].parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859175678103650324/image0-removebg-preview.png)";
 
-            arr[i].parentNode.onclick=()=>{ window.open("https://www.twitch.tv/turb4ik", '_blank'); };
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859175678103650324/image0-removebg-preview.png)";
             arr[i].parentElement.getElementsByTagName("span")[0].style.borderRadius="30px 0px 30px 30px";
             arr[i].parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
