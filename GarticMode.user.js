@@ -1654,6 +1654,29 @@ function VIPList(q){
         q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
         q.parentNode.style.transition="none";
         //q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
+
+    }
+    else if (q.innerText.toLowerCase() == "✧ Макс ✧".toLowerCase()){
+        o=q.previousSibling.children[1];
+        if(o){o.parentNode.removeChild(o);};
+        q.parentNode.title="Фурри художник :3";
+        q.parentNode.style.border="none";
+        q.style.color="#FFF";
+        q.parentNode.style.cursor="pointer";
+        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/853936724609728512/860099118789820436/unknown.png)";
+        q.parentNode.style.backgroundPosition="center";
+        q.parentNode.style.backgroundRepeat="no-repeat";
+        q.parentNode.style.backgroundSize="100%";
+
+        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/860146784617365524/chachoo-removebg-preview.png)";
+        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="30px 0px 30px 30px";
+        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
+        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-8px -6px";
+        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
+        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
+        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
+        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
+        q.parentNode.style.transition="none";
     }
     else if (q.innerText.indexOf("#") != -1){
         q.title="Игрок";
@@ -2905,6 +2928,9 @@ var loopaKey = false;
 
 function mainDrawFunc(){
     console.log("draw func");
+    //Дебаг
+    if (document.URL.indexOf("book") != -1){return};
+
     //Добавление боковой панели
     createSizePull();
 
