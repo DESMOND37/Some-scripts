@@ -905,6 +905,7 @@ function cencFunc(u){
         }
         var canv = u.children[1].children[1].firstChild;
         var nick = u.children[1].firstChild.innerText;
+        if (canv.tagName!="CANVAS"){canv = u.children[1].children[1].firstChild.firstChild;}
         canv.oncontextmenu=(e)=>{
             var contextmenu = document.createElement("div");
             contextmenu.classList.add("contextmenu");
