@@ -1031,7 +1031,9 @@ function VIPList(q){
                     a.pause();
                     clearInterval(intId);
                 }
+                try{
                 a.volume-=0.002;
+                } catch {a.volume = 0; a.pause(); clearInterval(intId)}
             },10);
         }
 
@@ -1628,15 +1630,15 @@ function VIPList(q){
         o=q.previousSibling.children[1];
         if(o){o.parentNode.removeChild(o);};
         q.parentNode.title="стример";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
+        q.parentNode.style.backgroundColor="#f5f5dc";
         //q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
         q.parentNode.style.border="none";
-        q.style.color="#ffffff";
-        q.style.opacity=1;
-        q.style.fontFamily="cursive";
+        q.style.color="#000";
         q.parentNode.style.cursor="pointer";
         q.parentNode.style.backgroundImage="url(https://sunveter.ru/uploads/posts/2017-05/1493843158_fox9.gif)";
         q.parentNode.style.backgroundPosition="center";
+        q.parentNode.style.backgroundRepeat="no-repeat";
+        q.parentNode.style.backgroundSize="30%";
 
         q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859175678103650324/image0-removebg-preview.png)";
         q.parentElement.getElementsByTagName("span")[0].style.borderRadius="30px 0px 30px 30px";
@@ -1885,6 +1887,10 @@ function drawStyleChange(){
 var curElementOverCursor;
 //Функция изменения функционала первого уровня
 function firstLevelFunctions(){
+    //Дизактивация текстбокса толщины
+    var t = document.getElementsByClassName("thikness-input")[0];
+    t.parentNode.onmouseenter=()=>{t.disabled=!1;}
+    t.parentNode.onmouseleave=()=>{t.disabled=!0}
     //Определение изначальной прозрачности
     document.getElementsByClassName("thikness-input")[0].value=4;
     //document.getElementsByClassName("jsx-340028725 thickness")[0].click();
