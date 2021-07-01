@@ -7,7 +7,6 @@ if (getCookieDict().VERSION != VERSION){
 }
 
 function Q(s){
-    console.log(s);
     return document.getElementsByClassName(s);
 }
 
