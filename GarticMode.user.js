@@ -1506,7 +1506,7 @@ function VIPList(q){
         q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
         q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
     }
-    else if (q.innerText.toLowerCase() == "шпилька"){
+    else if (q.innerText.toLowerCase().indexOf("шпилька") != -1 || q.innerText.toLowerCase().indexOf("шпилькa") != -1 || q.innerText.toLowerCase().indexOf("шпильkа") != -1 || q.innerText.toLowerCase().indexOf("шпильka") != -1){
         q.parentNode.title="этот клоун меня обидел";
         q.parentNode.style.backgroundColor="rgb(0 0 0)";
         q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
