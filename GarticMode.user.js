@@ -6,6 +6,11 @@ if (getCookieDict().VERSION != VERSION){
     document.cookie = `VERSION=${VERSION};`;
 }
 
+function Q(s){
+    console.log(s);
+    return document.getElementsByClassName(s);
+}
+
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 var cssAnimation = document.createElement('style');
@@ -404,7 +409,7 @@ var width;
 var height;
 
 function clientMouseMove(x, y){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var pointerCanvas = Q("jsx-150592943")[0];
     var event = new Event('mousemove', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
@@ -412,7 +417,7 @@ function clientMouseMove(x, y){
 }
 
 function clientMouseDown(x, y){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var pointerCanvas = Q("jsx-150592943")[0];
     var event = new Event('mousedown', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
@@ -420,7 +425,7 @@ function clientMouseDown(x, y){
 }
 
 function clientMouseUp(x, y){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var pointerCanvas = Q("jsx-150592943")[0];
     var event = new Event('mouseup', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
@@ -459,7 +464,7 @@ function mouseUp(){
 
 function drawSolidLine(arr){
     if (arr.length > 1){
- //       canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
+ //       canvas = Q("jsx-3193114933 ")[0];
  //       pos = canvas.getBoundingClientRect();
         left = pos.x;
         top = pos.y;
@@ -573,7 +578,7 @@ function sortBorderArray(arr){
 
 
 function drawNsort(arr){
-    canvas300 = document.getElementsByClassName("jsx-3193114933 ")[0];
+    canvas300 = Q("jsx-3193114933 ")[0];
     pos = canvas300.getBoundingClientRect();
     var lastPoint=arr[0];
     mouseDown(lastPoint[0], lastPoint[1]);
@@ -610,14 +615,14 @@ function drawNsort(arr){
         if (i==realLengthOfArray-1){
             mouseUp();
             curThicc.click();
-            document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
+            Q("jsx-3659451671 tool fil")[0].click();
         }
     }
 }
 
 
 function drawArray(arr){
-    var canvas = document.getElementsByClassName("jsx-3193114933 ")[0];
+    var canvas = Q("jsx-3193114933 ")[0];
     var pos = canvas.getBoundingClientRect();
     var left = pos.x;
     var top = pos.y;
@@ -636,7 +641,7 @@ function drawArray(arr){
 
 
 function glass(point){
-    var canvas = document.getElementsByClassName("jsx-150592943")[0];
+    var canvas = Q("jsx-150592943")[0];
     var rect = canvas.getBoundingClientRect();
     var x = rect.x;
     var y = rect.y;
@@ -650,10 +655,10 @@ function glass(point){
     var realHeight = 848;
 
     //Реальное расположение точки
-    var realPointX = document.getElementsByClassName("xmirror")[0].value;
-    var realPointY = document.getElementsByClassName("ymirror")[0].value;
+    var realPointX = Q("xmirror")[0].value;
+    var realPointY = Q("ymirror")[0].value;
     //Угол
-    var alpha = 180 - document.getElementsByClassName("degmirror")[0].value;
+    var alpha = 180 - Q("degmirror")[0].value;
 
     //Коэффициент отличия
     var coefW = curWidth / realWidth;
@@ -685,7 +690,7 @@ function glass(point){
     //Точка B
     var B = [A[0] + AM, A[1] - BM];
 
-    /*var middleCanvas = document.getElementsByClassName("mirror-canvas")[0];
+    /*var middleCanvas = Q("mirror-canvas")[0];
     var context = middleCanvas.getContext("2d");
     context.lineWidth = 20;
     context.beginPath();
@@ -714,7 +719,7 @@ function getPix(x, y, canvas){
 }
 
 function draw(x1, y1){
-    canvas = document.getElementsByClassName("jsx-150592943")[0];
+    canvas = Q("jsx-150592943")[0];
     var pos = canvas.getBoundingClientRect();
     let x = pos.x;
     let y = pos.y;
@@ -728,7 +733,7 @@ function draw(x1, y1){
 
 var canvas;
 function globalDraw(){
-    canvas = document.getElementsByClassName("jsx-150592943")[0];
+    canvas = Q("jsx-150592943")[0];
     alert("WRONG FUNC");
     var url = document.querySelector("#content > input[type=text]:nth-child(2)").value;
 
@@ -800,12 +805,12 @@ function setNess(n) {
 
 
 window.addEventListener("pointerup", (e)=>{
-    var item = document.getElementsByClassName("contextmenu")[0];
+    var item = Q("contextmenu")[0];
     if (item && !e.target.classList.contains("ctxmbutton")){item.parentNode.removeChild(item)};
 });
 
 window.onwheel = ()=>{
-    var item = document.getElementsByClassName("contextmenu")[0];
+    var item = Q("contextmenu")[0];
     if (item){item.parentNode.removeChild(item)};
 };
 
@@ -914,7 +919,7 @@ function cencFunc(u){
             contextmenu.style.top=e.clientY+"px";
             contextmenu.style.display="grid";
             contextmenu.style.padding="3px";
-            contextmenu.style.transform=document.getElementsByClassName("jsx-2562723607 jsx-3822683434 screen fade-enter-done")[0].style.transform;
+            contextmenu.style.transform=Q("jsx-2562723607 jsx-3822683434 screen fade-enter-done")[0].style.transform;
 
             var copy = document.createElement("a");
             copy.classList.add("ctxmbutton");
@@ -955,7 +960,7 @@ function cencFunc(u){
 
 
 function censorListener(){
-    document.getElementsByClassName("scrollElements")[1].addEventListener("DOMNodeInserted", (e)=>{
+    Q("scrollElements")[1].addEventListener("DOMNodeInserted", (e)=>{
         var u = e.target.firstChild;
         cencFunc(u);
     });
@@ -975,7 +980,7 @@ function AddButton(){
 function debugName(){
     var name = document.getElementsByTagName("h3")[0];
     if (name.innerText == ""){
-        document.getElementsByClassName("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
+        Q("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
     }
 }
 
@@ -1579,7 +1584,7 @@ function VIPList(q){
         q.style.color="rgb(69,145,129)";
         q.parentNode.onmouseenter=()=>{
             console.log('Now playing: y2mate.com_-_Orochimarus_Full_Theme.mp3')
-            var a = document.getElementsByClassName("audio-for-zero")[0];
+            var a = Q("audio-for-zero")[0];
             if (!a){
                 a = new Audio();
                 a.classList.add("audio-for-zero");
@@ -1601,7 +1606,7 @@ function VIPList(q){
         };
         q.parentNode.onmouseleave=()=>{
             clearInterval(intId);
-            var a = document.getElementsByClassName("audio-for-zero")[0];
+            var a = Q("audio-for-zero")[0];
             intId = setInterval(function(){
                 a.volume-=0.002;
                 if(a.volume <= 0.01){
@@ -1663,7 +1668,7 @@ function VIPList(q){
         q.parentNode.onmouseleave=()=>{if (q.banned != true){ q.parentNode.style.boxShadow=""} };
         q.parentNode.style.cursor="pointer";
         q.parentNode.onclick=()=>{
-            var ne = document.getElementsByClassName("scrollElements")[1].children;
+            var ne = Q("scrollElements")[1].children;
             if (q.banned){
                 let popa = blackArr.indexOf(q.innerText.toLowerCase())
                 q.banned=false;
@@ -1687,7 +1692,7 @@ function addListenerToBlock(block, func){
 }
 
 function extendTextInput() {
-    var textInput = document.getElementsByClassName("jsx-856742297")[0];
+    var textInput = Q("jsx-856742297")[0];
     if (textInput){
         textInput.maxLength=70;
         textInput.style.webkitTextSecurity="none";
@@ -1713,29 +1718,29 @@ function addMultEventsListener(events, func, element){
 }
 
 function clearActiveelements(){
-    var mirorButton = document.getElementsByClassName("jsx-3659451671 tool miror")[0];
+    var mirorButton = Q("jsx-3659451671 tool miror")[0];
     mirorButton.classList.remove("sel");
     clearMidCanvas();
     mirorButton.classList.remove("act1");
-    document.getElementsByClassName("rightpanel")[0].style.right="-220px";
-    var smoothButton = document.getElementsByClassName("jsx-3659451671 tool  smooth")[0];
-    var degRangeBorder = document.getElementsByClassName("deg-range-border")[0];
+    Q("rightpanel")[0].style.right="-220px";
+    var smoothButton = Q("jsx-3659451671 tool  smooth")[0];
+    var degRangeBorder = Q("deg-range-border")[0];
     smoothButton.classList.remove("act1");
     degRangeBorder.style.display="none";
     //sLevel = 1;
     if (prevElem){
         prevElem.classList.add("sel");
-        var pipetButton = document.getElementsByClassName("jsx-3659451671 tool pipet")[0];
+        var pipetButton = Q("jsx-3659451671 tool pipet")[0];
         pipetButton.classList.remove("act");
         pipetButton.classList.remove("sel");
     }
-    var loopaButton = document.getElementsByClassName("jsx-3659451671 tool loopa")[0];
-    var zoomC = document.getElementsByClassName("zoomC")[0];
+    var loopaButton = Q("jsx-3659451671 tool loopa")[0];
+    var zoomC = Q("zoomC")[0];
     loopaButton.classList.remove("act1");
     loopaButton.classList.remove("sel");
     zoomCHidden = true;
     zoomC.hidden = true;
-    document.getElementsByClassName("color-gradient")[0].style.display="none";
+    Q("color-gradient")[0].style.display="none";
 }
 
 function getRandomColor() {
@@ -1758,8 +1763,8 @@ var currentC;
 function addZoom(){
     function zoomUpdate(e){
         try{
-        var topC = document.getElementsByClassName("jsx-150592943")[0];
-        var zoomC = document.getElementsByClassName("zoomC")[0];
+        var topC = Q("jsx-150592943")[0];
+        var zoomC = Q("zoomC")[0];
         var rect = topC.getBoundingClientRect();
         var dx = e.clientX - rect.x;
         var dy = e.clientY - rect.y;
@@ -1793,13 +1798,13 @@ function addZoom(){
     }
 
 
-    if (!document.getElementsByClassName("zoomC").length && document.URL.indexOf("draw") != -1 && !document.getElementsByClassName("jsx-1307288772 book dark").length){
+    if (!Q("zoomC").length && document.URL.indexOf("draw") != -1 && !Q("jsx-1307288772 book dark").length){
         var zoomC = createCanvas(200, 200);
         zoomC.classList.add("zoomC");
         zoomC.hidden = true;
 
         document.querySelector("#__next").addEventListener("pointermove", (e)=>{
-            if (document.getElementsByClassName("jsx-3659451671 tool loopa act1 sel")[0]){
+            if (Q("jsx-3659451671 tool loopa act1 sel")[0]){
                 zoomUpdate(e);
             }
         });
@@ -1810,8 +1815,8 @@ function addZoom(){
             }, 10);
         });
 
-        memmoryC = document.getElementsByClassName("jsx-3193114933 ")[0];
-        currentC = document.getElementsByClassName("jsx-3193114933 ")[1];
+        memmoryC = Q("jsx-3193114933 ")[0];
+        currentC = Q("jsx-3193114933 ")[1];
 
         document.querySelector("#__next").appendChild(zoomC);
     }
@@ -1820,26 +1825,26 @@ function addZoom(){
 //Функция изменения дизайна
 function drawStyleChange(){
     //Смещение инструментов ниже
-    document.getElementsByClassName("jsx-3071142060")[0].style.margin="0px 0px -70px 0px";
+    Q("jsx-3071142060")[0].style.margin="0px 0px -70px 0px";
     //Растяжение палитры
-    var palitra = document.getElementsByClassName("jsx-3071142060")[1];
+    var palitra = Q("jsx-3071142060")[1];
     palitra.style.height="auto";
-    //var book = document.getElementsByClassName("jsx-1307288772 book")[0];
+    //var book = Q("jsx-1307288772 book")[0];
     //book.style.padding="0px 0px 20px 0px";
     //Изменеине в иснтрументах
-    var undo = document.getElementsByClassName("jsx-3659451671 tool undo")[0];
-    var redo = document.getElementsByClassName("jsx-3659451671 tool redo")[0];
+    var undo = Q("jsx-3659451671 tool undo")[0];
+    var redo = Q("jsx-3659451671 tool redo")[0];
     undo.style.margin="0px 0px 7px 0px";
     redo.style.margin="0px 0px 7px 0px";
     //Очистка задней картинки
-    var underDrawContainer = document.getElementsByClassName("jsx-1307288772 core")[0];
+    var underDrawContainer = Q("jsx-1307288772 core")[0];
     underDrawContainer.style.backgroundImage="url()";
     underDrawContainer.style.boxShadow="none";
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
     toolBar.style.height="auto";
 
     //Изменения расположения тайтлов
-    //document.getElementsByClassName("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
+    //Q("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
     //Изменение местоположение тайтлов
     //document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header > h4").style.margin="20px 0px 10px";
     //Убираем лишнее с хослта
@@ -1860,15 +1865,15 @@ function drawStyleChange(){
     //var but = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1562482592.bottom");
     //but.style.height="110px";
     //Удаление лого
-    //var logo = document.getElementsByClassName("jsx-1307288772 logo")[0];
+    //var logo = Q("jsx-1307288772 logo")[0];
     //if (logo != undefined){
     //    logo.parentNode.removeChild(logo);
     //}
     //Изменение цвета рамки
-    //var book1 = document.getElementsByClassName("jsx-1307288772 book")[0];
+    //var book1 = Q("jsx-1307288772 book")[0];
     //book1.style.backgroundColor="rgb(0 0 0)";
     //book1.style.boxShadow="rgb(0 0 0) 0px -3px 0px 0px, rgb(1 25 70) 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px";
-    //var header1 = document.getElementsByClassName("jsx-1307288772 header")[0];
+    //var header1 = Q("jsx-1307288772 header")[0];
     //header1.style.backgroundColor="rgb(0 0 0)";
     //header1.style.boxShadow="rgb(0 0 0) 0px -2px 0px 0px inset";
     //header1.style.borderBottom="6px solid rgb(0 0 0)";
@@ -1880,7 +1885,7 @@ function drawStyleChange(){
     newDiv.style.zIndex="0";
     newDiv.style.overflow="hidden";
     try{
-        document.getElementsByClassName("jsx-3193114933")[0].insertAdjacentElement('beforeBegin', newDiv);
+        Q("jsx-3193114933")[0].insertAdjacentElement('beforeBegin', newDiv);
     }catch{}
 }
 
@@ -1888,14 +1893,14 @@ var curElementOverCursor;
 //Функция изменения функционала первого уровня
 function firstLevelFunctions(){
     //Дизактивация текстбокса толщины
-    var t = document.getElementsByClassName("thikness-input")[0];
+    var t = Q("thikness-input")[0];
     t.parentNode.onmouseenter=()=>{t.disabled=!1;}
     t.parentNode.onmouseleave=()=>{t.disabled=!0}
     //Определение изначальной прозрачности
-    document.getElementsByClassName("thikness-input")[0].value=4;
-    //document.getElementsByClassName("jsx-340028725 thickness")[0].click();
+    Q("thikness-input")[0].value=4;
+    //Q("jsx-340028725 thickness")[0].click();
     //Невозможность открыть контекстное меню на холсте
-    document.getElementsByClassName("jsx-150592943")[0].oncontextmenu=function(){return false;};
+    Q("jsx-150592943")[0].oncontextmenu=function(){return false;};
     //Цензура текста
     var taskParent = document.getElementsByTagName("h3")[0];
     if (taskParent){
@@ -1931,7 +1936,7 @@ function firstLevelFunctions(){
     downloadButton.onclick=function(){
         var link = document.createElement('a');
         link.download = 'filename.png';
-        link.href = document.getElementsByClassName("jsx-3193114933 ")[0].toDataURL();
+        link.href = Q("jsx-3193114933 ")[0].toDataURL();
         link.click();
     };
     upper.appendChild(downloadButton);
@@ -1940,19 +1945,19 @@ function firstLevelFunctions(){
     window.addEventListener("pointerover", (e)=>{curElementOverCursor=e.path[0]})
 
     //Доктор Стрендж
-    var toolsBox100 = document.getElementsByClassName("jsx-3659451671")[1];
-    var undoButton = document.getElementsByClassName("tool undo")[0];
-    var redoButton = document.getElementsByClassName("tool redo")[0];
+    var toolsBox100 = Q("jsx-3659451671")[1];
+    var undoButton = Q("tool undo")[0];
+    var redoButton = Q("tool redo")[0];
     toolsBox100.onwheel=(e)=>{
         if (e.deltaY>0){undoButton.click();} else {redoButton.click();}
     }
 
-    var readyButton = document.getElementsByClassName("jsx-4289504161 small")[0];
-    if (readyButton && document.getElementsByClassName("jsx-3659451671 tool clear")[0] == undefined){
+    var readyButton = Q("jsx-4289504161 small")[0];
+    if (readyButton && Q("jsx-3659451671 tool clear")[0] == undefined){
         readyButton.addEventListener("click", ()=>{
             clearActiveelements();
             setTimeout(()=>{
-                if (document.getElementsByClassName("jsx-1553483530 pencil")[0] == undefined){
+                if (Q("jsx-1553483530 pencil")[0] == undefined){
                     mainDrawFunc();
                 }
             }, 300);
@@ -1962,19 +1967,19 @@ function firstLevelFunctions(){
 
 //Изменение палитры
 function palitEdit(){
-    var palitra = document.getElementsByClassName("jsx-3071142060")[1];
-    var nColor = document.getElementsByClassName("jsx-3071142060 color")[0].cloneNode(true);
-    var allColors = document.getElementsByClassName("jsx-3071142060 color");
+    var palitra = Q("jsx-3071142060")[1];
+    var nColor = Q("jsx-3071142060 color")[0].cloneNode(true);
+    var allColors = Q("jsx-3071142060 color");
 
     //Удаление предыдущих цветов
     while (palitra.firstChild.tagName != "INPUT") {
         palitra.removeChild(palitra.firstChild);
     }
 
-    if (document.getElementsByClassName("jsx-3071142060 color").length != 36){
-        var target = document.getElementsByClassName("jsx-3071142060")[0].getElementsByTagName("input")[0];
+    if (Q("jsx-3071142060 color").length != 36){
+        var target = Q("jsx-3071142060")[0].getElementsByTagName("input")[0];
         var colorList = [[0, 0, 0], [34, 177, 76], [47, 253, 57], [51, 51, 51], [0, 81, 36], [74, 255, 169], [125, 125, 125], [255, 255, 125], [0, 9, 168], [175, 175, 175], [255, 242, 0], [0, 0, 255], [255, 255, 255], [255, 201, 14], [79, 83, 255], [90, 7, 12], [191, 191, 0],[87, 129, 215], [171, 14, 21], [119, 92, 0], [73, 189, 218], [255, 0, 0], [255, 210, 166], [153, 217, 234], [239, 71, 80], [254, 135, 48], [180, 3, 175], [245, 80, 127], [224, 96, 1], [163, 73, 164], [244, 128, 134], [80, 43, 18], [251, 30, 245], [249, 185, 188], [54, 29, 12], [253, 162, 251]];
-        if (document.getElementsByClassName("jsx-1307288772 book dark")[0] != undefined){colorList[12]==[0,0,0];}
+        if (Q("jsx-1307288772 book dark")[0] != undefined){colorList[12]==[0,0,0];}
         for (let i=0; i<colorList.length; i++){
             let newColor = nColor.cloneNode(true);
             let color = colorList[i];
@@ -1991,13 +1996,13 @@ function drawKeys (evt){
     var isEscape = false;
     if ("key" in evt && document.URL.indexOf("draw") != -1) {
         if (evt.key === "Escape" || evt.key === "Esc" || evt.keyCode === 27) {
-            if (document.getElementsByClassName("act").length != 0 || document.getElementsByClassName("act1").length != 0){
+            if (Q("act").length != 0 || Q("act1").length != 0){
                 clearActiveelements();
             } else { moveCanvases()}
         }
 
         if (evt.key === "L" || evt.key === "l" || evt.keyCode === 76 || evt.code === "KeyL") {
-            var loopaButton = document.getElementsByClassName("loopa")[0];
+            var loopaButton = Q("loopa")[0];
             loopaButton.click();
         }
 
@@ -2037,7 +2042,7 @@ function drawKeys (evt){
 
 //Обработка колесика
 function onDrawWheel(e){
-    var zoomC = document.getElementsByClassName("zoomC")[0];
+    var zoomC = Q("zoomC")[0];
     //его тут нет, а если есть то:
     if (zoomC.hidden){
         moveCanvases();
@@ -2065,10 +2070,10 @@ function onDrawWheel(e){
 
 //Добавление пипетки по правой кнопки мыши
 function drawRMBPipet(){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var pointerCanvas = Q("jsx-150592943")[0];
     if (pointerCanvas){
         //ПКМ ПИПЕТКА
-        var canada = document.getElementsByClassName("jsx-3193114933 ")[0];
+        var canada = Q("jsx-3193114933 ")[0];
         var mexico = pointerCanvas;
         mexico.addEventListener('pointerdown', (e)=>{
 
@@ -2086,7 +2091,7 @@ function drawRMBPipet(){
                     var event = new Event ('mouseup', { bubbles: true, cancelable: true});
                     pointerCanvas.dispatchEvent(event);
 
-                    document.getElementsByClassName("jsx-3659451671 tool undo")[0].click();
+                    Q("jsx-3659451671 tool undo")[0].click();
                 }, 50)
             }
         })
@@ -2096,13 +2101,13 @@ function drawRMBPipet(){
 //Добавление заливки по средней кнопке мыши
 function drawMiddleBucket(){
     //Заливка
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var pointerCanvas = Q("jsx-150592943")[0];
     if (pointerCanvas){
         pointerCanvas.addEventListener("pointerdown", function(e) {
             if (e.which === 2) {
-                var curButt = document.getElementsByClassName("tool sel")[0];
-                var undoButt = document.getElementsByClassName("jsx-3659451671 tool undo")[0];
-                document.getElementsByClassName("jsx-3659451671 tool fil")[0].click();
+                var curButt = Q("tool sel")[0];
+                var undoButt = Q("jsx-3659451671 tool undo")[0];
+                Q("jsx-3659451671 tool fil")[0].click();
 
                 setTimeout(()=>{
                     undoButt.click();
@@ -2128,9 +2133,9 @@ function drawMiddleBucket(){
 //Изменение настроек прозрачности
 function nessEdit(){
     //трекбар прозрачности
-    if (!document.getElementsByClassName("ness-text").length){
-        var widthinput = document.getElementsByClassName("jsx-340028725 bxopacity")[0];
-        var ness = (()=>{var items = document.getElementsByClassName("jsx-340028725"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})()
+    if (!Q("ness-text").length){
+        var widthinput = Q("jsx-340028725 bxopacity")[0];
+        var ness = (()=>{var items = Q("jsx-340028725"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})()
         ness.step="0.01";
         ness.min="0";
         ness.style.height="150%";
@@ -2169,7 +2174,7 @@ function nessEdit(){
 
 
         //Изменение прозрачности колесиком
-        var trackBarBox = document.getElementsByClassName("jsx-340028725 bxopacity")[0];
+        var trackBarBox = Q("jsx-340028725 bxopacity")[0];
         trackBarBox.onwheel=(e)=>{
             if (Number(nesstext.value)-e.deltaY/100>100){
             } else if (Number(nesstext.value)-e.deltaY/100<0) {
@@ -2186,8 +2191,8 @@ function nessEdit(){
 
 //Инструменты//////////////////////////////////
 function addTools(){
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var pointerCanvas = Q("jsx-150592943")[0];
 
     var prevElem;
 
@@ -2215,10 +2220,10 @@ function addTools(){
 
 //Функционал луппы
 function addLoopaButton(){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var zoomC = document.getElementsByClassName("zoomC")[0];
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
-    if (!document.getElementsByClassName("loopa").length){
+    var pointerCanvas = Q("jsx-150592943")[0];
+    var zoomC = Q("zoomC")[0];
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    if (!Q("loopa").length){
         var loopaButton = document.createElement("div");
         loopaButton.classList.add("jsx-3659451671");
         loopaButton.classList.add("tool");
@@ -2228,7 +2233,7 @@ function addLoopaButton(){
         //loopaButton.style.left="56px";
         //loopaButton.style.top="-54px";
         loopaButton.onclick = function(){
-            if (document.getElementsByClassName("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length && !document.getElementsByClassName("jsx-1553483530 pencil").length){
+            if (Q("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length && !Q("jsx-1553483530 pencil").length){
                 if (!loopaButton.classList.contains("act1")){
                     loopaButton.classList.add("act1");
                     loopaButton.classList.add("sel");
@@ -2255,8 +2260,8 @@ var firstTimeAddWindowSmooth = true;
 var mapArray = [];
 function addSmoothingTool(){
     mapArray = [];
-        if (!document.getElementsByClassName("jsx-3659451671 tool smooth").length){
-            var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
+        if (!Q("jsx-3659451671 tool smooth").length){
+            var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
 
             var smoothBorder = document.createElement("div");
             smoothBorder.width = 300;
@@ -2342,7 +2347,7 @@ function addSmoothingTool(){
 
             smoothButton.onmouseenter=()=>{
                 degRangeBorder.style.display="";
-                document.getElementsByClassName("color-gradient")[0].style.display="none";
+                Q("color-gradient")[0].style.display="none";
             }
 
             smoothButton.onmouseleave=()=>{
@@ -2385,12 +2390,12 @@ function addSmoothingTool(){
             firstTimeAddWindowSmooth = false;
         }
 
-        degRange1 = document.getElementsByClassName("here-degrange")[0];
+        degRange1 = Q("here-degrange")[0];
 
-        var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+        var pointerCanvas = Q("jsx-150592943")[0];
         pointerCanvas.addEventListener('pointerdown', (e)=>{
-            var pipetTool = document.getElementsByClassName("jsx-3659451671 tool pipet act sel")[0];
-            var bucketTool = document.getElementsByClassName("jsx-3659451671 tool fil sel")[0];
+            var pipetTool = Q("jsx-3659451671 tool pipet act sel")[0];
+            var bucketTool = Q("jsx-3659451671 tool fil sel")[0];
             if (Number(degRange1.value)!=1 && !bucketTool && e.which != 2 && !onWorking && e.which != 3 && !pipetTool){
                 onWorkingKey = true;
                 startPoint = [e.clientX, e.clientY];
@@ -2417,9 +2422,9 @@ function addSmoothingTool(){
 
 //Функционал пипеточного элемента
 function addTitle(){
-    if (document.getElementsByClassName("pipet-title")[0]){return 0};
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var canada = document.getElementsByClassName("jsx-3193114933")[0];
+    if (Q("pipet-title")[0]){return 0};
+    var pointerCanvas = Q("jsx-150592943")[0];
+    var canada = Q("jsx-3193114933")[0];
     var curc = document.createElement("div");
     curc.style.height="10px";
     curc.style.width="10px";
@@ -2455,11 +2460,11 @@ function addTitle(){
 //Функционал пипетки
 var prevElem;
 function addPipetButton(){
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var canada = document.getElementsByClassName("jsx-3193114933")[0];
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var pointerCanvas = Q("jsx-150592943")[0];
+    var canada = Q("jsx-3193114933")[0];
 
-    if (document.getElementsByClassName("pipet")[0] == undefined && pointerCanvas){
+    if (Q("pipet")[0] == undefined && pointerCanvas){
         var pipetButton = document.createElement("div");
         pipetButton.classList.add("jsx-3659451671");
         pipetButton.classList.add("tool");
@@ -2469,9 +2474,9 @@ function addPipetButton(){
         toolBar.appendChild(pipetButton);
 
         pipetButton.onclick = function(){
-            if (!document.getElementsByClassName("jsx-1553483530 pencil").length){
+            if (!Q("jsx-1553483530 pencil").length){
                 addTitle();
-                prevElem = document.getElementsByClassName("tool sel")[0];
+                prevElem = Q("tool sel")[0];
                 prevElem.classList.remove("sel");
                 pipetButton.classList.add("act");
                 pipetButton.classList.add("sel");
@@ -2480,8 +2485,8 @@ function addPipetButton(){
 
 
         toolBar.addEventListener('click', (e)=>{
-            if (e.target != pipetButton && document.getElementsByClassName("act").length != 0 && !e.target.classList.contains("undo")){
-                document.querySelector("#__next").removeChild(document.getElementsByClassName("pipet-title")[0]);
+            if (e.target != pipetButton && Q("act").length != 0 && !e.target.classList.contains("undo")){
+                document.querySelector("#__next").removeChild(Q("pipet-title")[0]);
                 prevElem.classList.add("sel");
                 pipetButton.classList.remove("act");
                 pipetButton.classList.remove("sel");
@@ -2492,7 +2497,7 @@ function addPipetButton(){
     } else { console.log("PIP-button already exists or pointerCanvas is undefined") }
 
     pointerCanvas.addEventListener('pointerdown', (e)=>{
-        if (document.getElementsByClassName("act").length != 0 && e.which == 1){
+        if (Q("act").length != 0 && e.which == 1){
             var rgba = canada.getContext('2d').getImageData(e.offsetX*2, e.offsetY*2, 1, 1).data;
             let r = rgba[0];
             let g = rgba[1];
@@ -2505,7 +2510,7 @@ function addPipetButton(){
                 var event = new Event ('mouseup', { bubbles: true, cancelable: true});
                 pointerCanvas.dispatchEvent(event);
 
-                document.getElementsByClassName("jsx-3659451671 tool undo")[0].click();
+                Q("jsx-3659451671 tool undo")[0].click();
             }, 50)
         }
     })
@@ -2518,8 +2523,8 @@ var colorInput2;
 var defaultButton;
 var uKey = false;
 function randomColorButton(){
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
-    if (!document.getElementsByClassName("rand").length){
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    if (!Q("rand").length){
         var gradientButton = document.createElement("div");
         gradientButton.classList.add("jsx-3659451671");
         gradientButton.classList.add("tool");
@@ -2634,10 +2639,10 @@ function randomColorButton(){
         smoothBorder.appendChild(degRangeBorder);
 
         gradientButton.onmouseenter=()=>{
-            if(document.getElementsByClassName("jsx-1553483530 pencil").length){return;}
+            if(Q("jsx-1553483530 pencil").length){return;}
             degRangeBorder.style.display="";
-            document.getElementsByClassName("deg-range-border")[0].style.display="none";
-            if (!document.getElementsByClassName("jsx-4289504161 small")[0].disabled){
+            Q("deg-range-border")[0].style.display="none";
+            if (!Q("jsx-4289504161 small")[0].disabled){
                 defaultButton.style.cursor="no-drop";
                 defaultButton.title="Нельзя использовать если что-то уже нарисовано";
                 defaultButton.style.opacity=0.5;
@@ -2682,7 +2687,7 @@ function randomColorButton(){
         var c = context.getImageData(0, i, 1, 1).data;
         setColor(rgbToHex(c[0], c[1], c[2]));
     }
-    var canvas = document.getElementsByClassName("jsx-150592943")[0];
+    var canvas = Q("jsx-150592943")[0];
     var rect = canvas.getBoundingClientRect();
     var x0 = rect.x;
     var x1 = rect.x+rect.width;
@@ -2691,7 +2696,7 @@ function randomColorButton(){
 
     defaultButton.onclick=()=>{
         if (uKey){return;}
-        document.getElementsByClassName("jsx-3659451671 tool pen")[0].click();
+        Q("jsx-3659451671 tool pen")[0].click();
         for (let i=0;i<424;i++){
             setTimeout(()=>{
                 changeColor2(i, colorInput1.value, colorInput2.value)
@@ -2727,27 +2732,27 @@ function randomColorButton(){
 
 //Функционал кнопки зеркала
 function addMirrorButton(){
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
-    if (!document.getElementsByClassName("miror").length){
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    if (!Q("miror").length){
         var mirorButton = document.createElement("div");
         mirorButton.classList.add("jsx-3659451671");
         mirorButton.classList.add("tool");
         mirorButton.classList.add("miror");
 
         mirorButton.onclick=()=>{
-            if (!document.getElementsByClassName("jsx-1553483530 pencil").length){
-                if (document.getElementsByClassName("miror sel").length == 0){
+            if (!Q("jsx-1553483530 pencil").length){
+                if (Q("miror sel").length == 0){
                     mirorButton.classList.add("sel");
                     mirorButton.classList.add("act1");
                     updateMirrorLine();
                     document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.opacity = 1;
-                    document.getElementsByClassName("rightpanel")[0].style.right="0px";
+                    Q("rightpanel")[0].style.right="0px";
                     document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.animation="1s linear 0s normal none running here";
                 } else {
                     mirorButton.classList.remove("sel");
                     clearMidCanvas();
                     mirorButton.classList.remove("act1");
-                    document.getElementsByClassName("rightpanel")[0].style.right="-220px";
+                    Q("rightpanel")[0].style.right="-220px";
                     document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.opacity = 0.5;
                     document.querySelector("#content > div.rightpanel > div:nth-child(2)").style.animation="";
                 }
@@ -2761,8 +2766,8 @@ function addMirrorButton(){
 //Функции зеркала
 var onWorking = false;
 function addMirrorBase(){
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
-    var mirrorCanvas = document.getElementsByClassName("jsx-3193114933")[0].cloneNode();
+    var pointerCanvas = Q("jsx-150592943")[0];
+    var mirrorCanvas = Q("jsx-3193114933")[0].cloneNode();
     mirrorCanvas.classList.remove("jsx-3193114933");
     mirrorCanvas.classList.add("mirror-canvas");
     var ctx = mirrorCanvas.getContext("2d");
@@ -2808,12 +2813,12 @@ function addMirrorBase(){
     var centerL;
     var okey;
     var rect;
-    var againCanvas = document.getElementsByClassName("mirror-canvas")[0];
+    var againCanvas = Q("mirror-canvas")[0];
     var kotik = againCanvas.getContext("2d");
 
     evttCanvas.addEventListener('pointerdown', (e)=>{
-        var smoothingTool = document.getElementsByClassName("jsx-3659451671 tool smooth act1")[0];
-        if (!onWorking && document.getElementsByClassName("miror sel").length != 0 && !document.getElementsByClassName("jsx-3659451671 tool pipet act sel").length && e.which == 1){
+        var smoothingTool = Q("jsx-3659451671 tool smooth act1")[0];
+        if (!onWorking && Q("miror sel").length != 0 && !Q("jsx-3659451671 tool pipet act sel").length && e.which == 1){
             rect = evttCanvas.getBoundingClientRect();
             let relX = e.clientX - rect.x;
             let relY = e.clientY - rect.y;
@@ -2822,7 +2827,7 @@ function addMirrorBase(){
         }
     })
 
-    document.getElementsByClassName("screen")[0].addEventListener('pointermove', (e)=>{
+    Q("screen")[0].addEventListener('pointermove', (e)=>{
         if (key){
             let relX = e.clientX - rect.x;
             let relY = e.clientY - rect.y;
@@ -2833,7 +2838,7 @@ function addMirrorBase(){
 
     window.addEventListener('pointerup', (e)=>{
         setTimeout(()=>{
-            if (key && document.getElementsByClassName("miror sel").length != 0){
+            if (key && Q("miror sel").length != 0){
                 if (sLevel != 1){
                     var p1 = arr[0];
                     var p2 = arr[arr.length - 1];
@@ -2861,8 +2866,8 @@ function addMirrorBase(){
 //Функционал кнопки очистки
     var clearButton;
 function addClearButton(){
-    var toolBar = document.getElementsByClassName("jsx-3659451671 tools")[0].firstChild;
-    if (!document.getElementsByClassName("clear").length){
+    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    if (!Q("clear").length){
         clearButton = document.createElement("div");
         clearButton.classList.add("jsx-3659451671");
         clearButton.classList.add("tool");
@@ -2871,15 +2876,15 @@ function addClearButton(){
         toolBar.appendChild(clearButton);
     }
     clearButton.onclick=()=>{
-        var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];
+        var pointerCanvas = Q("jsx-150592943")[0];
         var rect = pointerCanvas.getBoundingClientRect();
         var x0 = rect.x;
         var y0 = rect.y;
         var x1 = rect.x + rect.width;
         var y1 = rect.y + rect.height;
-        var beforeColor = (()=>{var items = document.getElementsByClassName("jsx-3071142060"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})().value;
-        var beforeElement = document.getElementsByClassName("tool sel")[0];
-        var rectButton = document.getElementsByClassName("jsx-3659451671 tool rec")[0];
+        var beforeColor = (()=>{var items = Q("jsx-3071142060"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})().value;
+        var beforeElement = Q("tool sel")[0];
+        var rectButton = Q("jsx-3659451671 tool rec")[0];
         rectButton.click();
         setColor("#ffffff");
         clientMouseDown(x0, y0);
@@ -2922,14 +2927,14 @@ function mainDrawFunc(){
     //let supScale;
     //let curScale;
     ///////////////////VIPER/////////////////////
-    //document.getElementsByClassName("jsx-340028725 thickness")[0].click();
+    //Q("jsx-340028725 thickness")[0].click();
     /////////////////////////////////////////////
 
     //Обработка клавиатуры
     document.onkeydown = drawKeys;
 
     //Вилинговое увеличение экрана
-    var pointerCanvas = document.getElementsByClassName("jsx-150592943")[0];// <- самый верхний холст
+    var pointerCanvas = Q("jsx-150592943")[0];// <- самый верхний холст
     pointerCanvas.onwheel=onDrawWheel;
     //Изменение настроек прозрачности
     nessEdit();
@@ -2958,7 +2963,7 @@ function waitVideo(){
     video.width="634";
     video.height="358";
 
-    document.getElementsByClassName("jsx-1671937317 lottie")[0].parentNode.removeChild(document.getElementsByClassName("jsx-1671937317 lottie")[0]);
+    Q("jsx-1671937317 lottie")[0].parentNode.removeChild(Q("jsx-1671937317 lottie")[0]);
 
     var videoLink = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
 
@@ -3007,17 +3012,17 @@ function getCookieDict(){
 
 function debagDrawinfContainerOnExit(){
     try{
-    document.getElementsByClassName("jsx-1562482592 drawingContainer")[0].parentNode.removeChild(document.getElementsByClassName("jsx-1562482592 drawingContainer")[0]);
-    document.getElementsByClassName("class100")[0].parentNode.removeChild(document.getElementsByClassName("class100")[0]);
+    Q("jsx-1562482592 drawingContainer")[0].parentNode.removeChild(Q("jsx-1562482592 drawingContainer")[0]);
+    Q("class100")[0].parentNode.removeChild(Q("class100")[0]);
     } catch{};
 }
 
 function moveCanvases(){
     var nWindow = document.querySelector("#content");
-    var nnWindow = document.getElementsByClassName("jsx-1307288772 core")[0];
-    var drawContainer = document.getElementsByClassName("jsx-1562482592 drawingContainer")[0];
+    var nnWindow = Q("jsx-1307288772 core")[0];
+    var drawContainer = Q("jsx-1562482592 drawingContainer")[0];
     var contCanvases = drawContainer.children;
-    if (document.getElementsByClassName("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length > 0){
+    if (Q("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length > 0){
         drawContainer.parentNode.removeChild(drawContainer);
         drawContainer.style.position="absolute";
         drawContainer.style.left="0px";
@@ -3033,7 +3038,7 @@ function moveCanvases(){
         whiteZone.style.height=`${window.innerHeight}px`;
         whiteZone.style.position="absolute";
         whiteZone.style.zIndex=1;
-        whiteZone.style.backgroundImage=document.getElementsByClassName("jsx-1307288772 core")[0].style.backgroundImage;
+        whiteZone.style.backgroundImage=Q("jsx-1307288772 core")[0].style.backgroundImage;
         nWindow.appendChild(whiteZone);
         nWindow.appendChild(drawContainer);
     } else {
@@ -3043,7 +3048,7 @@ function moveCanvases(){
             contCanvases[i].style.height=`424px`;
             contCanvases[i].style.zIndex="";
         }
-        document.getElementsByClassName("class100")[0].parentNode.removeChild(document.getElementsByClassName("class100")[0]);
+        Q("class100")[0].parentNode.removeChild(Q("class100")[0]);
         nWindow.removeChild(drawContainer);
         nnWindow.appendChild(drawContainer);
     }
@@ -3055,13 +3060,13 @@ function moveCanvases(){
 
 //Я и так знаю что делает эта функция, а значит это читает кто-то другой
 window.addEventListener('resize', function(event){
-    var drawContainer = document.getElementsByClassName("jsx-1562482592 drawingContainer")[0];
+    var drawContainer = Q("jsx-1562482592 drawingContainer")[0];
     if (drawContainer){
         var anCanvases = drawContainer.children;
         var newArray = [].slice.call(anCanvases);
-        newArray.push(document.getElementsByClassName("class100")[0]);
+        newArray.push(Q("class100")[0]);
 
-        if (document.getElementsByClassName("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length == 0){
+        if (Q("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length == 0){
             for (let i=0; i<newArray.length; i++){
                 newArray[i].style.width=`${window.innerWidth}px`;
                 newArray[i].style.height=`${window.innerHeight}px`;
@@ -3181,7 +3186,7 @@ function decToHex(n){return Number(n).toString(16);}
 
 
 function mainMenuTitle(){
-    if (!document.getElementsByClassName("top-menu").length){
+    if (!Q("top-menu").length){
         var topMenu = document.createElement("div");
         topMenu.classList.add("top-menu");
         topMenu.style.width="auto";
@@ -3189,9 +3194,9 @@ function mainMenuTitle(){
         topMenu.style.display="inline-flex";
         topMenu.style.blockSize="max-content";
         topMenu.style.transformOrigin="top";
-        topMenu.style.transform=document.getElementsByClassName("screen")[0].style.transform;
+        topMenu.style.transform=Q("screen")[0].style.transform;
         window.addEventListener("resize", ()=>{
-            topMenu.style.transform=document.getElementsByClassName("screen")[0].style.transform;
+            topMenu.style.transform=Q("screen")[0].style.transform;
         })
         document.querySelector("#content").appendChild(topMenu);
         document.querySelector("#content").style.justifyContent="center";
@@ -3301,20 +3306,20 @@ var globalScale;
 document.querySelector("body").style.overflow="hidden";
 
 function backgroundUpdate(){
-    let inputLink = document.getElementsByClassName("urlbg")[0];
-    let degInput = document.getElementsByClassName("deginput")[0];
-    let sizeInput = document.getElementsByClassName("sizeinput")[0];
-    let xInput = document.getElementsByClassName("xinput")[0];
-    let yInput = document.getElementsByClassName("yinput")[0];;
-    let curBgStyle = document.getElementsByClassName("imgChange")[0];
+    let inputLink = Q("urlbg")[0];
+    let degInput = Q("deginput")[0];
+    let sizeInput = Q("sizeinput")[0];
+    let xInput = Q("xinput")[0];
+    let yInput = Q("yinput")[0];;
+    let curBgStyle = Q("imgChange")[0];
     curBgStyle.innerText = `.newdiv::before {content: ''; position: absolute; width: 200%; height: 200%; top: ${yInput.value}%; left: ${xInput.value}%; z-index: -1; background: url(${inputLink.value}) 0 0 no-repeat; -webkit-transform: rotate(${degInput.value}deg); -moz-transform: rotate(${degInput.value}deg); -ms-transform: rotate(${degInput.value}deg); -o-transform: rotate(${degInput.value}deg); transform: rotate(${degInput.value}deg); background-position: center; background-size: ${sizeInput.value}%;}`;
 }
 
 function updateMirrorLine(){
-    var xInput = document.getElementsByClassName("xmirror")[0];
-    var yInput = document.getElementsByClassName("ymirror")[0];
-    var degInput = document.getElementsByClassName("degmirror")[0];
-    var middleCanvas = document.getElementsByClassName("mirror-canvas")[0];
+    var xInput = Q("xmirror")[0];
+    var yInput = Q("ymirror")[0];
+    var degInput = Q("degmirror")[0];
+    var middleCanvas = Q("mirror-canvas")[0];
     var context = middleCanvas.getContext("2d");
 
     var x0 = Number(xInput.value);
@@ -3347,7 +3352,7 @@ function updateMirrorLine(){
 }
 
 function clearMidCanvas(){
-    var middleCanvas = document.getElementsByClassName("mirror-canvas")[0];
+    var middleCanvas = Q("mirror-canvas")[0];
     var context = middleCanvas.getContext("2d");
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, middleCanvas.width, middleCanvas.height);
@@ -3355,9 +3360,9 @@ function clearMidCanvas(){
 }
 
 function lobbyEdit(){
-    var s = document.getElementsByClassName("jsx-2855609897 game")[0];
+    var s = Q("jsx-2855609897 game")[0];
     s.classList.add("reded");
-    document.getElementsByClassName("jsx-2855609897")[4].innerText += "\nДоктор не рекомендует"
+    Q("jsx-2855609897")[4].innerText += "\nДоктор не рекомендует"
 }
 
 function createSizePull(){
@@ -3384,7 +3389,7 @@ function createSizePull(){
     rightPannel.onmouseleave=function(){
         backgroundMenuKey=false;
         setTimeout(()=>{
-            if (!backgroundMenuKey && document.getElementsByClassName("miror sel").length == 0){
+            if (!backgroundMenuKey && Q("miror sel").length == 0){
                 linkInput.disabled=true;
                 rightPannel.style.right="-220px";
             }
@@ -3568,8 +3573,8 @@ function createSizePull(){
     mirrorWindow.style.transition="all 0.5s ease 0s";
 
     mirrorWindow.onclick=()=>{
-        if (document.getElementsByClassName("miror sel act1").length == 0){
-            document.getElementsByClassName("miror")[0].click();
+        if (Q("miror sel act1").length == 0){
+            Q("miror")[0].click();
         }
     }
 
@@ -3704,7 +3709,7 @@ function createSizePull(){
 }
 
 function createColorPull(){
-    if (document.getElementsByClassName("leftpanel")[0] == undefined && document.isTrusted){
+    if (Q("leftpanel")[0] == undefined && document.isTrusted){
 
         var cookieDict = getCookieDict();
 
@@ -4027,7 +4032,7 @@ function createColorPull(){
         colorInput4.style.appearance="none";
         colorInput4.style.background="none";
         colorInput4.style.margin="5px";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundBlendMode="color-burn";
+        Q("jsx-2562723607")[1].style.backgroundBlendMode="color-burn";
         if(!localStorage.getItem("sc4")){
             localStorage.setItem("sc4", "#000000");
             localStorage.setItem("sc4o", "00");
@@ -4037,7 +4042,7 @@ function createColorPull(){
         colorInput4.oninput=function(){
             localStorage.setItem("sc4", colorInput4.value);
             colorInput4.style.backgroundColor=colorInput4.value;
-            document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=colorInput4.value + localStorage.getItem("sc4o");
+            Q("jsx-2562723607")[1].style.backgroundColor=colorInput4.value + localStorage.getItem("sc4o");
         }
         d.appendChild(colorInput4);
 
@@ -4054,12 +4059,12 @@ function createColorPull(){
         opacity2.style.borderRadius="10px";
         opacity2.style.height="4px";
         opacity2.value=parseInt(localStorage.getItem("sc4o"), 16);
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
+        Q("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
         opacity2.oninput=()=>{
             var v = Number(opacity2.value).toString(16);
             if (v.length==1){v="0"+v};
             localStorage.setItem("sc4o", v);
-            document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
+            Q("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
         };
         d.appendChild(opacity2);
 
@@ -4114,7 +4119,7 @@ function createColorPull(){
         if(!localStorage.getItem("sl2")){localStorage.setItem("sl2", "")}
         linkInput2.value=localStorage.getItem("sl2");
         if (linkInput2.value != ""){
-            document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
+            Q("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
         }
         linkInput2.placeholder="URL";
         linkInput2.style.color="white";
@@ -4131,15 +4136,15 @@ function createColorPull(){
                 console.log("1");
                 localStorage.setItem("sl2", linkInput2.value);
                 if (linkInput2.value != ""){
-                    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
+                    Q("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
                 } else {
-                    document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`none`;
+                    Q("jsx-2562723607")[1].style.backgroundImage=`none`;
                 }
         };
         linkInput2.disabled=true;
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
+        Q("jsx-2562723607")[1].style.backgroundSize="cover";
+        Q("jsx-2562723607")[1].style.backgroundPosition="center";
+        Q("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
 
 
         d.appendChild(linkTitle);
@@ -4228,17 +4233,17 @@ function createColorPull(){
             linkInput2.disabled=true;
             leftPannel.style.left="-220px";
             dialogWindow('reset all style settings?', 'All style settings will be reset to the default settings without the possibility of recovery', ()=>{
-                let colorInput1 = document.getElementsByClassName("color-input1")[0];
-                let colorInput2 = document.getElementsByClassName("color-input2")[0];
-                let colorInput3 = document.getElementsByClassName("color-input3")[0];
-                let colorInput4 = document.getElementsByClassName("color-input4")[0];
-                let degRange1 = document.getElementsByClassName("deg-input")[0];
-                let percentRange1 = document.getElementsByClassName("prec-input1")[0];
-                let percentRange2 = document.getElementsByClassName("prec-input2")[0];
-                let linkInput1 = document.getElementsByClassName("link-input")[0];
-                let linkInput2 = document.getElementsByClassName("link-input-2")[0];
-                let opacity1 = document.getElementsByClassName("opacity1")[0];
-                let opacity2 = document.getElementsByClassName("opacity2")[0];
+                let colorInput1 = Q("color-input1")[0];
+                let colorInput2 = Q("color-input2")[0];
+                let colorInput3 = Q("color-input3")[0];
+                let colorInput4 = Q("color-input4")[0];
+                let degRange1 = Q("deg-input")[0];
+                let percentRange1 = Q("prec-input1")[0];
+                let percentRange2 = Q("prec-input2")[0];
+                let linkInput1 = Q("link-input")[0];
+                let linkInput2 = Q("link-input-2")[0];
+                let opacity1 = Q("opacity1")[0];
+                let opacity2 = Q("opacity2")[0];
 
                 colorInput1.value="#7213e7";
                 colorInput2.value="#c8435e";
@@ -4268,7 +4273,7 @@ function createColorPull(){
                 localStorage.setItem("sc4o", "00");
                 colorInput4.style.backgroundColor=colorInput4.value;
 
-                document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor="#00000000";
+                Q("jsx-2562723607")[1].style.backgroundColor="#00000000";
                 document.querySelector("#content").style.backgroundColor="#00000000";
                 document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
                 document.querySelector("#__next").style.backgroundImage="";
@@ -4286,14 +4291,14 @@ function createColorPull(){
 
     function styleUpdate(){
         console.log("double")
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundBlendMode="color-dodge";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundSize="cover";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundPosition="center";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
+        Q("jsx-2562723607")[1].style.backgroundBlendMode="color-dodge";
+        Q("jsx-2562723607")[1].style.backgroundSize="cover";
+        Q("jsx-2562723607")[1].style.backgroundPosition="center";
+        Q("jsx-2562723607")[1].style.backgroundRepeat="no-repeat";
+        Q("jsx-2562723607")[1].style.backgroundColor=localStorage.getItem("sc4") + localStorage.getItem("sc4o");
         document.querySelector("#content").style.backgroundColor=localStorage.getItem("sc3") + localStorage.getItem("sc3o");
         if(localStorage.getItem("sl1") != ""){document.querySelector("#__next").style.backgroundImage=`url(${localStorage.getItem("sl1")})`;}
-        document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage=`url(${localStorage.getItem("sl2")})`;
+        Q("jsx-2562723607")[1].style.backgroundImage=`url(${localStorage.getItem("sl2")})`;
         document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
     }
 
@@ -4314,9 +4319,9 @@ var waitingKey = false;
 
     window.onkeydown=(e)=>{
         if (e.key === "Enter" || e.key === "Ent" || e.keyCode === 13) {
-            document.getElementsByClassName("jsx-4289504161 big")[0].click();
+            Q("jsx-4289504161 big")[0].click();
         }
-        var input = document.getElementsByClassName("jsx-856742297 ")[0];
+        var input = Q("jsx-856742297 ")[0];
         if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
             var p = prompt("Введите команду:", "100") ;
             if (p == "0"){
@@ -4345,13 +4350,13 @@ var waitingKey = false;
 
 function flagsOff(){
 
-    if (drawKey && document.getElementsByClassName("jsx-1553483530 pencil")[0]){
-        document.getElementsByClassName("jsx-1553483530 pencil")[0].parentNode.removeChild(document.getElementsByClassName("jsx-1553483530 pencil")[0]);
+    if (drawKey && Q("jsx-1553483530 pencil")[0]){
+        Q("jsx-1553483530 pencil")[0].parentNode.removeChild(Q("jsx-1553483530 pencil")[0]);
     }
 
-    if (document.getElementsByClassName("bm")[0]){
-        document.getElementsByClassName("bm")[0].pause();
-        document.getElementsByClassName("bm")[0].currentTime = 0;
+    if (Q("bm")[0]){
+        Q("bm")[0].pause();
+        Q("bm")[0].currentTime = 0;
     }
 
     lobbyKey = false;
@@ -4367,8 +4372,8 @@ function flagsOff(){
 
 function memoryFunc(){
     if (document.URL.indexOf("draw") != -1){return}
-    var smth = document.getElementsByClassName("jsx-1307288772 core")[0];
-    var mCanvas = document.getElementsByClassName("jsx-3193114933 ")[0];
+    var smth = Q("jsx-1307288772 core")[0];
+    var mCanvas = Q("jsx-3193114933 ")[0];
     smth.style.backgroundImage="url()";
     smth.style.cursor="pointer";
     smth.onclick = ()=>{
@@ -4390,7 +4395,7 @@ function memoryFunc(){
 }
 
 function offBgMenu(){
-        var panel = document.getElementsByClassName("rightpanel");
+        var panel = Q("rightpanel");
         if (panel.length != 0){
             panel[0].parentNode.removeChild(panel[0]);
         }
@@ -4398,9 +4403,9 @@ function offBgMenu(){
 
 function clown(){
         if (getCookieDict().badguy=="1"){
-            var input = document.getElementsByClassName("jsx-856742297 ")[0];
+            var input = Q("jsx-856742297 ")[0];
             setValue(input, "vinegative");
-            document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener('click', ()=>{
+            Q("jsx-4289504161 big")[0].addEventListener('click', ()=>{
                 if (getCookieDict().badguy=="1"){
                     setValue(input, "vinegative");
                 }
@@ -4415,12 +4420,12 @@ function main(){
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
 
         if (!(localStorage.getItem("clown")=="false")){
-            if (document.getElementsByClassName("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || document.getElementsByClassName("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
+            if (Q("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || Q("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
                 localStorage.setItem("clown", "true");
             };
             if (localStorage.getItem("clown")=="true"){
-                document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener("click", ()=>{
-                    setValue(document.getElementsByClassName("jsx-856742297 ")[0], "Шпилька");
+                Q("jsx-4289504161 big")[0].addEventListener("click", ()=>{
+                    setValue(Q("jsx-856742297 ")[0], "Шпилька");
                 })
             }
         }
@@ -4442,12 +4447,12 @@ function main(){
     else if (document.URL.indexOf("?c=") != -1 && !menuLinkKey){
 
         if (!(localStorage.getItem("clown")=="false")){
-            if (document.getElementsByClassName("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || document.getElementsByClassName("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
+            if (Q("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || Q("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
                 localStorage.setItem("clown", "true");
             };
             if (localStorage.getItem("clown")=="true"){
-                document.getElementsByClassName("jsx-4289504161 big")[0].addEventListener("click", ()=>{
-                    setValue(document.getElementsByClassName("jsx-856742297 ")[0], "Шпилька");
+                Q("jsx-4289504161 big")[0].addEventListener("click", ()=>{
+                    setValue(Q("jsx-856742297 ")[0], "Шпилька");
                 })
             }
         }
@@ -4475,28 +4480,28 @@ function main(){
         drawKey=true;
     }
     else if (document.URL.indexOf("lobby") != -1 && !lobbyKey){
-        var v = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
+        var v = Q("jsx-4216852870 jsx-2842824398 nick");
         for (let i=0; i<v.length; i++){VIPList(v[i]);}
-        addListenerToBlock(document.getElementsByClassName("jsx-1927447174 scrollElements")[0]);
+        addListenerToBlock(Q("jsx-1927447174 scrollElements")[0]);
         setTimeout(lobbyEdit, 300);
         styleUpdate();
         flagsOff();
         lobbyKey=true;
     }
     else if (document.URL.indexOf("book") != -1 && !bookKey){
-        var w = document.getElementsByClassName("scrollElements")[1];
+        var w = Q("scrollElements")[1];
         if (!w){
-            document.getElementsByClassName("jsx-2790456822 timeline")[0].addEventListener("DOMNodeInserted", (e)=>{
+            Q("jsx-2790456822 timeline")[0].addEventListener("DOMNodeInserted", (e)=>{
                 if (e.target.classList.contains("scroll")){
                     console.log("WARNING");
-                    var w = document.getElementsByClassName("scrollElements")[1].children;
+                    var w = Q("scrollElements")[1].children;
                     censorListener();
                     for(var k=0; k<w.length; k++){cencFunc(w[k].firstChild)}
                 }
             });
         } else {
             setTimeout(()=>{
-                w = document.getElementsByClassName("scrollElements")[1].children;
+                w = Q("scrollElements")[1].children;
                 censorListener();
                 for(var k=0; k<w.length; k++){cencFunc(w[k].firstChild)}
             }, 100);
@@ -4504,13 +4509,13 @@ function main(){
 
         debagDrawinfContainerOnExit();
 
-        if (document.getElementsByClassName("zoomC").length){
-            document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
+        if (Q("zoomC").length){
+            Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
 
-        v = document.getElementsByClassName("jsx-4216852870 jsx-2842824398 nick");
+        v = Q("jsx-4216852870 jsx-2842824398 nick");
         for (let i=0; i<v.length; i++){VIPList(v[i]);}
-        addListenerToBlock(document.getElementsByClassName("jsx-3158565948 scrollElements")[0]);
+        addListenerToBlock(Q("jsx-3158565948 scrollElements")[0]);
         styleUpdate();
         offBgMenu();
         flagsOff();
@@ -4527,8 +4532,8 @@ function main(){
         //Блок названия картинки
         offBgMenu();
         setTimeout(extendTextInput, 200);
-        if (document.getElementsByClassName("zoomC").length){
-            document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
+        if (Q("zoomC").length){
+            Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
         styleUpdate();
         flagsOff();
@@ -4540,8 +4545,8 @@ function main(){
         debagDrawinfContainerOnExit();
         offBgMenu();
         setTimeout(styleUpdate, 500);
-        if (document.getElementsByClassName("zoomC").length){
-            document.getElementsByClassName("zoomC")[0].parentNode.removeChild(document.getElementsByClassName("zoomC")[0]);
+        if (Q("zoomC").length){
+            Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
         styleUpdate();
         flagsOff();
@@ -5506,7 +5511,7 @@ function exec() {
 							children: [ce.map((function(t) {
 								return Object(n.jsx)("div", {
 									onClick: e.disabled ? null : function() {
-                                        document.getElementsByClassName("thikness-input")[0].value=t;
+                                        Q("thikness-input")[0].value=t;
 										return e.onChangeThickness(t)
 									},
 									className: "jsx-340028725 " + (ne()("thickness", {
