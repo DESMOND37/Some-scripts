@@ -1506,7 +1506,7 @@ function VIPList(q){
         q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
         q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
     }
-    else if (q.innerText.toLowerCase().indexOf("шпилька") != -1 || q.innerText.toLowerCase().indexOf("шпилькa") != -1 || q.innerText.toLowerCase().indexOf("шпильkа") != -1 || q.innerText.toLowerCase().indexOf("шпильka") != -1){
+    else if (testForIncorporation(q.innerText.toLowerCase(), ["шпилька", "шпилькa", "шпильkа", "шпильka"])){
         q.parentNode.title="этот клоун меня обидел";
         q.parentNode.style.backgroundColor="rgb(0 0 0)";
         q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
@@ -1706,6 +1706,14 @@ function VIPList(q){
             };
         };
     }
+}
+
+
+function testForIncorporation(word, arr){
+    for (let i=0; i<arr.length; i++){
+        if (word.indexOf(arr[i]) != -1){return !0}
+    }
+    return !1
 }
 
 function addListenerToBlock(block, func){
