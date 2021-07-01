@@ -1892,7 +1892,7 @@ var curElementOverCursor;
 //Функция изменения функционала первого уровня
 function firstLevelFunctions(){
     //Дизактивация текстбокса толщины
-    var t = Q("thikness-input")[0];
+    var t = document.getElementsByClassName("thikness-input")[0];
     t.parentNode.onmouseenter=()=>{t.disabled=!1;}
     t.parentNode.onmouseleave=()=>{t.disabled=!0}
     //Определение изначальной прозрачности
@@ -5510,7 +5510,7 @@ function exec() {
 							children: [ce.map((function(t) {
 								return Object(n.jsx)("div", {
 									onClick: e.disabled ? null : function() {
-                                        Q("thikness-input")[0].value=t;
+                                        document.getElementsByClassName("thikness-input")[0].value=t;
 										return e.onChangeThickness(t)
 									},
 									className: "jsx-340028725 " + (ne()("thickness", {
