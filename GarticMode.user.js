@@ -4434,7 +4434,7 @@ function main(){
         //    deletBanner();
             createColorPull();
         }
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(createColorPull, 10);
@@ -4466,14 +4466,14 @@ function main(){
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(createColorPull, 10);
-        styleUpdate()
+        setTimeout(styleUpdate, 10);
         setTimeout(mainMenuTitle, 10);
         //setTimeout(console.clear, 2000);
         flagsOff();
         menuLinkKey=true;
     }
     else if (document.URL.indexOf("draw") != -1 && !drawKey){
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         setTimeout(mainDrawFunc, 500);
         flagsOff();
         drawKey=true;
@@ -4483,7 +4483,7 @@ function main(){
         for (let i=0; i<v.length; i++){VIPList(v[i]);}
         addListenerToBlock(Q("jsx-1927447174 scrollElements")[0]);
         setTimeout(lobbyEdit, 300);
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         flagsOff();
         lobbyKey=true;
     }
@@ -4515,13 +4515,13 @@ function main(){
         v = Q("jsx-4216852870 jsx-2842824398 nick");
         for (let i=0; i<v.length; i++){VIPList(v[i]);}
         addListenerToBlock(Q("jsx-3158565948 scrollElements")[0]);
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         offBgMenu();
         flagsOff();
         bookKey=true;
     }
     else if (document.URL.indexOf("start") != -1 && !startKey){
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         setTimeout(extendTextInput , 500);
         flagsOff();
         startKey=true;
@@ -4534,7 +4534,7 @@ function main(){
         if (Q("zoomC").length){
             Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         flagsOff();
         writeKey=true;
         setTimeout(memoryFunc, 500);
@@ -4543,11 +4543,10 @@ function main(){
         //Блок перерисовки картинки
         debagDrawinfContainerOnExit();
         offBgMenu();
-        setTimeout(styleUpdate, 500);
+        setTimeout(styleUpdate, 10);
         if (Q("zoomC").length){
             Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
-        styleUpdate();
         flagsOff();
         memoryKey=true;
     }
@@ -4559,7 +4558,7 @@ function main(){
         //    waitVideo();
         //}
 
-        styleUpdate();
+        setTimeout(styleUpdate, 10);
         //waitVideo();
 
         //setTimeout(styleUpdate, 500);
