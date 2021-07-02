@@ -126,7 +126,7 @@
           "margin": "0px",
           "width": "100%",
           "heigth": "100%",
-          "min-height": "auto"
+          "minHeight": "auto"
         }
       }
     },
