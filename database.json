@@ -84,43 +84,46 @@
       }
     },
     "lepishov2007": {
-      "innerText": "",
+      "innerText": "Стример",
       "music": "",
       "musicOnJoin": "",
       "title": "",
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "function1": "",
+      "function1": "function func1(q, d){window.open('https://www.twitch.tv/lepishov2007', '_blank');}",
       "function2": "",
       "function3": "",
       "function4": "",
       "code": "",
       "nickname": {
-          "color": "",
-          "fontFamily": "",
+          "color": "#fff",
+          "fontFamily": "fantasy",
           "fontWeight": "",
-          "fontStyle": ""
+          "fontStyle": "oblique",
+          "fontSize": "xx-large"
       },
       "block": {
         "translition": "none",
         "backgroundColor": "",
-        "backgroundImage": "",
+        "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/847413107005718548/wallpaper.png",
         "backgroundSize": "",
         "backgroundPosition": "",
         "bacgroundRepeat": "",
-        "border": "",
+        "border": "none",
         "boxShadow": "",
         "animation": "",
-        "cursor": ""
+        "cursor": "pointer"
       },
       "avatar": {
         "border": "",
         "backgroundColor": "",
         "child": {
-          "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
-          "backgroundSize": "",
-          "backgroundPosition": ""
+          "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/847414409957343232/dd86851c-cf1a-4211-884b-4b1d369d3c37-profile_image-300x300.png",
+          "backgroundSize": "160%",
+          "backgroundPosition": "-10px -10px",
+          "backgroundRadius": "35px",
+          "margin": "0px"
         }
       }
     },
@@ -141,10 +144,11 @@
           "color": "",
           "fontFamily": "",
           "fontWeight": "",
-          "fontStyle": ""
+          "fontStyle": "",
+          "fontSize": ""
       },
       "block": {
-        "translition": "",
+        "translition": "none",
         "backgroundColor": "",
         "backgroundImage": "",
         "backgroundSize": "",
@@ -159,14 +163,99 @@
         "border": "",
         "backgroundColor": "",
         "child": {
-          "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
+          "backgroundImage": "",
           "backgroundSize": "",
-          "backgroundPosition": ""
+          "backgroundPosition": "",
+          "backgroundRadius": "",
+          "margin": ""
         }
       }
     },
     "bobtyan": {
-        
+      "innerText": "Стример",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "function1": "function func1(q, d){window.open('https://www.twitch.tv/lepishov2007', '_blank');}",
+      "function2": "",
+      "function3": "",
+      "function4": "",
+      "code": "",
+      "nickname": {
+          "color": "#fff",
+          "fontFamily": "fantasy",
+          "fontWeight": "",
+          "fontStyle": "oblique",
+          "fontSize": "xx-large"
+      },
+      "block": {
+        "translition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/847413107005718548/wallpaper.png",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "bacgroundRepeat": "",
+        "border": "none",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
+          "backgroundSize": "",
+          "backgroundPosition": "",
+          "backgroundRadius": ""
+        }
+      }
+    },
+    "xviperx": {
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "function1": "",
+      "function2": "",
+      "function3": "",
+      "function4": "",
+      "code": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": ""
+      },
+      "block": {
+        "translition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "bacgroundRepeat": "",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": ""
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "",
+          "backgroundSize": "",
+          "backgroundPosition": "",
+          "backgroundRadius": ""
+        }
+      }
     },
     "беатмахоне": {
 
