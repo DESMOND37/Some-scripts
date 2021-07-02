@@ -509,7 +509,7 @@
         "border": "3px solid darkblue",
         "boxShadow": "",
         "animation": "",
-        "cursor": "pointer"
+        "cursor": ""
       },
       "avatar": {
         "border": "",
