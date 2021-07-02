@@ -10,7 +10,7 @@
       "href": "",
       "function1": "",
       "function2": "",
-      "function3": "function func3(q, b){ if (!q.parentNode.a){ q.parentNode.a = new Audio(); q.parentNode.a.src=d.music; q.parentNode.a.currentTime=1; } if(q.parentNode.a.ended){q.parentNode.a.currentTime="1";} q.parentNode.a.volume=0; q.parentNode.a.play(); if (q.parentNode.i){clearInterval(q.parentNode.i)} q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume >= 0.2){ clearInterval(q.parentNode.i); } q.parentNode.a.volume+=0.002; },20); }",
+      "function3": "function func3(q, b){ if (!q.parentNode.a){ q.parentNode.a = new Audio(); q.parentNode.a.src=d.music; q.parentNode.a.currentTime=1; } if(q.parentNode.a.ended){q.parentNode.a.currentTime=1;} q.parentNode.a.volume=0; q.parentNode.a.play(); if (q.parentNode.i){clearInterval(q.parentNode.i)} q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume >= 0.2){ clearInterval(q.parentNode.i); } q.parentNode.a.volume+=0.002; },20); }",
       "function4": "",
       "code": "NA==",
       "nickname": {
@@ -124,7 +124,45 @@
       }
     },
     "xviperx": {
-
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "function1": "",
+      "function2": "",
+      "function3": "",
+      "function4": "",
+      "code": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": ""
+      },
+      "block": {
+        "translition": "",
+        "backgroundColor": "",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "bacgroundRepeat": "",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": ""
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
+          "backgroundSize": "",
+          "backgroundPosition": ""
+        }
+      }
     },
     "bobtyan": {
         
