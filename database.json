@@ -259,11 +259,11 @@
       "innerText": "",
       "music": "",
       "musicOnJoin": "",
-      "title": "",
+      "title": "Стример",
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "",
+      "onclick": "function func1(q, d){window.open('https://www.twitch.tv/bobtyan', '_blank');}",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
@@ -280,7 +280,7 @@
       },
       "block": {
         "translition": "none",
-        "backgroundColor": "",
+        "backgroundColor": "lightblue",
         "backgroundImage": "",
         "backgroundSize": "",
         "backgroundPosition": "",
@@ -291,17 +291,17 @@
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "",
+        "border": "3px solid yellow",
         "backgroundColor": "",
         "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
+          "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/844929630329896990/8c9367ad-edac-4808-ad31-965923a180cd-profile_image-70x70.png",
+          "backgroundSize": "110%",
+          "backgroundPosition": "-2px -3px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
           "animation": ""
         }
       }
