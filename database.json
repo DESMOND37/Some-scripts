@@ -20,6 +20,7 @@
           "fontWeight": "",
           "fontStyle": "",
           "fontSize": "",
+          "overflow": "",
           "animation": "",
           "textShadow": ""
       },
@@ -167,6 +168,7 @@
           "fontFamily": "fantasy",
           "fontWeight": "",
           "fontStyle": "oblique",
+          "overflow": "initial";
           "fontSize": "xx-large",
           "animation": ""
       },
