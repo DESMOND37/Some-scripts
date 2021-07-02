@@ -372,7 +372,7 @@
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "function func1(q, d){'https://www.twitch.tv/peps_nn', '_blank');}",
+      "onclick": "function func1(q, d){window.open('https://www.twitch.tv/peps_nn', '_blank');}",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
