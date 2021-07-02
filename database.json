@@ -186,11 +186,11 @@
       },
       "avatar": {
         "border": "",
-        "backgroundColor": "",
+        "backgroundColor": "#000",
         "child": {
           "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/847414409957343232/dd86851c-cf1a-4211-884b-4b1d369d3c37-profile_image-300x300.png",
-          "backgroundSize": "160%",
-          "backgroundPosition": "-10px -10px",
+          "backgroundSize": "100%",
+          "backgroundPosition": "center",
           "borderRadius": "35px",
           "margin": "0px",
           "width": "100%",
