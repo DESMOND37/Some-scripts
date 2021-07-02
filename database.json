@@ -83,7 +83,45 @@
       }
     },
     "lepishov2007": {
-
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "function1": "",
+      "function2": "",
+      "function3": "",
+      "function4": "",
+      "code": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": ""
+      },
+      "block": {
+        "translition": "",
+        "backgroundColor": "",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "bacgroundRepeat": "",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": ""
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
+          "backgroundSize": "",
+          "backgroundPosition": ""
+        }
+      }
     },
     "xviperx": {
 
