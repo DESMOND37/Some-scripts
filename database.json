@@ -131,53 +131,6 @@
         }
       }
     },
-          "innerText": "",
-      "music": "",
-      "musicOnJoin": "",
-      "title": "Стример",
-      "thirdElem": false,
-      "iElem": false,
-      "href": "",
-      "onclick": "function func1(q, d){window.open('https://www.twitch.tv/lepishov2007', '_blank');}",
-      "oncontextmenu": "",
-      "onmouseenter": "",
-      "onmouseleave": "",
-      "info": "",
-      "code": "",
-      "nickname": {
-          "color": "#fff",
-          "fontFamily": "fantasy",
-          "fontWeight": "",
-          "fontStyle": "oblique",
-          "fontSize": "xx-large"
-      },
-      "block": {
-        "translition": "none",
-        "backgroundColor": "",
-        "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/847413107005718548/wallpaper.png",
-        "backgroundSize": "",
-        "backgroundPosition": "",
-        "bacgroundRepeat": "",
-        "border": "none",
-        "boxShadow": "",
-        "animation": "",
-        "cursor": "pointer"
-      },
-      "avatar": {
-        "border": "",
-        "backgroundColor": "",
-        "child": {
-          "backgroundImage": "",
-          "backgroundSize": "160%",
-          "backgroundPosition": "-10px -10px",
-          "backgroundRadius": "35px",
-          "margin": "0px",
-          "width": "100%",
-          "heigth": "100%",
-          "minHeight": "auto"
-        }
-      }
-    },
     "bobtyan": {
     
     },
