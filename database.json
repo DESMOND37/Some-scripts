@@ -198,7 +198,55 @@
       }
     },
     "bobtyan": {
-    
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "animation": "",
+          "textShadow": ""
+      },
+      "block": {
+        "translition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "backgroundRepeat": "no-repeat",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "",
+          "backgroundSize": "",
+          "backgroundPosition": "",
+          "borderRadius": "",
+          "margin": "",
+          "width": "",
+          "height": "",
+          "minHeight": "",
+          "animation": ""
+        }
+      }
     },
     "беатмахоне": {
 
