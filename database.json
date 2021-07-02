@@ -5,7 +5,7 @@
       "music": "https://cdn.discordapp.com/attachments/833410401366573066/858770595320037396/b1d79b4b02fb8b_mp3cut.net.mp3",
       "musicOnJoin": "https://cdn.discordapp.com/attachments/833410401366573066/858407902947704872/8307-obemnyi-stuk-v-dver.mp3",
       "title": "Создатель модификации & Рисователь Гаечек"
-      "nickname":{
+      "nickname": {
           "color": "#000",
           "fontFamily": "fantasy",
           "fontWeight": "",
@@ -34,54 +34,10 @@
       }
     },
     "krevetka74": {
-      "innertext": "",
-      "title1": "Стример",
-      "href1": "https://www.twitch.tv/krevetka74",
-      "cursor1": "pointer",
-      "color1": "black",
-      "music": "https://cdn.discordapp.com/attachments/833410401366573066/858770595320037396/b1d79b4b02fb8b_mp3cut.net.mp3",
-      "animation": "all 0.3s linear 0s",
-      "fontFamily": "fantasy",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundColorchild": "black",
-      "borderColor": "#ffffff",
-      "border": "2px rgb(255, 255, 255) solid",
-      "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
-      "backgroundSize": "110%",
-      "backgroundPosition": "-2px 4px",
-      "backgroundPositionparrent": [
-        "60px -70px",
-        "20px -40px"
-      ],
-      "backgroundImageparrent": "https://media.discordapp.net/attachments/833410401366573066/846132899258564658/giphy.gif",
-      "backgroundSizeparrent": "153% 15%",
-      "transition": "none",
-      "musicjoin": "https://cdn.discordapp.com/attachments/833410401366573066/858407902947704872/8307-obemnyi-stuk-v-dver.mp3"
+
     },
     "lepishov2007": {
-      "innertext": "DoctorDeathDDracula",
-      "title1": "Создатель модификации & Рисователь Гаечек",
-      "href1": "https://t.me/DoctorDeathDDracula",
-      "cursor1": "pointer",
-      "color1": "black",
-      "music": "https://cdn.discordapp.com/attachments/833410401366573066/858770595320037396/b1d79b4b02fb8b_mp3cut.net.mp3",
-      "animation": "2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit",
-      "fontFamily": "fantasy",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundColorchild": "black",
-      "borderColor": "red",
-      "border": "2px solid black",
-      "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png",
-      "backgroundSize": "130%",
-      "backgroundPosition": "-6px -3px",
-      "backgroundPositionparrent": [
-        "60px -70px",
-        "20px -40px"
-      ],
-      "backgroundImageparrent": "https://media.discordapp.net/attachments/833410401366573066/858402910110744616/unknown.png?width=1440&height=400",
-      "backgroundSizeparrent": "324px 100px",
-      "transition": "none",
-      "musicjoin": "https://cdn.discordapp.com/attachments/833410401366573066/858407902947704872/8307-obemnyi-stuk-v-dver.mp3"
+
     },
     "xviperx": {
       "innertext": "DoctorDeathDDracula",
