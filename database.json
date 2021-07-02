@@ -25,7 +25,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "",
         "backgroundImage": "",
         "backgroundSize": "",
@@ -77,7 +77,7 @@
           "animation": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "",
         "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/858402910110744616/unknown.png?width=1440&height=400)",
         "backgroundSize": "100%",
@@ -123,7 +123,7 @@
           "animation": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "",
         "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/846132899258564658/giphy.gif)",
         "backgroundSize": "73%",
@@ -173,7 +173,7 @@
           "animation": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "",
         "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/847413107005718548/wallpaper.png)",
         "backgroundSize": "",
@@ -226,7 +226,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "chartreuse",
         "backgroundImage": "",
         "backgroundSize": "",
@@ -279,7 +279,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "lightblue",
         "backgroundImage": "",
         "backgroundSize": "",
@@ -334,7 +334,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "red",
         "backgroundImage": "",
         "backgroundSize": "",
@@ -389,7 +389,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "",
         "backgroundImage": "#ffa000",
         "backgroundSize": "",
@@ -445,7 +445,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "",
         "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/845257788443590686/unknown.png)",
         "backgroundSize": "130%",
@@ -500,7 +500,7 @@
           "textShadow": ""
       },
       "block": {
-        "translition": "none",
+        "transition": "none",
         "backgroundColor": "#f9f9f9",
         "backgroundImage": "url(https://cdn.discordapp.com/attachments/833410401366573066/848315223973691412/b5176b6979ba46da196d35b515fc5110.gif)",
         "backgroundSize": "250px",
@@ -515,7 +515,7 @@
         "border": "",
         "backgroundColor": "",
         "child": {
-          "backgroundImage": "",
+          "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860664353849212958/imgonline-com-ua-Resize-HUlEBCScJ9XZ.jpg)",
           "backgroundSize": "120%",
           "backgroundPosition": "-5px -2px",
           "borderRadius": "35px",
