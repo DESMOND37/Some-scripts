@@ -185,7 +185,7 @@
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "2px solid #000",
+        "border": "2px solid #FFF",
         "backgroundColor": "#000",
         "child": {
           "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/847414409957343232/dd86851c-cf1a-4211-884b-4b1d369d3c37-profile_image-300x300.png",
@@ -199,6 +199,10 @@
         }
       }
     },
+    
+    
+    
+    
     "bobtyan": {
       "innerText": "",
       "music": "",
