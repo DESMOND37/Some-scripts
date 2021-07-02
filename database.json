@@ -46,11 +46,11 @@
       "innerText": "",
       "music": "",
       "musicOnJoin": "",
-      "title": "",
+      "title": "Стример",
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "",
+      "onclick": "function func1(q, d){window.open('https://www.twitch.tv/krevetka74', '_blank');}",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
@@ -62,24 +62,24 @@
           "fontStyle": ""
       },
       "block": {
-        "translition": "",
+        "translition": "none",
         "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
+        "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/846132899258564658/giphy.gif",
+        "backgroundSize": "73%",
+        "backgroundPosition": "153% 15%",
         "bacgroundRepeat": "",
-        "border": "",
+        "border": "2px solid #FFF",
         "boxShadow": "",
         "animation": "",
-        "cursor": ""
+        "cursor": "pointer"
       },
       "avatar": {
-        "border": "",
+        "border": "2px solid #fff",
         "backgroundColor": "",
         "child": {
           "backgroundImage": "https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png",
-          "backgroundSize": "",
-          "backgroundPosition": ""
+          "backgroundSize": "110%",
+          "backgroundPosition": "-2px 4px"
         }
       }
     },
@@ -103,7 +103,7 @@
           "fontStyle": ""
       },
       "block": {
-        "translition": "",
+        "translition": "none",
         "backgroundColor": "",
         "backgroundImage": "",
         "backgroundSize": "",
