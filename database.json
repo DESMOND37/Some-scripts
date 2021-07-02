@@ -306,9 +306,64 @@
         }
       }
     },
+    
+    
+    
     "беатмахоне": {
-
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Стример",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "function func1(q, d){window.open('https://www.twitch.tv/beatmaxone', '_blank');}",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "#FFF",
+          "fontFamily": "cursive",
+          "fontWeight": "bolder",
+          "fontStyle": "",
+          "fontSize": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": ""
+      },
+      "block": {
+        "translition": "none",
+        "backgroundColor": "red",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "backgroundRepeat": "no-repeat",
+        "border": "3px solid black",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "3px solid #000",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/844986185788162048/6f9d8ae1-7e01-4876-99cb-6386e13a5550-profile_image-70x70.png)",
+          "backgroundSize": "110%",
+          "backgroundPosition": "-2px -3px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
+    
+    
+    
     "peps_nn": {
 
     },
