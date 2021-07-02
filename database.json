@@ -167,7 +167,8 @@
           "fontFamily": "fantasy",
           "fontWeight": "",
           "fontStyle": "oblique",
-          "fontSize": "xx-large"
+          "fontSize": "xx-large",
+          "animation": "",
       },
       "block": {
         "translition": "none",
