@@ -19,6 +19,7 @@
         "backgroundPosition": "20px -40px",
         "bacgroundRepeat": "no-repeat",
         "border": "2px solid red",
+        "boxShadow": "",
         "animation": "2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit",
         "cursor": "pointer"
       }
