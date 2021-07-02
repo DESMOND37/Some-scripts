@@ -365,7 +365,56 @@
     
     
     "peps_nn": {
-
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Стример",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "function func1(q, d){'https://www.twitch.tv/peps_nn', '_blank');}",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "yellow",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": ""
+      },
+      "block": {
+        "translition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "darkorange",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "backgroundRepeat": "no-repeat",
+        "border": "3px solid brown",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "3px solid brown",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://cdn.discordapp.com/attachments/833410401366573066/845064787028475924/unknown.png)",
+          "backgroundSize": "110%",
+          "backgroundPosition": "-3px -3px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
     "груша ": {
 
