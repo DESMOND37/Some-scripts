@@ -168,7 +168,7 @@
           "fontFamily": "fantasy",
           "fontWeight": "",
           "fontStyle": "oblique",
-          "overflow": "initial";
+          "overflow": "initial",
           "fontSize": "xx-large",
           "animation": ""
       },
@@ -199,7 +199,6 @@
         }
       }
     },
-    
     
     
     
