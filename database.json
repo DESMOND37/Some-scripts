@@ -528,7 +528,56 @@
       }
     },
     "владыко ": {
- 
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Художник",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "#1f1f1f",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "#e01212",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "backgroundRepeat": "no-repeat",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "none",
+        "backgroundColor": "#1f1f1f",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860666944612859924/m_111_1__compress.png)",
+          "backgroundSize": "90%",
+          "backgroundPosition": "2px 2px",
+          "borderRadius": "",
+          "margin": "",
+          "width": "",
+          "height": "",
+          "minHeight": "",
+          "animation": ""
+        }
+      }
     },
     "бpaйc": {
 
