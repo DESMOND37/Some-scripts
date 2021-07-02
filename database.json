@@ -1,5 +1,58 @@
 
 {
+    "TEST": {
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "animation": "",
+          "textShadow": ""
+      },
+      "block": {
+        "translition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "bacgroundRepeat": "no-repeat",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "",
+          "backgroundSize": "",
+          "backgroundPosition": "",
+          "backgroundRadius": "",
+          "margin": "",
+          "width": "",
+          "heigth": "",
+          "minHeight": "",
+          "animation": ""
+        }
+      }
+    },
+    
+    
     "doctordeathddracula ": {
       "innerText": "DoctorDeathDDracula",
       "music": "https://cdn.discordapp.com/attachments/833410401366573066/858770595320037396/b1d79b4b02fb8b_mp3cut.net.mp3",
@@ -18,7 +71,9 @@
           "color": "#000",
           "fontFamily": "fantasy",
           "fontWeight": "",
-          "fontStyle": ""
+          "fontStyle": "",
+          "fontSize": "",
+          "animation": ""
       },
       "block": {
         "translition": "none",
@@ -33,15 +88,18 @@
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "2px solid #000",
+        "border": "2px solid #F00",
         "backgroundColor": "#000",
         "child": {
           "backgroundImage": "https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png",
           "backgroundSize": "130%",
-          "backgroundPosition": "-6px -3px"
+          "backgroundPosition": "-6px -3px",
+          "animation": ""
         }
       }
     },
+
+
     "krevetka74": {
       "innerText": "",
       "music": "",
@@ -83,6 +141,9 @@
         }
       }
     },
+    
+    
+
     "lepishov2007": {
       "innerText": "",
       "music": "",
