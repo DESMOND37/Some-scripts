@@ -391,7 +391,7 @@
       "block": {
         "translition": "none",
         "backgroundColor": "",
-        "backgroundImage": "darkorange",
+        "backgroundImage": "#ffa000",
         "backgroundSize": "",
         "backgroundPosition": "",
         "backgroundRepeat": "no-repeat",
@@ -421,10 +421,10 @@
     
     
     "груша ": {
-      "innerText": "",
+      "innerText": "груша",
       "music": "",
       "musicOnJoin": "",
-      "title": "",
+      "title": "Художник",
       "thirdElem": false,
       "iElem": false,
       "href": "",
@@ -435,11 +435,11 @@
       "info": "",
       "code": "",
       "nickname": {
-          "color": "",
-          "fontFamily": "",
+          "color": "#824700",
+          "fontFamily": "Bold",
           "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
+          "fontStyle": "italic",
+          "fontSize": "x-large",
           "overflow": "",
           "animation": "",
           "textShadow": ""
@@ -447,27 +447,27 @@
       "block": {
         "translition": "none",
         "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/845257788443590686/unknown.png)",
+        "backgroundSize": "130%",
+        "backgroundPosition": "-35px -40px",
         "backgroundRepeat": "no-repeat",
-        "border": "",
+        "border": "3px solid #c7945a",
         "boxShadow": "",
         "animation": "",
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "",
+        "border": "0px solid brown",
         "backgroundColor": "",
         "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
+          "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/845264187927298068/unknown.png)",
+          "backgroundSize": "160%",
+          "backgroundPosition": "-10px -10px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
           "animation": ""
         }
       }
