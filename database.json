@@ -1549,5 +1549,64 @@
           "animation": ""
         }
       }
-    }
+    },
+    
+    
+    
+  "": {
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "function": "",
+      "code": "",
+      "class": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "backgroundRepeat": "no-repeat",
+        "border": "",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "",
+          "backgroundSize": "",
+          "backgroundPosition": "",
+          "borderRadius": "",
+          "margin": "",
+          "width": "",
+          "height": "",
+          "minHeight": "",
+          "animation": ""
+        }
+      }
+  }
 }
