@@ -1,5 +1,5 @@
 
-var VERSION = "2.4.7.2";
+var VERSION = "2.4.7.2;
 
 function Q(s){
     return document.getElementsByClassName(s);
@@ -1069,7 +1069,6 @@ xhr.onload = function(){
     console.log("db is loaded");
     var data = xhr.response;
     dict = JSON.parse(data);
-    console.log(dict);
 }
 xhr.send();
 
@@ -1128,7 +1127,7 @@ function VIPList(q){
         }
 
         //удаление i-того элемента
-        if (d.iElem){
+        if (d.iElem && q.parentNode.firstChild.children[1]){
             q.parentNode.firstChild.removeChild(q.parentNode.firstChild.children[1]);
         }
 
@@ -4050,7 +4049,7 @@ function main(){
 
         //setTimeout(styleUpdate, 500);
         //setTimeout(console.clear, 2000);
-        setTimeout(waitVideo, 500);
+        setTimeout(waitVideo, 1000);
         flagsOff();
         waitingKey=true;
     }
