@@ -914,7 +914,7 @@
       "onmouseenter": "function func3(q, d){q.parentNode.a=new Audio (q.music); q.parentNode.a.volume=0.2; q.parentNode.a.currentTime=6; q.parentNode.a.play();}",
       "onmouseleave": "",
       "info": "",
-      "function": "function f(q, d){q.parentNode.classList.add(d.class); q.parentNode.firstChild.firstChild.style.backgroundImage='url(https://media.discordapp.net/attachments/827569141782282272/860941286915440660/imgonline-com-ua-Resize-kjz2bHpjcPR0id.jpg)'}",
+      "function": "function f(q, d){q.parentNode.classList.add(d.class); q.parentNode.firstChild.firstChild.style.backgroundImage='url(https://media.discordapp.net/attachments/827569141782282272/860941286915440660/imgonline-com-ua-Resize-kjz2bHpjcPR0id.jpg)'; q.style.zIndex=1}",
       "code": "",
       "class": "seba",
       "nickname": {
@@ -991,59 +991,5 @@
  
     },
     "ArZer0": {
-      "innerText": "123123123123",
-      "music": "",
-      "musicOnJoin": "",
-      "title": "1231231313213",
-      "thirdElem": false,
-      "iElem": false,
-      "href": "",
-      "onclick": "",
-      "oncontextmenu": "",
-      "onmouseenter": "",
-      "onmouseleave": "",
-      "info": "",
-      "function": "",
-      "code": "",
-      "class": "",
-      "nickname": {
-          "color": "",
-          "fontFamily": "",
-          "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
-          "letterSpacing": "",
-          "overflow": "",
-          "animation": "",
-          "textShadow": "",
-          "webkitTextStroke": ""
-      },
-      "block": {
-        "transition": "none",
-        "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
-        "backgroundRepeat": "no-repeat",
-        "border": "",
-        "boxShadow": "",
-        "animation": "",
-        "cursor": "pointer"
-      },
-      "avatar": {
-        "border": "",
-        "backgroundColor": "",
-        "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
-          "animation": ""
-        }
-      }
-    }
+
   }
