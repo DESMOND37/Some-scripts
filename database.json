@@ -999,11 +999,11 @@
         "backgroundImage": "url(https://media.discordapp.net/attachments/851530974880595988/854001745797316638/0dadaa53c1657664.gif)",
         "backgroundSize": "400px",
         "backgroundPosition": "-30px 190px",
-        "backgroundRepeat": "no-repeat",
+        "backgroundRepeat": "",
         "border": "2px solid #000",
         "boxShadow": "",
         "animation": "",
-        "cursor": "pointer"
+        "cursor": ""
       },
       "avatar": {
         "border": "2px solid #000",
@@ -1061,7 +1061,7 @@
         "border": "3px solid #000000",
         "boxShadow": "",
         "animation": "",
-        "cursor": "pointer"
+        "cursor": ""
       },
       "avatar": {
         "border": "0px solid brown",
