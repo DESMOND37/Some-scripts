@@ -1377,7 +1377,60 @@
     
     
     
-    "ArZer0": {
-
+    "arzer0": {
+      "innerText": "",
+      "music": "https://cdn.discordapp.com/attachments/858056014889091142/859139360163102772/y2mate.com_-_Orochimarus_Full_Theme.mp3",
+      "musicOnJoin": "",
+      "title": "Меценат, филантроп, плэйбой, анимешник...",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "function func3(q, b){ if (!q.parentNode.a){ q.parentNode.a = new Audio(); q.parentNode.a.src=d.music; q.parentNode.a.currentTime=1; } if(q.parentNode.a.ended){q.parentNode.a.currentTime=1;} q.parentNode.a.volume=0; q.parentNode.a.play(); if (q.parentNode.i){clearInterval(q.parentNode.i)} q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume >= 0.2){ clearInterval(q.parentNode.i); } q.parentNode.a.volume+=0.002; },20); }",
+      "onmouseleave": "function func4(q, d){ clearInterval(q.parentNode.i); q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume <= 0.01){ q.parentNode.a.pause(); clearInterval(q.parentNode.i); } try{ q.parentNode.a.volume-=0.002; } catch {q.parentNode.a.volume = 0; q.parentNode.a.pause(); clearInterval(q.parentNode.i)} },10); }",
+      "info": "",
+      "function": "",
+      "code": "",
+      "class": "",
+      "nickname": {
+          "color": "#459181",
+          "fontFamily": "fantasy",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/858056014889091142/859139729123180554/QQzsrBH.gif)",
+        "backgroundSize": "324px 200px",
+        "backgroundPosition": "20px -100px",
+        "backgroundRepeat": "no-repeat",
+        "border": "2px solid #459181",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "2px solid #459181",
+        "backgroundColor": "#000",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/859142286071169084/hqdefault-removebg-preview.png)",
+          "backgroundSize": "180%",
+          "backgroundPosition": "-23px -0px",
+          "borderRadius": "30px",
+          "margin": "",
+          "width": "",
+          "height": "",
+          "minHeight": "",
+          "animation": ""
+        }
+      }
     }
 }
