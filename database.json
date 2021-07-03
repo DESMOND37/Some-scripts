@@ -1256,12 +1256,67 @@
         }
       }
     },
-    "шпилька": {
-  
+
+
+    "трубочка": {
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Стример",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "function func1(q, b){ window.open("https://www.twitch.tv/turb4ik", '_blank') }",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "function": "",
+      "code": "",
+      "class": "",
+      "nickname": {
+          "color": "#fff",
+          "fontFamily": "cursive",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "linear-gradient(to right, rgb(19 196 231), rgb(255 0 200))",
+        "backgroundSize": "",
+        "backgroundPosition": "",
+        "backgroundRepeat": "no-repeat",
+        "border": "none",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "#000",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/858473457896259638/57076064-91e6-4bb7-8a54-7b0e4ea62bdf-profile_image-300x300.png)",
+          "backgroundSize": "120%",
+          "backgroundPosition": "-4px -6px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
-    "ТРУБОЧКА": {
     
-    },
+    
+    
     "линыч": {
  
     },
