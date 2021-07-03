@@ -927,7 +927,7 @@
           "overflow": "",
           "animation": "",
           "textShadow": "",
-          "webkitTextStroke": "2px black"
+          "webkitTextStroke": "2px #000"
       },
       "block": {
         "transition": "none",
