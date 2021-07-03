@@ -1264,7 +1264,7 @@
       "musicOnJoin": "",
       "title": "Стример",
       "thirdElem": false,
-      "iElem": false,
+      "iElem": true,
       "href": "",
       "onclick": "function func1(q, b){ window.open('https://www.twitch.tv/turb4ik', '_blank') }",
       "oncontextmenu": "",
@@ -1304,7 +1304,7 @@
         "child": {
           "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/858473457896259638/57076064-91e6-4bb7-8a54-7b0e4ea62bdf-profile_image-300x300.png)",
           "backgroundSize": "120%",
-          "backgroundPosition": "-4px -6px",
+          "backgroundPosition": "-6px -5px",
           "borderRadius": "35px",
           "margin": "0px",
           "width": "100%",
