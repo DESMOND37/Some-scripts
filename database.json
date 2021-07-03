@@ -907,7 +907,7 @@
       "musicOnJoin": "",
       "title": "Стример",
       "thirdElem": false,
-      "iElem": false,
+      "iElem": true,
       "href": "",
       "onclick": "function func1(q, d){ window.open('https://www.twitch.tv/sebadavinch', '_blank') }",
       "oncontextmenu": "",
@@ -936,7 +936,7 @@
         "backgroundSize": "100% 100%",
         "backgroundPosition": "",
         "backgroundRepeat": "no-repeat",
-        "border": "2px solid #000",
+        "border": "3px solid #000",
         "boxShadow": "",
         "animation": "",
         "cursor": "pointer"
@@ -961,60 +961,7 @@
     
     
     "013": {
-      "innerText": "",
-      "music": "",
-      "musicOnJoin": "",
-      "title": "111111111111111111",
-      "thirdElem": false,
-      "iElem": false,
-      "href": "",
-      "onclick": "",
-      "oncontextmenu": "",
-      "onmouseenter": "",
-      "onmouseleave": "",
-      "info": "",
-      "function": "",
-      "code": "",
-      "class": "",
-      "nickname": {
-          "color": "",
-          "fontFamily": "",
-          "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
-          "letterSpacing": "",
-          "overflow": "",
-          "animation": "",
-          "textShadow": "",
-          "webkitTextStroke": ""
-      },
-      "block": {
-        "transition": "none",
-        "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
-        "backgroundRepeat": "no-repeat",
-        "border": "",
-        "boxShadow": "",
-        "animation": "",
-        "cursor": "pointer"
-      },
-      "avatar": {
-        "border": "",
-        "backgroundColor": "",
-        "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
-          "animation": ""
-        }
-      }
+
     },
     
     
