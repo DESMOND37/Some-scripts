@@ -1,5 +1,5 @@
 
-var VERSION = "2.4.7.2;
+var VERSION = "2.4.7.2";
 
 function Q(s){
     return document.getElementsByClassName(s);
