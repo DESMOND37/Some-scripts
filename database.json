@@ -810,8 +810,62 @@
         }
       }
     },
-    "IV547": {
-     
+    
+    
+    
+    "iv547": {
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Донатер",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "#fff",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "url(https://cdn.discordapp.com/attachments/833410401366573066/850471589543936000/blog-post-01-1.gif)",
+        "backgroundSize": "70%",
+        "backgroundPosition": "180px -10px",
+        "backgroundRepeat": "no-repeat",
+        "border": "none",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860822843385970688/m_unknown_1.png)",
+          "backgroundSize": "130%",
+          "backgroundPosition": "center",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
     "sеbаdavinсh ": {
   
