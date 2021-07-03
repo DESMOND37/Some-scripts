@@ -898,6 +898,9 @@
         }
       }
     },
+    
+    
+    
     "sеbаdavinсh ": {
       "innerText": "",
       "music": "",
@@ -911,9 +914,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
-      "function": "",
+      "function": "function f(q, d){q.parentNode.classList.add(d.class)},
       "code": "",
-      "class": "",
+      "class": "seba",
       "nickname": {
           "color": "red",
           "fontFamily": "fantasy",
