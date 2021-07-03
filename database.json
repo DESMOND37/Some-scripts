@@ -607,7 +607,7 @@
           "fontSize": "20px",
           "letterSpacing": "3px",
           "overflow": "",
-          "animation": "",
+          "animation": "5s linear 0s 1 normal none running rainbow",
           "textShadow": "",
           "webkitTextStroke": "1px #000"
       },
@@ -620,7 +620,7 @@
         "backgroundRepeat": "no-repeat",
         "border": "",
         "boxShadow": "",
-        "animation": "5s linear 0s 1 normal none running rainbow",
+        "animation": "",
         "cursor": "pointer"
       },
       "avatar": {
