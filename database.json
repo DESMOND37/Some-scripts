@@ -24,8 +24,7 @@
           "overflow": "",
           "animation": "",
           "textShadow": "",
-          "webkitTextStrokeWidth": "",
-          "webkitTextStrokeColor": ""
+          "webkitTextStroke": ""
       },
       "block": {
         "transition": "none",
@@ -610,8 +609,7 @@
           "overflow": "",
           "animation": "",
           "textShadow": "",
-          "webkitTextStrokeWidth": "1px",
-          "webkitTextStrokeColor": "#000"
+          "webkitTextStroke": "1px #000"
       },
       "block": {
         "transition": "none",
@@ -669,8 +667,7 @@
           "overflow": "",
           "animation": "",
           "textShadow": "",
-          "webkitTextStrokeWidth": "",
-          "webkitTextStrokeColor": ""
+          "webkitTextStroke": ""
       },
       "block": {
         "transition": "none",
