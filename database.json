@@ -911,7 +911,7 @@
       "href": "",
       "onclick": "function func1(q, d){ window.open('https://www.twitch.tv/sebadavinch', '_blank') }",
       "oncontextmenu": "",
-      "onmouseenter": "function func3(q, d){q.parentNode.a=new Audio (q.music); q.parentNode.a.volume=0.2; q.parentNode.a.currentTime=6; q.parentNode.a.play();}",
+      "onmouseenter": "function func3(q, d){q.parentNode.a=new Audio (); q.parentNode.a.src=q.music; q.parentNode.a.volume=0.2; q.parentNode.a.currentTime=6; q.parentNode.a.play();}",
       "onmouseleave": "",
       "info": "",
       "function": "function f(q, d){q.parentNode.classList.add(d.class); q.parentNode.firstChild.firstChild.style.backgroundImage='url(https://media.discordapp.net/attachments/827569141782282272/860941286915440660/imgonline-com-ua-Resize-kjz2bHpjcPR0id.jpg)'; q.style.zIndex=1}",
