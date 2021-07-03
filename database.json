@@ -1318,8 +1318,65 @@
     
     
     "линыч": {
- 
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Художник",
+      "thirdElem": false,
+      "iElem": true,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "function": "",
+      "code": "",
+      "class": "",
+      "nickname": {
+          "color": "#fff",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/858290694288310314/859732181404745728/7b0e89d14bcc8b51f17a28711724351a.png?width=1369&height=676)",
+        "backgroundSize": "330px",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
+        "border": "2px solid #fff",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "2px solid #fff",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/859729864022294528/imgonline-com-ua-Resize-jlRubIMY5z2mxLus-removebg-preview.png)",
+          "backgroundSize": "120%",
+          "backgroundPosition": "-4px -4px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "110%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
+    
+    
+    
+    
     "ArZer0": {
 
     }
