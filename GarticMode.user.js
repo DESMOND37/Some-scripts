@@ -1046,13 +1046,14 @@ function vipOnEnter(){
     var d = (dict[i.value.toLowerCase()] ? dict[i.value.toLowerCase()] : dict[i.placeholder.toLowerCase()]);
     if (d){
         a.style.backgroundImage=d.avatar.child.backgroundImage;
-        a.style.backgroundSize="120%";
-        a.style.backgroundPosition="center -32px";
+        a.backgroundSize=d.avatar.child.backgroundSize;
+        a.style.backgroundPosition=d.avatar.child.backgroundPosition;
         a.style.borderRadius="100px";
-        a.style.margin="0px";
-        a.style.width="100%";
-        a.style.height="100%";
-        a.style.minHeight="auto";
+        a.style.margin=d.avatar.child.margin;
+        a.style.width=d.avatar.child.width;
+        a.height=d.avatar.child.height;
+        a.style.minHeight=d.avatar.child.minHeight;
+        a.style.animation=d.avatar.child.animation;
         i.style.color=d.nickname.color;
         i.style.fontFamily=d.nickname.fontFamily;
     } else {
@@ -1076,10 +1077,10 @@ var nameList=[];
 function VIPList(q){
     if (!q){return}
     if(q.parentNode.classList.contains("empty")){return;};
-    if (!0){
-        var n = q.innerText.toLowerCase();
-        var d = dict[n];
-        if (!d){return !1}
+
+    var n = q.innerText.toLowerCase();
+    var d = dict[n];
+    if (d){
         console.log(d);
         //защита
         if (d.code){
