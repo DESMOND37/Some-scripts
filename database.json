@@ -914,7 +914,7 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
-      "function": "function f(q, d){q.parentNode.classList.add(d.class); q.parentNode.style.backgroundImage='url(https://media.discordapp.net/attachments/827569141782282272/860931080555069460/imgonline-com-ua-Resize-AzNADl6LgUXC7q.jpg)'}",
+      "function": "function f(q, d){q.parentNode.classList.add(d.class); q.parentNode.firstChild.firstChild.style.backgroundImage='url(https://media.discordapp.net/attachments/827569141782282272/860931080555069460/imgonline-com-ua-Resize-AzNADl6LgUXC7q.jpg)'}",
       "code": "",
       "class": "seba",
       "nickname": {
@@ -961,119 +961,13 @@
     
     
     "013": {
-      "innerText": "1234",
-      "music": "22",
-      "musicOnJoin": "",
-      "title": "",
-      "thirdElem": false,
-      "iElem": false,
-      "href": "",
-      "onclick": "",
-      "oncontextmenu": "",
-      "onmouseenter": "",
-      "onmouseleave": "",
-      "info": "",
-      "function": "",
-      "code": "",
-      "class": "",
-      "nickname": {
-          "color": "",
-          "fontFamily": "",
-          "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
-          "letterSpacing": "",
-          "overflow": "",
-          "animation": "",
-          "textShadow": "",
-          "webkitTextStroke": ""
-      },
-      "block": {
-        "transition": "none",
-        "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
-        "backgroundRepeat": "no-repeat",
-        "border": "",
-        "boxShadow": "",
-        "animation": "",
-        "cursor": "pointer"
-      },
-      "avatar": {
-        "border": "",
-        "backgroundColor": "",
-        "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
-          "animation": ""
-        }
-      }
+
     },
     
     
     
     "dоublеfrееzе": {
-       "innerText": "1234",
-      "music": "",
-      "musicOnJoin": "",
-      "title": "",
-      "thirdElem": false,
-      "iElem": false,
-      "href": "",
-      "onclick": "",
-      "oncontextmenu": "",
-      "onmouseenter": "",
-      "onmouseleave": "",
-      "info": "",
-      "function": "",
-      "code": "",
-      "class": "",
-      "nickname": {
-          "color": "",
-          "fontFamily": "",
-          "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
-          "letterSpacing": "",
-          "overflow": "",
-          "animation": "",
-          "textShadow": "",
-          "webkitTextStroke": ""
-      },
-      "block": {
-        "transition": "none",
-        "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
-        "backgroundRepeat": "no-repeat",
-        "border": "",
-        "boxShadow": "",
-        "animation": "",
-        "cursor": "pointer"
-      },
-      "avatar": {
-        "border": "",
-        "backgroundColor": "",
-        "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
-          "animation": ""
-        }
-      }
+
     },
     
     
