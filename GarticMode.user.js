@@ -1,10 +1,5 @@
 
-var VERSION = "2.4.7.1";
-
-if (getCookieDict().VERSION != VERSION){
-    alert(`НОВАЯ ВЕРСИЯ ${VERSION}\n\nЧто нового?:\nБыл концептуально переработан весь код, и лагов должно стать горазд меньше. Также была изменена цензура - теперь видно имя скрытого игрока.`);
-    document.cookie = `VERSION=${VERSION};`;
-}
+var VERSION = "2.4.7.2";
 
 function Q(s){
     return document.getElementsByClassName(s);
@@ -15,7 +10,7 @@ function Q(s){
 var cssAnimation = document.createElement('style');
 cssAnimation.type = 'text/css';
 var rules = document.createTextNode('@keyframes rainbow {'+
-                                    '100%, 0% { color: rgb(255, 0, 0);}'+
+                                    '100%, 0% { color: rgb(255, 0, 0); opacity: 1;}'+
                                     '8% { color: rgb(255, 127, 0);}'+
                                     '16% { color: rgb(255, 255, 0);}'+
                                     '25% { color: rgb(127, 255, 0);}'+
@@ -326,7 +321,7 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange29);
 
 var cssAnimation21 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules001 = document.createTextNode("@keyframes viper {100%, 0% { color: #8a2be2; } 9% { color: #945cca; } 18% {color: #9781b1;} 27% {color: #92a297;} 36% {color: #83c17a;} 45% {color: #67e056;} 54% {color: #0eff0e;} 63% {color: #67e056;} 72% {color: #83c17a;} 81% {color: #92a297;} 90% {color: #9781b1;}}");
+var rules001 = document.createTextNode("@keyframes viper {100%, 0% { color: #8a2be2FF; opacity: 1; } 9% { color: #945ccaFF; } 18% {color: #9781b1FF;} 27% {color: #92a297FF;} 36% {color: #83c17aFF;} 45% {color: #67e056FF;} 54% {color: #0eff0eFF;} 63% {color: #67e056FF;} 72% {color: #83c17aFF;} 81% {color: #92a297FF;} 90% {color: #9781b1FF;}}");
 cssAnimation.appendChild(rules001);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
 
@@ -334,7 +329,7 @@ document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
 
 var cssAnimation22 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: 0px -40px;} 50% {background-position: 0px -60px;}}");
+var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: center 15%;} 50% {background-position: center 45%;}}");
 cssAnimation.appendChild(rules002);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation22);
 
@@ -381,6 +376,64 @@ styleInputRange02019.appendChild(rules02019);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange02019);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var cssAnimation4 = document.createElement('style');
+cssAnimation.type = 'text/css';
+var rules04 = document.createTextNode("@keyframes wiggi {100%, 0% {background-position: 180px -10px;} 50% {background-position: 150px -10px;}}");
+cssAnimation.appendChild(rules04);
+document.getElementsByTagName("head")[0].appendChild(cssAnimation4);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var styleInputRange296 = document.createElement('style');
+styleInputRange296.type = 'text/css';
+var rules296 = document.createTextNode(".seba::before {  content: ''; animation: 5s linear 0s infinite normal none running plane; position: absolute; left: -70px; top: -5px; width: 500px; height: 80px; background-image: url('https://media.discordapp.net/attachments/827569141782282272/860901923078012928/seba-removebg-preview_2.png'); background-size: 80%; transform: rotate(1deg); background-repeat: no-repeat; background-position: center center; z-index: 0;}");
+styleInputRange296.appendChild(rules296);
+document.getElementsByTagName("head")[0].appendChild(styleInputRange296);
+
+var styleInputRange297 = document.createElement('style');
+styleInputRange297.type = 'text/css';
+var rules297 = document.createTextNode(".seba:hover::before {  animation: 2s linear 0s infinite normal none running  planeintro, 5s linear 0s infinite normal none running plane; ");
+styleInputRange297.appendChild(rules297);
+document.getElementsByTagName("head")[0].appendChild(styleInputRange297);
+
+var cssAnimation47 = document.createElement('style');
+cssAnimation.type = 'text/css';
+var rules047 = document.createTextNode("@keyframes planeintro {0% {background-size: 80%; } 25% {background-size: 150%; opacity: 1;} 30% {background-size: 170%; opacity: 0; z-index: 2;} 35% {background-size: 0%; opacity: 0;} 40% {background-size: 20%; opacity: 1;  z-index: 0;} 100% {background-size: 80%;}}");
+cssAnimation.appendChild(rules047);
+document.getElementsByTagName("head")[0].appendChild(cssAnimation47);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+function createUpdateWindow(){
+    if (localStorage.getItem("VERSION") == VERSION){return}
+    localStorage.setItem("VERSION", VERSION);
+    if (Q("shadow-window")[0]){return}
+    var f = document.createElement("div");
+    f.classList.add("shadow-window");
+    f.style.zIndex=10;
+    f.style.position="absolute";
+    f.style.width="100%";
+    f.style.height="100%";
+    f.style.backgroundColor="#000D";
+    document.querySelector("#__next").appendChild(f);
+    var w = document.createElement("div");
+    w.classList.add("shadow-window");
+    w.style.zIndex=10;
+    w.style.position="absolute";
+    w.style.width="500px";
+    w.style.height="500px";
+    w.style.backgroundColor="#FFF";
+    w.style.borderRadius="20px";
+    w.style.left="50%";
+    w.style.top="50%";
+    w.style.margin="-250px 0px 0px -250px";
+    f.appendChild(w);
+    var st = document.createElement("span");
+    st.innerText="SETTINGS";
+    w.appendChild(st);
+}
 
 
 function createCanvas(height=800, width=800){
@@ -984,386 +1037,151 @@ function debugName(){
     }
 }
 
-var doctorwas = false;
-var was0;
-var blackArr = [];
-var intId;
 
+function vipOnEnter(){
+    if (!dict){return}
+    var i = Q("jsx-856742297 ")[0];
+    i.oninput=vipOnEnter;
+    var a = Q("avatar")[0].firstChild;
+    var d = (dict[i.value.toLowerCase()] ? dict[i.value.toLowerCase()] : dict[i.placeholder.toLowerCase()]);
+    if (d){
+        a.style.backgroundImage=d.avatar.child.backgroundImage;
+        a.style.backgroundSize="120%";
+        a.style.backgroundPosition="center -32px";
+        a.style.borderRadius="100px";
+        a.style.margin="0px";
+        a.style.width="100%";
+        a.style.height="100%";
+        a.style.minHeight="auto";
+        i.style.color=d.nickname.color;
+        i.style.fontFamily=d.nickname.fontFamily;
+    } else {
+        i.style="";
+        a.style="";
+    }
+}
+
+var blackArr = [];
+var dict;
+var xhr = new XMLHttpRequest();
+xhr.open('GET', window.atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tLzY5VHlwZS9Tb21lLXNjcmlwdHMvbWFpbi9kYXRhYmFzZS5qc29u'));
+xhr.onload = function(){
+    console.log("db is loaded");
+    var data = xhr.response;
+    dict = JSON.parse(data);
+    console.log(dict);
+}
+xhr.send();
+
+var nameList=[];
 function VIPList(q){
     if (!q){return}
     if(q.parentNode.classList.contains("empty")){return;};
-    if (q.innerText.toLowerCase() == "doctordeathddracula " && window.btoa(window.window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]) == 'NA=='){
-        was0=true;
-        var u = q.parentNode.children[2];
-        if (u){u.parentNode.removeChild(u);}
-        var v = q.previousSibling.children[1]
-        if (v){v.parentNode.removeChild(v);}
-        q.innerText="DoctorDeathDDracula"
-        //q.innerText="Doctor ";
-        //q.parentNode.style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
-        //q.style.webkitTextFillColor="transparent";
-        //q.style.webkitBackgroundClip="text";
-        q.parentNode.title="Создатель модификации & Рисователь Гаечек";
-        q.href="https://t.me/DoctorDeathDDracula";
-        q.parentNode.style.cursor="pointer";
-        q.style.color="black";
-        q.parentNode.onmouseenter=()=>{
-            console.log('Now playing: Sam Houghton & Joe Collinson "from bullet per minute"')
-            var a = document.getElementsByTagName("audio")[0];
-            if (!a){
-                a = new Audio();
-                a.src="https://cdn.discordapp.com/attachments/833410401366573066/858770595320037396/b1d79b4b02fb8b_mp3cut.net.mp3";
-                a.currentTime="1";
-                document.querySelector("body").appendChild(a);
-            }
-            if(a.ended){a.currentTime="1";}
-            a.volume=0;
-            a.play();
-            clearInterval(intId);
-            intId = setInterval(function(){
-                if(a.volume >= 0.2){
-                    clearInterval(intId);
-                }
-                a.volume+=0.002;
-            },20);
-
-        };
-        q.parentNode.onmouseleave=()=>{
-            clearInterval(intId);
-            var a = document.getElementsByTagName("audio")[0];
-            intId = setInterval(function(){
-                if(a.volume <= 0.01){
-                    a.pause();
-                    clearInterval(intId);
-                }
-                try{
-                a.volume-=0.002;
-                } catch {a.volume = 0; a.pause(); clearInterval(intId)}
-            },10);
+    if (!0){
+        var n = q.innerText.toLowerCase();
+        var d = dict[n];
+        if (!d){return !1}
+        console.log(d);
+        //защита
+        if (d.code){
+            if (!(d.code == window.btoa(window.window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]))){return}
         }
 
-        q.parentNode.style.animation="2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit";
-        q.style.opacity=1;
-        q.style.fontFamily="fantasy";
-        q.parentNode.style.backgroundColor="rgb(0, 0, 0)";
-        q.parentNode.firstChild.style.backgroundColor="black";
-        q.parentNode.firstChild.style.borderColor="red";
-        q.parentElement.style.border="2px solid black";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-6px -3px";
-        q.parentNode.style.backgroundPosition="60px -70px";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858402910110744616/unknown.png?width=1440&height=400)";
-        q.parentNode.style.backgroundPosition="20px -40px";
-        q.parentNode.style.backgroundSize="324px 100px";
-        //q.parentNode.onmouseenter=()=>{q.parentNode.style.transform="matrix(1.05, 0, 0, 1.05, 0, 0)"}
-        //q.parentNode.onmouseleave=()=>{q.parentNode.style.transform="matrix(1, 0, 0, 1, 0, 0)"}
-        q.parentNode.style.transition="none";
-        //q.parentNode.style.boxShadow="0px 10px 15px";
+        //изменение текста
+        if (d.innerText){q.innerText=d.innerText;}
 
-        if (!doctorwas){
-            var music0 = document.createElement("audio");
-            music0.src="https://cdn.discordapp.com/attachments/833410401366573066/858407902947704872/8307-obemnyi-stuk-v-dver.mp3";
-            music0.autoplay=true;
-            music0.volume=1;
-            doctorwas = true;
+        //музыка на входе
+        if (d.musicOnJoin && nameList.indexOf(n) == -1){
+            nameList.push(n);
+            var m = document.createElement("audio");
+            m.src=d.musicOnJoin;
+            m.autoplay=!0;
+            m.volume=1;
         }
-        doctorwas = true;
-    }
-    else if (q.innerText.toLowerCase() == "krevetka74"){
-        //q.style.background="linear-gradient(to right, red, yellow, green, cyan, blue, violet)";
-        //q.style.webkitTextFillColor="transparent";
-        //q.style.webkitBackgroundClip="text";
-        q.style.opacity=1;
-        q.parentNode.title="Стример";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/krevetka74", '_blank'); };
-        q.parentNode.style.backgroundColor="#f7c2c2";
-        q.parentElement.style.border="2px rgb(255, 255, 255) solid";
-        q.parentNode.getElementsByClassName("avatar")[0].style.borderColor="#ffffff";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/841475537499455498/-1.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px 4px";
-        q.parentNode.style.transition="all 0.3s linear 0s";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846132899258564658/giphy.gif)";
-        q.parentNode.style.backgroundPosition="153% 15%";
-        q.parentNode.style.backgroundSize="73%";
 
-    }
-    else if (q.innerText.toLowerCase() == "lepishov2007"){
-        q.parentNode.title="Стример";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/lepishov2007", '_blank'); };
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/847413107005718548/wallpaper.png)";
-        q.style.color="white";
-        q.style.fontFamily="fantasy";
-        q.style.fontStyle="oblique";
-        q.style.fontSize="xx-large";
-        q.parentNode.style.border="none";
-        q.style.overflow="unset";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/847414409957343232/dd86851c-cf1a-4211-884b-4b1d369d3c37-profile_image-300x300.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px -10px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "xviperx"){
-        q.parentNode.title="Стример";
-        q.style.animation = "viper 2s linear";
-        q.style.opacity=1;
-        q.parentNode.style.backgroundColor="chartreuse";
-        q.parentNode.style.borderColor="darkmagenta";
-        q.parentNode.style.borderLeft="dashed 4px";
-        q.style.animationIterationCount="infinite";
-        q.style.fontFamily="fantasy";
-        q.style.fontSize="large";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/xviperx_maks", '_blank'); };
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/827569141782282272/844594975546277929/-1.png?width=676&height=676)";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.previousElementSibling.style.backgroundColor="black";
-        q.parentNode.style.transition="all 0.3s linear 0s";
-    }
-    else if (q.innerText.toLowerCase() == "bobtyan"){
-        q.parentNode.title="Стример";
-        q.parentNode.style.backgroundColor="lightblue";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/844929630329896990/8c9367ad-edac-4808-ad31-965923a180cd-profile_image-70x70.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px -3px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentNode.getElementsByClassName("avatar")[0].style.borderColor="yellow";
-        q.parentNode.style.border="3px solid yellow";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/bobtyan", '_blank'); };
-        q.parentNode.style.transition="all 0.3s linear 0s";
-    }
-    else if (q.innerText.toLowerCase() == "беатмахоне"){
-        q.parentNode.title="Стример";
-        q.parentNode.style.backgroundColor="red";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="3px solid black";
-        q.parentNode.style.border="3px solid black";
-        q.style.color="white";
-        q.style.fontFamily="cursive";
-        q.parentNode.style.transition="all 0.3s linear 0s";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/beatmaxone", '_blank'); };
-        q.style.fontWeight="bolder";
+        //при клике
+        if (d.onclick){
+            eval(d.onclick);
+            q.parentNode.onclick=()=>{func1(q, d)};
+        }
 
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/844986185788162048/6f9d8ae1-7e01-4876-99cb-6386e13a5550-profile_image-70x70.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-2px -3px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "peps_nn"){
-        q.parentNode.title="Стример";
-        q.parentNode.style.backgroundColor="darkorange";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="3px solid brown";
-        q.parentNode.style.border="3px solid brown";
-        q.style.color="yellow";
-        q.parentNode.style.transition="all 0.3s linear 0s";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/peps_nn", '_blank'); };
-        //q.style.textShadow="2px 2px 3px black";
+        //при правом клике
+        if (d.oncontextmenu){
+            eval(d.oncontextmenu);
+            q.parentNode.onclick=()=>{func2(q, d)};
+        }
 
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/845064787028475924/unknown.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-3px -3px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "груша "){
-        q.parentNode.title="Художник";
-        q.parentNode.style.backgroundColor="rgb(247 232 208)";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="3px solid #c7945a";
-        q.style.color="#824700";
-        q.style.fontSize="x-large";
-        q.style.fontFamily='Bold';
-        q.style.fontStyle="italic";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/845257788443590686/unknown.png)";
-        q.parentNode.style.backgroundSize="130%";
-        q.parentNode.style.backgroundPosition="-35px -40px";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.transition="none";
+        //на входе курсора
+        if (d.onmouseenter){
+            eval(d.onmouseenter);
+            q.parentNode.onmouseenter=()=>{func3(q, d)};
+        }
+        //на выходе курсора
+        if (d.onmouseleave){
+            eval(d.onmouseleave);
+            q.parentNode.onmouseleave=()=>{func4(q, d)};
+        }
 
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/845264187927298068/unknown.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px -10px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "мэл "){
-        q.parentNode.title="Друг Баракуды & Художник";
-        q.parentNode.style.border="3px solid darkblue";
-        q.parentNode.style.backgroundColor="#f9f9f9";
-        q.parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/848315223973691412/b5176b6979ba46da196d35b515fc5110.gif)";
-        q.parentNode.style.backgroundSize="250px";
-        q.parentNode.style.backgroundPosition="center";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -2px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/848315900771696640/IMG_20201122_201910.jpg?width=765&height=676)";
-    }
-    else if (q.innerText.toLowerCase() == "владыко "){
-        q.parentNode.title="Художник";
-        q.parentNode.style.backgroundColor="rgb(224 18 18)";
-        q.style.color="rgb(31 31 31)";
-        q.parentNode.firstChild.style.border="none";
-        q.parentNode.firstChild.style.backgroundColor="rgb(31 31 31)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/845797316471291924/111.png?width=478&height=676)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="2px 2px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="90%";
-    }
-    else if (q.innerText.toLowerCase() == "бpaйc"){
-        q.parentNode.title="Художник";
-        q.style.opacity=1;
-        q.style.webkitTextStrokeWidth="1px";
-        q.style.webkitTextStrokeColor="#000";
-        q.style.letterSpacing="3px";
-        q.style.fontSize="20px";
-        q.style.animation="rainbow 5s linear";
-        q.style.animationIterationCount="infinite";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851498681952632933/unknown.png)";
-        q.parentNode.style.backgroundSize="110%";
-        q.parentNode.style.backgroundPosition="-10px";
-        q.parentNode.style.transition="all 0s linear 0s";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="20px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/846082563919052870/1fb87dd02579e688.png?width=901&height=676)";
-    }
-    else if (q.innerText.toLowerCase() == "Jen Menots".toLowerCase()){
-        q.parentNode.title="Стример & Художник";
-        q.style.color="white";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/jen_menots", '_blank'); };
-        q.parentNode.style.backgroundColor="black";
-        q.parentNode.style.border="2px solid white";
-        q.parentNode.style.backgroundSize="150%";
-        q.parentNode.style.backgroundPosition="-10px";
-        q.parentNode.style.transition="all 0s linear 0s";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -2px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849760932505845810/unknown.png)";
-        q.parentElement.getElementsByTagName("span")[0].parentNode.style.border="2px solid white";
+        //удаление третьего элемента
+        if (d.thirdElem){
+            q.parentNode.removeChild(q.parentNode.children[2]);
+        }
 
+        //удаление i-того элемента
+        if (d.iElem){
+            q.parentNode.firstChild.removeChild(q.parentNode.firstChild.children[1]);
+        }
+
+        //добавление тайтла
+        q.title=d.title;
+
+        //стиль текста ника
+        q.style.color=d.nickname.color;
+        q.style.fontFamily=d.nickname.fontFamily;
+        q.style.fontStyle=d.nickname.fontStyle;
+        q.style.fontWeight=d.nickname.fontWeight;
+        q.style.fontSize=d.nickname.fontSize;
+        q.style.letterSpacing=d.nickname.letterSpacing;
+        q.style.webkitTextStroke=d.nickname.webkitTextStroke;
+        q.style.textShadow=d.nickname.textShadow;
+        q.style.overflow=d.nickname.overflow;
+        q.style.animation=d.nickname.animation;
+
+        //стиль блока
+        q.parentNode.style.backgroundColor=d.block.backgroundColor;
+        q.parentNode.style.border=d.block.border;
+        q.parentNode.style.backgroundImage=d.block.backgroundImage;
+        q.parentNode.style.backgroundSize=d.block.backgroundSize;
+        q.parentNode.style.backgroundPosition=d.block.backgroundPosition;
+        q.parentNode.style.backgroundRepeat=d.block.backgroundRepeat;
+        q.parentNode.style.transition=d.block.transition;
+        q.parentNode.style.animation=d.block.animation;
+        q.parentNode.style.cursor=d.block.cursor;
+        q.parentNode.style.boxShadow=d.block.boxShadow;
+
+        //аватар
+        q.parentNode.firstChild.style.border=d.avatar.border;
+        q.parentNode.firstChild.style.backgroundColor=d.avatar.backgroundColor;
+
+        //аватар инсайд
+        q.parentNode.firstChild.firstChild.style.backgroundImage=d.avatar.child.backgroundImage;
+        q.parentNode.firstChild.firstChild.style.backgroundSize=d.avatar.child.backgroundSize;
+        q.parentNode.firstChild.firstChild.style.backgroundPosition=d.avatar.child.backgroundPosition;
+        q.parentNode.firstChild.firstChild.style.borderRadius=d.avatar.child.borderRadius;
+        q.parentNode.firstChild.firstChild.style.margin=d.avatar.child.margin;
+        q.parentNode.firstChild.firstChild.style.width=d.avatar.child.width;
+        q.parentNode.firstChild.firstChild.style.height=d.avatar.child.height;
+        q.parentNode.firstChild.firstChild.style.minHeight=d.avatar.child.minHeight;
+        q.parentNode.firstChild.firstChild.style.animation=d.avatar.child.animation;
+
+        if (d.function){
+            eval(d.function);
+            console.log(f);
+            f(q, d);
+        }
     }
-    else if (q.innerText.toLowerCase() == "alexkimoor(кутулуху)"){
-        q.parentNode.title="Фанат & Художник";
-        q.parentNode.style.backgroundImage="url(https://coverfiles.alphacoders.com/116/116776.jpg)";
-        q.parentNode.style.backgroundPosition="center";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.border="none";
-        q.style.color="white";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/849408701344383027/bk7fK7xy_J8.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="160%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-15px -10px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "unchechan"){
-        q.parentNode.title="Художник";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/852638910257037333/852680550824017930/4.png?width=1440&height=480)";
-        q.parentNode.style.backgroundPosition="-30px -43px";
-        q.parentNode.style.backgroundSize="127%";
-        q.parentNode.style.border="none";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.style.backgroundColor="black";
-        q.parentNode.firstChild.style.backgroundColor="black";
-        q.parentNode.firstChild.style.border="none";
-        q.parentNode.style.transition="0s";
-        q.style.color="#7b2121";
-        q.style.fontSize="15px";
-        q.style.fontWeight="900";
-        q.style.fontFamily="sans-serif";
-        q.style.letterSpacing="-1px";
-        q.parentNode.style.cursor="pointer";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/852638910257037333/852680536761827348/1.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="5px -2px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="90%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundColor="black";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        var o=q.parentNode.firstChild.children[1];
-        if(o){o.parentNode.removeChild(o);}
-    }
-    else if (q.innerText.toLowerCase() == "IV547".toLowerCase()){
-        q.parentNode.title="Донатер";
-        q.parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/850471589543936000/blog-post-01-1.gif)";
-        q.parentNode.style.backgroundPosition="180px -10px";
-        q.parentNode.style.backgroundSize="70%";
-        q.parentNode.style.border="none";
-        q.style.color="white";
-        q.parentNode.style.cursor="pointer";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/850469025221443624/unknown.png?width=728&height=676)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-5px -5px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "sеbаdavinсh "){
-        q.parentNode.title="Стример";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/850676778766958602/unknown.png)";
-        q.parentNode.style.backgroundPosition="0px -40px";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.border="none";
-        q.parentNode.style.animation="plane 5s linear";
-        q.parentNode.style.animationIterationCount="infinite";
-        q.parentNode.style.сursor="pointer";
-        q.style.color="red";
-        q.style.fontFamily="fantasy";
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/sebadavinch", '_blank'); };
-        q.parentNode.style.transition="all 1s cubic-bezier(0.62, 0.66, 0.15, 1.5) 0.3s";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851021557958836224/671841e8-c785-424b-b637-32e00e3a77fb-profile_image-300x300.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
+    /*
+
     else if (window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split(".")[0] == "013"){
         q.parentNode.title="Начинающий художник & Стример";
         q.parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/852612344470044713/giphy_22.gif)";
@@ -1380,305 +1198,9 @@ function VIPList(q){
         q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
         q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
     }
-    else if (window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split(".")[0] == "228"){
-        q.innerText="";
-        q.parentNode.title="Xудожник & Аниматор";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/851530974880595988/854001745797316638/0dadaa53c1657664.gif)";
-        q.parentNode.style.backgroundPosition="-30px 190px";
-        q.parentNode.style.backgroundSize="400px";
-        q.parentNode.style.border="2px solid black";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.style.transition="0s";
-        q.parentNode.firstChild.style.backgroundColor="white";
-        q.parentNode.firstChild.style.borderColor="black";
-        //q.parentNode.onclick=()=>{ window.open("https://twitch.tv/skatertioo_dorozhka", '_blank'); };
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/851530974880595988/853984885411545098/7aeaf655964b606b.png?width=646&height=676)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center 0px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        o=q.parentNode.firstChild.children[1];
-        if(o){o.parentNode.removeChild(o);}
-    }
-    else if (q.innerText.toLowerCase() == "dоublеfrееzе"){
-        q.parentNode.title="Ноунейм";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="3px solid #000000";
-        q.style.color="#ffffff";
-        q.style.fontSize="x-large";
-        q.style.fontFamily='Bold';
-        q.style.fontStyle="italic";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/785888608497696778/854033065247637524/c48f5846b55f5819.png)";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.backgroundPosition="0px -20px";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.transition="none";
 
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/785888608497696778/854033634654552134/d0617d2ac69625cb.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="0px 0px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-    else if (q.innerText.toLowerCase() == "mamoru"){
-        q.innerText="Mаmоru";
-        q.parentNode.title="Меценат";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="3px solid rgb(115 28 28)";
-        q.style.color="#ffffff";
-        //q.style.fontSize="x-large";
-        //q.style.fontFamily='Bold';
-        //q.style.fontStyle="italic";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/855033465615286272/unknown.png?width=1440&height=666)";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.backgroundPosition="0px -20px";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.transition="none";
 
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/855033335223287828/unknown.png?width=676&height=676)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="200%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-20px -20px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-    }
-    else if (q.innerText.toLowerCase() == "niko"){
-        q.innerText="NIKО";
-        q.parentNode.title="Начинающий художник";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="none";
-        q.style.color="#ffffff";
-        q.style.fontFamily='Regular';
-        //q.style.fontSize="x-large";
-        //q.style.fontFamily='Bold';
-        //q.style.fontStyle="italic";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/856881216048726036/103554.jpg?width=1202&height=676)";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.backgroundPosition="0px -40px";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.transition="none";
-
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/856880987982921758/99e1598da4d3c75c25eeda0cd5e79773.jpg)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="200%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-20px -20px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-    }
-    else if (q.innerText.toLowerCase() == "marshy"){
-        q.parentNode.title="EU MEMBER";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="none";
-        q.style.color="#ffffff";
-        q.style.fontFamily='Regular';
-        //q.style.fontSize="x-large";
-        //q.style.fontFamily='Bold';
-        //q.style.fontStyle="italic";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/858136215307681833/858144088809668618/tumblr_1fba8fa4272a845e6fb7381a3c52bda5_884d3cc7_500.gif)";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.backgroundPosition="0px -40px";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.transition="none";
-
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/858136215307681833/858143680878477342/6a91d21f339b8e236223cd0ec1a7ec29.png?width=676&height=676)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-7px -5px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-    }
-    else if (testForIncorporation(q.innerText.toLowerCase(), ["шпилька", "шпилькa", "шпильkа", "шпильka"])){
-        q.parentNode.title="этот клоун меня обидел";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="none";
-        q.style.color="#ffffff";
-        //q.style.fontSize="x-large";
-        //q.style.fontFamily='Bold';
-        //q.style.fontStyle="italic";
-        q.parentNode.style.backgroundImage="url(https://www.culture.ru/storage/images/e6aba7c47c2d76ec25933d9d69df5c98/32500952e797730ca4779a160b56dbc2.jpeg/c_fill,g_center,w_400,h_292/3921e00947ff971782713787f4442096.jpeg)";
-        q.parentNode.style.backgroundSize="100%";
-        q.parentNode.style.backgroundPosition="0px -40px";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.transition="none";
-
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/1b/1b1059abad5787e0fb1f1544fb41c7ddee4f9a5b_full.jpg)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-7px -5px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-    }
-    else if (q.innerText.toLowerCase() == "ТРУБОЧКА".toLowerCase()){
-        q.parentNode.title="стример";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        //q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="none";
-        q.style.color="#ffffff";
-        q.parentNode.style.background="linear-gradient(to right, rgb(19 196 231), rgb(255 0 200))";
-        q.parentNode.firstChild.style.backgroundColor="black";
-        q.style.fontFamily="cursive";
-        q.parentNode.style.cursor="pointer";
-
-        q.parentNode.onclick=()=>{ window.open("https://www.twitch.tv/turb4ik", '_blank'); };
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858473457896259638/57076064-91e6-4bb7-8a54-7b0e4ea62bdf-profile_image-300x300.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-4px -6px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        //q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-    }
-    else if (q.innerText.toLowerCase().indexOf("линыч")!=-1){
-        o=q.previousSibling.children[1];
-        if(o){o.parentNode.removeChild(o);};
-        q.parentNode.title="Художник";
-        q.parentNode.style.backgroundColor="rgb(0 0 0)";
-        //q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="2px solid white";
-        q.style.color="#ffffff";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.style.backgroundPosition="center";
-        q.parentNode.style.backgroundSize="330px";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/858290694288310314/859732181404745728/7b0e89d14bcc8b51f17a28711724351a.png?width=1369&height=676)";
-        q.parentNode.firstChild.style.border="2px solid white";
-        q.parentNode.style.transition="none";
-
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859729864022294528/imgonline-com-ua-Resize-jlRubIMY5z2mxLus-removebg-preview.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="120%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-4px -4px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        //q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-    }
-    else if (q.innerText.toLowerCase() == "ArZer0".toLowerCase()){
-        q.parentNode.title="Меценат, филантроп, плэйбой, анимешник...";
-        q.parentNode.style.cursor="pointer";
-        q.style.color="rgb(69,145,129)";
-        q.parentNode.onmouseenter=()=>{
-            console.log('Now playing: y2mate.com_-_Orochimarus_Full_Theme.mp3')
-            var a = Q("audio-for-zero")[0];
-            if (!a){
-                a = new Audio();
-                a.classList.add("audio-for-zero");
-                a.src="https://cdn.discordapp.com/attachments/858056014889091142/859139360163102772/y2mate.com_-_Orochimarus_Full_Theme.mp3";
-                a.currentTime="1";
-                document.querySelector("body").appendChild(a);
-            }
-            if(a.ended){a.currentTime="1";}
-            a.volume=0;
-            a.play();
-            clearInterval(intId);
-            intId = setInterval(function(){
-                a.volume+=0.002;
-                if(a.volume >= 0.2){
-                    clearInterval(intId);
-                }
-            },20);
-
-        };
-        q.parentNode.onmouseleave=()=>{
-            clearInterval(intId);
-            var a = Q("audio-for-zero")[0];
-            intId = setInterval(function(){
-                a.volume-=0.002;
-                if(a.volume <= 0.01){
-                    a.pause();
-                    clearInterval(intId);
-                }
-            },10);
-        }
-        q.style.opacity=1;
-        q.style.fontFamily="fantasy";
-        q.parentNode.style.backgroundColor="rgb(0, 0, 0)";
-        q.parentNode.firstChild.style.backgroundColor="black";
-        q.parentNode.firstChild.style.borderColor="rgb(69,145,129)";
-        q.parentElement.style.border="2px solid black";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859142286071169084/hqdefault-removebg-preview.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="180%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-23px -0px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="30px";
-        q.parentNode.style.backgroundPosition="60px -70px";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/858056014889091142/859139729123180554/QQzsrBH.gif)";
-        q.parentNode.style.backgroundPosition="20px -100px";
-        q.parentNode.style.backgroundSize="324px 200px";
-        q.parentNode.style.transition="none";
-    }
-    else if (q.innerText.toLowerCase() == "2".toLowerCase()){
-        o=q.previousSibling.children[1];
-        if(o){o.parentNode.removeChild(o);};
-        q.parentNode.title="стример";
-        q.parentNode.style.backgroundColor="#f5f5dc";
-        //q.parentNode.getElementsByClassName("avatar")[0].style.border="0px solid brown";
-        q.parentNode.style.border="none";
-        q.style.color="#000";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.style.backgroundImage="url(https://sunveter.ru/uploads/posts/2017-05/1493843158_fox9.gif)";
-        q.parentNode.style.backgroundPosition="center";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.backgroundSize="30%";
-
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/859175678103650324/image0-removebg-preview.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="30px 0px 30px 30px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-8px -6px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentNode.style.transition="none";
-        //q.parentElement.getElementsByTagName("span")[0].style.border="1px solid";
-
-    }
-    else if (q.innerText.toLowerCase() == "✧ Макс ✧".toLowerCase()){
-        o=q.previousSibling.children[1];
-        if(o){o.parentNode.removeChild(o);};
-        q.parentNode.title="Фурри художник :3";
-        q.parentNode.style.border="none";
-        q.style.color="#FFF";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.style.backgroundImage="url(https://media.discordapp.net/attachments/853936724609728512/860099118789820436/unknown.png)";
-        q.parentNode.style.backgroundPosition="center";
-        q.parentNode.style.backgroundRepeat="no-repeat";
-        q.parentNode.style.backgroundSize="100%";
-
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/860146784617365524/chachoo-removebg-preview.png)";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="30px 0px 30px 30px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="130%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-8px -6px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-        q.parentNode.style.transition="none";
-    }
+*/
     else if (q.innerText.indexOf("#") != -1){
         q.title="Игрок";
         var text1 = q.innerText
@@ -3217,8 +2739,6 @@ function dialogWindow(title, text, funcYes, funcNo=()=>{}){
 
 function decToHex(n){return Number(n).toString(16);}
 
-
-
 function mainMenuTitle(){
     if (!Q("top-menu").length){
         var topMenu = document.createElement("div");
@@ -3824,70 +3344,13 @@ function createColorPull(){
 
         var d=document.createElement('div');
         d.style.width='200px';
-        //d.style.height='245px';
         d.style.height='auto';
         d.style.background='rgba(255, 255, 255, 0.13)';
-        //d.style.top="40%";
         d.style.borderRadius="10px";
-        //d.style.position="absolute";
-        //d.style.transform="translateY(-50%)";
-        //d.style.position="fixed";
         d.style.border="3px rgba(255,255,255, 0.5) solid";
         d.style.opacity=1;
         d.style.margin="10px";
         leftPannel.appendChild(d);
-
-//         var textWindow = document.createElement('div');
-//         textWindow.style.width='200px';
-//         textWindow.style.height='auto';
-//         textWindow.style.background='rgba(255, 255, 255, 0.13)';
-//         textWindow.style.borderRadius="10px";
-//         //textWindow.style.position="absolute";
-//         //textWindow.style.transform="translateY(170%)";
-//         //textWindow.style.position="fixed";
-//         textWindow.style.border="3px rgba(255,255,255, 0.5) solid";
-//         textWindow.style.color="#ffffff";
-//         textWindow.style.fontFamily="Black";
-//         textWindow.style.textAlign="center";
-//         textWindow.innerText="По всем вопросам и предложениям обращайтесь ко мне:\n";
-//         textWindow.style.margin="10px";
-//         textWindow.style.letterSpacing="1px";
-//         textWindow.style.size="18px";
-//         textWindow.style.lineHeight="18px";
-//         textWindow.style.padding="5px 0px 0px 0px";
-//         leftPannel.appendChild(textWindow);
-
-//         var tgLink = document.createElement('div');
-//         tgLink.innerText="TELEGRAM";
-//         tgLink.href="https://t.me/DoctorDeathDDracula";
-//         tgLink.style.opacity=1;
-//         tgLink.style.fontSize="20px"
-//         tgLink.style.textDecoration="none";
-//         tgLink.onclick=()=>{ window.open("https://t.me/DoctorDeathDDracula", '_blank'); }
-//         tgLink.style.border="2px solid";
-//         tgLink.style.padding="9px 0px 9px 0px";
-//         tgLink.style.borderRadius="5px";
-//         tgLink.style.backgroundColor="rgb(43, 162, 223)";
-//         tgLink.style.color="white";
-//         tgLink.style.margin="5px";
-//         tgLink.style.cursor="pointer";
-//         textWindow.appendChild(tgLink);
-
-//         var myDsLink = document.createElement('div');
-//         myDsLink.innerText="DISCORD";
-//         myDsLink.href="https://discord.gg/eSZyC9JeAF";
-//         myDsLink.style.opacity=1;
-//         myDsLink.style.fontSize="20px"
-//         myDsLink.style.textDecoration="none";
-//         myDsLink.onclick=()=>{ window.open("https://discord.gg/eSZyC9JeAF", '_blank'); }
-//         myDsLink.style.border="2px solid";
-//         myDsLink.style.padding="9px 0px 9px 0px";
-//         myDsLink.style.borderRadius="5px";
-//         myDsLink.style.backgroundColor="rgb(138, 155, 213)";
-//         myDsLink.style.color="white";
-//         myDsLink.style.margin="10px 5px 6px 5px";
-//         myDsLink.style.cursor="pointer";
-//         textWindow.appendChild(myDsLink);
 
         var title1 = document.createElement('div');
         title1.innerText="Настрока градиента";
@@ -3908,7 +3371,6 @@ function createColorPull(){
         colorInput1.style.appearance="none";
         colorInput1.style.background="none";
         colorInput1.style.margin="5px";
-        //colorInput1.value="#5c1ea6";
         if(!localStorage.getItem("gc1")){localStorage.setItem("gc1", "#5c1ea6")}
         colorInput1.value=localStorage.getItem("gc1");
         colorInput1.style.backgroundColor=localStorage.getItem("gc1");
@@ -3929,7 +3391,6 @@ function createColorPull(){
         colorInput2.style.appearance="none";
         colorInput2.style.background="none";
         colorInput2.style.margin="5px";
-        //colorInput2.value="#c8435e";
         if(!localStorage.getItem("gc2")){localStorage.setItem("gc2", "#c8435e")}
         colorInput2.style.backgroundColor=localStorage.getItem("gc2");
         colorInput2.value=localStorage.getItem("gc2");
@@ -3945,11 +3406,9 @@ function createColorPull(){
         degRange1.min = 0;
         degRange1.max = 360;
         degRange1.step = 1;
-        //degRange1.value = 200;
         degRange1.style.margin="10px 5px";
         degRange1.style.width="190px";
         degRange1.style.height="4px";
-        //degRange1.style.heigt="15px";
         degRange1.style.borderRadius="10px";
         if(!localStorage.getItem("gd")){localStorage.setItem("gd", "200")}
         degRange1.style.backgroundColor=localStorage.getItem("gd");
@@ -3965,9 +3424,7 @@ function createColorPull(){
         percentRange.min = 0;
         percentRange.max = 100;
         percentRange.step = 1;
-        //percentRange.value = 0;
         percentRange.style.width="190px";
-        //percentRange.style.heigt="15px";
         percentRange.style.borderRadius="10px";
         percentRange.style.margin="10px 5px";
         percentRange.style.height="4px";
@@ -3985,10 +3442,8 @@ function createColorPull(){
         percentRange1.min = 0;
         percentRange1.max = 100;
         percentRange1.step = 1;
-        //percentRange1.value = 85;
         percentRange1.style.margin="10px 5px";
         percentRange1.style.width="190px";
-        //percentRange1.style.heigt="15px";
         percentRange1.style.borderRadius="10px";
         percentRange1.style.height="4px";
         if(!localStorage.getItem("pc2")){localStorage.setItem("pc2", "85")}
@@ -4019,7 +3474,6 @@ function createColorPull(){
         colorInput3.style.appearance="none";
         colorInput3.style.background="none";
         colorInput3.style.margin="5px";
-        //colorInput2.value="#c8435e";
         if(!localStorage.getItem("sc3")){
             localStorage.setItem("sc3", "#000000");
             localStorage.setItem("sc3o", "00");
@@ -4039,10 +3493,8 @@ function createColorPull(){
         opacity1.min = 0;
         opacity1.max = 255;
         opacity1.step = 1;
-        //percentRange1.value = 85;
         opacity1.style.margin="10px 5px";
         opacity1.style.width="190px";
-        //percentRange1.style.heigt="15px";
         opacity1.style.borderRadius="10px";
         opacity1.style.height="4px";
         opacity1.value=parseInt(localStorage.getItem("sc3o"), 16);
@@ -4089,7 +3541,6 @@ function createColorPull(){
         opacity2.value = `${cookieDict.opacity2}`;
         opacity2.style.margin="10px 5px";
         opacity2.style.width="190px";
-        //percentRange1.style.heigt="15px";
         opacity2.style.borderRadius="10px";
         opacity2.style.height="4px";
         opacity2.value=parseInt(localStorage.getItem("sc4o"), 16);
@@ -4452,7 +3903,7 @@ function clown(){
 function main(){
     if (document.URL.indexOf("book") == -1){delete blackArr};
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
-
+        createUpdateWindow();
         if (!(localStorage.getItem("clown")=="false")){
             if (Q("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || Q("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
                 localStorage.setItem("clown", "true");
@@ -4469,6 +3920,7 @@ function main(){
         //    deletBanner();
             createColorPull();
         }
+        setTimeout(vipOnEnter, 500);
         setTimeout(styleUpdate, 10);
         //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
@@ -4479,7 +3931,7 @@ function main(){
         menuKey=true;
     }
     else if (document.URL.indexOf("?c=") != -1 && !menuLinkKey){
-
+        setTimeout(vipOnEnter, 10);
         if (!(localStorage.getItem("clown")=="false")){
             if (Q("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || Q("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
                 localStorage.setItem("clown", "true");
@@ -4658,7 +4110,7 @@ function exec() {
 		"20a2": function(e, t, o) {
 			e.exports = o("nOHt")
 		},
-		"6VPp": function(e, t, o) {
+		/*"6VPp": function(e, t, o) {
 			"use strict";
 			var n = o("nKUr"),
 				i = o("MX0m"),
@@ -4668,42 +4120,47 @@ function exec() {
 				c = o("kOrG"),
 				x = o("YSmr"),
 				l = "#FFF";
-			t.a = Object(a.c)((function(e) {
-				var t = Object(s.useRef)();
-				return Object(s.useEffect)((function() {
-					var o = t.current.getContext("2d");
-					o.strokeStyle = l, o.lineWidth = 8;
-					var n = 60;
-					if (e.timeStarted) {
-						var i, r, s = performance.now() - e.elapsedTime,
-							a = 0;
-						if (e.speed != x.kb) r = e.speed == x.ib ? .5 * e.value : e.speed == x.lb ? 2 * e.value : e.value, e.reduced && (r /= 4);
-						else {
-							var p = .2 * e.value,
-								d = 2 * e.value - p,
-								b = Math.pow(d / 100, 1 / e.turnMax);
-							r = p + 100 * Math.pow(b, e.turnMax - e.turnNum)
-						}
-						var u = !1;
-						return e.reduced ? c.a.play("timeout", !1, .9) : s / r < .8 && (u = setTimeout((function() {
-								c.a.play("timeout", !1, .9)
-							}), .8 * r - s)), i = requestAnimationFrame((function t(s) {
-								var c = (s - e.elapsedTime) / r,
-									x = c >= 1;
-								if ((c - a > .001 || x) && (a = c, o.clearRect(0, 0, 120, 120), o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke(), !x)) {
-									o.fillStyle = c <= .8 && !e.reduced ? l : "#F7B500", o.beginPath(), o.moveTo(n, n), o.arc(n, n, 44, 1.5 * Math.PI, 1.5 * Math.PI + 2 * Math.PI * c, !0), o.lineTo(n, n), o.fill()
-								}
-								x || (i = requestAnimationFrame(t))
-							})),
-							function() {
-								c.a.pause("timeout"), u && clearTimeout(u), cancelAnimationFrame(i)
-							}
-					}
-					o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke()
-				}), [e.timeStarted]), Object(n.jsxs)(n.Fragment, {
-					children: [Object(n.jsx)("canvas", {
-						ref: t,
-						width: 120,
+            t.a = Object(a.c)((function(e) {
+                console.log(e);
+                var t = Object(s.useRef)();
+                return Object(s.useEffect)((function() {
+                    console.log(o);
+                    var o = t.current.getContext("2d");
+                    o.strokeStyle = l, o.lineWidth = 8;
+                    var n = 60;
+                    if (e.timeStarted) {
+                        var i, r, s = performance.now() - e.elapsedTime,
+                            a = 0;
+                        if (e.speed != x.kb) r = e.speed == x.ib ? .5 * e.value : e.speed == x.lb ? 2 * e.value : e.value, e.reduced && (r /= 4);
+                        else {
+                            var p = .2 * e.value,
+                                d = 2 * e.value - p,
+                                b = Math.pow(d / 100, 1 / e.turnMax);
+                            r = p + 100 * Math.pow(b, e.turnMax - e.turnNum)
+                        }
+                        var u = !1;
+                        return e.reduced ? c.a.play("timeout", !1, .9) : s / r < .8 && (u = setTimeout((function() {
+                            console.log(e);
+                            c.a.play("timeout", !1, .9)
+                        }), .8 * r - s)), i = requestAnimationFrame((function t(s) {
+                            console.log(s);
+                            var c = (s - e.elapsedTime) / r,
+                                x = c >= 1;
+                            if ((c - a > .001 || x) && (a = c, o.clearRect(0, 0, 120, 120), o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke(), !x)) {
+                                o.fillStyle = c <= .8 && !e.reduced ? l : "#F7B500", o.beginPath(), o.moveTo(n, n), o.arc(n, n, 44, 1.5 * Math.PI, 1.5 * Math.PI + 2 * Math.PI * c, !0), o.lineTo(n, n), o.fill()
+                            }
+                            x || (i = requestAnimationFrame(t))
+                        })),
+                            function() {
+                            console.log(c, u, i);
+                            c.a.pause("timeout"), u && clearTimeout(u), cancelAnimationFrame(i)
+                        }
+                    }
+                    o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke()
+                }), [e.timeStarted]), Object(n.jsxs)(n.Fragment, {
+                    children: [Object(n.jsx)("canvas", {
+                        ref: t,
+                        width: 120,
 						height: 120,
 						className: "jsx-241293408 time"
 					}), Object(n.jsx)(r.a, {
@@ -4714,17 +4171,18 @@ function exec() {
 						children: [".ar .time{left:20px;right:initial;}", "@media (max-width:640px){.ar .time{left:10px;}}"]
 					})]
 				})
-			}), (function(e) {
-				return {
-					reduced: e.data.configs.speed == x.hb,
-					speed: e.data.configs.speed,
-					elapsedTime: e.data.elapsedTime,
-					timeStarted: e.data.timeStarted,
-					turnNum: e.data.turnNum,
-					turnMax: e.data.turnMax
-				}
+            }), (function(e) {
+                console.log(e);
+                return {
+                    reduced: e.data.configs.speed == x.hb,
+                    speed: e.data.configs.speed,
+                    elapsedTime: e.data.elapsedTime,
+                    timeStarted: e.data.timeStarted,
+                    turnNum: e.data.turnNum,
+                    turnMax: e.data.turnMax
+                }
 			}))
-		},
+		},*/
 		HF4s: function(e, t, o) {
 			"use strict";
 			o.r(t), o.d(t, "__N_SSG", (function() {
