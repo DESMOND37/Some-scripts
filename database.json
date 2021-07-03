@@ -1013,9 +1013,9 @@
           "backgroundSize": "110%",
           "backgroundPosition": "center 0px",
           "borderRadius": "35px",
-          "margin": "110%",
+          "margin": "0px",
           "width": "110%",
-          "height": "",
+          "height": "110%",
           "minHeight": "auto",
           "animation": ""
         }
