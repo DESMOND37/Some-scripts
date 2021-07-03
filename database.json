@@ -936,13 +936,13 @@
         "backgroundSize": "100% 100%",
         "backgroundPosition": "",
         "backgroundRepeat": "no-repeat",
-        "border": "none",
+        "border": "2px solid #000",
         "boxShadow": "",
         "animation": "",
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "",
+        "border": "2px solid #000",
         "backgroundColor": "",
         "child": {
           "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/851021557958836224/671841e8-c785-424b-b637-32e00e3a77fb-profile_image-300x300.png)",
@@ -961,60 +961,7 @@
     
     
     "013": {
-      "innerText": "",
-      "music": "",
-      "musicOnJoin": "",
-      "title": "123123123",
-      "thirdElem": false,
-      "iElem": false,
-      "href": "",
-      "onclick": "",
-      "oncontextmenu": "",
-      "onmouseenter": "",
-      "onmouseleave": "",
-      "info": "",
-      "function": "",
-      "code": "",
-      "class": "",
-      "nickname": {
-          "color": "",
-          "fontFamily": "",
-          "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
-          "letterSpacing": "",
-          "overflow": "",
-          "animation": "",
-          "textShadow": "",
-          "webkitTextStroke": ""
-      },
-      "block": {
-        "transition": "none",
-        "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
-        "backgroundRepeat": "no-repeat",
-        "border": "",
-        "boxShadow": "",
-        "animation": "",
-        "cursor": "pointer"
-      },
-      "avatar": {
-        "border": "",
-        "backgroundColor": "",
-        "child": {
-          "backgroundImage": "",
-          "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
-          "animation": ""
-        }
-      }
+
     },
     
     
