@@ -1266,7 +1266,7 @@
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "function func1(q, b){ window.open("https://www.twitch.tv/turb4ik", '_blank') }",
+      "onclick": "function func1(q, b){ window.open('https://www.twitch.tv/turb4ik', '_blank') }",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
