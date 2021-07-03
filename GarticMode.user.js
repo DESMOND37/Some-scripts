@@ -1123,7 +1123,7 @@ function VIPList(q){
         }
 
         //удаление третьего элемента
-        if (d.thirdElem){
+        if (d.thirdElem && q.parentNode.children[2]){
             q.parentNode.removeChild(q.parentNode.children[2]);
         }
 
@@ -4110,6 +4110,79 @@ function exec() {
 		"20a2": function(e, t, o) {
 			e.exports = o("nOHt")
 		},
+		/*"6VPp": function(e, t, o) {
+			"use strict";
+			var n = o("nKUr"),
+				i = o("MX0m"),
+				r = o.n(i),
+				s = o("q1tI"),
+				a = o("Ya7B"),
+				c = o("kOrG"),
+				x = o("YSmr"),
+				l = "#FFF";
+            t.a = Object(a.c)((function(e) {
+                console.log(e);
+                var t = Object(s.useRef)();
+                return Object(s.useEffect)((function() {
+                    console.log(o);
+                    var o = t.current.getContext("2d");
+                    o.strokeStyle = l, o.lineWidth = 8;
+                    var n = 60;
+                    if (e.timeStarted) {
+                        var i, r, s = performance.now() - e.elapsedTime,
+                            a = 0;
+                        if (e.speed != x.kb) r = e.speed == x.ib ? .5 * e.value : e.speed == x.lb ? 2 * e.value : e.value, e.reduced && (r /= 4);
+                        else {
+                            var p = .2 * e.value,
+                                d = 2 * e.value - p,
+                                b = Math.pow(d / 100, 1 / e.turnMax);
+                            r = p + 100 * Math.pow(b, e.turnMax - e.turnNum)
+                        }
+                        var u = !1;
+                        return e.reduced ? c.a.play("timeout", !1, .9) : s / r < .8 && (u = setTimeout((function() {
+                            console.log(e);
+                            c.a.play("timeout", !1, .9)
+                        }), .8 * r - s)), i = requestAnimationFrame((function t(s) {
+                            console.log(s);
+                            var c = (s - e.elapsedTime) / r,
+                                x = c >= 1;
+                            if ((c - a > .001 || x) && (a = c, o.clearRect(0, 0, 120, 120), o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke(), !x)) {
+                                o.fillStyle = c <= .8 && !e.reduced ? l : "#F7B500", o.beginPath(), o.moveTo(n, n), o.arc(n, n, 44, 1.5 * Math.PI, 1.5 * Math.PI + 2 * Math.PI * c, !0), o.lineTo(n, n), o.fill()
+                            }
+                            x || (i = requestAnimationFrame(t))
+                        })),
+                            function() {
+                            console.log(c, u, i);
+                            c.a.pause("timeout"), u && clearTimeout(u), cancelAnimationFrame(i)
+                        }
+                    }
+                    o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke()
+                }), [e.timeStarted]), Object(n.jsxs)(n.Fragment, {
+                    children: [Object(n.jsx)("canvas", {
+                        ref: t,
+                        width: 120,
+						height: 120,
+						className: "jsx-241293408 time"
+					}), Object(n.jsx)(r.a, {
+						id: "2409927210",
+						children: ["canvas.jsx-241293408{position:absolute;width:60px;height:60px;top:20px;right:20px;font-family:Ubuntu;font-weight:500;font-size:36px;color:rgba(255,255,255,.69);}", "@media (max-width:640px){canvas.jsx-241293408{z-index:5;width:40px;height:40px;top:12px;right:10px;}}"]
+					}), Object(n.jsx)(r.a, {
+						id: "2667873027",
+						children: [".ar .time{left:20px;right:initial;}", "@media (max-width:640px){.ar .time{left:10px;}}"]
+					})]
+				})
+            }), (function(e) {
+                console.log(e);
+                return {
+                    reduced: e.data.configs.speed == x.hb,
+                    speed: e.data.configs.speed,
+                    elapsedTime: e.data.elapsedTime,
+                    timeStarted: e.data.timeStarted,
+                    turnNum: e.data.turnNum,
+                    turnMax: e.data.turnMax
+                }
+			}))
+		},*/
 		HF4s: function(e, t, o) {
 			"use strict";
 			o.r(t), o.d(t, "__N_SSG", (function() {
