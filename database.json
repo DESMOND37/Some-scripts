@@ -845,10 +845,10 @@
         "backgroundImage": "url(https://cdn.discordapp.com/attachments/833410401366573066/850471589543936000/blog-post-01-1.gif)",
         "backgroundSize": "70%",
         "backgroundPosition": "180px -10px",
-        "backgroundRepeat": "no-repeat",
+        "backgroundRepeat": "",
         "border": "none",
         "boxShadow": "",
-        "animation": "",
+        "animation": "4s ease 0s infinite normal none running wiggi",
         "cursor": "pointer"
       },
       "avatar": {
