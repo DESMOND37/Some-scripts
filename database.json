@@ -918,16 +918,16 @@
       "code": "",
       "class": "seba",
       "nickname": {
-          "color": "red",
+          "color": "#FFF",
           "fontFamily": "fantasy",
           "fontWeight": "",
-          "fontStyle": "",
-          "fontSize": "",
+          "fontStyle": "italic",
+          "fontSize": "20px",
           "letterSpacing": "",
           "overflow": "",
           "animation": "",
           "textShadow": "",
-          "webkitTextStroke": ""
+          "webkitTextStroke": "2px black"
       },
       "block": {
         "transition": "none",
@@ -942,11 +942,11 @@
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "2px solid #000",
+        "border": "3px solid #000",
         "backgroundColor": "",
         "child": {
           "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/851021557958836224/671841e8-c785-424b-b637-32e00e3a77fb-profile_image-300x300.png)",
-          "backgroundSize": "110%",
+          "backgroundSize": "100%",
           "backgroundPosition": "center",
           "borderRadius": "35px",
           "margin": "0px",
