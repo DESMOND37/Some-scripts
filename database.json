@@ -1129,7 +1129,7 @@
           "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860977008853647370/imgonline-com-ua-Resize-wXS3AKNuZ0pNQ0BO.jpg)",
           "backgroundSize": "200%",
           "backgroundPosition": "-20px -20px",
-          "borderRadius": "35%",
+          "borderRadius": "35px",
           "margin": "0px",
           "width": "100%",
           "height": "100%",
@@ -1138,11 +1138,70 @@
         }
       }
     },
+    
+    
+    
     "niko": {
-  
+      "innerText": "NIК0",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Начинающий художник",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "function": "",
+      "code": "",
+      "class": "",
+      "nickname": {
+          "color": "#fff",
+          "fontFamily": "Regular",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "x-large",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/856881216048726036/103554.jpg?width=1202&height=676)",
+        "backgroundSize": "100%",
+        "backgroundPosition": "0px -40px",
+        "backgroundRepeat": "no-repeat",
+        "border": "none",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/856880987982921758/99e1598da4d3c75c25eeda0cd5e79773.jpg)",
+          "backgroundSize": "200%",
+          "backgroundPosition": "-20px -20px",
+          "borderRadius": "35px",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
+    
+    
+    
     "marshy": {
-   
+        
     },
     "шпилька": {
   
