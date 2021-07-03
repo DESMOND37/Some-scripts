@@ -1083,7 +1083,60 @@
     
     
     "mamoru": {
-  
+     "innerText": "Mаmоru",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Меценат",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "function": "",
+      "code": "",
+      "class": "",
+      "nickname": {
+          "color": "#731c1c",
+          "fontFamily": "Bold",
+          "fontWeight": "",
+          "fontStyle": "italic",
+          "fontSize": "x-large",
+          "letterSpacing": "",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStroke": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "#000",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860976389281153064/imgonline-com-ua-Resize-9zRdBnb6lxB.jpg)",
+        "backgroundSize": "100%",
+        "backgroundPosition": "0px -20px",
+        "backgroundRepeat": "no-repeat",
+        "border": "3px solid #731c1c",
+        "boxShadow": "",
+        "animation": "",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "1px solid",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860977008853647370/imgonline-com-ua-Resize-wXS3AKNuZ0pNQ0BO.jpg)",
+          "backgroundSize": "200%",
+          "backgroundPosition": "-20px -20px",
+          "borderRadius": "35%",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
+          "animation": ""
+        }
+      }
     },
     "niko": {
   
