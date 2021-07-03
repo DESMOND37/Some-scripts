@@ -20,9 +20,12 @@
           "fontWeight": "",
           "fontStyle": "",
           "fontSize": "",
+          "letterSpacing": "",
           "overflow": "",
           "animation": "",
-          "textShadow": ""
+          "textShadow": "",
+          "webkitTextStrokeWidth": "",
+          "webkitTextStrokeColor": ""
       },
       "block": {
         "transition": "none",
@@ -579,8 +582,64 @@
         }
       }
     },
+    
+    
+    
+    
     "бpaйc": {
-
+      "innerText": "",
+      "music": "",
+      "musicOnJoin": "",
+      "title": "Художник",
+      "thirdElem": false,
+      "iElem": false,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "",
+      "onmouseleave": "",
+      "info": "",
+      "code": "",
+      "nickname": {
+          "color": "",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "20px",
+          "letterSpacing": "3px",
+          "overflow": "",
+          "animation": "",
+          "textShadow": "",
+          "webkitTextStrokeWidth": "1px",
+          "webkitTextStrokeColor": "#000"
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/833410401366573066/851498681952632933/unknown.png)",
+        "backgroundSize": "110%",
+        "backgroundPosition": "-10px",
+        "backgroundRepeat": "no-repeat",
+        "border": "",
+        "boxShadow": "",
+        "animation": "5s linear 0s 1 normal none running rainbow",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "",
+        "backgroundColor": "",
+        "child": {
+          "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/860768855110058004/m_.png)",
+          "backgroundSize": "",
+          "backgroundPosition": "-10px",
+          "borderRadius": "35px",
+          "margin": "",
+          "width": "",
+          "height": "",
+          "minHeight": "",
+          "animation": ""
+        }
+      }
     },
     "Jen Menots": {
       
