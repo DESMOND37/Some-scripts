@@ -13,7 +13,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "",
           "fontFamily": "",
@@ -69,6 +71,7 @@
       "onmouseenter": "function func3(q, b){ if (!q.parentNode.a){ q.parentNode.a = new Audio(); q.parentNode.a.src=d.music; q.parentNode.a.currentTime=1; } if(q.parentNode.a.ended){q.parentNode.a.currentTime=1;} q.parentNode.a.volume=0; q.parentNode.a.play(); if (q.parentNode.i){clearInterval(q.parentNode.i)} q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume >= 0.2){ clearInterval(q.parentNode.i); } q.parentNode.a.volume+=0.002; },20); }",
       "onmouseleave": "function func4(q, d){ clearInterval(q.parentNode.i); q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume <= 0.01){ q.parentNode.a.pause(); clearInterval(q.parentNode.i); } try{ q.parentNode.a.volume-=0.002; } catch {q.parentNode.a.volume = 0; q.parentNode.a.pause(); clearInterval(q.parentNode.i)} },10); }",
       "info": "",
+      "function": "",
       "code": "NA==",
       "nickname": {
           "color": "#000",
@@ -115,7 +118,10 @@
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
+      "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "",
           "fontFamily": "",
@@ -164,7 +170,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#fff",
           "fontFamily": "fantasy",
@@ -216,7 +224,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "",
           "fontFamily": "fantasy",
@@ -270,7 +280,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "",
           "fontFamily": "",
@@ -324,7 +336,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#FFF",
           "fontFamily": "cursive",
@@ -379,7 +393,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "yellow",
           "fontFamily": "",
@@ -435,7 +451,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#824700",
           "fontFamily": "Bold",
@@ -490,7 +508,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "",
           "fontFamily": "",
@@ -542,7 +562,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#1f1f1f",
           "fontFamily": "",
@@ -584,7 +606,6 @@
     
     
     
-    
     "бpaйc": {
       "innerText": "",
       "music": "",
@@ -598,7 +619,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "",
           "fontFamily": "",
@@ -656,7 +679,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#FFF",
           "fontFamily": "",
@@ -712,7 +737,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#fff",
           "fontFamily": "",
@@ -769,7 +796,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#7b2121",
           "fontFamily": "sans-serif",
@@ -826,7 +855,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "#fff",
           "fontFamily": "",
@@ -880,7 +911,9 @@
       "onmouseenter": "",
       "onmouseleave": "",
       "info": "",
+      "function": "",
       "code": "",
+      "class": "",
       "nickname": {
           "color": "red",
           "fontFamily": "fantasy",
