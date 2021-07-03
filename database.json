@@ -903,7 +903,7 @@
     
     "sеbаdavinсh ": {
       "innerText": "",
-      "music": "",
+      "music": "https://cdn.discordapp.com/attachments/827569141782282272/860943702146416720/samolety_04545.mp3",
       "musicOnJoin": "",
       "title": "Стример",
       "thirdElem": false,
@@ -911,7 +911,7 @@
       "href": "",
       "onclick": "function func1(q, d){ window.open('https://www.twitch.tv/sebadavinch', '_blank') }",
       "oncontextmenu": "",
-      "onmouseenter": "",
+      "onmouseenter": "function func1(q, d){q.parentNode.a=new Audio (q.music); q.parentNode.a.currentTime=6; q.parentNode.a.play()}",
       "onmouseleave": "",
       "info": "",
       "function": "function f(q, d){q.parentNode.classList.add(d.class); q.parentNode.firstChild.firstChild.style.backgroundImage='url(https://media.discordapp.net/attachments/827569141782282272/860941286915440660/imgonline-com-ua-Resize-kjz2bHpjcPR0id.jpg)'}",
