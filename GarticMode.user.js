@@ -883,30 +883,77 @@ function rgbToHex(r, g, b) {
 
 function cencFunc(u){
     if(!u || !u.classList){return}
+    var d, o, q;
+    if (u.classList.contains("drawing")){
+        d=dict[u.children[1].firstChild.innerText.toLowerCase()];
+        if (d){
+            o=u.firstChild.firstChild;
+            //аватар
+            o.parentNode.style.border=d.avatar.border;
+            o.parentNode.style.backgroundColor=d.avatar.backgroundColor;
 
-    var g = u.parentNode;
-    if (g.firstChild.children[1]){
-        if (g.firstChild.children[1].firstChild.innerText == "DOCTORDEATHDDRACULA "){
-            g.firstChild.firstChild.firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png)";
-            g.firstChild.firstChild.firstChild.style.backgroundPosition="-4px 0px";
-            g.firstChild.firstChild.firstChild.style.backgroundSize="120%";
-            g.firstChild.children[1].firstChild.style.color="black";
-            g.firstChild.children[1].firstChild.style.opacity=1;
-            g.firstChild.firstChild.style.border="2px solid red";
-            g.firstChild.firstChild.style.backgroundColor="black";
-            g.firstChild.firstChild.style.transform="scale(-1, 1)";
-        }
+            //аватар инсайд
+            o.style.transform="scale(-1, 1)";
+
+            o.style.backgroundImage=d.avatar.child.backgroundImage;
+            o.style.backgroundSize=d.avatar.child.backgroundSize;
+            o.style.backgroundPosition=d.avatar.child.backgroundPosition;
+            o.style.borderRadius=d.avatar.child.borderRadius;
+            o.style.margin=d.avatar.child.margin;
+            o.style.width=d.avatar.child.width;
+            o.style.height=d.avatar.child.height;
+            o.style.minHeight=d.avatar.child.minHeight;
+            o.style.animation=d.avatar.child.animation;
+
+            q = u.children[1].firstChild;
+            //стиль текста ника
+            q.style.color=d.nickname.color;
+            q.style.fontFamily=d.nickname.fontFamily;
+            q.style.fontStyle=d.nickname.fontStyle;
+            q.style.fontWeight=d.nickname.fontWeight;
+            q.style.fontSize=d.nickname.fontSize;
+            q.style.letterSpacing=d.nickname.letterSpacing;
+            q.style.webkitTextStroke=d.nickname.webkitTextStroke;
+            q.style.textShadow=d.nickname.textShadow;
+            q.style.overflow=d.nickname.overflow;
+            q.style.animation=d.nickname.animation;
+        };
     }
-    if (g.firstChild.firstChild && g.firstChild.firstChild.firstChild){
-        if (g.firstChild.firstChild.firstChild.innerText == "DOCTORDEATHDDRACULA "){
-            g.firstChild.children[1].firstChild.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/858404435432570920/doctor-removebg-preview.png)";
-            g.firstChild.children[1].firstChild.style.backgroundPosition="-4px 0px";
-            g.firstChild.children[1].firstChild.style.backgroundSize="120%";
-            g.firstChild.children[1].style.border="2px solid red";
-            g.firstChild.children[1].style.backgroundColor="black";
-            g.firstChild.firstChild.firstChild.style.color="black";
-        }
+
+    if (u.classList.contains("answer")){
+        d=dict[u.parentNode.parentNode.innerText.toLowerCase()];
+        if (d){
+            o=u.children[1].firstChild;
+            //аватар
+            o.parentNode.style.border=d.avatar.border;
+            o.parentNode.style.backgroundColor=d.avatar.backgroundColor;
+
+            //аватар инсайд
+            o.style.backgroundImage=d.avatar.child.backgroundImage;
+            o.style.backgroundSize=d.avatar.child.backgroundSize;
+            o.style.backgroundPosition=d.avatar.child.backgroundPosition;
+            o.style.borderRadius=d.avatar.child.borderRadius;
+            o.style.margin=d.avatar.child.margin;
+            o.style.width=d.avatar.child.width;
+            o.style.height=d.avatar.child.height;
+            o.style.minHeight=d.avatar.child.minHeight;
+            o.style.animation=d.avatar.child.animation;
+
+            q = u.firstChild.firstChild;
+            //стиль текста ника
+            q.style.color=d.nickname.color;
+            q.style.fontFamily=d.nickname.fontFamily;
+            q.style.fontStyle=d.nickname.fontStyle;
+            q.style.fontWeight=d.nickname.fontWeight;
+            q.style.fontSize=d.nickname.fontSize;
+            q.style.letterSpacing=d.nickname.letterSpacing;
+            q.style.webkitTextStroke=d.nickname.webkitTextStroke;
+            q.style.textShadow=d.nickname.textShadow;
+            q.style.overflow=d.nickname.overflow;
+            q.style.animation=d.nickname.animation;
+        };
     }
+
 
     if(u.classList.contains("load")){u.addEventListener("DOMNodeInserted", (e)=>{
         e.path[3].classList.remove("load");
@@ -1081,7 +1128,6 @@ function VIPList(q){
     var n = q.innerText.toLowerCase();
     var d = dict[n];
     if (d){
-        console.log(d);
         //защита
         if (d.code){
             if (!(d.code == window.btoa(window.window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]))){return}
@@ -1176,7 +1222,6 @@ function VIPList(q){
 
         if (d.function){
             eval(d.function);
-            console.log(f);
             f(q, d);
         }
     }
@@ -1213,7 +1258,9 @@ function VIPList(q){
         q.parentNode.onmouseleave=()=>{if (q.banned != true){ q.parentNode.style.boxShadow=""} };
         q.parentNode.style.cursor="pointer";
         q.parentNode.onclick=()=>{
-            var ne = Q("scrollElements")[1].children;
+            var ne = Q("scrollElements")[1]
+            if (!ne){return}
+            ne=ne.children;
             if (q.banned){
                 let popa = blackArr.indexOf(q.innerText.toLowerCase())
                 q.banned=false;
@@ -3619,7 +3666,6 @@ function createColorPull(){
         linkInput2.style.fontFamily='Black';
         linkInput2.style.padding="0px 10px";
         linkInput2.oninput=()=>{
-                console.log("1");
                 localStorage.setItem("sl2", linkInput2.value);
                 if (linkInput2.value != ""){
                     Q("jsx-2562723607")[1].style.backgroundImage=`url(${linkInput2.value})`;
@@ -3803,35 +3849,36 @@ var writeKey = false;
 var memoryKey = false;
 var waitingKey = false;
 
-    window.onkeydown=(e)=>{
-        if (e.key === "Enter" || e.key === "Ent" || e.keyCode === 13) {
-            Q("jsx-4289504161 big")[0].click();
-        }
-        var input = Q("jsx-856742297 ")[0];
-        if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
-            var p = prompt("Введите команду:", "100") ;
-            if (p == "0"){
-                document.cookie="badguy=0";
-                setValue(input, "");
-                alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
-            } else if (p == "1"){
-                document.cookie="badguy=1;";
-                setValue(input, "vinegative");
-                alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
-            } else if (p == "123"){
-                setValue(input, "DoctorDeathDDracula ");
-            } else if (p == "100"){
-                var r = localStorage.getItem("room");
-                if (!r){alert("Ошибка"); return;}
-                localStorage.setItem("uuid", "" + Math.random());
-                document.location.replace(r);
-            } else {alert("Такой команды не существует");}
-        }
-        if ((e.key=="=" || e.code=="Equal" || e.keyCode=="187") && e.altKey){
-            localStorage.setItem("uuid", "" + Math.random());
-            window.open(localStorage.getItem("room"), '_blank');
-        }
+window.onkeydown=(e)=>{
+    if (e.key === "Enter" || e.key === "Ent" || e.keyCode === 13) {
+        var t = Q("jsx-4289504161 big")[0];
+        if(t){t.click()};
     }
+    var input = Q("jsx-856742297 ")[0];
+    if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
+        var p = prompt("Введите команду:", "100") ;
+        if (p == "0"){
+            document.cookie="badguy=0";
+            setValue(input, "");
+            alert("ВЫ БОЛЬШЕ НЕ КЛОУН");
+        } else if (p == "1"){
+            document.cookie="badguy=1;";
+            setValue(input, "vinegative");
+            alert("ПОЗДРАВЛЯЮ, ВЫ КЛОУН!");
+        } else if (p == "123"){
+            setValue(input, "DoctorDeathDDracula ");
+        } else if (p == "100"){
+            var r = localStorage.getItem("room");
+            if (!r){alert("Ошибка"); return;}
+            localStorage.setItem("uuid", "" + Math.random());
+            document.location.replace(r);
+        } else {alert("Такой команды не существует");}
+    }
+    if ((e.key=="=" || e.code=="Equal" || e.keyCode=="187") && e.altKey){
+        localStorage.setItem("uuid", "" + Math.random());
+        window.open(localStorage.getItem("room"), '_blank');
+    }
+}
 
 
 function flagsOff(){
@@ -3982,7 +4029,6 @@ function main(){
                 setTimeout(()=>{
                 if (!e.target.classList || !e){return}
                 if (e.target.classList.contains("scroll")){
-                    console.log("WARNING");
                     var w = Q("scrollElements")[1].children;
                     censorListener();
                     for(var k=0; k<w.length; k++){cencFunc(w[k].firstChild)}
@@ -4125,10 +4171,8 @@ function exec() {
 				x = o("YSmr"),
 				l = "#FFF";
             t.a = Object(a.c)((function(e) {
-                console.log(e);
                 var t = Object(s.useRef)();
                 return Object(s.useEffect)((function() {
-                    console.log(o);
                     var o = t.current.getContext("2d");
                     o.strokeStyle = l, o.lineWidth = 8;
                     var n = 60;
@@ -4144,10 +4188,8 @@ function exec() {
                         }
                         var u = !1;
                         return e.reduced ? c.a.play("timeout", !1, .9) : s / r < .8 && (u = setTimeout((function() {
-                            console.log(e);
                             c.a.play("timeout", !1, .9)
                         }), .8 * r - s)), i = requestAnimationFrame((function t(s) {
-                            console.log(s);
                             var c = (s - e.elapsedTime) / r,
                                 x = c >= 1;
                             if ((c - a > .001 || x) && (a = c, o.clearRect(0, 0, 120, 120), o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke(), !x)) {
@@ -4156,7 +4198,6 @@ function exec() {
                             x || (i = requestAnimationFrame(t))
                         })),
                             function() {
-                            console.log(c, u, i);
                             c.a.pause("timeout"), u && clearTimeout(u), cancelAnimationFrame(i)
                         }
                     }
@@ -4176,7 +4217,6 @@ function exec() {
 					})]
 				})
             }), (function(e) {
-                console.log(e);
                 return {
                     reduced: e.data.configs.speed == x.hb,
                     speed: e.data.configs.speed,
