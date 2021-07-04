@@ -1252,7 +1252,7 @@ function extendTextInput() {
         textInput.style.webkitTextSecurity="none";
     }
     else{
-        textInput = document.querySelector("#content > div.jsx-2562723607.jsx-3822683434.screen.fade-enter-done > div > div.jsx-3203140451.center > form > input");
+        textInput = Q("jsx-374639877")[0];
         textInput.maxLength=70;
         textInput.style.webkitTextSecurity="none";
     }
@@ -4013,7 +4013,7 @@ function main(){
     }
     else if (document.URL.indexOf("start") != -1 && !startKey){
         setTimeout(styleUpdate, 10);
-        setTimeout(extendTextInput , 500);
+        setTimeout(extendTextInput , 1000);
         flagsOff();
         startKey=true;
     }
@@ -4021,7 +4021,7 @@ function main(){
         debagDrawinfContainerOnExit();
         //Блок названия картинки
         offBgMenu();
-        setTimeout(extendTextInput, 200);
+        setTimeout(extendTextInput, 1000);
         if (Q("zoomC").length){
             Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
