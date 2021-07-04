@@ -1240,6 +1240,7 @@ function testForIncorporation(word, arr){
 
 function addListenerToBlock(block, func){
     block.addEventListener("DOMNodeInserted", (e)=>{
+        if (!e.target.children){return}
         VIPList(e.target.children[1]);
     })
 }
@@ -3978,12 +3979,15 @@ function main(){
         var w = Q("scrollElements")[1];
         if (!w){
             Q("jsx-2790456822 timeline")[0].addEventListener("DOMNodeInserted", (e)=>{
+                setTimeout(()=>{
+                if (!e.target.classList || !e){return}
                 if (e.target.classList.contains("scroll")){
                     console.log("WARNING");
                     var w = Q("scrollElements")[1].children;
                     censorListener();
                     for(var k=0; k<w.length; k++){cencFunc(w[k].firstChild)}
                 }
+                }, 20);
             });
         } else {
             setTimeout(()=>{
@@ -4110,7 +4114,7 @@ function exec() {
 		"20a2": function(e, t, o) {
 			e.exports = o("nOHt")
 		},
-		/*"6VPp": function(e, t, o) {
+		"6VPp": function(e, t, o) {
 			"use strict";
 			var n = o("nKUr"),
 				i = o("MX0m"),
@@ -4182,7 +4186,7 @@ function exec() {
                     turnMax: e.data.turnMax
                 }
 			}))
-		},*/
+		},
 		HF4s: function(e, t, o) {
 			"use strict";
 			o.r(t), o.d(t, "__N_SSG", (function() {
