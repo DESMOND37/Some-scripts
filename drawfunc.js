@@ -1,4 +1,5 @@
-_N_E=(window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
+
+_N_E = (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 	[18], {
 		"20a2": function(e, t, o) {
 			e.exports = o("nOHt")
@@ -13,42 +14,42 @@ _N_E=(window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 				c = o("kOrG"),
 				x = o("YSmr"),
 				l = "#FFF";
-            t.a = Object(a.c)((function(e) {
-                var t = Object(s.useRef)();
-                return Object(s.useEffect)((function() {
-                    var o = t.current.getContext("2d");
-                    o.strokeStyle = l, o.lineWidth = 8;
-                    var n = 60;
-                    if (e.timeStarted) {
-                        var i, r, s = performance.now() - e.elapsedTime,
-                            a = 0;
-                        if (e.speed != x.kb) r = e.speed == x.ib ? .5 * e.value : e.speed == x.lb ? 2 * e.value : e.value, e.reduced && (r /= 4);
-                        else {
-                            var p = .2 * e.value,
-                                d = 2 * e.value - p,
-                                b = Math.pow(d / 100, 1 / e.turnMax);
-                            r = p + 100 * Math.pow(b, e.turnMax - e.turnNum)
-                        }
-                        var u = !1;
-                        return e.reduced ? c.a.play("timeout", !1, .9) : s / r < .8 && (u = setTimeout((function() {
-                            c.a.play("timeout", !1, .9)
-                        }), .8 * r - s)), i = requestAnimationFrame((function t(s) {
-                            var c = (s - e.elapsedTime) / r,
-                                x = c >= 1;
-                            if ((c - a > .001 || x) && (a = c, o.clearRect(0, 0, 120, 120), o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke(), !x)) {
-                                o.fillStyle = c <= .8 && !e.reduced ? l : "#F7B500", o.beginPath(), o.moveTo(n, n), o.arc(n, n, 44, 1.5 * Math.PI, 1.5 * Math.PI + 2 * Math.PI * c, !0), o.lineTo(n, n), o.fill()
-                            }
-                            x || (i = requestAnimationFrame(t))
-                        })),
-                            function() {
-                            c.a.pause("timeout"), u && clearTimeout(u), cancelAnimationFrame(i)
-                        }
-                    }
-                    o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke()
-                }), [e.timeStarted]), Object(n.jsxs)(n.Fragment, {
-                    children: [Object(n.jsx)("canvas", {
-                        ref: t,
-                        width: 120,
+			t.a = Object(a.c)((function(e) {
+				var t = Object(s.useRef)();
+				return Object(s.useEffect)((function() {
+					var o = t.current.getContext("2d");
+					o.strokeStyle = l, o.lineWidth = 8;
+					var n = 60;
+					if (e.timeStarted) {
+						var i, r, s = performance.now() - e.elapsedTime,
+							a = 0;
+						if (e.speed != x.kb) r = e.speed == x.ib ? .5 * e.value : e.speed == x.lb ? 2 * e.value : e.value, e.reduced && (r /= 4);
+						else {
+							var p = .2 * e.value,
+								d = 2 * e.value - p,
+								b = Math.pow(d / 100, 1 / e.turnMax);
+							r = p + 100 * Math.pow(b, e.turnMax - e.turnNum)
+						}
+						var u = !1;
+						return e.reduced ? c.a.play("timeout", !1, .9) : s / r < .8 && (u = setTimeout((function() {
+								c.a.play("timeout", !1, .9)
+							}), .8 * r - s)), i = requestAnimationFrame((function t(s) {
+								var c = (s - e.elapsedTime) / r,
+									x = c >= 1;
+								if ((c - a > .001 || x) && (a = c, o.clearRect(0, 0, 120, 120), o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke(), !x)) {
+									o.fillStyle = c <= .8 && !e.reduced ? l : "#F7B500", o.beginPath(), o.moveTo(n, n), o.arc(n, n, 44, 1.5 * Math.PI, 1.5 * Math.PI + 2 * Math.PI * c, !0), o.lineTo(n, n), o.fill()
+								}
+								x || (i = requestAnimationFrame(t))
+							})),
+							function() {
+								c.a.pause("timeout"), u && clearTimeout(u), cancelAnimationFrame(i)
+							}
+					}
+					o.beginPath(), o.arc(n, n, 56, 0, 2 * Math.PI), o.stroke()
+				}), [e.timeStarted]), Object(n.jsxs)(n.Fragment, {
+					children: [Object(n.jsx)("canvas", {
+						ref: t,
+						width: 120,
 						height: 120,
 						className: "jsx-241293408 time"
 					}), Object(n.jsx)(r.a, {
@@ -59,15 +60,15 @@ _N_E=(window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 						children: [".ar .time{left:20px;right:initial;}", "@media (max-width:640px){.ar .time{left:10px;}}"]
 					})]
 				})
-            }), (function(e) {
-                return {
-                    reduced: e.data.configs.speed == x.hb,
-                    speed: e.data.configs.speed,
-                    elapsedTime: e.data.elapsedTime,
-                    timeStarted: e.data.timeStarted,
-                    turnNum: e.data.turnNum,
-                    turnMax: e.data.turnMax
-                }
+			}), (function(e) {
+				return {
+					reduced: e.data.configs.speed == x.hb,
+					speed: e.data.configs.speed,
+					elapsedTime: e.data.elapsedTime,
+					timeStarted: e.data.timeStarted,
+					turnNum: e.data.turnNum,
+					turnMax: e.data.turnMax
+				}
 			}))
 		},
 		HF4s: function(e, t, o) {
@@ -447,16 +448,16 @@ _N_E=(window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 							c = Math.abs(o[2] - r[2]),
 							x = Math.abs(o[3] - r[3]);
 						return s < 20 && a < 20 && c < 20 && x < 20 || 0 == r[3] && 255 == o[0] && 255 == o[1] && 255 == o[2] || 0 == o[3] && 255 == r[0] && 255 == r[1] && 255 == r[2]
-					},
-					d = function(e) {
-						for (var t = e[0], o = e[1], n = t + e[2], i = o + e[3], r = t; r < n; r++)
-							for (var s = o; s < i; s++) b[r][s] = !0;
+                    },
+                    d = function(e) {
+                        for (var t = e[0], o = e[1], n = t + e[2], i = o + e[3], r = t; r < n; r++)
+                            for (var s = o; s < i; s++) b[r][s] = !0;
                         e[0]-=2;
                         e[1]-=2;
                         e[2]+=2;
                         e[3]+=2;
-						return e
-					};
+                        return e
+                    };
 				t = Math.round(t), o = Math.round(o);
 				var b, u = parseInt(n.replace("#", "0x")),
 					f = u % 256,
@@ -882,37 +883,37 @@ _N_E=(window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 					return Object(n.jsxs)("div", {
 						className: "jsx-340028725 " + (ne()("options", {
 							disabled: e.disabled,
-							submenu: e.submenu
-						}) || ""),
-						children: [Object(n.jsx)("div", {
-							className: "jsx-340028725",
-							children: [ce.map((function(t) {
-								return Object(n.jsx)("div", {
-									onClick: e.disabled ? null : function() {
+                            submenu: e.submenu
+                        }) || ""),
+                        children: [Object(n.jsx)("div", {
+                            className: "jsx-340028725",
+                            children: [ce.map((function(t) {
+                                return Object(n.jsx)("div", {
+                                    onClick: e.disabled ? null : function() {
                                         document.getElementsByClassName("thikness-input")[0].value=t;
-										return e.onChangeThickness(t)
-									},
-									className: "jsx-340028725 " + (ne()("thickness", {
-										sel: e.thickness == t
-									}) || "")
-								}, t)
-							})), [Object(n.jsx)("span", {
-								//className: "jsx-340028725"
-							}), Object(n.jsx)("input", {
-								//disabled: e.disabled,
+                                        return e.onChangeThickness(t)
+                                    },
+                                    className: "jsx-340028725 " + (ne()("thickness", {
+                                        sel: e.thickness == t
+                                    }) || "")
+                                }, t)
+                            })), [Object(n.jsx)("span", {
+                                className: "jsx-340028725"
+                            }), Object(n.jsx)("input", {
+                                //disabled: e.disabled,
                                 maxLength: 3,
-								type: "text",
-								onChange: function(t) {
+                                type: "text",
+                                onChange: function(t) {
                                     if (t.target.value>500){t.target.value=500;}
                                     if (t.target.value=="00" || t.target.value=="000"){t.target.value=0;}
                                     t.target.value = t.target.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')
                                     return e.onChangeThickness(t.target.value);
-								},
-								className: "thikness-input"
-							}), Object(n.jsx)("span", {
-								//className: "jsx-340028725"
-							})]]
-						}), Object(n.jsxs)("div", {
+                                },
+                                className: "thikness-input"
+                            }), Object(n.jsx)("span", {
+                                className: "jsx-340028725"
+                            })]]
+                        }), Object(n.jsxs)("div", {
 							className: "jsx-340028725 bxopacity",
 							children: [Object(n.jsx)("span", {
 								className: "jsx-340028725"
@@ -1062,7 +1063,6 @@ _N_E=(window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([
 					}
 
 					function a(e) {
-                        //if(e.which!=1){return;}
 						e.preventDefault(), B(G.mb), g == G.xb ? (V(t = [g, [y, _]].concat(Object(r.a)(D.apply(void 0, [X.current.getContext("2d")].concat(Object(r.a)(K(e, o, s / G.d, i)), [y, G.c * G.d, G.b * G.d])).map((function(e) {
 							return Math.round(e / G.d)
 						}))))), b((function(e) {
