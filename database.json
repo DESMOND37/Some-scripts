@@ -1561,7 +1561,7 @@
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "function func1(q, d){  window.open('https://www.twitch.tv/kplayz4681', '_blank')  }",
+      "onclick": "function func1(q, d){  window.open('https://twitch.tv/kalinin_p1ay', '_blank')  }",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
