@@ -1737,7 +1737,7 @@ document.getElementsByTagName("head")[0].appendChild(cssAnimation21);
 
 var cssAnimation22 = document.createElement('style');
 cssAnimation.type = 'text/css';
-var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: center 15%;} 50% {background-position: center 45%;}}");
+var rules002 = document.createTextNode("@keyframes plane {100%, 0% {background-position: center 30%;} 50% {background-position: center 45%;}}");
 cssAnimation.appendChild(rules002);
 document.getElementsByTagName("head")[0].appendChild(cssAnimation22);
 
@@ -2635,27 +2635,7 @@ function VIPList(q){
             f(q, d);
         }
     }
-    /*
 
-    else if (window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split(".")[0] == "013"){
-        q.parentNode.title="Начинающий художник & Стример";
-        q.parentNode.style.backgroundImage="url(https://cdn.discordapp.com/attachments/833410401366573066/852612344470044713/giphy_22.gif)";
-        q.parentNode.style.border="none";
-        q.parentNode.style.cursor="pointer";
-        q.parentNode.onclick=()=>{ window.open("https://twitch.tv/skatertioo_dorozhka", '_blank'); };
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundImage="url(https://media.discordapp.net/attachments/851907193610436639/852614521779912724/xFQ5F6Ar3PM.jpg)";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="-10px";
-        q.parentElement.getElementsByTagName("span")[0].style.borderRadius="35px";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundSize="110%";
-        q.parentElement.getElementsByTagName("span")[0].style.backgroundPosition="center 0px";
-        q.parentElement.getElementsByTagName("span")[0].style.width="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.height="100%";
-        q.parentElement.getElementsByTagName("span")[0].style.minHeight="auto";
-        q.parentElement.getElementsByTagName("span")[0].style.margin="0px";
-    }
-
-
-*/
     else if (q.innerText.indexOf("#") != -1){
         q.title="Игрок";
         var text1 = q.innerText
