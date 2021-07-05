@@ -1598,7 +1598,7 @@
         "backgroundColor": "",
         "child": {
           "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/861539630658748426/imgonline-com-ua-Resize-tNe78g8MsWeTT.jpg)",
-          "backgroundSize": "",
+          "backgroundSize": "130%",
           "backgroundPosition": "center",
           "borderRadius": "35px",
           "margin": "0px",
