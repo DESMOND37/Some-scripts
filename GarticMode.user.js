@@ -2906,10 +2906,12 @@ function firstLevelFunctions(){
     //Дизактивация текстбокса толщины
     //setTimeout(()=>{
     var t = document.getElementsByClassName("thikness-input")[0];
-    t.parentNode.onmouseenter=()=>{t.disabled=!1;}
-    t.parentNode.onmouseleave=()=>{t.disabled=!0}//}, 500);
-    //Определение изначальной прозрачности
-    Q("thikness-input")[0].value=4;
+    if (t){
+        t.parentNode.onmouseenter=()=>{t.disabled=!1;}
+        t.parentNode.onmouseleave=()=>{t.disabled=!0}//}, 500);
+        //Определение изначальной прозрачности
+        Q("thikness-input")[0].value=4;
+    }
     //Q("jsx-340028725 thickness")[0].click();
     //Невозможность открыть контекстное меню на холсте
     Q("jsx-150592943")[0].oncontextmenu=function(){return false;};
