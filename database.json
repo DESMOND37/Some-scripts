@@ -1554,7 +1554,7 @@
     
     
   "kplayz4681": {
-      "innerText": "",
+      "innerText": " ",
       "music": "",
       "musicOnJoin": "",
       "title": "",
@@ -1584,9 +1584,9 @@
       "block": {
         "transition": "none",
         "backgroundColor": "",
-        "backgroundImage": "",
-        "backgroundSize": "",
-        "backgroundPosition": "",
+        "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/861539348120731648/unknown.png)",
+        "backgroundSize": "120%",
+        "backgroundPosition": "center",
         "backgroundRepeat": "no-repeat",
         "border": "",
         "boxShadow": "",
@@ -1597,14 +1597,14 @@
         "border": "",
         "backgroundColor": "",
         "child": {
-          "backgroundImage": "",
+          "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/861539630658748426/imgonline-com-ua-Resize-tNe78g8MsWeTT.jpg)",
           "backgroundSize": "",
-          "backgroundPosition": "",
-          "borderRadius": "",
-          "margin": "",
-          "width": "",
-          "height": "",
-          "minHeight": "",
+          "backgroundPosition": "center",
+          "borderRadius": "35%",
+          "margin": "0px",
+          "width": "100%",
+          "height": "100%",
+          "minHeight": "auto",
           "animation": ""
         }
       }
