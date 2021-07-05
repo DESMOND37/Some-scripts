@@ -516,8 +516,6 @@ function mouseUp(){
 
 function drawSolidLine(arr){
     if (arr.length > 1){
- //       canvas = Q("jsx-3193114933 ")[0];
- //       pos = canvas.getBoundingClientRect();
         left = pos.x;
         top = pos.y;
         width = pos.width;
@@ -1092,20 +1090,24 @@ function vipOnEnter(){
     var a = Q("avatar")[0].firstChild;
     var d = (dict[i.value.toLowerCase()] ? dict[i.value.toLowerCase()] : dict[i.placeholder.toLowerCase()]);
     if (d){
+        //аватар
+        a.parentNode.style.border=d.avatar.border;
+        a.parentNode.style.backgroundColor=d.avatar.backgroundColor;
+
+        //аватар инсайд
         a.style.backgroundImage=d.avatar.child.backgroundImage;
-        a.backgroundSize=d.avatar.child.backgroundSize;
-        a.style.backgroundPosition=d.avatar.child.backgroundPosition;
-        a.style.borderRadius="100px";
+        a.style.backgroundSize=d.avatar.child.backgroundSize;
+        a.style.backgroundPosition="center";//d.avatar.child.backgroundPosition;
+        a.style.borderRadius=d.avatar.child.borderRadius;
         a.style.margin=d.avatar.child.margin;
         a.style.width=d.avatar.child.width;
-        a.height=d.avatar.child.height;
+        a.style.height=d.avatar.child.height;
         a.style.minHeight=d.avatar.child.minHeight;
         a.style.animation=d.avatar.child.animation;
-        i.style.color=d.nickname.color;
-        i.style.fontFamily=d.nickname.fontFamily;
     } else {
         i.style="";
         a.style="";
+        a.parentNode.style="";
     }
 }
 
@@ -1494,9 +1496,10 @@ var curElementOverCursor;
 //Функция изменения функционала первого уровня
 function firstLevelFunctions(){
     //Дизактивация текстбокса толщины
+    //setTimeout(()=>{
     var t = document.getElementsByClassName("thikness-input")[0];
     t.parentNode.onmouseenter=()=>{t.disabled=!1;}
-    t.parentNode.onmouseleave=()=>{t.disabled=!0}
+    t.parentNode.onmouseleave=()=>{t.disabled=!0}//}, 500);
     //Определение изначальной прозрачности
     Q("thikness-input")[0].value=4;
     //Q("jsx-340028725 thickness")[0].click();
@@ -3962,21 +3965,18 @@ function main(){
                 })
             }
         }
-        //Блок главного меню
-        //alert("menuKey");
+
         window.onload=()=>{
-        //    deletBanner();
             createColorPull();
         }
         setTimeout(vipOnEnter, 500);
         setTimeout(styleUpdate, 10);
-        //setTimeout(blackListFunc, 10);
         setTimeout(deletBanner, 10);
         setTimeout(createColorPull, 10);
         setTimeout(mainMenuTitle, 10);
-        //setTimeout(console.clear, 2000);
         flagsOff();
         menuKey=true;
+
     }
     else if (document.URL.indexOf("?c=") != -1 && !menuLinkKey){
         setTimeout(vipOnEnter, 10);
@@ -4113,6 +4113,7 @@ function main(){
 
 function exec() {
     document.querySelector("#content").addEventListener("DOMNodeInserted", main);
+    setTimeout(main, 100);
 }
 
 
