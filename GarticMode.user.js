@@ -1098,7 +1098,7 @@ function vipOnEnter(){
         a.style.backgroundImage=d.avatar.child.backgroundImage;
         a.style.backgroundSize=d.avatar.child.backgroundSize;
         a.style.backgroundPosition="center";//d.avatar.child.backgroundPosition;
-        a.style.borderRadius=d.avatar.child.borderRadius;
+        a.style.borderRadius="100px";//d.avatar.child.borderRadius;
         a.style.margin=d.avatar.child.margin;
         a.style.width=d.avatar.child.width;
         a.style.height=d.avatar.child.height;
