@@ -1588,13 +1588,13 @@
         "backgroundSize": "120%",
         "backgroundPosition": "center",
         "backgroundRepeat": "no-repeat",
-        "border": "",
+        "border": "3px solid #ff7d00",
         "boxShadow": "",
         "animation": "",
         "cursor": "pointer"
       },
       "avatar": {
-        "border": "",
+        "border": "2px solid #ff7100",
         "backgroundColor": "",
         "child": {
           "backgroundImage": "url(https://media.discordapp.net/attachments/827569141782282272/861539630658748426/imgonline-com-ua-Resize-tNe78g8MsWeTT.jpg)",
