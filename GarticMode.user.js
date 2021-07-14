@@ -2327,7 +2327,7 @@ function cencFunc(u){
     }
 
     if (u.classList.contains("answer")){
-        d=dict[u.parentNode.parentNode.innerText.toLowerCase()];
+        d=dict[u.parentNode.parentNode.innerText.toLowerCase()] ? dict[u.parentNode.parentNode.innerText.toLowerCase()] : dict[u.firstChild.firstChild.innerText.toLowerCase()];
         if (d){
             o=u.children[1].firstChild;
             //аватар
@@ -2833,41 +2833,9 @@ function drawStyleChange(){
     underDrawContainer.style.boxShadow="none";
     var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
     toolBar.style.height="auto";
-
-    //Изменения расположения тайтлов
-    //Q("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
-    //Изменение местоположение тайтлов
-    //document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header > h4").style.margin="20px 0px 10px";
-    //Убираем лишнее с хослта
-    //var hos = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
-    //hos.style.boxShadow="none";
-    //hos.style.margin="0px 6px 6px";
-    //Book edit
-    //book.style.height="538px";
-    //book.style.borderRadius="10px";
-    //Слой книги
-    //var bookLayer = document.querySelector("#content > div > div > div.jsx-1562482592.center");
-    //bookLayer.style.padding="50px 0px 0px";
     //Надхолсьтье
     var canvasLayer = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
     canvasLayer.style.borderRadius="0px 0px 0px 0px";
-    //document.querySelector("#content > div.jsx-2562723607.jsx-3822683434.screen.fade-enter-done > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header").style.borderRadius="0px"
-    //Нижняя планка
-    //var but = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1562482592.bottom");
-    //but.style.height="110px";
-    //Удаление лого
-    //var logo = Q("jsx-1307288772 logo")[0];
-    //if (logo != undefined){
-    //    logo.parentNode.removeChild(logo);
-    //}
-    //Изменение цвета рамки
-    //var book1 = Q("jsx-1307288772 book")[0];
-    //book1.style.backgroundColor="rgb(0 0 0)";
-    //book1.style.boxShadow="rgb(0 0 0) 0px -3px 0px 0px, rgb(1 25 70) 0px 2px 0px 0px, rgb(0 0 0 / 50%) 0px 8px 4px 0px";
-    //var header1 = Q("jsx-1307288772 header")[0];
-    //header1.style.backgroundColor="rgb(0 0 0)";
-    //header1.style.boxShadow="rgb(0 0 0) 0px -2px 0px 0px inset";
-    //header1.style.borderBottom="6px solid rgb(0 0 0)";
     var newDiv = document.createElement("div");
     newDiv.classList.add("newdiv");
     newDiv.style.width="758px";
@@ -2894,6 +2862,7 @@ function firstLevelFunctions(){
     }
     //Q("jsx-340028725 thickness")[0].click();
     //Невозможность открыть контекстное меню на холсте
+    if (!Q("jsx-150592943")[0]){return}
     Q("jsx-150592943")[0].oncontextmenu=function(){return false;};
     //Цензура текста
     var taskParent = document.getElementsByTagName("h3")[0];
