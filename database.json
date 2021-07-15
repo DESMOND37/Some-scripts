@@ -1678,7 +1678,7 @@
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "func1(q, d){ window.open('https://www.twitch.tv/ggamerrr_', '_blank'); })",
+      "onclick": "func1(q, d){ window.open('https://www.twitch.tv/ggamerrr_', '_blank'); }",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
