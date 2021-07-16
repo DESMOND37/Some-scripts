@@ -3480,7 +3480,7 @@ function addPipetButton(){
 
 }
 
-//Кноака рандомного цвета
+//Кнопка рандомного цвета
 var colorInput1;
 var colorInput2;
 var defaultButton;
@@ -4252,9 +4252,6 @@ function mainMenuTitle(){
         donateTitle.onclick=()=>{ window.open("http://bit.ly/DoctorDonation", '_blank'); };
         donateTitle.style.cursor="pointer";
         donateTitle.style.transformOrigin="top";
-        donateTitle.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851193266706710538/dfd_1.gif?width=1202&height=676)";
-        donateTitle.style.backgroundSize="150%";
-        donateTitle.style.backgroundPositionY="-5px";
         donateTitle.style.margin="0px 7px 0px 0px";
 
         topMenu.appendChild(donateTitle);
@@ -5196,6 +5193,7 @@ function createColorPull(){
                 document.querySelector("#content").style.backgroundColor="#00000000";
                 document.querySelector("body").style.backgroundImage=`linear-gradient(${localStorage.getItem("gd")}deg, ${localStorage.getItem("gc1")} ${localStorage.getItem("pc1")}%, ${localStorage.getItem("gc2")} ${localStorage.getItem("pc2")}%)`;
                 document.querySelector("#__next").style.backgroundImage="";
+                document.getElementsByClassName("jsx-2562723607")[1].style.backgroundImage="";
             }, ()=>{
                 linkInput1.disabled=false;
                 linkInput2.disabled=false;
