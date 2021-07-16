@@ -1753,7 +1753,7 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange0201);
 
 var styleInputRange0202 = document.createElement('style');
 styleInputRange0202.type = 'text/css';
-var rules0202 = document.createTextNode(".reded:hover {background-color: rgba(255, 100, 100, 0.7);}");
+var rules0202 = document.createTextNode(".game.jsx-2855609897:hover {background-color: rgba(255, 100, 100, 0.7);}");
 styleInputRange0202.appendChild(rules0202);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange0202);
 
@@ -4166,7 +4166,6 @@ function mainMenuTitle(){
         document.querySelector("#content").style.justifyContent="center";
 
         var settingTitle = document.createElement("div");
-        settingTitle.classList.add("title");
         settingTitle.innerText=`Settings`;
         settingTitle.style.backgroundColor="rgba(0,0,0, 0.5)";
         settingTitle.style.borderRadius="0px 0px 5px 5px";
@@ -4184,7 +4183,6 @@ function mainMenuTitle(){
         topMenu.appendChild(settingTitle);
 
         var telegramTitle = document.createElement("div");
-        telegramTitle.classList.add("title");
         telegramTitle.title="свяжитесь со мной!"
         telegramTitle.innerText=`Telegram`;
         telegramTitle.style.backgroundColor="#17bde2";
@@ -4222,7 +4220,6 @@ function mainMenuTitle(){
         topMenu.appendChild(title);
 
         var discordTitle = document.createElement("div");
-        discordTitle.classList.add("title");
         discordTitle.title="Присоединяйтесь к русскому сообществу в дискорде!"
         discordTitle.innerText=`Discord`;
         discordTitle.style.backgroundColor="#9163ff";
@@ -4241,7 +4238,6 @@ function mainMenuTitle(){
         topMenu.appendChild(discordTitle);
 
         var donateTitle = document.createElement("div");
-        donateTitle.classList.add("title");
         donateTitle.innerText=`Donate`;
         donateTitle.title="Поддержите мой проект";
         donateTitle.style.backgroundColor="skyblue";
@@ -4256,12 +4252,43 @@ function mainMenuTitle(){
         donateTitle.onclick=()=>{ window.open("http://bit.ly/DoctorDonation", '_blank'); };
         donateTitle.style.cursor="pointer";
         donateTitle.style.transformOrigin="top";
-        donateTitle.style.transition=0.5+"s";
         donateTitle.style.backgroundImage="url(https://media.discordapp.net/attachments/833410401366573066/851193266706710538/dfd_1.gif?width=1202&height=676)";
         donateTitle.style.backgroundSize="150%";
         donateTitle.style.backgroundPositionY="-5px";
+        donateTitle.style.margin="0px 7px 0px 0px";
 
         topMenu.appendChild(donateTitle);
+
+        var hideButton = document.createElement("div");
+        hideButton.k = !1;
+        hideButton.innerText="_";
+        hideButton.style.color="#FFF";
+        hideButton.style.backgroundColor="rgba(0, 0, 0, 0.5)";
+        hideButton.style.height="15px";
+        hideButton.style.width="auto";
+        hideButton.style.borderRadius="0px 0px 5px 5px";
+        hideButton.style.fontFamily="Black";
+        hideButton.style.padding="5px 10px 3px";
+        hideButton.style.cursor="pointer";
+        hideButton.onclick=()=>{
+            if (hideButton.k){
+                settingTitle.style.opacity=1;
+                donateTitle.style.opacity=1;
+                title.style.opacity=1;
+                telegramTitle.style.opacity=1;
+                discordTitle.style.opacity=1;
+                hideButton.k = !1;
+            } else {
+                settingTitle.style.opacity=0;
+                donateTitle.style.opacity=0;
+                title.style.opacity=0;
+                telegramTitle.style.opacity=0;
+                discordTitle.style.opacity=0;
+                hideButton.k = !0;
+            }
+        }
+
+        topMenu.appendChild(hideButton);
     }
 }
 
@@ -4324,9 +4351,7 @@ function clearMidCanvas(){
 }
 
 function lobbyEdit(){
-    var s = Q("jsx-2855609897 game")[0];
-    s.classList.add("reded");
-    Q("jsx-2855609897")[4].innerText += "\nДоктор не рекомендует"
+
 }
 
 function createSizePull(){
