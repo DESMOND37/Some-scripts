@@ -1734,7 +1734,7 @@
       "thirdElem": false,
       "iElem": false,
       "href": "",
-      "onclick": "",
+      "onclick": "function func1(q, d){ window.open('https://www.twitch.tv/moyglaz', '_blank'); }",
       "oncontextmenu": "",
       "onmouseenter": "",
       "onmouseleave": "",
