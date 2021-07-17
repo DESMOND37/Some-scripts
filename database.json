@@ -1382,7 +1382,7 @@
       "musicOnJoin": "",
       "title": "Меценат, филантроп, плэйбой, анимешник...",
       "thirdElem": false,
-      "iElem": false,
+      "iElem": true,
       "href": "",
       "onclick": "",
       "oncontextmenu": "",
