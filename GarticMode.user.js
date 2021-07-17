@@ -1,4 +1,4 @@
-var VERSION = "2.4.7.4";
+var VERSION = "2.4.7.7";
 
 function Q(s){
     return document.getElementsByClassName(s);
@@ -2817,7 +2817,7 @@ function mainMenuTitle(){
         title.style.fontFamily="Black";
         title.style.padding="5px 10px 3px";
         title.style.margin="0px 7px";
-        title.onclick=()=>{ window.open("https://telegra.ph/GarticMod---Mod-dlya-igry-garticphonecom-05-18", '_blank'); };
+        title.onclick=()=>{ window.open("https://telegra.ph/Gartic-Mode---Mod-dlya-igry-garticphone-07-16", '_blank'); };
         title.style.cursor="pointer";
 
         topMenu.appendChild(title);
