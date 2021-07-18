@@ -9,6 +9,7 @@ function Q(s){
     return document.getElementsByClassName(s);
 }
 
+
 //var s1 = document.createElement("script");
 //s1.async = !0;
 //var xhr2 = new XMLHttpRequest();
