@@ -1,525 +1,36 @@
-alert("Мод не доступен из-за обновления! В скором времени будет исправлен");
+
+var VERSION = "2.8.8.0";
 
 
-var VERSION = "2.4.7.7";
+var UNDO = "jsx-4206980828 tool undo";
+var REDO = "jsx-4206980828 tool redo";
+var TOOL = "jsx-4206980828";
+var UDC = "jsx-979771310 core watermark";
+var TBAR = "jsx-4206980828";
+var UPPER = "jsx-979771310 header";
+var CORE = "jsx-979771310 core watermark";
+var DCANV = "jsx-1116305971";
+var PCANV = "jsx-150592943";
+var MINP = "jsx-46098086";
+var SLL = "jsx-1927447174 scrollElements";
+var NICK = "jsx-4216852870 jsx-1594390208 nick";
 
-document.isTrusted=!1
+
 
 function Q(s){
     return document.getElementsByClassName(s);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//var s1 = document.createElement("script");
-//s1.async = !0;
-//var xhr2 = new XMLHttpRequest();
-//xhr2.open('GET', 'https://raw.githubusercontent.com/69Type/Some-scripts/main/drawfunc.js');
-//xhr2.onload = function(){
-//    document.isTrusted=!0;
-//    s1.text=xhr2.response;
-//}
-//xhr2.send();
-//document.querySelector("body").appendChild(s1);
+// var s1 = document.createElement("script");
+// s1.async = !0;
+// var xhr2 = new XMLHttpRequest();
+// xhr2.open('GET', 'https://raw.githubusercontent.com/69Type/Some-scripts/main/drawfunc.js');
+// xhr2.onload = function(){
+//     document.isTrusted=!0;
+//     s1.text=xhr2.response;
+// }
+// xhr2.send();
+// document.querySelector("body").appendChild(s1);
 
 //////////////////////////////////////////////////////style///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -637,38 +148,38 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange11);
 //Стиль лупы
 var styleInputRange12 = document.createElement('style');
 styleInputRange12.type = 'text/css';
-var rules12 = document.createTextNode(".loopa.jsx-3659451671::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830443858378096680/loopa_edit.svg'); background-size: 45px 45px; height: 45px; width: 45px;}");
+var rules12 = document.createTextNode(".loopa.jsx-4206980828::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830443858378096680/loopa_edit.svg'); background-size: 45px 45px; height: 45px; width: 45px;}");
 styleInputRange12.appendChild(rules12);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange12);
 //Активация лупы
 var styleInputRange15 = document.createElement('style');
 styleInputRange15.type = 'text/css';
-var rules15 = document.createTextNode(".loopa.jsx-3659451671:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830453942731014194/loopa_edit.svg'); background-size: 45px 45px; height: 45px; width: 45px;}");
+var rules15 = document.createTextNode(".loopa.jsx-4206980828:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830453942731014194/loopa_edit.svg'); background-size: 45px 45px; height: 45px; width: 45px;}");
 styleInputRange15.appendChild(rules15);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange15);
 //Активированная лупа
 var styleInputRange015 = document.createElement('style');
 styleInputRange015.type = 'text/css';
-var rules015 = document.createTextNode(".loopa.jsx-3659451671.act1::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830453942731014194/loopa_edit.svg'); background-size: 45px 45px; height: 45px; width: 45px;}");
+var rules015 = document.createTextNode(".loopa.jsx-4206980828.act1::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830453942731014194/loopa_edit.svg'); background-size: 45px 45px; height: 45px; width: 45px;}");
 styleInputRange015.appendChild(rules015);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange015);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Стиль пипетки
 var styleInputRange16 = document.createElement('style');
 styleInputRange16.type = 'text/css';
-var rules16 = document.createTextNode(".pipet.jsx-3659451671::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830469620694646784/pipet.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules16 = document.createTextNode(".pipet.jsx-4206980828::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830469620694646784/pipet.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange16.appendChild(rules16);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange16);
 //Активация пипетки
 var styleInputRange17 = document.createElement('style');
 styleInputRange17.type = 'text/css';
-var rules17 = document.createTextNode(".pipet.jsx-3659451671:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830476126261870652/pipet.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules17 = document.createTextNode(".pipet.jsx-4206980828:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830476126261870652/pipet.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange17.appendChild(rules17);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange17);
 //Активированная пипетка
 var styleInputRange18 = document.createElement('style');
 styleInputRange18.type = 'text/css';
-var rules18 = document.createTextNode(".pipet.jsx-3659451671.act::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830476126261870652/pipet.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules18 = document.createTextNode(".pipet.jsx-4206980828.act::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/830476126261870652/pipet.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange18.appendChild(rules18);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange18);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -682,19 +193,19 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange13);
 //Стиль зеркала
 var styleInputRange19 = document.createElement('style');
 styleInputRange19.type = 'text/css';
-var rules19 = document.createTextNode(".miror.jsx-3659451671::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/833347814704021564/miror.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules19 = document.createTextNode(".miror.jsx-4206980828::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/833347814704021564/miror.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange19.appendChild(rules19);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange19);
 //Активация зеркала
 var styleInputRange20 = document.createElement('style');
 styleInputRange20.type = 'text/css';
-var rules20 = document.createTextNode(".miror.jsx-3659451671:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/831638658050293827/miror.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules20 = document.createTextNode(".miror.jsx-4206980828:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/831638658050293827/miror.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange20.appendChild(rules20);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange20);
 //Активированное зеркало
 var styleInputRange21 = document.createElement('style');
 styleInputRange21.type = 'text/css';
-var rules21 = document.createTextNode(".miror.jsx-3659451671.act1::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/831638658050293827/miror.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules21 = document.createTextNode(".miror.jsx-4206980828.act1::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/831638658050293827/miror.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange21.appendChild(rules21);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange21);
 //Активный бэкграунд
@@ -714,19 +225,19 @@ document.getElementsByTagName("head")[0].appendChild(cssAnimation1);
 //Стиль сгдаживания
 var styleInputRange019 = document.createElement('style');
 styleInputRange019.type = 'text/css';
-var rules019 = document.createTextNode(".smooth.jsx-3659451671::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841308292033544222/gesture_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules019 = document.createTextNode(".smooth.jsx-4206980828::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841308292033544222/gesture_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange019.appendChild(rules019);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange019);
 //Активация сгдаживания
 var styleInputRange020 = document.createElement('style');
 styleInputRange020.type = 'text/css';
-var rules020 = document.createTextNode(".smooth.jsx-3659451671:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841310156754911282/gesture_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules020 = document.createTextNode(".smooth.jsx-4206980828:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841310156754911282/gesture_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange020.appendChild(rules020);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange020);
 //Активированное сгдаживание
 var styleInputRange021 = document.createElement('style');
 styleInputRange021.type = 'text/css';
-var rules021 = document.createTextNode(".smooth.jsx-3659451671.act1::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841310156754911282/gesture_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules021 = document.createTextNode(".smooth.jsx-4206980828.act1::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841310156754911282/gesture_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange021.appendChild(rules021);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange021);
 //Активный бэкграунд сгдаживания
@@ -742,13 +253,13 @@ document.getElementsByTagName("head")[0].appendChild(styleInputRange022);
 //Стиль закрывания
 var styleInputRange1019 = document.createElement('style');
 styleInputRange1019.type = 'text/css';
-var rules1019 = document.createTextNode(".clear.jsx-3659451671::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841313973290926163/close_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules1019 = document.createTextNode(".clear.jsx-4206980828::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841313973290926163/close_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange1019.appendChild(rules1019);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange1019);
 //Активация сгдаживания
 var styleInputRange1020 = document.createElement('style');
 styleInputRange1020.type = 'text/css';
-var rules1020 = document.createTextNode(".clear.jsx-3659451671:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841315545923190784/close_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules1020 = document.createTextNode(".clear.jsx-4206980828:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/841315545923190784/close_black_24dp.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange1020.appendChild(rules1020);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange1020);
 
@@ -782,19 +293,19 @@ document.getElementsByTagName("head")[0].appendChild(cssAnimation2);
 //Стиль рандома
 var styleInputRange25 = document.createElement('style');
 styleInputRange25.type = 'text/css';
-var rules25 = document.createTextNode(".rand.jsx-3659451671::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/833071627020926976/rand.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules25 = document.createTextNode(".rand.jsx-4206980828::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/833071627020926976/rand.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange25.appendChild(rules25);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange25);
 //Активация рандома
 var styleInputRange26 = document.createElement('style');
 styleInputRange26.type = 'text/css';
-var rules26 = document.createTextNode(".rand.jsx-3659451671:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/833074439582122034/rand.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
+var rules26 = document.createTextNode(".rand.jsx-4206980828:active::after {display: block; content: ' '; background-image: url('https://cdn.discordapp.com/attachments/827569141782282272/833074439582122034/rand.svg'); background-size: 35px 35px; height: 35px; width: 35px;}");
 styleInputRange26.appendChild(rules26);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange26);
 //Активация рандома
 var styleInputRange27 = document.createElement('style');
 styleInputRange27.type = 'text/css';
-//var rules27 = document.createTextNode(".rand.tool.jsx-3659451671:hover::before {content: '';  margin: 2px; flex: 1 1 0%; border-radius: 3px; align-self: stretch; animation: 5s linear 0s infinite normal none running rainbow2;}");
+//var rules27 = document.createTextNode(".rand.tool.jsx-4206980828:hover::before {content: '';  margin: 2px; flex: 1 1 0%; border-radius: 3px; align-self: stretch; animation: 5s linear 0s infinite normal none running rainbow2;}");
 //styleInputRange27.appendChild(rules27);
 document.getElementsByTagName("head")[0].appendChild(styleInputRange27);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -977,7 +488,7 @@ var width;
 var height;
 
 function clientMouseMove(x, y){
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var pointerCanvas = Q(PCANV)[0];
     var event = new Event('mousemove', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
@@ -985,7 +496,7 @@ function clientMouseMove(x, y){
 }
 
 function clientMouseDown(x, y){
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var pointerCanvas = Q(PCANV)[0];
     var event = new Event('mousedown', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
@@ -993,7 +504,7 @@ function clientMouseDown(x, y){
 }
 
 function clientMouseUp(x, y){
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var pointerCanvas = Q(PCANV)[0];
     var event = new Event('mouseup', { bubbles: true, cancelable: true});
     event.clientX=x;
     event.clientY=y;
@@ -1181,7 +692,7 @@ function drawNsort(arr){
         if (i==realLengthOfArray-1){
             mouseUp();
             curThicc.click();
-            Q("jsx-3659451671 tool fil")[0].click();
+            Q("jsx-4206980828 tool fil")[0].click();
         }
     }
 }
@@ -1207,7 +718,7 @@ function drawArray(arr){
 
 
 function glass(point){
-    var canvas = Q("jsx-150592943")[0];
+    var canvas = Q(PCANV)[0];
     var rect = canvas.getBoundingClientRect();
     var x = rect.x;
     var y = rect.y;
@@ -1285,7 +796,7 @@ function getPix(x, y, canvas){
 }
 
 function draw(x1, y1){
-    canvas = Q("jsx-150592943")[0];
+    canvas = Q(PCANV)[0];
     var pos = canvas.getBoundingClientRect();
     let x = pos.x;
     let y = pos.y;
@@ -1299,7 +810,7 @@ function draw(x1, y1){
 
 var canvas;
 function globalDraw(){
-    canvas = Q("jsx-150592943")[0];
+    canvas = Q(PCANV)[0];
     alert("WRONG FUNC");
     var url = document.querySelector("#content > input[type=text]:nth-child(2)").value;
 
@@ -1594,14 +1105,14 @@ function AddButton(){
 function debugName(){
     var name = document.getElementsByTagName("h3")[0];
     if (name.innerText == ""){
-        Q("jsx-1307288772 drawing")[0].style.margin="15px 0px 10px";
+        Q("drawing")[0].style.margin="15px 0px 10px";
     }
 }
 
 
 function vipOnEnter(){
     if (!dict){return}
-    var i = Q("jsx-856742297 ")[0];
+    var i = Q(MINP)[0];
     i.oninput=vipOnEnter;
     var a = Q("avatar")[0].firstChild;
     var d = (dict[i.value.toLowerCase()] ? dict[i.value.toLowerCase()] : dict[i.placeholder.toLowerCase()]);
@@ -1648,7 +1159,7 @@ function VIPList(q){
     if (d){
         //защита
         if (d.code){
-            if (!(d.code == window.btoa(window.window.getComputedStyle(q.parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]))){return}
+            if (!(d.code == window.btoa(window.window.getComputedStyle(q.parentNode.parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]))){return}
         }
 
         //изменение текста
@@ -1666,34 +1177,34 @@ function VIPList(q){
         //при клике
         if (d.onclick){
             eval(d.onclick);
-            q.parentNode.onclick=()=>{func1(q, d)};
+            q.parentNode.parentNode.onclick=()=>{func1(q, d)};
         }
 
         //при правом клике
         if (d.oncontextmenu){
             eval(d.oncontextmenu);
-            q.parentNode.onclick=()=>{func2(q, d)};
+            q.parentNode.parentNode.onclick=()=>{func2(q, d)};
         }
 
         //на входе курсора
         if (d.onmouseenter){
             eval(d.onmouseenter);
-            q.parentNode.onmouseenter=()=>{func3(q, d)};
+            q.parentNode.parentNode.onmouseenter=()=>{func3(q, d)};
         }
         //на выходе курсора
         if (d.onmouseleave){
             eval(d.onmouseleave);
-            q.parentNode.onmouseleave=()=>{func4(q, d)};
+            q.parentNode.parentNode.onmouseleave=()=>{func4(q, d)};
         }
 
         //удаление третьего элемента
-        if (d.thirdElem && q.parentNode.children[2]){
-            q.parentNode.removeChild(q.parentNode.children[2]);
+        if (d.thirdElem && q.parentNode.parentNode.children[2]){
+            q.parentNode.parentNode.removeChild(q.parentNode.parentNode.children[2]);
         }
 
         //удаление i-того элемента
-        if (d.iElem && q.parentNode.firstChild.children[1]){
-            q.parentNode.firstChild.removeChild(q.parentNode.firstChild.children[1]);
+        if (d.iElem && q.parentNode.parentNode.firstChild.children[1]){
+            q.parentNode.parentNode.firstChild.removeChild(q.parentNode.parentNode.firstChild.children[1]);
         }
 
         //добавление тайтла
@@ -1712,31 +1223,31 @@ function VIPList(q){
         q.style.animation=d.nickname.animation;
 
         //стиль блока
-        q.parentNode.style.backgroundColor=d.block.backgroundColor;
-        q.parentNode.style.border=d.block.border;
-        q.parentNode.style.backgroundImage=d.block.backgroundImage;
-        q.parentNode.style.backgroundSize=d.block.backgroundSize;
-        q.parentNode.style.backgroundPosition=d.block.backgroundPosition;
-        q.parentNode.style.backgroundRepeat=d.block.backgroundRepeat;
-        q.parentNode.style.transition=d.block.transition;
-        q.parentNode.style.animation=d.block.animation;
-        q.parentNode.style.cursor=d.block.cursor;
-        q.parentNode.style.boxShadow=d.block.boxShadow;
+        q.parentNode.parentNode.style.backgroundColor=d.block.backgroundColor;
+        q.parentNode.parentNode.style.border=d.block.border;
+        q.parentNode.parentNode.style.backgroundImage=d.block.backgroundImage;
+        q.parentNode.parentNode.style.backgroundSize=d.block.backgroundSize;
+        q.parentNode.parentNode.style.backgroundPosition=d.block.backgroundPosition;
+        q.parentNode.parentNode.style.backgroundRepeat=d.block.backgroundRepeat;
+        q.parentNode.parentNode.style.transition=d.block.transition;
+        q.parentNode.parentNode.style.animation=d.block.animation;
+        q.parentNode.parentNode.style.cursor=d.block.cursor;
+        q.parentNode.parentNode.style.boxShadow=d.block.boxShadow;
 
         //аватар
-        q.parentNode.firstChild.style.border=d.avatar.border;
-        q.parentNode.firstChild.style.backgroundColor=d.avatar.backgroundColor;
+        q.parentNode.parentNode.firstChild.style.border=d.avatar.border;
+        q.parentNode.parentNode.firstChild.style.backgroundColor=d.avatar.backgroundColor;
 
         //аватар инсайд
-        q.parentNode.firstChild.firstChild.style.backgroundImage=d.avatar.child.backgroundImage;
-        q.parentNode.firstChild.firstChild.style.backgroundSize=d.avatar.child.backgroundSize;
-        q.parentNode.firstChild.firstChild.style.backgroundPosition=d.avatar.child.backgroundPosition;
-        q.parentNode.firstChild.firstChild.style.borderRadius=d.avatar.child.borderRadius;
-        q.parentNode.firstChild.firstChild.style.margin=d.avatar.child.margin;
-        q.parentNode.firstChild.firstChild.style.width=d.avatar.child.width;
-        q.parentNode.firstChild.firstChild.style.height=d.avatar.child.height;
-        q.parentNode.firstChild.firstChild.style.minHeight=d.avatar.child.minHeight;
-        q.parentNode.firstChild.firstChild.style.animation=d.avatar.child.animation;
+        q.parentNode.parentNode.firstChild.firstChild.style.backgroundImage=d.avatar.child.backgroundImage;
+        q.parentNode.parentNode.firstChild.firstChild.style.backgroundSize=d.avatar.child.backgroundSize;
+        q.parentNode.parentNode.firstChild.firstChild.style.backgroundPosition=d.avatar.child.backgroundPosition;
+        q.parentNode.parentNode.firstChild.firstChild.style.borderRadius=d.avatar.child.borderRadius;
+        q.parentNode.parentNode.firstChild.firstChild.style.margin=d.avatar.child.margin;
+        q.parentNode.parentNode.firstChild.firstChild.style.width=d.avatar.child.width;
+        q.parentNode.parentNode.firstChild.firstChild.style.height=d.avatar.child.height;
+        q.parentNode.parentNode.firstChild.firstChild.style.minHeight=d.avatar.child.minHeight;
+        q.parentNode.parentNode.firstChild.firstChild.style.animation=d.avatar.child.animation;
 
         if (d.function){
             eval(d.function);
@@ -1817,23 +1328,23 @@ function addMultEventsListener(events, func, element){
 }
 
 function clearActiveelements(){
-    var mirorButton = Q("jsx-3659451671 tool miror")[0];
+    var mirorButton = Q("jsx-4206980828 tool miror")[0];
     mirorButton.classList.remove("sel");
     clearMidCanvas();
     mirorButton.classList.remove("act1");
     Q("rightpanel")[0].style.right="-220px";
-    var smoothButton = Q("jsx-3659451671 tool  smooth")[0];
+    var smoothButton = Q("jsx-4206980828 tool  smooth")[0];
     var degRangeBorder = Q("deg-range-border")[0];
     smoothButton.classList.remove("act1");
     degRangeBorder.style.display="none";
     //sLevel = 1;
     if (prevElem){
         prevElem.classList.add("sel");
-        var pipetButton = Q("jsx-3659451671 tool pipet")[0];
+        var pipetButton = Q("jsx-4206980828 tool pipet")[0];
         pipetButton.classList.remove("act");
         pipetButton.classList.remove("sel");
     }
-    var loopaButton = Q("jsx-3659451671 tool loopa")[0];
+    var loopaButton = Q("jsx-4206980828 tool loopa")[0];
     var zoomC = Q("zoomC")[0];
     loopaButton.classList.remove("act1");
     loopaButton.classList.remove("sel");
@@ -1862,7 +1373,7 @@ var currentC;
 function addZoom(){
     function zoomUpdate(e){
         try{
-        var topC = Q("jsx-150592943")[0];
+        var topC = Q(PCANV)[0];
         var zoomC = Q("zoomC")[0];
         var rect = topC.getBoundingClientRect();
         var dx = e.clientX - rect.x;
@@ -1903,7 +1414,7 @@ function addZoom(){
         zoomC.hidden = true;
 
         document.querySelector("#__next").addEventListener("pointermove", (e)=>{
-            if (Q("jsx-3659451671 tool loopa act1 sel")[0]){
+            if (Q("jsx-4206980828 tool loopa act1 sel")[0]){
                 zoomUpdate(e);
             }
         });
@@ -1931,19 +1442,20 @@ function drawStyleChange(){
     //var book = Q("jsx-1307288772 book")[0];
     //book.style.padding="0px 0px 20px 0px";
     //Изменеине в иснтрументах
-    var undo = Q("jsx-3659451671 tool undo")[0];
-    var redo = Q("jsx-3659451671 tool redo")[0];
+    var undo = Q(UNDO)[0];
+    var redo = Q(REDO)[0];
     undo.style.margin="0px 0px 7px 0px";
     redo.style.margin="0px 0px 7px 0px";
     //Очистка задней картинки
-    var underDrawContainer = Q("jsx-1307288772 core")[0];
+    var underDrawContainer = Q(UDC)[0];
     underDrawContainer.style.backgroundImage="url()";
     underDrawContainer.style.boxShadow="none";
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var toolBar = Q(TBAR)[0].firstChild;
     toolBar.style.height="auto";
     //Надхолсьтье
-    var canvasLayer = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.core");
+    var canvasLayer = Q(CORE)[0];
     canvasLayer.style.borderRadius="0px 0px 0px 0px";
+
     var newDiv = document.createElement("div");
     newDiv.classList.add("newdiv");
     newDiv.style.width="758px";
@@ -1952,7 +1464,7 @@ function drawStyleChange(){
     newDiv.style.zIndex="0";
     newDiv.style.overflow="hidden";
     try{
-        Q("jsx-3193114933")[0].insertAdjacentElement('beforeBegin', newDiv);
+        Q(DCANV)[0].insertAdjacentElement('beforeBegin', newDiv);
     }catch{}
 }
 
@@ -1968,10 +1480,9 @@ function firstLevelFunctions(){
         //Определение изначальной прозрачности
         Q("thikness-input")[0].value=4;
     }
-    //Q("jsx-340028725 thickness")[0].click();
     //Невозможность открыть контекстное меню на холсте
-    if (!Q("jsx-150592943")[0]){return}
-    Q("jsx-150592943")[0].oncontextmenu=function(){return false;};
+    if (!Q(PCANV)[0]){return}
+    Q(PCANV)[0].oncontextmenu=function(){return false;};
     //Цензура текста
     var taskParent = document.getElementsByTagName("h3")[0];
     if (taskParent){
@@ -1990,7 +1501,7 @@ function firstLevelFunctions(){
     }else {console.log("task is undefined");}
 
     //Кнопка скачивания
-    var upper = document.querySelector("#content > div > div > div.jsx-1562482592.center > div.jsx-1307288772.book > div.jsx-1307288772.header");
+    var upper = Q(UPPER)[0];
     var downloadButton = document.createElement("button");
     downloadButton.style.position="absolute";
     downloadButton.style.right="714px";
@@ -2016,24 +1527,13 @@ function firstLevelFunctions(){
     window.addEventListener("pointerover", (e)=>{curElementOverCursor=e.path[0]})
 
     //Доктор Стрендж
-    var toolsBox100 = Q("jsx-3659451671")[1];
+    var t1 = Q(TBAR)[0];
     var undoButton = Q("tool undo")[0];
     var redoButton = Q("tool redo")[0];
-    toolsBox100.onwheel=(e)=>{
+    t1.onwheel=(e)=>{
         if (e.deltaY>0){undoButton.click();} else {redoButton.click();}
     }
 
-    var readyButton = Q("jsx-4289504161 small")[0];
-    if (readyButton && Q("jsx-3659451671 tool clear")[0] == undefined){
-        readyButton.addEventListener("click", ()=>{
-            clearActiveelements();
-            setTimeout(()=>{
-                if (Q("jsx-1553483530 pencil")[0] == undefined){
-                    mainDrawFunc();
-                }
-            }, 300);
-        })
-    }
 }
 
 //Изменение палитры
@@ -2141,7 +1641,7 @@ function onDrawWheel(e){
 
 //Добавление пипетки по правой кнопки мыши
 function drawRMBPipet(){
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var pointerCanvas = Q(PCANV)[0];
     if (pointerCanvas){
         //ПКМ ПИПЕТКА
         var canada = Q("jsx-3193114933 ")[0];
@@ -2162,7 +1662,7 @@ function drawRMBPipet(){
                     var event = new Event ('mouseup', { bubbles: true, cancelable: true});
                     pointerCanvas.dispatchEvent(event);
 
-                    Q("jsx-3659451671 tool undo")[0].click();
+                    Q(UNDO)[0].click();
                 }, 50)
             }
         })
@@ -2172,13 +1672,13 @@ function drawRMBPipet(){
 //Добавление заливки по средней кнопке мыши
 function drawMiddleBucket(){
     //Заливка
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var pointerCanvas = Q(PCANV)[0];
     if (pointerCanvas){
         pointerCanvas.addEventListener("pointerdown", function(e) {
             if (e.which === 2) {
                 var curButt = Q("tool sel")[0];
-                var undoButt = Q("jsx-3659451671 tool undo")[0];
-                Q("jsx-3659451671 tool fil")[0].click();
+                var undoButt = Q(UNDO)[0];
+                Q("jsx-4206980828 tool fil")[0].click();
 
                 setTimeout(()=>{
                     undoButt.click();
@@ -2262,8 +1762,8 @@ function nessEdit(){
 
 //Инструменты//////////////////////////////////
 function addTools(){
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var toolBar = Q(TBAR)[0].firstChild;
+    var pointerCanvas = Q(PCANV)[0];
 
     var prevElem;
 
@@ -2291,12 +1791,12 @@ function addTools(){
 
 //Функционал луппы
 function addLoopaButton(){
-    var pointerCanvas = Q("jsx-150592943")[0];
+    var pointerCanvas = Q(PCANV)[0];
     var zoomC = Q("zoomC")[0];
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var toolBar = Q(TBAR)[0].firstChild;
     if (!Q("loopa").length){
         var loopaButton = document.createElement("div");
-        loopaButton.classList.add("jsx-3659451671");
+        loopaButton.classList.add(TOOL);
         loopaButton.classList.add("tool");
         loopaButton.classList.add("loopa");
         loopaButton.style.margin="0px";
@@ -2304,7 +1804,7 @@ function addLoopaButton(){
         //loopaButton.style.left="56px";
         //loopaButton.style.top="-54px";
         loopaButton.onclick = function(){
-            if (Q("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length && !Q("jsx-1553483530 pencil").length){
+            if (Q(UDC)[0].getElementsByClassName("jsx-1562482592 drawingContainer").length && !Q("jsx-1553483530 pencil").length){
                 if (!loopaButton.classList.contains("act1")){
                     loopaButton.classList.add("act1");
                     loopaButton.classList.add("sel");
@@ -2331,8 +1831,8 @@ var firstTimeAddWindowSmooth = true;
 var mapArray = [];
 function addSmoothingTool(){
     mapArray = [];
-        if (!Q("jsx-3659451671 tool smooth").length){
-            var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+        if (!Q("jsx-4206980828 tool smooth").length){
+            var toolBar = Q(TBAR)[0].firstChild;
 
             var smoothBorder = document.createElement("div");
             smoothBorder.width = 300;
@@ -2346,7 +1846,7 @@ function addSmoothingTool(){
             toolBar.appendChild(smoothBorder);
 
             var degRangeBorder = document.createElement("div");
-            degRangeBorder.classList.add("jsx-3659451671");
+            degRangeBorder.classList.add(TOOL);
             degRangeBorder.classList.add("deg-range-border");
             degRangeBorder.style.width="230px";
             degRangeBorder.style.height="auto";
@@ -2408,7 +1908,7 @@ function addSmoothingTool(){
             smoothBorder.appendChild(degRangeBorder);
 
             var smoothButton = document.createElement("div");
-            smoothButton.classList.add("jsx-3659451671");
+            smoothButton.classList.add(TOOL);
             smoothButton.classList.add("tool");
             smoothButton.classList.add("smooth");
             smoothButton.style.backgroundColor="#ff000030";
@@ -2463,10 +1963,10 @@ function addSmoothingTool(){
 
         degRange1 = Q("here-degrange")[0];
 
-        var pointerCanvas = Q("jsx-150592943")[0];
+        var pointerCanvas = Q(PCANV)[0];
         pointerCanvas.addEventListener('pointerdown', (e)=>{
-            var pipetTool = Q("jsx-3659451671 tool pipet act sel")[0];
-            var bucketTool = Q("jsx-3659451671 tool fil sel")[0];
+            var pipetTool = Q("jsx-4206980828 tool pipet act sel")[0];
+            var bucketTool = Q("jsx-4206980828 tool fil sel")[0];
             if (Number(degRange1.value)!=1 && !bucketTool && e.which != 2 && !onWorking && e.which != 3 && !pipetTool){
                 onWorkingKey = true;
                 startPoint = [e.clientX, e.clientY];
@@ -2494,8 +1994,8 @@ function addSmoothingTool(){
 //Функционал пипеточного элемента
 function addTitle(){
     if (Q("pipet-title")[0]){return 0};
-    var pointerCanvas = Q("jsx-150592943")[0];
-    var canada = Q("jsx-3193114933")[0];
+    var pointerCanvas = Q(PCANV)[0];
+    var canada = Q(DCANV)[0];
     var curc = document.createElement("div");
     curc.style.height="10px";
     curc.style.width="10px";
@@ -2531,13 +2031,13 @@ function addTitle(){
 //Функционал пипетки
 var prevElem;
 function addPipetButton(){
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
-    var pointerCanvas = Q("jsx-150592943")[0];
-    var canada = Q("jsx-3193114933")[0];
+    var toolBar = Q(TBAR)[0].firstChild;
+    var pointerCanvas = Q(PCANV)[0];
+    var canada = Q(DCANV)[0];
 
     if (Q("pipet")[0] == undefined && pointerCanvas){
         var pipetButton = document.createElement("div");
-        pipetButton.classList.add("jsx-3659451671");
+        pipetButton.classList.add(TOOL);
         pipetButton.classList.add("tool");
         pipetButton.classList.add("pipet");
         pipetButton.style.margin="0px";
@@ -2581,7 +2081,7 @@ function addPipetButton(){
                 var event = new Event ('mouseup', { bubbles: true, cancelable: true});
                 pointerCanvas.dispatchEvent(event);
 
-                Q("jsx-3659451671 tool undo")[0].click();
+                Q(UNDO)[0].click();
             }, 50)
         }
     })
@@ -2594,10 +2094,10 @@ var colorInput2;
 var defaultButton;
 var uKey = false;
 function randomColorButton(){
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var toolBar = Q(TBAR)[0].firstChild;
     if (!Q("rand").length){
         var gradientButton = document.createElement("div");
-        gradientButton.classList.add("jsx-3659451671");
+        gradientButton.classList.add(TOOL);
         gradientButton.classList.add("tool");
         gradientButton.classList.add("rand");
         gradientButton.style.margin="7px 0px 0px 0px";
@@ -2615,7 +2115,7 @@ function randomColorButton(){
         toolBar.appendChild(smoothBorder);
 
         var degRangeBorder = document.createElement("div");
-        degRangeBorder.classList.add("jsx-3659451671");
+        degRangeBorder.classList.add(TOOL);
         degRangeBorder.classList.add("color-gradient");
         degRangeBorder.style.width="200px";
         degRangeBorder.style.height="auto";
@@ -2713,7 +2213,7 @@ function randomColorButton(){
             if(Q("jsx-1553483530 pencil").length){return;}
             degRangeBorder.style.display="";
 //             Q("deg-range-border")[0].style.display="none";
-//             var N = new Set(Q("jsx-3193114933")[0].getContext("2d").getImageData(0, 0, 1516, 848).data)
+//             var N = new Set(Q(DCANV)[0].getContext("2d").getImageData(0, 0, 1516, 848).data)
 //             if (N.size != 1){
 //                 defaultButton.style.cursor="no-drop";
 //                 defaultButton.title="Нельзя использовать если что-то уже нарисовано";
@@ -2759,7 +2259,7 @@ function randomColorButton(){
         var c = context.getImageData(0, i, 1, 1).data;
         setColor(rgbToHex(c[0], c[1], c[2]));
     }
-    var canvas = Q("jsx-150592943")[0];
+    var canvas = Q(PCANV)[0];
     var rect = canvas.getBoundingClientRect();
     var x0 = rect.x;
     var x1 = rect.x+rect.width;
@@ -2768,7 +2268,7 @@ function randomColorButton(){
 
     defaultButton.onclick=()=>{
         if (uKey){return;}
-        Q("jsx-3659451671 tool pen")[0].click();
+        Q("jsx-4206980828 tool pen")[0].click();
         for (let i=0;i<424;i++){
             setTimeout(()=>{
                 changeColor2(i, colorInput1.value, colorInput2.value)
@@ -2804,10 +2304,10 @@ function randomColorButton(){
 
 //Функционал кнопки зеркала
 function addMirrorButton(){
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var toolBar = Q(TBAR)[0].firstChild;
     if (!Q("miror").length){
         var mirorButton = document.createElement("div");
-        mirorButton.classList.add("jsx-3659451671");
+        mirorButton.classList.add(TOOL);
         mirorButton.classList.add("tool");
         mirorButton.classList.add("miror");
 
@@ -2838,9 +2338,9 @@ function addMirrorButton(){
 //Функции зеркала
 var onWorking = false;
 function addMirrorBase(){
-    var pointerCanvas = Q("jsx-150592943")[0];
-    var mirrorCanvas = Q("jsx-3193114933")[0].cloneNode();
-    mirrorCanvas.classList.remove("jsx-3193114933");
+    var pointerCanvas = Q(PCANV)[0];
+    var mirrorCanvas = Q(DCANV)[0].cloneNode();
+    mirrorCanvas.classList.remove(DCANV);
     mirrorCanvas.classList.add("mirror-canvas");
     var ctx = mirrorCanvas.getContext("2d");
     ctx.fillStyle = "rgba(255, 0, 0, 0.9)";
@@ -2889,8 +2389,8 @@ function addMirrorBase(){
     var kotik = againCanvas.getContext("2d");
 
     evttCanvas.addEventListener('pointerdown', (e)=>{
-        var smoothingTool = Q("jsx-3659451671 tool smooth act1")[0];
-        if (!onWorking && Q("miror sel").length != 0 && !Q("jsx-3659451671 tool pipet act sel").length && e.which == 1){
+        var smoothingTool = Q("jsx-4206980828 tool smooth act1")[0];
+        if (!onWorking && Q("miror sel").length != 0 && !Q("jsx-4206980828 tool pipet act sel").length && e.which == 1){
             rect = evttCanvas.getBoundingClientRect();
             let relX = e.clientX - rect.x;
             let relY = e.clientY - rect.y;
@@ -2938,17 +2438,17 @@ function addMirrorBase(){
 //Функционал кнопки очистки
     var clearButton;
 function addClearButton(){
-    var toolBar = Q("jsx-3659451671 tools")[0].firstChild;
+    var toolBar = Q(TBAR)[0].firstChild;
     if (!Q("clear").length){
         clearButton = document.createElement("div");
-        clearButton.classList.add("jsx-3659451671");
+        clearButton.classList.add(TOOL);
         clearButton.classList.add("tool");
         clearButton.classList.add("clear");
         clearButton.style.margin="7px 0px 0px";
         toolBar.appendChild(clearButton);
     }
     clearButton.onclick=()=>{
-        var pointerCanvas = Q("jsx-150592943")[0];
+        var pointerCanvas = Q(PCANV)[0];
         var rect = pointerCanvas.getBoundingClientRect();
         var x0 = rect.x;
         var y0 = rect.y;
@@ -2956,7 +2456,7 @@ function addClearButton(){
         var y1 = rect.y + rect.height;
         var beforeColor = (()=>{var items = Q("jsx-3071142060"); for (let i=0; i<items.length; i++){if (items[i].tagName=="INPUT"){return items[i]}}})().value;
         var beforeElement = Q("tool sel")[0];
-        var rectButton = Q("jsx-3659451671 tool rec")[0];
+        var rectButton = Q("jsx-4206980828 tool rec")[0];
         rectButton.click();
         setColor("#ffffff");
         clientMouseDown(x0, y0);
@@ -3009,7 +2509,7 @@ function mainDrawFunc(){
     document.onkeydown = drawKeys;
 
     //Вилинговое увеличение экрана
-    var pointerCanvas = Q("jsx-150592943")[0];// <- самый верхний холст
+    var pointerCanvas = Q(PCANV)[0];// <- самый верхний холст
     pointerCanvas.onwheel=onDrawWheel;
     //Изменение настроек прозрачности
     nessEdit();
@@ -3094,10 +2594,10 @@ function debagDrawinfContainerOnExit(){
 
 function moveCanvases(){
     var nWindow = document.querySelector("#content");
-    var nnWindow = Q("jsx-1307288772 core")[0];
+    var nnWindow = Q(UDC)[0];
     var drawContainer = Q("jsx-1562482592 drawingContainer")[0];
     var contCanvases = drawContainer.children;
-    if (Q("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length > 0){
+    if (Q(UDC)[0].getElementsByClassName("jsx-1562482592 drawingContainer").length > 0){
         drawContainer.parentNode.removeChild(drawContainer);
         drawContainer.style.position="absolute";
         drawContainer.style.left="0px";
@@ -3113,7 +2613,7 @@ function moveCanvases(){
         whiteZone.style.height=`${window.innerHeight}px`;
         whiteZone.style.position="absolute";
         whiteZone.style.zIndex=1;
-        whiteZone.style.backgroundImage=Q("jsx-1307288772 core")[0].style.backgroundImage;
+        whiteZone.style.backgroundImage=Q(UDC)[0].style.backgroundImage;
         nWindow.appendChild(whiteZone);
         nWindow.appendChild(drawContainer);
     } else {
@@ -3141,7 +2641,7 @@ window.addEventListener('resize', function(event){
         var newArray = [].slice.call(anCanvases);
         newArray.push(Q("class100")[0]);
 
-        if (Q("jsx-1307288772 core")[0].getElementsByClassName("jsx-1562482592 drawingContainer").length == 0){
+        if (Q(UDC)[0].getElementsByClassName("jsx-1562482592 drawingContainer").length == 0){
             for (let i=0; i<newArray.length; i++){
                 newArray[i].style.width=`${window.innerWidth}px`;
                 newArray[i].style.height=`${window.innerHeight}px`;
@@ -3461,6 +2961,7 @@ function lobbyEdit(){
 }
 
 function createSizePull(){
+    if (Q("rightpanel").length != 0){return}
     var backgroundMenuKey = false;
 
     var rightPannel=document.createElement('div');
@@ -4348,7 +3849,7 @@ window.onkeydown=(e)=>{
         var t = Q("jsx-4289504161 big")[0];
         if(t){t.click()};
     }
-    var input = Q("jsx-856742297 ")[0];
+    var input = Q(MINP)[0];
     if ((e.code == "Delete" || e.key == "Delete" || e.keyCode == 46) && e.ctrlKey){
         var p = prompt("Введите команду:", "100") ;
         if (p == "0"){
@@ -4397,9 +3898,10 @@ function flagsOff(){
     waitingKey = false;
 }
 
+
 function memoryFunc(){
     if (document.URL.indexOf("draw") != -1){return}
-    var smth = Q("jsx-1307288772 core")[0];
+    var smth = Q(UDC)[0];
     var mCanvas = Q("jsx-3193114933 ")[0];
     smth.style.backgroundImage="url()";
     smth.style.cursor="pointer";
@@ -4421,22 +3923,11 @@ function memoryFunc(){
 
 }
 
+
 function offBgMenu(){
         var panel = Q("rightpanel");
         if (panel.length != 0){
             panel[0].parentNode.removeChild(panel[0]);
-        }
-    }
-
-function clown(){
-        if (getCookieDict().badguy=="1"){
-            var input = Q("jsx-856742297 ")[0];
-            setValue(input, "vinegative");
-            Q("jsx-4289504161 big")[0].addEventListener('click', ()=>{
-                if (getCookieDict().badguy=="1"){
-                    setValue(input, "vinegative");
-                }
-            })
         }
     }
 
@@ -4445,17 +3936,6 @@ function main(){
     if (document.URL.indexOf("book") == -1){delete blackArr};
     if ((document.URL.indexOf("https://garticphone.com/") != -1 && document.URL.length == 26) && !menuKey){
         //createUpdateWindow();
-        if (!(localStorage.getItem("clown")=="false")){
-            if (Q("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || Q("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
-                localStorage.setItem("clown", "true");
-            };
-            if (localStorage.getItem("clown")=="true"){
-                Q("jsx-4289504161 big")[0].addEventListener("click", ()=>{
-                    setValue(Q("jsx-856742297 ")[0], "Шпилька");
-                })
-            }
-        }
-
         window.onload=()=>{
             createColorPull();
         }
@@ -4470,16 +3950,6 @@ function main(){
     }
     else if (document.URL.indexOf("?c=") != -1 && !menuLinkKey){
         setTimeout(vipOnEnter, 10);
-        if (!(localStorage.getItem("clown")=="false")){
-            if (Q("jsx-856742297 ")[0].value.toLowerCase()=="шпилька" || Q("jsx-856742297 ")[0].placeholder.toLowerCase()=="шпилька"){
-                localStorage.setItem("clown", "true");
-            };
-            if (localStorage.getItem("clown")=="true"){
-                Q("jsx-4289504161 big")[0].addEventListener("click", ()=>{
-                    setValue(Q("jsx-856742297 ")[0], "Шпилька");
-                })
-            }
-        }
         localStorage.setItem("room", document.URL);
         //Блок главного меню при входе по ссылке
         //alert("menuLinkKey");
@@ -4504,9 +3974,9 @@ function main(){
         drawKey=true;
     }
     else if (document.URL.indexOf("lobby") != -1 && !lobbyKey){
-        var v = Q("jsx-4216852870 jsx-2842824398 nick");
+        var v = Q(NICK);
         for (let i=0; i<v.length; i++){VIPList(v[i]);}
-        addListenerToBlock(Q("jsx-1927447174 scrollElements")[0]);
+        addListenerToBlock(Q(SLL)[0]);
         setTimeout(lobbyEdit, 300);
         setTimeout(styleUpdate, 10);
         flagsOff();
@@ -4515,7 +3985,7 @@ function main(){
     else if (document.URL.indexOf("book") != -1 && !bookKey){
         var w = Q("scrollElements")[1];
         if (!w){
-            Q("jsx-2790456822 timeline")[0].addEventListener("DOMNodeInserted", (e)=>{
+            Q("timeline")[0].addEventListener("DOMNodeInserted", (e)=>{
                 setTimeout(()=>{
                 if (!e.target.classList || !e){return}
                 if (e.target.classList.contains("scroll")){
@@ -4539,7 +4009,7 @@ function main(){
             Q("zoomC")[0].parentNode.removeChild(Q("zoomC")[0]);
         }
 
-        v = Q("jsx-4216852870 jsx-2842824398 nick");
+        v = Q("nick");
         for (let i=0; i<v.length; i++){VIPList(v[i]);}
         addListenerToBlock(Q("jsx-3158565948 scrollElements")[0]);
         setTimeout(styleUpdate, 10);
@@ -4611,3 +4081,4 @@ function exec() {
     document.querySelector("#content").addEventListener("DOMNodeInserted", main);
     setTimeout(main, 100);
 }
+
