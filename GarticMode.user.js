@@ -1,16 +1,14 @@
-alert("garticphone потерпел масштабное обновление из-за чего полностю обновилась его структура вследствии чего мод временно может работать не корректно!")
 
-
-var VERSION = "2.8.8.0";
+var VERSION = "2.8.8.";
 
 
 var UNDO = "jsx-4206980828 tool undo";
 var REDO = "jsx-4206980828 tool redo";
 var TOOL = "jsx-4206980828";
-var UDC = "jsx-979771310 core watermark";
+var UDC = "jsx-979771310 core";
 var TBAR = "jsx-4206980828";
 var UPPER = "jsx-979771310 header";
-var CORE = "jsx-979771310 core watermark";
+var CORE = "jsx-979771310 core";
 var DCANV = "jsx-1116305971";
 var PCANV = "jsx-150592943";
 var MINP = "jsx-46098086";
@@ -1159,6 +1157,7 @@ function VIPList(q){
     var n = q.innerText.toLowerCase();
     var d = dict[n];
     if (d){
+        console.log(d, q);
         //защита
         if (d.code){
             if (!(d.code == window.btoa(window.window.getComputedStyle(q.parentNode.parentNode.firstChild.firstChild).backgroundImage.substring(43).split('.')[0]))){return}
@@ -1299,7 +1298,7 @@ function testForIncorporation(word, arr){
 function addListenerToBlock(block, func){
     block.addEventListener("DOMNodeInserted", (e)=>{
         if (!e.target.children){return}
-        VIPList(e.target.children[1]);
+        VIPList(e.target.children[1].firstChild);
     })
 }
 
@@ -1450,8 +1449,11 @@ function drawStyleChange(){
     redo.style.margin="0px 0px 7px 0px";
     //Очистка задней картинки
     var underDrawContainer = Q(UDC)[0];
-    underDrawContainer.style.backgroundImage="url()";
-    underDrawContainer.style.boxShadow="none";
+    if (underDrawContainer){
+        underDrawContainer.style.backgroundImage="url()";
+        underDrawContainer.style.boxShadow="none";
+    }
+
     var toolBar = Q(TBAR)[0].firstChild;
     toolBar.style.height="auto";
     //Надхолсьтье
@@ -2637,6 +2639,7 @@ function moveCanvases(){
 
 //Я и так знаю что делает эта функция, а значит это читает кто-то другой
 window.addEventListener('resize', function(event){
+    /*
     var drawContainer = Q("jsx-1562482592 drawingContainer")[0];
     if (drawContainer){
         var anCanvases = drawContainer.children;
@@ -2649,8 +2652,7 @@ window.addEventListener('resize', function(event){
                 newArray[i].style.height=`${window.innerHeight}px`;
             }
         }
-    }
-
+    }*/
 })
 
 
@@ -3904,7 +3906,7 @@ function flagsOff(){
 function memoryFunc(){
     if (document.URL.indexOf("draw") != -1){return}
     var smth = Q(UDC)[0];
-    var mCanvas = Q("jsx-3193114933 ")[0];
+    var mCanvas = Q("jsx-1116305971")[0];
     smth.style.backgroundImage="url()";
     smth.style.cursor="pointer";
     smth.onclick = ()=>{
@@ -3984,7 +3986,7 @@ function main(){
         flagsOff();
         lobbyKey=true;
     }
-    else if (document.URL.indexOf("book") != -1 && !bookKey){
+    else if (document.URL.indexOf("book") != -1 ){ // && !bookKey
         var w = Q("scrollElements")[1];
         if (!w){
             Q("timeline")[0].addEventListener("DOMNodeInserted", (e)=>{
