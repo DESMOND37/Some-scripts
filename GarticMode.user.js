@@ -1,5 +1,5 @@
 
-var VERSION = "2.8.8.";
+var VERSION = "2.8.8.0";
 
 
 var UNDO = "jsx-4206980828 tool undo";
