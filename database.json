@@ -1781,4 +1781,50 @@
         }
       }
     }
+    	"LEEEEROOOY.SYS": {
+      "innerText": "DNS технопоинт",
+      "music": "https://cdn.discordapp.com/attachments/705488125950165095/866109273808830494/-_Sou_Farao.mp3",
+      "musicOnJoin": "https://cdn.discordapp.com/attachments/705488125950165095/866109415870562324/intro-ea-games.mp3",
+      "title": "LEEEEROOOY JENKIIIIINS",
+      "thirdElem": true,
+      "iElem": true,
+      "href": "",
+      "onclick": "",
+      "oncontextmenu": "",
+      "onmouseenter": "function func3(q, b){ if (!q.parentNode.a){ q.parentNode.a = new Audio(); q.parentNode.a.src=d.music; q.parentNode.a.currentTime=1; } if(q.parentNode.a.ended){q.parentNode.a.currentTime=1;} q.parentNode.a.volume=0; q.parentNode.a.play(); if (q.parentNode.i){clearInterval(q.parentNode.i)} q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume >= 0.2){ clearInterval(q.parentNode.i); } q.parentNode.a.volume+=0.002; },20); }",
+      "onmouseleave": "function func4(q, d){ clearInterval(q.parentNode.i); q.parentNode.i = setInterval(function(){ if(q.parentNode.a.volume <= 0.01){ q.parentNode.a.pause(); clearInterval(q.parentNode.i); } try{ q.parentNode.a.volume-=0.002; } catch {q.parentNode.a.volume = 0; q.parentNode.a.pause(); clearInterval(q.parentNode.i)} },10); }",
+      "info": "",
+      "function": "",
+      "code": "",
+      "nickname": {
+          "color": "#000",
+          "fontFamily": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "fontSize": "",
+          "animation": ""
+      },
+      "block": {
+        "transition": "none",
+        "backgroundColor": "",
+        "backgroundImage": "url(https://cdn.discordapp.com/attachments/705488125950165095/866104097936375858/14352202_1594103464216890_3464466582748685359_o.jpg)",
+        "backgroundSize": "100%",
+        "backgroundPosition": "20px -40px",
+        "bacgroundRepeat": "no-repeat",
+        "border": "2px solid #000",
+        "boxShadow": "",
+        "animation": "2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit",
+        "cursor": "pointer"
+      },
+      "avatar": {
+        "border": "2px solid #F00",
+        "backgroundColor": "#000",
+        "child": {
+          "backgroundImage": "url(https://garticphone.com/images/avatar/1.svg)",
+          "backgroundSize": "130%",
+          "backgroundPosition": "-6px -3px",
+          "animation": ""
+        }
+      }
+    }
 }
