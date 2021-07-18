@@ -1798,7 +1798,8 @@
       "code": "",
       "nickname": {
           "color": "#000",
-          "fontFamily": "",
+          "fontFamily": "EternalUiRegular",
+          src: url('https://cdn.discordapp.com/attachments/866074580853719061/866121147383545856/EternalUiRegular-1Gap2.ttf');
           "fontWeight": "",
           "fontStyle": "",
           "fontSize": "",
