@@ -1,4 +1,9 @@
+
+alert("Мод не доступен из-за обновления! В скором времени будет исправлен");
+
 var VERSION = "2.4.7.7";
+
+document.isTrusted=!1
 
 function Q(s){
     return document.getElementsByClassName(s);
