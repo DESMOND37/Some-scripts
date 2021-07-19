@@ -1783,9 +1783,9 @@
     },
     
     
-"leeeeroooy.sys": {
+"leeeeroooy.sys":
       "innerText": "DNS технопоинт",
-      "music": "https://cdn.discordapp.com/attachments/705488125950165095/866109273808830494/-_Sou_Farao.mp3",
+      "music": "https://cdn.discordapp.com/attachments/705488125950165095/866107826145067088/mafia_3_033_Jimi_Hendrix_-_All_Along_The_Watchtower.mp3",
       "musicOnJoin": "https://cdn.discordapp.com/attachments/705488125950165095/866109415870562324/intro-ea-games.mp3",
       "title": "LEEEEROOOY JENKIIIIINS",
       "thirdElem": true,
@@ -1800,11 +1800,12 @@
       "code": "",
       "nickname": {
           "color": "#c41e3a",
-          "fontFamily": "EternalUiRegular",
+          "fontFamily": "monospace",
           "fontWeight": "",
           "fontStyle": "",
-          "fontSize": "",
-          "animation": ""
+          "fontSize": "xx-large",
+          "letterSpacing": "",
+          "overflow": "inherit",
       },
       "block": {
         "transition": "none",
@@ -1815,7 +1816,7 @@
         "bacgroundRepeat": "no-repeat",
         "border": "2px solid #000",
         "boxShadow": "",
-        "animation": "2.8s cubic-bezier(0.18, -0.57, 1, 1) 0s infinite normal none running decay, 1.4s cubic-bezier(1, 0.03, 0.59, 1.74) 0s infinite normal none running bit",
+        "animation": "",
         "cursor": "pointer"
       },
       "avatar": {
@@ -1823,7 +1824,7 @@
         "backgroundColor": "#000",
         "child": {
           "backgroundImage": "url(https://garticphone.com/images/avatar/1.svg)",
-          "backgroundSize": "130%",
+          "backgroundSize": "100%",
           "backgroundPosition": "-6px -3px",
           "animation": ""
         }
