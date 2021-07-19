@@ -1805,7 +1805,7 @@
           "fontStyle": "",
           "fontSize": "xx-large",
           "letterSpacing": "",
-          "overflow": "inherit",
+          "overflow": "inherit"
       },
       "block": {
         "transition": "none",
