@@ -1799,13 +1799,13 @@
       "function": "",
       "code": "",
       "nickname": {
-          "color": "#c41e3a",
-          "fontFamily": "monospace",
+          "color": "#fff",
+          "fontFamily": "",
           "fontWeight": "",
           "fontStyle": "",
-          "fontSize": "xx-large",
+          "fontSize": "",
           "letterSpacing": "",
-          "overflow": "inherit",
+          "overflow": "",
           "animation": ""
       },
       "block": {
@@ -1815,7 +1815,7 @@
         "backgroundSize": "100%",
         "backgroundPosition": "20px -40px",
         "bacgroundRepeat": "no-repeat",
-        "border": "2px solid #000",
+        "border": "2px solid #fff",
         "boxShadow": "",
         "animation": "",
         "cursor": "pointer"
